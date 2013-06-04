@@ -1,6 +1,6 @@
-# SEO Plugin by SQUIRRLY
+### SEO Plugin by SQUIRRLY
 
-<h3>SEO Plugin by SQUIRRLY - helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time</h3>
+SEO Plugin by SQUIRRLY - helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time
 
 http://www.youtube.com/watch?v=HYTcdLXNhhw
 
@@ -30,12 +30,12 @@ We're glad to have you
 
 
 ### Credits
-Florin Muresan CEO at Squirrly
-Calin Vingan CTO at Squirrly
+* Florin Muresan CEO at Squirrly
+* Calin Vingan CTO at Squirrly
 
 And 4 Great collaborators:
 
-Lucian - core php programmer
-Andreea - creative marketing intern
-Bogdan - stylish designer
-Cristina  - Squirrly mascot designer
+* Lucian - core php programmer
+* Andreea - creative marketing intern
+* Bogdan - stylish designer
+* Cristina  - Squirrly mascot designer
