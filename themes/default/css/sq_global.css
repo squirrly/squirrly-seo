@@ -1,0 +1,156 @@
+.sq_message{
+    line-height: 19px;
+    padding: 0px 0;
+    font-size: 13px;
+    text-align: center;
+    margin: -1px 15px 0 5px;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #FFFBCC;
+    border-color: #E6DB55;
+}
+.sq_notices{
+    font-size: 13px;
+    color: #555;
+}
+.sq_error{
+    font-size: 13px;
+    color: #555;
+}
+.sq_loading {
+    height: 60px;
+    background: transparent url('../img/loading.gif') no-repeat center;
+}
+
+.sq_minloading {
+    
+    height: 20px;
+    width: 20px;
+    background: transparent url('../img/minloading.gif') no-repeat center;
+}
+.sq_error{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: brown;
+    margin: 5px;
+    
+}
+.sq_beta{
+    font-size: 11px;
+    color: darkRed;
+    vertical-align: top;
+    line-height: 16px;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    border: 1px solid darkRed;
+    padding: 0 3px;
+}
+
+/********************* SNIPPET *****************************/
+#sq_settings #sq_snippet{
+    max-width: 500px;
+}
+#sq_settings #sq_snippet #sq_snippet_ul{
+    min-height: 65px;
+}
+#sq_snippet{
+    position: relative;
+    margin: 10px 0;
+}
+#sq_snippet #sq_snippet_ul{
+    background-color: white;
+    border: 1px solid #ebebeb;
+    width: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#sq_snippet #sq_snippet_ul li{
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#sq_snippet #sq_snippet_ul li#sq_snippet_update{
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px #333;
+    box-shadow: 1px 1px 0px 0px white;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 7px 8px;
+    cursor: pointer;
+    float: right;
+    margin: 13px;
+}
+#sq_settings #sq_snippet #sq_snippet_ul li#sq_snippet_update{
+    margin: 1px;
+}
+
+#sq_snippet #sq_snippet_ul #sq_snippet_title,
+#sq_snippet #sq_snippet_ul #sq_snippet_title a{
+    color: #12c;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 16px;
+    height: 19px;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    max-width: 450px;
+}
+#sq_snippet #sq_snippet_ul #sq_snippet_url,
+#sq_snippet #sq_snippet_ul #sq_snippet_url a{
+    color: #093;
+    height: 16px;
+    overflow: visible;
+    text-decoration: none;
+}
+
+#sq_snippet #sq_snippet_ul #sq_snippet_description{
+    color: #222;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 2px;
+    max-width: 450px;
+    overflow: hidden;
+}
+#sq_snippet #sq_snippet_name{
+    position: absolute;
+    right: 0;
+    top: -8px;
+    background-color: linen;
+    border: 1px solid #ddd;
+    font-size: 10px;
+    padding: 0px 10px;
+}
+#sq_snippet #sq_snippet_disclaimer{
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    color: #999;
+    font-size: 10px;
+    padding: 0px 3px;
+}
+#sq_snippet #sq_snippet_ul #sq_snippet_source{
+    position: absolute;
+    bottom: 1px;
+    right: 2px;
+}
+#sq_snippet #sq_snippet_ul #sq_snippet_source a{
+    font-size: 10px;
+    color: lightslategray;
+    text-decoration: none;
+}
+/**************************************************/

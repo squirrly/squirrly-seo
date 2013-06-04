@@ -1,0 +1,939 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: squirrly_seo\n"
+"POT-Creation-Date: 2013-05-28 09:18+0200\n"
+"PO-Revision-Date: 2013-05-28 09:19+0200\n"
+"Last-Translator: Squirrly <contact@squirrly.co>\n"
+"Language-Team: Squirrly UK <contact@squirrly.co>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: d:\\pagini_net\\se_lucreaza\\squirrly\\wordpress\\wp-"
+"content\\plugins\\squirrly-seo\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: squirrly.php:45
+msgid ""
+"For Squirrly to work, the PHP version has to be equal or greater then 5.1"
+msgstr "Versiunea PHP trebuie sa fie mai mare de 5.1"
+
+#: classes/SQ_Error.php:17
+msgid ""
+"Function get_class does not exists! Is required for Squirrly to work "
+"properly."
+msgstr ""
+"Functia get_class nu exista! E necesara pentru a functiona corect pluginul "
+"Squirrly"
+
+#: classes/SQ_Error.php:20
+msgid ""
+"Function file_exists does not exists! Is required for Squirrly to work "
+"properly."
+msgstr ""
+"Functia file_exists nu exista! E necesara pentru a functiona corect pluginul "
+"Squirrly"
+
+#: classes/SQ_Error.php:24
+msgid "The home directory is not set!"
+msgstr "Directorul home nu este setat!"
+
+#: classes/SQ_Error.php:28
+msgid "The PHP version has to be greater then 4.0"
+msgstr "Versiunea PHP trebuie sa fie mai mare de 4.0"
+
+#: classes/SQ_Error.php:66
+msgid "Turn off warnings!"
+msgstr "Opreste avertizarile"
+
+#: classes/SQ_Error.php:67
+msgid "Notice: "
+msgstr "Atentie:"
+
+#: classes/SQ_Error.php:71
+msgid "Note: "
+msgstr "Atentie:"
+
+#: classes/SQ_Tools.php:324
+msgid "Fix it for me!"
+msgstr "Repara-l"
+
+#: classes/SQ_Tools.php:330
+msgid "Let Squirrly optimize your SEO automatically (recommended)"
+msgstr "Lasa Squirrly sa optimizeze SEO automat (recomandat)"
+
+#: classes/SQ_Tools.php:338
+msgid "You're blocking google from indexing your site!"
+msgstr "Blochezi accesul la google spre indexarea site-ului"
+
+#: classes/SQ_Tools.php:344
+msgid ""
+"It is highly recommended that you include the %postname% variable in the "
+"permalink structure. <br />Go to Settings > Permalinks and add /%postname%/ "
+"in Custom Structure"
+msgstr ""
+"E recomandat sa incluzi %postaname% in structura link-ului permanent. <br /"
+">Mergi la Setari > Legaturi permanente si adauga  /%postname%/ in campul "
+"Structură personalizată"
+
+#: controllers/SQ_Post.php:200
+msgid "Plugin Feedback"
+msgstr "Feedback Squirrly"
+
+#: controllers/SQ_Post.php:236
+msgid "Thank you for your feedback"
+msgstr "Multumesc pentru feedback"
+
+#: controllers/SQ_Post.php:238 controllers/SQ_Post.php:273
+msgid "Could not send the email..."
+msgstr "Nu s-a putut trimite email ..."
+
+#: controllers/SQ_Post.php:241 controllers/SQ_Post.php:276
+msgid "No message."
+msgstr "Nici un mesaj."
+
+#: controllers/SQ_Post.php:260
+msgid "Plugin Support"
+msgstr "Suport la plugin"
+
+#: controllers/SQ_Post.php:271
+msgid "Message sent..."
+msgstr "Mesajul a fost trimis..."
+
+#: controllers/SQ_PostsList.php:95
+msgid "Squirrly"
+msgstr "Squirrly"
+
+#: controllers/SQ_PostsList.php:135
+msgid "Squirrly article rank"
+msgstr "Squirrly article rank"
+
+#: controllers/SQ_PostsList.php:136 core/SQ_Blockseo/SQ_Blockseo.php:9
+msgid "Update"
+msgstr "Update"
+
+#: controllers/SQ_PostsList.php:137
+msgid "More details"
+msgstr "Mai mult"
+
+#: controllers/SQ_PostsList.php:138
+msgid "Less details"
+msgstr "Mai putin"
+
+#: controllers/SQ_PostsList.php:139
+msgid "Interval: "
+msgstr ""
+
+#: controllers/SQ_PostsList.php:140 models/SQ_PostsList.php:14
+msgid "Today"
+msgstr "Azi"
+
+#: controllers/SQ_PostsList.php:141 models/SQ_PostsList.php:15
+msgid "Last 7 days"
+msgstr "Ultimele 7 zile"
+
+#: controllers/SQ_PostsList.php:142 models/SQ_PostsList.php:16
+msgid "Last 30 days"
+msgstr "Ultimele 30 zile"
+
+#: controllers/SQ_PostsList.php:144 core/SQ_Blockrank/SQ_Blockrank.php:14
+msgid "See it in 'All Posts'"
+msgstr "Arata-l in 'Lista Articole'"
+
+#: controllers/SQ_PostsList.php:145
+msgid "progress"
+msgstr "progres"
+
+#: controllers/SQ_PostsList.php:146
+msgid "optimized"
+msgstr "optimizat"
+
+#: controllers/SQ_PostsList.php:147
+msgid "See rank"
+msgstr "Vezi rang"
+
+#: controllers/SQ_PostsList.php:148
+msgid "Hide rank"
+msgstr "Ascunde Rang"
+
+#: controllers/SQ_PostsList.php:149
+msgid "Optimize"
+msgstr "Optimizare"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:64
+#, php-format
+msgid ""
+"We found your email, so it means you already have a Squirrly.co account. "
+"Please login with your Squirrly Email. If you forgot your password click "
+"%shere%s"
+msgstr ""
+"Am gasit emailul tau, inseamna ca te-ai inregistrat deja la Squirrly. "
+"Conecteaza-te cu contul tau de Squirrly. Daca ai uitat parola atunci apasa "
+"%saici%s"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:68
+msgid "An error occured. Mabe a network error :("
+msgstr "A aparut o eroare. Probabil o eroare de retea :("
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:72
+#, php-format
+msgid ""
+"Could not send your informations to squirrly. Please register %smanually%s."
+msgstr ""
+"Nu s-a putut trimite informatia la Squirrly. Inregistreaza-te %smanual%s."
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:103
+msgid "Wrong email or password!"
+msgstr "Email sau Parola gresita!"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:106
+msgid "You can use this account only for the URL you registered first!"
+msgstr "Poti folosi acest cont doar pentru URL-ul inregistrat la inceput!"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:110
+msgid "An error occured."
+msgstr "A aparut o eroare."
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:112
+msgid "Both fields are required."
+msgstr "Ambele campuri sunt obligatorii!"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Recent discussions:"
+msgstr "Discutii recente:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Exact search:"
+msgstr "Cautari exacte:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Competition:"
+msgstr "Competitia:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Trend:"
+msgstr "Trend:"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "date"
+msgstr "data"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Read it!"
+msgstr "Citeste!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Insert it!"
+msgstr "Adauga!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Reference"
+msgstr "Referinta"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Insert as box"
+msgstr "Adauga"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Not relevant?"
+msgstr "Nu e ce doresti?"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Insert in your article"
+msgstr "Adauga paragraf in articol"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "For Squirrly to work, you have to have tinymce editor installed!"
+msgstr ""
+"Pentru ca Squirrly sa functioneze, trebuie sa ai editorul TinyMCE instalat"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid ":( I lost my squirrel. Please reload the page."
+msgstr ":( Am pierdut veverita. Te rog sa dai refresh la pagina."
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "No results found!"
+msgstr "Nu s-a gasit nimic ..."
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Switch to Visual editor!"
+msgstr "Schimba in Editor Vizual!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Use more words in one keyword"
+msgstr "Am mai multe cuvinte"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Takes too long to check this keyword ..."
+msgstr "Ia prea mult timp sa verifice cuvantul ..."
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Do a research!"
+msgstr "Mai multe detalii!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:50
+msgid "Do more research!"
+msgstr "Mai multe detalii!"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:8 themes/default/SQ_Menu.php:209
+msgid "Squirrly Snippet"
+msgstr "Snipet Squirrly"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:10
+msgid ""
+"Click the Update button (to the right) to see the snippet from your website."
+msgstr "Click pe butonul Update pentru a vedea snipetul site-ului"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:11
+msgid "Enter a title above for the snippet to get data."
+msgstr "Adauga un titlu pentru a putea vedea datele in snipet"
+
+#: core/SQ_Loading/SQ_Loading.php:26
+msgid ""
+"For Squirrly to work properly you have to use a higher version of Internet "
+"Explorer. <br /> We recommend you to use Chrome or Mozilla."
+msgstr ""
+"Pentru a functiona Squirrly, trebui sa folosesti o versiune mai noua de "
+"Internet explorer. <br /> Recomandam sa folosesti Chrome sau Mozilla."
+
+#: core/SQ_Loading/SQ_Loading.php:28
+msgid "Can not connect to Squirrly. Error: "
+msgstr "Nu se poate conecta la Squirrly. Eroare: "
+
+#: core/SQ_Loading/SQ_Loading.php:36
+msgid ""
+"You haven`t used Squirrly SEO to optimize your article. Do you want to "
+"optimize for a keyword before publishing?"
+msgstr ""
+"Nu ai folosit Squirrly SEO pentru a optimiza articolul. Vrei sa il "
+"optimizezi inainte de publicare?"
+
+#: models/SQ_Menu.php:111
+msgid "The code for Google Webmaster Tool is incorrect."
+msgstr "Codul google pentru Webmaster Tool este gresit."
+
+#: models/SQ_Menu.php:138
+msgid "The code for Google Analytics is incorrect."
+msgstr "Codul Google Analytics este incorect."
+
+#: models/SQ_Menu.php:166
+msgid "The code for Facebook is incorrect."
+msgstr "Codul Facbook este gresit."
+
+#: models/SQ_Menu.php:191
+msgid "The code for Bing is incorrect."
+msgstr "Codul Bing este gresit."
+
+#: models/SQ_Menu.php:224
+msgid "File type error: Only JPEG, JPG, GIF or PNG files are allowed."
+msgstr "Eroare fisier: Doar fisierele JPEG,JPG,GIF sau PNG sunt permise"
+
+#: models/SQ_Menu.php:237
+msgid "GD error: The GD library must be installed on your server."
+msgstr ""
+"Eroare librarie GD: Trebuie sa instalezi libraria GD pe server pentru a "
+"putea adauga imaginea"
+
+#: models/SQ_Menu.php:244
+msgid "Delete error: Could not delete the old favicon."
+msgstr "Eroare Stergere: Nu se poate sterge icoana veche"
+
+#: models/SQ_Menu.php:251
+msgid "Upload error: Could not upload the favicon."
+msgstr "Eroare Upload: Nu se poate urca pe server imaginea"
+
+#: models/SQ_Menu.php:257
+msgid "Permission error: Could not change the favicon permissions."
+msgstr "Eroare Fisier: Nu se poate schimba permisiunea fisierului"
+
+#: models/SQ_Menu.php:283
+msgid ""
+"ICO Error: Could not create the ICO from file. Try with another file type."
+msgstr "Eroare ICO: Nu se poate transforma imaginea in fisier ICO"
+
+#: models/SQ_Menu.php:286
+msgid "The favicon has been updated."
+msgstr "Icoana a fost adaugata pe server"
+
+#: models/SQ_Post.php:71
+msgid "Squirrly could not find any results for: "
+msgstr "Squirrly nu a putut gasi rezultate pentru: "
+
+#: models/SQ_PostsList.php:13
+msgid "This article"
+msgstr "Acest articol"
+
+#: models/SQ_PostsList.php:13
+msgid "All your articles"
+msgstr "Articolele mele"
+
+#: models/SQ_PostsList.php:52
+msgid "Optimize this article to start Squirrly Rank"
+msgstr "Optimizeaza articolul pentru a pornit Squirrly Rank"
+
+#: models/SQ_PostsList.php:94
+msgid "There are no information for this post yet."
+msgstr "Nu sunt suficiente informatii pentru acest post"
+
+#: models/SQ_PostsList.php:112 models/SQ_PostsList.php:231
+msgid "Traffic to article"
+msgstr "Trafic la articol"
+
+#: models/SQ_PostsList.php:113
+msgid "Social impact"
+msgstr "Impact Social Media"
+
+#: models/SQ_PostsList.php:114
+msgid "Links to article"
+msgstr "Link-uri spre articol"
+
+#: models/SQ_PostsList.php:177
+msgid "Google Indexed"
+msgstr "Indexare Google"
+
+#: models/SQ_PostsList.php:182
+msgid "pos"
+msgstr "pos"
+
+#: models/SQ_PostsList.php:182 themes/default/SQ_Menu.php:44
+#: themes/default/SQ_Menu.php:63 themes/default/SQ_Menu.php:80
+#: themes/default/SQ_Menu.php:97 themes/default/SQ_Menu.php:114
+#: themes/default/SQ_Menu.php:131 themes/default/SQ_Menu.php:148
+#: themes/default/SQ_Menu.php:175 themes/default/SQ_Menu.php:192
+#: themes/default/SQ_Menu.php:254 themes/default/SQ_Menu.php:265
+#: themes/default/SQ_Menu.php:276
+msgid "Yes"
+msgstr "Da"
+
+#: models/SQ_PostsList.php:182 themes/default/SQ_Menu.php:46
+#: themes/default/SQ_Menu.php:65 themes/default/SQ_Menu.php:82
+#: themes/default/SQ_Menu.php:99 themes/default/SQ_Menu.php:116
+#: themes/default/SQ_Menu.php:133 themes/default/SQ_Menu.php:150
+#: themes/default/SQ_Menu.php:177 themes/default/SQ_Menu.php:194
+#: themes/default/SQ_Menu.php:256 themes/default/SQ_Menu.php:267
+#: themes/default/SQ_Menu.php:278
+msgid "No"
+msgstr "Nu"
+
+#: models/SQ_PostsList.php:182
+msgid "for:"
+msgstr "pentru:"
+
+#: models/SQ_PostsList.php:182
+msgid "(searched with the url)"
+msgstr "(cautat cu url)"
+
+#: models/SQ_PostsList.php:202
+msgid "This article|Average"
+msgstr "Acest articole|Media"
+
+#: models/SQ_PostsList.php:238
+msgid "Visits"
+msgstr "Vizite"
+
+#: models/SQ_PostsList.php:241
+msgid "Unique"
+msgstr "Unici"
+
+#: models/SQ_PostsList.php:351
+msgid "Google result for: "
+msgstr "Rezultate Google pentru:"
+
+#: models/SQ_PostsList.php:384
+msgid "Change"
+msgstr "Modifica"
+
+#: models/SQ_PostsList.php:385 models/SQ_PostsList.php:460
+msgid "Current position"
+msgstr "Pozitia curenta"
+
+#: models/SQ_PostsList.php:419
+msgid "Recommended by Squirrly"
+msgstr "Recomandat de Squirrly"
+
+#: models/SQ_PostsList.php:459
+msgid "Keyword"
+msgstr "Cuvant cheie:"
+
+#: themes/default/SQ_Blocklogin.php:2
+msgid "Squirrly.co Login"
+msgstr "Conectare la Squirrly"
+
+#: themes/default/SQ_Blocklogin.php:9
+msgid "Email:"
+msgstr "Email:"
+
+#: themes/default/SQ_Blocklogin.php:10
+msgid "Password:"
+msgstr "Parola:"
+
+#: themes/default/SQ_Blocklogin.php:11
+msgid "Login"
+msgstr "Logare"
+
+#: themes/default/SQ_Blocklogin.php:12
+msgid "Register"
+msgstr "Cont nou"
+
+#: themes/default/SQ_Blocklogin.php:12
+msgid "Register to Squirrly.co"
+msgstr "Inregistreaza-te la Squirrly.co"
+
+#: themes/default/SQ_Blocklogin.php:13
+msgid "Lost password?"
+msgstr "Ai uitat parola?"
+
+#: themes/default/SQ_Blocklogin.php:13
+msgid "Lost password"
+msgstr "Am uitat parola"
+
+#: themes/default/SQ_Blocklogin.php:17
+msgid "Enter your email"
+msgstr "Adauga adresa email"
+
+#: themes/default/SQ_Blocklogin.php:18
+msgid "Your E-mail:"
+msgstr "Emailul tau:"
+
+#: themes/default/SQ_Blocklogin.php:19
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: themes/default/SQ_Blocklogin.php:20
+msgid "This email connects you to Squirrly.co"
+msgstr "Acest email te conecteaza la Squirrly"
+
+#: themes/default/SQ_Blocklogin.php:29
+msgid "The email address is invalid!"
+msgstr "Adresa de email este invalida!"
+
+#: themes/default/SQ_Blocklogin.php:30
+msgid "Click on Sign Up button and try again ..."
+msgstr "Apasa butonul Sign Up pentru a incerca din nou ..."
+
+#: themes/default/SQ_Blocklogin.php:31
+msgid "An error occured while logging in!"
+msgstr "A aparut o eroare la logare."
+
+#: themes/default/SQ_Blocklogin.php:32
+msgid "Connecting ..."
+msgstr "Conectare ..."
+
+#: themes/default/SQ_Blockresearch.php:2
+msgid "Squirrly Keyword Research"
+msgstr " Cercetare cuvinte cheie"
+
+#: themes/default/SQ_Blockresearch.php:3
+msgid "Clear"
+msgstr "Alta cautare"
+
+#: themes/default/SQ_Blockresearch.php:9
+msgid "Keyword:"
+msgstr "Cuvant cheie:"
+
+#: themes/default/SQ_Blockresearch.php:11 themes/default/SQ_Blocksearch.php:23
+msgid "Use this keyword"
+msgstr "Foloseste acest cuvant"
+
+#: themes/default/SQ_Blockresearch.php:20
+msgid "+ Add keyword"
+msgstr "Adauga cuvant cheie"
+
+#: themes/default/SQ_Blockresearch.php:21
+msgid "Do the research"
+msgstr "Trimite >>"
+
+#: themes/default/SQ_Blockresearch.php:24
+msgid "Enter even more keywords."
+msgstr "Adauga mai multe cuvinte"
+
+#: themes/default/SQ_Blockresearch.php:25
+msgid "Let some keywords for the next time as well!"
+msgstr "Mai lasa cuvinte si pentru viitor!"
+
+#: themes/default/SQ_Blocksearch.php:3
+msgid "Optimize for Keyword"
+msgstr "Optimizare dupa cuvant cheie"
+
+#: themes/default/SQ_Blocksearch.php:10
+msgid "Enter a keyword"
+msgstr "Adauga cuvant"
+
+#: themes/default/SQ_Blocksearch.php:10
+msgid "for Squirrly Live SEO optimization"
+msgstr "Pentru optimizare cu  Squirrly SEO"
+
+#: themes/default/SQ_Blocksearch.php:22
+msgid "Do a research"
+msgstr "Mai multe detalii"
+
+#: themes/default/SQ_Blocksearch.php:27
+msgid "Enter a keyword above!"
+msgstr "Adauga cuvinte cheie mai sus!"
+
+#: themes/default/SQ_Blocksearch.php:28
+msgid "I have more then one keyword!"
+msgstr "Am mai multe cuvinte!"
+
+#: themes/default/SQ_Blocksearch.php:34
+msgid "Images"
+msgstr "Imagini"
+
+#: themes/default/SQ_Blocksearch.php:35
+msgid "Twitter"
+msgstr "Twitter"
+
+#: themes/default/SQ_Blocksearch.php:36
+msgid "Wiki"
+msgstr "Wiki"
+
+#: themes/default/SQ_Blocksearch.php:37
+msgid "News"
+msgstr "News"
+
+#: themes/default/SQ_Blocksearch.php:38
+msgid "Blogs"
+msgstr "Bloguri"
+
+#: themes/default/SQ_Blocksearch.php:39
+msgid "My articles"
+msgstr "Articolele mele"
+
+#: themes/default/SQ_Blocksearch.php:44
+msgid "Show only Copyright Free images"
+msgstr "Arata doar imagini fara copyright"
+
+#: themes/default/SQ_Blockseo.php:3
+msgid "Squirrly LIVE SEO assistant"
+msgstr "Asistent SEO Live"
+
+#: themes/default/SQ_Menu.php:5
+msgid ""
+"With Squirrly SEO, your Wordpress will get Excellent SEO on each article you "
+"write."
+msgstr ""
+"Cu Squirrly SEO, articolele tale vor avea un SEO excelent la fiecare articol "
+"scris."
+
+#: themes/default/SQ_Menu.php:7
+msgid "SEO Software"
+msgstr "Software SEO"
+
+#: themes/default/SQ_Menu.php:7
+msgid ""
+"delivered as a plugin for Wordpress. <br /><br />We connect your wordpress "
+"with Squirrly, so that we can find the best SEO opportunities, give you "
+"reports and analyse your competitors."
+msgstr ""
+"livrat ca un plugin de Wordpress.  <br /><br />Conectam wordpress cu "
+"Squirrly pentru a gasi solutiile SEO cele mai bune, pentru a va oferi "
+"rapoarte si pentru a analiza competitia."
+
+#: themes/default/SQ_Menu.php:9
+msgid "Write a new post with Squirrly"
+msgstr "Scrie un nou articol cu Squirrly"
+
+#: themes/default/SQ_Menu.php:23
+msgid "Squirrly settings"
+msgstr "Setari Squirrly"
+
+#: themes/default/SQ_Menu.php:23 themes/default/SQ_Menu.php:342
+msgid "Save settings"
+msgstr "Salveaza setari"
+
+#: themes/default/SQ_Menu.php:29
+msgid " API"
+msgstr " API"
+
+#: themes/default/SQ_Menu.php:32
+msgid "API Key:"
+msgstr "Cheie API"
+
+#: themes/default/SQ_Menu.php:38
+msgid "Let Squirrly automatically optimize my blog"
+msgstr "Lasa Squirrly sa imi optimizeze blogul automat"
+
+#: themes/default/SQ_Menu.php:52
+msgid "What does Squirrly automatically do for SEO?"
+msgstr "Ce face Squirrly in mod automat pentru SEO?"
+
+#: themes/default/SQ_Menu.php:68
+msgid "Add <strong>canonical</strong> link in home page"
+msgstr "Adauga <strong>link canonic</strong> in pagina acasa"
+
+#: themes/default/SQ_Menu.php:85
+msgid "Add the <strong>XML Sitemap</strong> for search engines"
+msgstr "Adauga <strong>Harta XML</strong> pentru motoarele de cautare"
+
+#: themes/default/SQ_Menu.php:102
+msgid ""
+"Add the required METAs for home page (<strong>icon, author, language, dc "
+"publisher</strong>, etc.)"
+msgstr ""
+"Adauga cerintele META in pagina acasa (<strong>icon, author, language, dc "
+"publisher</strong>, etc.)"
+
+#: themes/default/SQ_Menu.php:119
+msgid ""
+"Add the <strong>favicon</strong> and the <strong>icon for Apple devices</"
+"strong>."
+msgstr ""
+"Adauga <strong>favicon</strong> si <strong>icoana pentru dispozitivele "
+"Apple</strong>."
+
+#: themes/default/SQ_Menu.php:136
+msgid ""
+"Add the <strong>Facebook meta objects</strong> for a good looking share. "
+msgstr ""
+"Adauga <strong>Facebook meta objects</strong> pentru o afisare mai frumoasa "
+"in Facebook"
+
+#: themes/default/SQ_Menu.php:153
+msgid "Add the <strong>Twitter card</strong> in your tweets. "
+msgstr "Adauga <strong>titlul</strong> corect in pagina acasa"
+
+#: themes/default/SQ_Menu.php:154
+msgid "Your twitter account: "
+msgstr "Contul tau de twitter:"
+
+#: themes/default/SQ_Menu.php:164
+msgid "First page optimization (Title, Description, Keywords)"
+msgstr "Optimizare prima pagina (Titlu, Descriere, Cuvinte cheie)"
+
+#: themes/default/SQ_Menu.php:180
+msgid "Add the correct <strong>title</strong> in the home page"
+msgstr "Adauga <strong>titlul</strong> corect in pagina acasa"
+
+#: themes/default/SQ_Menu.php:197
+msgid ""
+"Add the correct <strong>description</strong> and <strong>keywords</strong> "
+"in all pages"
+msgstr ""
+"Aadauga <strong>descrierea</strong> si <strong>cuvintele cheie</strong> "
+"corecte in toate paginile"
+
+#: themes/default/SQ_Menu.php:215
+msgid "Check with google ..."
+msgstr "Verificat cu google ..."
+
+#: themes/default/SQ_Menu.php:218
+msgid ""
+"If you don't see any changes in custom optimization, check if another SEO "
+"plugin affects Squirrly SEO"
+msgstr ""
+"Daca nu sunt modificari in titlu prin aceasta optimizate, verifica daca nu e "
+"afectat de alte pluginuri instalate."
+
+#: themes/default/SQ_Menu.php:225
+msgid "Auto"
+msgstr "Auto"
+
+#: themes/default/SQ_Menu.php:227
+msgid "Custom"
+msgstr "Manual"
+
+#: themes/default/SQ_Menu.php:235
+msgid "Title:"
+msgstr "Titlu:"
+
+#: themes/default/SQ_Menu.php:236
+msgid "Tips: Length 10-75 chars"
+msgstr "Atentie: Lungimea 10-75 caractere"
+
+#: themes/default/SQ_Menu.php:239
+msgid "Description:"
+msgstr "Descrierea:"
+
+#: themes/default/SQ_Menu.php:240
+msgid "Tips: Length 70-165 chars"
+msgstr "Atentie: Lungimea 70-165 caractere"
+
+#: themes/default/SQ_Menu.php:243
+msgid "Keywords:"
+msgstr "Cuvinte cheie:"
+
+#: themes/default/SQ_Menu.php:244
+msgid "Tips: 2-4 keywords"
+msgstr "Atentie: 2-4 cuvinte cheie"
+
+#: themes/default/SQ_Menu.php:250
+msgid "Squirrly Options"
+msgstr "Optiuni Squirrly"
+
+#: themes/default/SQ_Menu.php:259
+msgid "Let Squirrly warn me if there are errors related to SEO settings"
+msgstr "Lasa Squirrly sa ma anunte daca sunt erori SEO in setari"
+
+#: themes/default/SQ_Menu.php:270
+msgid ""
+"Show <strong>\"Enter a keyword\"</strong> bubble when posting a new article."
+msgstr ""
+"Afiseaza balonul <strong>\"Adauga un keyword\"</strong>cand se posteaza un "
+"nou articol."
+
+#: themes/default/SQ_Menu.php:281
+msgid ""
+"Always show <strong>Keyword Informations</strong> about the selected keyword."
+msgstr ""
+"Afiseaza <strong>Informatii de cuvint cheie</strong> dupa alegerea "
+"cuvantului la postare."
+
+#: themes/default/SQ_Menu.php:294
+msgid "Change the Website Icon"
+msgstr "Schimba icoana site-ului"
+
+#: themes/default/SQ_Menu.php:297
+msgid "File types: JPG, JPEG, GIF and PNG."
+msgstr "Tip fisiere JPEG,JPG,GIF sau PNG "
+
+#: themes/default/SQ_Menu.php:300
+msgid "Upload file:"
+msgstr "Urca fisier:"
+
+#: themes/default/SQ_Menu.php:305
+msgid "Upload"
+msgstr "Upload"
+
+#: themes/default/SQ_Menu.php:309
+msgid ""
+"If you don't see the new icon in your browser, empty the browser cache and "
+"refresh the page."
+msgstr ""
+"Daca nu vezi noua icoana in browser, goleste cache-ul din browser si da "
+"refresh la pagina."
+
+#: themes/default/SQ_Menu.php:313
+msgid "Tool for Search Engines"
+msgstr "Pentru motoare de cautare"
+
+#: themes/default/SQ_Menu.php:317
+msgid "Google Plus URL:"
+msgstr "URL Google Plus:"
+
+#: themes/default/SQ_Menu.php:321
+#, php-format
+msgid "Google META verification code for %sWebmaster Tool%s`:"
+msgstr "Cod META pentru %sGoogle Webmaster Tool%s"
+
+#: themes/default/SQ_Menu.php:325
+#, php-format
+msgid "Google  %sAnalytics ID%s`:"
+msgstr "Google %sAnalytics ID%s:"
+
+#: themes/default/SQ_Menu.php:329
+#, php-format
+msgid "Facebook META code (for %sInsights%s )`:"
+msgstr "Facebook META code (pentru %sInsights%s):"
+
+#: themes/default/SQ_Menu.php:333
+#, php-format
+msgid "Bing META code (for %sWebmaster Tool%s )`:"
+msgstr "Bing META code (pentru %sWebmaster Tool%s):"
+
+#: themes/default/SQ_Post.php:6
+msgid "How was your Squirrly experience today?"
+msgstr "Cum a fost experienta de azi cu Squirrly?"
+
+#: themes/default/SQ_Post.php:13
+msgid "How was Squirrly today?"
+msgstr "Cum a fost Squirrly azi?"
+
+#: themes/default/SQ_Post.php:26
+msgid "Please tell us why?"
+msgstr "De ce?"
+
+#: themes/default/SQ_Post.php:29
+msgid "Send feedback"
+msgstr "Trimite"
+
+#: themes/default/SQ_Post.php:33 themes/default/SQ_Post.php:54
+msgid "Go to:"
+msgstr "Mergi la:"
+
+#: themes/default/SQ_Post.php:33 themes/default/SQ_Post.php:54
+msgid "support page"
+msgstr "pagina suport"
+
+#: themes/default/SQ_Post.php:38
+msgid "Thank you! You can send us a happy face tomorow too."
+msgstr "Multumim! Ne poti trimite o fata vesela si maine."
+
+#: themes/default/SQ_Post.php:44
+msgid "Support"
+msgstr "Suport"
+
+#: themes/default/SQ_Post.php:47
+msgid "Need Help with Squirrly SEO?"
+msgstr "Ai nevoie de ajutor cu Squirrly SEO?"
+
+#: themes/default/SQ_Post.php:51
+msgid "Send Question"
+msgstr "Trimite"
+
+#: themes/default/SQ_Post.php:60
+msgid "Go to Profile"
+msgstr "Profilul tau din Squirrly"
+
+#: themes/default/SQ_Post.php:60
+msgid "Profile"
+msgstr "Profil"
+
+#~ msgid "See it in post list"
+#~ msgstr "Vezi in "
+
+#~ msgid "For Squirrly to work, you have to have tinymce installed!"
+#~ msgstr ""
+#~ "Pentru ca Squirrly sa functioneze, trebuie sa ai editorul TinyMCE instalat"
+
+#~ msgid "Talk about it:"
+#~ msgstr "Vorbesc despre:"
+
+#~ msgid ""
+#~ "The system is acting Squirrly. I can not find the link to the server."
+#~ msgstr "Sistemul functioneaza ciudat. Nu gasesc calea spre server."
+
+#~ msgid "Status:"
+#~ msgstr "Stare:"
+
+#~ msgid "automatically"
+#~ msgstr "Automat"
+
+#~ msgid "<< Leave it automatically"
+#~ msgstr "<< Sa se adauge automat"
+
+#~ msgid "Having trouble logging in? Please click the Support button above."
+#~ msgstr "Ai probleme cu logarea? Apasa pe butonul de Suport de mai sus."
+
+#~ msgid ""
+#~ "Your Squirrly account has expired. Please Upgrade your plan and use "
+#~ "Squirrly to optimize your articles."
+#~ msgstr ""
+#~ "Contul tau de Squirrly a expirat. Te rog sa faci un Upgrade de plan  "
+#~ "pentru a putea folosi Squirrly in continuare."
+
+#~ msgid "Search it:"
+#~ msgstr "Se cauta:"
+
+#~ msgid "User:"
+#~ msgstr "User:"
+
+#~ msgid "See"
+#~ msgstr "Vezi"
+
+#~ msgid "in action"
+#~ msgstr "in actiune!"
+
+#~ msgid "Turn on automatic optimization from Squirrly!"
+#~ msgstr "Lasa Squirrly sa optimizeze SEO in mod automat!"
+
+#~ msgid ""
+#~ "It is highly recommended that you set to receive notifications for new "
+#~ "comments."
+#~ msgstr "Este recomandat sa primesti notificari cand vin comenzi noi"
+
+#~ msgid "XML sitemap: "
+#~ msgstr "XML sitemap: "
+
+#~ msgid "Let "
+#~ msgstr "Lasa"

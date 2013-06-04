@@ -1,0 +1,126 @@
+/**** FOR ALL *****/
+.sq_quote_content,
+.sq_blog_content,
+.sq_wiki_content,
+.sq_local_content{
+    position: relative;
+    clear: both;
+
+    background: white;
+    font-size: 14px;
+    color: #333;
+
+    max-width: 500px;
+    margin: 5px auto 5px auto;
+    padding: 13px;
+    
+    -webkit-transition: .1s border-color;
+    -moz-transition: .1s border-color;
+    transition: .1s border-color;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+
+    -webkit-box-shadow: 0 1px 0 #DDD;
+    -moz-box-shadow: 0 1px 0 #ddd;
+    box-shadow: 0 1px 0 #DDD;
+}
+
+/**** FOR TWEETS *****/
+.sq_quote_content p{
+    line-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.sq_author_avatar{
+    display: block;
+    float: left;
+    
+    width: 48px;
+    height: 48px;
+    padding: 1px;
+    margin: 0;
+    border: 1px solid #DDD;
+}
+.sq_quote_text{
+    margin-left: 62px;
+    line-height: 1.5em;
+    padding-left: 21px;
+    background: url("../img/avatar-margin.png") left top no-repeat;
+    min-height: 52px;
+    font-family: "Georgia",serif;
+    font-size: 16px;
+}
+
+
+/**** FOR BLOG *****/
+.sq_blog_content p{
+    line-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+a.sq_news{
+    display: block;
+    font-family: "Helvetica",sans-serif;
+    font-weight: 700;
+    color: #0074B7;
+    
+    font-size: 14px;
+    
+    line-height: 1.4em;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.sq_news_text{
+    font-size: 12px;
+    color: #333;
+}
+
+/**** FOR BLOG *****/
+.sq_wiki_content p{
+    line-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+a.sq_wiki{
+    display: block;
+    font-family: "Helvetica",sans-serif;
+    font-weight: 700;
+    color: #0074B7;
+    
+    font-size: 14px;
+    
+    line-height: 1.4em;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.sq_wiki_text{
+    font-size: 12px;
+    color: #333;
+}
+
+/**** FOR LOCAL *****/
+.sq_local_content p{
+    line-height: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+a.sq_local{
+    display: block;
+    font-family: "Helvetica",sans-serif;
+    font-weight: 700;
+    color: #0074B7;
+    
+    font-size: 14px;
+    
+    line-height: 1.4em;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.sq_local_text{
+    font-size: 12px;
+    color: #333;
+}
+

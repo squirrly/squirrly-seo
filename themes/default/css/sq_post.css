@@ -1,0 +1,336 @@
+#postsquirrly{
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    margin: 0 0 10px 0;
+    padding: 2px;
+}
+
+.sq_push{
+    position: absolute;
+    top: -7px;
+    left: 30px;
+    font-size: 10px;
+    margin: 0;
+    border: 1px solid #333;
+    background-color: darkred;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    padding: 0px 1px;
+    width: 14px;
+    text-shadow: 1px 1px #333;
+    color: #fff;
+    font-family: 'Megalopolis',Arial,Helvetica,Sans-Serif;
+    text-align: center;
+}
+
+#sq_options_dasboard .sq_push{
+    left: 36px;
+}
+
+#postsquirrly div,
+#postsquirrly p,
+#postsquirrly td,
+#postsquirrly .inside {
+    margin: 0;
+    padding: 0;
+}
+
+
+#postsquirrly .hndle,#postsquirrly  .handlediv{
+    display: none;
+}
+
+#postsquirrly .sq_header{
+    background-color: #f6f0eb;
+
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+
+    padding: 8px 10px;
+    margin: 0;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    box-shadow: 0px 0px 6px 0px #888;
+    -moz-box-shadow:0px 0px 6px 0px #888;
+    -webkit-box-shadow:0px 0px 6px 0px #888;
+}
+
+#postsquirrly .sq_box{
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    box-shadow: 0px 0px 6px 0px #888;
+    -moz-box-shadow:0px 0px 6px 0px #888;
+    -webkit-box-shadow:0px 0px 6px 0px #888;
+    margin-bottom: 15px;
+    
+}
+
+
+/* FOR LOADING*/
+#sq_blocklogin{
+    background-color: lightYellow;
+}
+#sq_blocklogin input,
+#sq_blocklogin textarea
+#sq_blocklogin {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 30px;
+    padding: 6px;
+}
+#sq_blocklogin #sq_login{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    min-width: 50px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#sq_blocklogin label{
+    margin-top: 0px;
+    margin-right: 2px;
+    width: 72px;
+    display: inline-block;
+}
+#sq_blocklogin ul li{
+    position: relative;
+    display: table;
+    width: 260px;
+
+    font-family: "Lucida Grande",Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 4px 0px 4px 15px;
+    margin: 5px 0px;
+    line-height: 16px;
+    text-shadow: 1px 1px #white;
+    text-align: center;
+}
+
+#sq_blocklogin .sq_info{
+    font-size: 13px;
+    text-align: center;
+}
+#sq_blocklogin .sq_error{
+    font-size: 12px;
+    text-align: center;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#sq_blocklogin #sq_register{
+    margin: 5px 0;
+}
+#sq_blocklogin #sq_register_wait{
+    display: inline-block;
+    margin-left: 2px;
+}
+#sq_blocklogin #sq_autologin{
+    padding: 20px 10px 5px 10px;
+}
+
+#sq_blocklogin #sq_autologin #sq_loginimage{
+    display: block;
+    background-color: green;
+    height: auto;
+    width: 100px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    margin: 13px;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    cursor: pointer;
+}
+#sq_blocklogin #sq_register_email{
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    margin: 0px auto;
+    margin-top: 14px;
+    margin-bottom: 11px;
+}
+#sq_blocklogin #sq_register_email #sq_email{
+    width: 160px !important ;
+    border: 2px solid green;
+}
+/*******************************************/
+#sq_options{
+    position: relative;
+    clear: both;
+    height: 40px;
+}
+
+#sq_options > ul > li{
+    position: relative;
+    width: 115px;
+    float: left;
+    
+    color: #444444;
+    font-family: Segoe UI;
+    font-size: 14px;
+    
+    margin: 0 auto;
+    padding: 0px 0 0 0px;
+    cursor: pointer;
+}
+
+#sq_options li#sq_options_support{
+    margin-left: 27px;
+    width: 100px;
+}
+#sq_options_support .sq_text,
+#sq_options_dasboard .sq_text a{
+    display: block;
+    float: left;
+    
+    font-family: Segoe UI;
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+    background: white;
+    background: -moz-linear-gradient(top, white, #f5f5f5);
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f5f5f5));
+}
+#sq_options .sq_icon{
+    display: block;
+    float: left;
+   
+    margin-top: -8px;
+    margin-left: 3px;
+    
+    background: transparent url('../img/sprite.png') no-repeat;
+}
+#sq_options > ul > li#sq_options_feedback{
+    width: 30px;
+    margin-left: 2px;
+}
+#sq_options_feedback .sq_label_feedback_smiley{
+    display: block;
+    height: 37px;
+    width: 35px;
+    background: transparent url('../img/sprite.png') no-repeat;
+    border: none;
+    cursor: pointer;
+}
+#sq_options_feedback .sq_feedback_smiley{
+    display: none;
+}
+#sq_options_feedback .sq_label_feedback_0{background-position: -102px -154px !important;}
+#sq_options_feedback .sq_label_feedback_1{background-position: -148px -154px !important;}
+#sq_options_feedback .sq_label_feedback_2{background-position: -194px -154px !important;}
+#sq_options_feedback .sq_label_feedback_3{background-position: -240px -154px !important;}
+#sq_options_feedback .sq_label_feedback_4{background-position: -284px -154px !important;}
+
+#sq_options_feedback .sq_icon{
+    height: 37px;
+    width: 35px;
+    background-position: -194px -154px;
+}
+#sq_options_support .sq_icon{
+    height: 37px;
+    width: 30px;
+    background-position: -5px -154px;
+}
+#sq_options_dasboard .sq_icon{
+    height: 40px;
+    width: 60px;
+    background-position: -35px -154px;
+}
+#sq_options_support .sq_options_support_popup,
+#sq_options_feedback .sq_options_feedback_popup{
+    display: table;
+    min-width: 245px;
+    position: absolute;
+    z-index: 1002;
+    background-color: white;
+    padding: 5px;
+    margin-top: 0px;
+    
+    top: 33px;
+    border: 1px solid #CCC;
+    border-radius: 0 7px 7px 7px;
+    -moz-border-radius: 0 7px 7px 7px;
+    -webkit-border-radius: 0 7p 7px 7px;
+    box-shadow: 1px 4px 6px -1px #888;
+    -moz-box-shadow:1px 4px 6px -1px #888;
+    -webkit-box-shadow:1px 4px 6px -1px #888;
+    cursor: default;
+}
+#sq_options_support .sq_options_support_popup{
+    left: -50px;
+}
+#sq_options_feedback .sq_options_feedback_popup{
+    left: -101px;
+}
+
+#sq_options_support .sq_options_support_popup li,
+#sq_options_feedback .sq_options_feedback_popup li{
+    color: #333;
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    padding: 3px 5px;
+}
+#sq_options_support #sq_options_support_error,
+#sq_options_feedback #sq_options_feedback_error{
+    margin: 6px 0;
+}
+#sq_options_feedback .sq_small_input{
+    width: 240px;
+}
+#sq_options_support .sq_small_input{
+    width: 225px;
+}
+#sq_options_support .sq_options_support_popup #sq_support_submit,
+#sq_options_feedback .sq_options_feedback_popup #sq_feedback_submit{
+    background-color: green;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    
+    width: 100px;
+    margin: 10px auto 5px auto;
+    padding: 5px;
+    position: relative;
+    text-shadow: 1px 1px #555;
+    cursor: pointer;
+}
+
+#sq_options_support #sq_options_close,
+#sq_options_feedback #sq_options_feedback_close{
+    position: absolute;
+    background-color: #e5d8cd;
+    right: -6px;
+    top: -3px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    width: 8px;
+    line-height: 16px;
+    padding: 0px 5px 3px;
+    border-radius: 10px;
+    border: 1px solid darkOliveGreen;
+    cursor: pointer;
+    z-index: 2;
+}
