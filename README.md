@@ -1,4 +1,4 @@
-### Wordpress SEO Plugin by SQUIRRLY
+## Wordpress SEO Plugin by SQUIRRLY
 
 SEO Plugin by SQUIRRLY - helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time
 
@@ -29,7 +29,7 @@ Squirrly Seo has a Trial period of 14 Days, after which you may choose to buy a 
 We're glad to have you
 
 
-### Credits
+## Credits
 * Florin Muresan CEO at Squirrly
 * Calin Vingan CTO at Squirrly
 
@@ -39,3 +39,5 @@ And 4 Great collaborators:
 * Andreea - creative marketing intern
 * Bogdan - stylish designer
 * Cristina  - Squirrly mascot designer
+
+
