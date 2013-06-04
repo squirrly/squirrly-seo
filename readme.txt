@@ -76,7 +76,6 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 * Fixed minor Snippet/Settings issues
 * Added the Squirrly Keyword Suggestion in Squirrly Rank
 
-
 = 2.0.1 =
 * Added Squirrly SEO Rank in Post/Page lists
 * Added Traffic progress monitor for each post/page
