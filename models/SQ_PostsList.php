@@ -398,7 +398,7 @@ class Model_SQ_PostsList{
                     <table class="sq_rank_block_list">
                         <tr>
                           <th ></th>
-                          <th></th>
+                          
                           <th class="sq_rank_block_list_header">'.__('Change',_PLUGIN_NAME_).'</th>
                           <th class="sq_rank_block_list_header">'.__('Current position',_PLUGIN_NAME_).'</th>
                         </tr>';
@@ -407,7 +407,7 @@ class Model_SQ_PostsList{
                      if ($key > 0) {
                         $str .= '<tr>
                                     <td><span><img src="'._SQ_STATIC_API_URL_.SQ_URI.'/img/flag/'.$value["flag"] .'.png" /></span></td>
-                                    <td class="sq_rank_block_list_title"><span>'.$value["title"].'</span></td>
+
                                     <td class="sq_rank_block_list_value"><span style="'.(($value["change"] < 0) ? "color:red;" : (($value["change"] > 0) ? "color:green; font-weight:bold;" : "color:gray")).'">'.(($value["change"] > 0) ? "+".$value["change"] : $value["change"]) .'</span></td>
                                     <td class="sq_rank_block_list_value"><span style="'.(($value["position"] == 0) ? "color:red;" : (($value["position"] > 0 && $value["position"] <= 10) ? "color:green; font-weight:bold;" : "color:gray")).'">'.(($value["position"] == 0) ? '>100' : $value["position"]) .'</span></td>
                                  </tr>';
