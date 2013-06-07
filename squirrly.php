@@ -7,11 +7,11 @@ Plugin Name: SEO Plugin by SQUIRRLY
 Plugin URI: http://my.squirrly.co
 Description: Squirrly SEO Plugin helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time. <BR> <a href="http://my.squirrly.co/user" target="_blank"><strong>Check your profile</strong></a>
 Author: cifi, calinvingan, florinmuresan, lucianpacurar
-Version: 2.0.2
+Version: 2.0.3
 Author URI: http://www.squirrly.co
 */
 /* SET THE CURRENT VERSION ABOVE AND BELOW */
-define('SQ_VERSION', '2.0.2');
+define('SQ_VERSION', '2.0.3');
 
 /* Call config files*/
 require(dirname(__FILE__).'/config/config.php');
@@ -22,7 +22,7 @@ if (PHP_VERSION_ID >= 5100){
     require_once(_SQ_CLASSES_DIR_.'SQ_ObjController.php');
     require_once(_SQ_CLASSES_DIR_.'SQ_BlockController.php');
 
-    /* Main class call */
+    /* Main class call */ 
     $fc = SQ_ObjController::getController('SQ_FrontController', false);
     $fc->run();
 

@@ -2,12 +2,25 @@
 
 class Model_SQ_Frontend {
     private $header = '';
+    /** @var string */
     private $title;
+
+    /** @var string */
     private $description;
+
+    /** @var integer */
     private $min_title_length = 10;
+
+    /** @var integer */
     private $max_title_length = 100;
+
+    /** @var integer */
     private $max_description_length = 160;
+
+    /** @var integer */
     private $min_description_length = 70;
+
+    /** @var integer */
     private $max_keywrods = 4;
 
     /**
