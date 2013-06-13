@@ -19,27 +19,36 @@ class SQ_Tools extends SQ_FrontController {
 
         self::$options = $this->getOptions();
 
-
-        //if debug is called
-        if (self::getIsset('sq_debug')){
-            if(is_admin() || is_super_admin()){
-                $_GET['sq_debug'] = 'on';
-            }else{
-                if(self::getValue('sq_debug') <> self::$options['sq_api'])
-                    $_GET['sq_debug'] = 'off';
-            }
-
-            if(self::getValue('sq_debug') === 'on')
-                if (function_exists('register_shutdown_function')){
-                    register_shutdown_function(array($this, 'showDebug'));
-                }
-        }
+        $this->checkDebug(); //Check for debug
     }
 
     public static function getUserID(){
         global $current_user;
         return $current_user->ID;
     }
+
+    /**
+     * Check if debug is called
+     */
+    private function checkDebug(){
+        //if debug is called
+        if (self::getIsset('sq_debug')){
+
+
+            if(self::getValue('sq_debug') == self::$options['sq_api'])
+                $_GET['sq_debug'] = 'on';
+            elseif(is_admin())
+                $_GET['sq_debug'] = 'on';
+            else
+                $_GET['sq_debug'] = 'off';
+
+            if(self::getValue('sq_debug') === 'on'){
+                if (function_exists('register_shutdown_function'))
+                    register_shutdown_function(array($this, 'showDebug'));
+            }
+        }
+    }
+
 
     /**
     * This hook will save the current version in database and load the messages from usermeta
@@ -56,6 +65,24 @@ class SQ_Tools extends SQ_FrontController {
         $this->loadMultilanguage();
         $this->checkPluginUpdated();
         $this->load_flashdata();
+
+        //add setting link in plugin
+        add_filter('plugin_action_links', array($this, 'hookActionlink'), 5, 2 );
+    }
+
+    /**
+     * Add a link to settings in the plugin list
+     *
+     * @param array $links
+     * @param type $file
+     * @return array
+     */
+    public function hookActionlink($links, $file) {
+          if ($file == _PLUGIN_NAME_. '/squirrly.php'){
+            $settings_link = '<a href="' . admin_url('admin.php?page=squirrly') . '">' . __('Settings', _PLUGIN_NAME_) . '</a>';
+            array_unshift($links, $settings_link);
+          }
+          return $links;
     }
 
     /**
@@ -115,9 +142,12 @@ class SQ_Tools extends SQ_FrontController {
             'sq_auto_meta' => 1,
             'sq_auto_favicon' => 1,
             'sq_auto_twitter' => 1,
+            'sq_auto_facebook' => 1,
             'sq_twitter_account' => '',
 
             'sq_auto_seo' => 1,
+            'sq_auto_title' => 1,
+            'sq_auto_description' => 1,
             'sq_fp_title' => '',
             'sq_fp_description' => '',
             'sq_fp_keywords' => '',
@@ -131,6 +161,8 @@ class SQ_Tools extends SQ_FrontController {
             'ignore_warn' => 0,
             'sq_keyword_help' => 1,
             'sq_keyword_information' => 0,
+            'sq_advance_user' => 0,
+            'sq_affiliate_link' => ''
         );
         $options = json_decode(get_option(SQ_OPTION),true);
 
@@ -141,6 +173,7 @@ class SQ_Tools extends SQ_FrontController {
 
         return $default;
     }
+
 
     /**
     * Save the Options in user option table in DB
@@ -610,13 +643,12 @@ class SQ_Tools extends SQ_FrontController {
         $content = self::sq_remote_get($url,array('timeout' => 5));
 
         //echo '<pre>'.  htmlentities(print_r($content,true)).'</pre>';
-        $title_regex = "/<title[^<>]*>([^<>]*)<\/title>/si";
+        $title_regex = "/<title[^>]*>([^<>]*)<\/title>/si";
         preg_match($title_regex, $content, $title);
+
         if (is_array($title) && count($title) > 0){
             $snippet['title'] = $title[1];
-            $snippet['title'] = trim(strip_tags(htmlspecialchars($snippet['title'])));
-            if (strlen($snippet['title']) > $length['title'])
-                $snippet['title'] = substr($snippet['title'], 0, ($length['title'] -1) ). '...';
+            $snippet['title'] = self::i18n(trim(strip_tags($snippet['title'])));
         }
 
         $description_regex = '/<meta[^<>]*description[^<>]*content="([^"<>]+)"[^<>]*>/si';

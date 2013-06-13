@@ -58,6 +58,34 @@ class Model_SQ_Menu {
 
 	}
 
+       /**
+	 * Add a submenumenu in WP admin page
+	 *
+	 * @param array $param
+	 *
+	 * @return void
+	 */
+	public function addSubmenu($param=null){
+		if ($param) $this->menu = $param;
+
+		if (is_array($this->menu)){
+
+			if ($this->menu[0] <> '' && $this->menu[1] <> ''){
+				/* add the translation */
+				$this->menu[0] = __($this->menu[0],_PLUGIN_NAME_);
+				$this->menu[1] = __($this->menu[1],_PLUGIN_NAME_);
+
+				if (!isset($this->menu[5])) $this->menu[5] = null;
+				if (!isset($this->menu[6])) $this->menu[6] = null;
+                                if (!isset($this->menu[7])) $this->menu[7] = null;
+
+				/* add the menu with WP*/
+				add_submenu_page($this->menu[0],$this->menu[1],$this->menu[2],$this->menu[3],$this->menu[4],$this->menu[5],$this->menu[6],$this->menu[7]);
+			}
+		}
+
+	}
+
 	/**
 	 * Add a box Meta in WP
 	 *

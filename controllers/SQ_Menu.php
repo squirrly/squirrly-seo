@@ -11,17 +11,55 @@ class SQ_Menu extends SQ_FrontController {
          * Creates the Setting menu in Wordpress
          */
         public function hookMenu(){
+            $first_page = preg_replace ('/\s/','_',_SQ_NAME_);
+
             SQ_Tools::checkErrorSettings(true);
             $this->post_type = array('post','page','product','shopp_page_shopp-products');
+            if(SQ_Tools::$options['sq_howto'] == 1)
+                $first_page = 'sq_howto';
+            else
+                $first_page = 'sq_dashboard';
 
             /* add the plugin menu in admin */
             if (current_user_can('administrator')){
-                $this->model->addMenu(array(    ucfirst(_SQ_NAME_),
-                                            ucfirst(_SQ_NAME_) . SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                $this->model->addMenu(array(ucfirst(_SQ_NAME_) ,
+                                            'Squirrly'. SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
                                             'edit_posts',
-                                            preg_replace ('/\s/','_',_SQ_NAME_) ,
-                                            array($this,'showMenu'),
+                                            $first_page ,
+                                            null,
                                             _SQ_THEME_URL_ . 'img/menu_icon_16.png'
+                                      ));
+                if(SQ_Tools::$options['sq_howto'] == 1){
+                    $this->model->addSubmenu(array($first_page ,
+                                            ucfirst(_SQ_NAME_) . __(' getting started', _PLUGIN_NAME_) ,
+                                            __('Getting started', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                                            'edit_posts',
+                                            'sq_howto' ,
+                                            array(SQ_ObjController::getBlock('SQ_BlockHelp'), 'init')
+                                      ));
+                }
+                if (SQ_Tools::$options['sq_api'] <> ''){
+                    $this->model->addSubmenu(array($first_page ,
+                                            ucfirst(_SQ_NAME_) . __(' dashboard', _PLUGIN_NAME_) ,
+                                            __('Dashboard', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                                            'edit_posts',
+                                            'sq_dashboard' ,
+                                            array(SQ_ObjController::getBlock('SQ_BlockDashboard'), 'init')
+                                      ));
+                }
+                $this->model->addSubmenu(array($first_page ,
+                                            ucfirst(_SQ_NAME_) . __(' settings', _PLUGIN_NAME_) ,
+                                            __('Settings', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                                            'edit_posts',
+                                            preg_replace ('/\s/','_',_SQ_NAME_),
+                                            array($this,'showMenu')
+                                      ));
+                $this->model->addSubmenu(array($first_page ,
+                                            __('Earn money with ', _PLUGIN_NAME_) . ucfirst(_SQ_NAME_),
+                                            __('Earn money', _PLUGIN_NAME_),
+                                            'edit_posts',
+                                            'sq_affiliate' ,
+                                            array(SQ_ObjController::getBlock('SQ_BlockAffiliate'), 'init')
                                       ));
             }
 
@@ -37,7 +75,7 @@ class SQ_Menu extends SQ_FrontController {
             if(SQ_ObjController::getController('SQ_PostMiddle'))
                 foreach($this->post_type as $type)
                     $this->model->addMeta(array('postmiddle'._SQ_NAME_,
-                                                ucfirst(_SQ_NAME_),
+                                                __('Squirrly article rank', _PLUGIN_NAME_),
                                                 array(SQ_ObjController::getController('SQ_PostMiddle'), 'init'),
                                                 $type,
                                                 'normal',
@@ -61,9 +99,11 @@ class SQ_Menu extends SQ_FrontController {
             /* Force call of error display */
             SQ_ObjController::getController('SQ_Error', false)->hookNotices();
 
+
             /* Get the options from Database*/
             $this->options = SQ_Tools::$options;
             parent::init();
+
 
 
 	}
@@ -78,10 +118,7 @@ class SQ_Menu extends SQ_FrontController {
 
 
           switch (SQ_Tools::getValue('action')){
-            case 'sq_howto':
-                SQ_Tools::saveOptions('sq_howto', (int)SQ_Tools::getValue('sq_howto'));
-                exit();
-                break;
+
             case 'sq_settings_update':
                 if(SQ_Tools::getValue('sq_use') == '') return;
 
@@ -165,6 +202,7 @@ class SQ_Menu extends SQ_FrontController {
                     $url = get_bloginfo('url');
 
                 $snippet = SQ_Tools::getSnippet($url);
+
                 /*if((int)SQ_Tools::getValue('post_id') > 0)
                     $snippet['url'] = get_permalink((int)SQ_Tools::getValue('post_id'));
                 */

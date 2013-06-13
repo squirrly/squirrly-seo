@@ -300,7 +300,8 @@ class Model_SQ_PostsList{
                 </li>
             </ul>
             ';
-            $str .= $this->getGraph($traffic[0]["id"] .'-'. $this->post_id);
+            if(SQ_Tools::getValue('sq_debug') !== 'on')
+                $str .= $this->getGraph($traffic[0]["id"] .'-'. $this->post_id);
          return $str;
     }
 
@@ -366,6 +367,7 @@ class Model_SQ_PostsList{
 
         $serp[] = array('id'=>'sq_rank_serp',
                         'class'=>'sq_rank_flag_google_header',
+                        'lastcheck'=>(isset($rank['change']['lastcheck']) ? $rank['change']['lastcheck'] : null),
                         'title'=>__('Google result for: ',_PLUGIN_NAME_),
                         'keyword'=> $rank['keyword']);
 
@@ -387,6 +389,7 @@ class Model_SQ_PostsList{
 
 
     public function getSERPZone($serp){
+        SQ_Tools::dump($serp);
         $str = '';
         $str .= '<ul class="sq_rank_ul_values">
                 <li class="sq_rank_values">
@@ -398,17 +401,17 @@ class Model_SQ_PostsList{
                     <table class="sq_rank_block_list">
                         <tr>
                           <th ></th>
-                          
-                          <th class="sq_rank_block_list_header">'.__('Change',_PLUGIN_NAME_).'</th>
-                          <th class="sq_rank_block_list_header">'.__('Current position',_PLUGIN_NAME_).'</th>
+
+                          <th class="sq_rank_block_list_header">'.__('Change',_PLUGIN_NAME_).(isset($serp[0]["lastcheck"]) ? '<br /><span class="sq_rank_lastcheck">'.__('since',_PLUGIN_NAME_).': '.(string) date_i18n(get_option('date_format') ,strtotime($serp[0]["lastcheck"])).'</span>' : '') .'</th>
+                          <th class="sq_rank_block_list_header">'.__('Current position',_PLUGIN_NAME_) . '<br /><span class="sq_rank_currentcheck">'.(string) date_i18n(get_option('date_format') ,time()).'</span>'.'</th>
                         </tr>';
 
                 foreach ($serp as $key => $value){
                      if ($key > 0) {
                         $str .= '<tr>
-                                    <td><span><img src="'._SQ_STATIC_API_URL_.SQ_URI.'/img/flag/'.$value["flag"] .'.png" /></span></td>
+                                    <td><span><img src="'._SQ_STATIC_API_URL_.SQ_URI.'/img/flag/'.$value["flag"] .'.png" title="'.$value["title"].'" /></span></td>
 
-                                    <td class="sq_rank_block_list_value"><span style="'.(($value["change"] < 0) ? "color:red;" : (($value["change"] > 0) ? "color:green; font-weight:bold;" : "color:gray")).'">'.(($value["change"] > 0) ? "+".$value["change"] : $value["change"]) .'</span></td>
+                                    <td class="sq_rank_block_list_value"><span style="'.(($value["change"] < 0) ? "color:red;" : (($value["change"] > 0) ? "color:green; font-weight:bold;" : "color:gray")).'">'.(($value["change"] > 0) ? "+".$value["change"] : $value["change"]) . '</span></td>
                                     <td class="sq_rank_block_list_value"><span style="'.(($value["position"] == 0) ? "color:red;" : (($value["position"] > 0 && $value["position"] <= 10) ? "color:green; font-weight:bold;" : "color:gray")).'">'.(($value["position"] == 0) ? '>100' : $value["position"]) .'</span></td>
                                  </tr>';
                             }

@@ -1,3 +1,6 @@
+#sq_settings {
+    position: relative;
+}
 
 #sq_settings #sq_settings_title{
     font-size: 18px;
@@ -26,6 +29,89 @@
     padding: 5px 10px;
     margin: 6px 0 0 20px;
     text-decoration: none;
+    cursor: pointer;
+}
+/**************************** LOGIN **********************************/
+#sq_settings_login #sq_blocklogin label{
+    width: 80px;
+}
+#sq_settings_login .sq_box{
+    max-width: 540px;
+    min-width: 500px;
+    border: 1px solid #8E8E8E;
+    font-size: 1.1em;
+    margin: 20px auto;
+    padding: 1em;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    box-shadow: 0 5px 9px -5px #222;
+}
+
+#sq_settings_login .sq_box .sq_header{
+    color: #1d9ed4 !important;
+    font-size: 26px !important;
+    margin: 0;
+    padding: 5px 0;
+}
+
+#sq_settings_login #sq_blocklogin ul li{
+    width: 500px !important;
+}
+#sq_settings_login #sq_blocklogin ul li input[type=text],
+#sq_settings_login #sq_blocklogin ul li input[type=password]{
+    min-width: 250px;
+}
+
+#sq_settings_login #sq_blocklogin #sq_register_email{
+    width: 500px;
+}
+#sq_settings_login #sq_blocklogin #sq_register_email  input[type=text]{
+    min-width: 250px;
+}
+/**************************** AFFILIATE **********************************/
+#sq_settings .sq_settings_affiliate_bigtitle{
+    color: #1d9ed4 !important;
+    font-size: 26px !important;
+    margin: 0;
+    padding: 5px 0;
+}
+
+#sq_settings .sq_settings_affiliate_bigbutton{
+    margin-bottom:35px;
+    text-align: center;
+}
+#sq_settings .sq_settings_affiliate_bigbutton input{
+    padding: 15px !important;
+    font-size: 18px !important;
+    cursor: pointer;
+}
+#sq_settings .sq_settings_affiliate_bigbutton span{
+    display: block;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+}
+#sq_settings .sq_settings_affiliate_info{
+    margin-bottom: 35px;
+}
+
+#sq_settings .sq_settings_affiliate_info li{
+    margin-left: 16px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+    line-height: 20px;
+}
+
+#sq_settings .sq_affiliate_banner{
+    display:block;
+    margin-bottom:20px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+#sq_settings .sq_settings_info{
+    text-align: left;
 }
 
 /****************************HOW TO **********************************/
@@ -33,7 +119,7 @@
 #sq_settings #sq_settings_howto{
     position: relative;
     background: #ED6612 url('../img/settings_howto.jpg') center center  no-repeat;
-    
+
     border: 2px solid #F1F2F4;
     border-radius: 5px;
     padding: 10px;
@@ -95,31 +181,68 @@
     border-radius: 6px;
 }
 
-#sq_settings #sq_settings_howto #sq_settings_howto_close{
-    position: absolute;
-    background-color: #E5D8CD;
-    right: -6px;
-    top: -3px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #333;
-    line-height: 16px;
-    width: 8px;
-    height: 12px;
-    padding: 0px 5px 6px;
-    border-radius: 10px;
-    border: 1px solid darkOliveGreen;
+#sq_settings #sq_settings_title #sq_settings_howto_close{
+    display: inline-block;
+    font-size: 12px;
+    color: blue;
+    font-weight: normal;
+    line-height: 30px;
     cursor: pointer;
-    z-index: 2;
 }
 
+/************************* STATUS ****************************/
+#sq_settings  .sq_user_title{
+    color: #1d9ed4 !important;
+    font-size: 26px;
+    margin: 0;
+    padding: 5px 0 !important;
+    text-align: left;
+}
+
+#sq_settings #sq_user_stats_list li{
+    margin: 0;
+    padding: 3px 0 3px 24px;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+#sq_settings #sq_user_stats_list li strong{
+    color: green;
+    font-size: 16px;
+}
+
+#sq_settings #sq_user_info .sq_settings_info{
+    color: #333;
+    padding-top: 15px;
+    text-align: left;
+}
+#sq_settings #sq_user_info .sq_settings_info a{
+    font-weight: bold;
+}
+#sq_settings #sq_user_info .sq_button a{
+    clear: both;
+    display: block;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 25px;
+    padding: 5px 10px;
+    margin: 20px  0 0 20px;
+    text-decoration: none;
+    text-shadow: 1px 1px #333;
+    cursor: pointer;
+}
 /**************************************************************/
 
 #sq_settings #sq_userinfo{
     color: #333;
     font-size: 14px;
     font-weight: normal;
-    background-color: #f1f1f1;
+
     margin: 0 15px 5px 0;
     padding: 0px;
     text-shadow: 1px 1px white;
@@ -131,7 +254,7 @@
 
 /**************************************************************/
 
-#sq_settings #sq_settings_body{ 
+#sq_settings #sq_settings_body{
     display: block;
     font-size: 12px;
     color: #333;
@@ -152,14 +275,20 @@
 #sq_settings_body fieldset{
     max-width: 540px;
     min-width: 500px;
-    
+
     background: white;
     border: 1px solid #8E8E8E;
     font-size: 1.1em;
-    margin: 10px;
+    margin: 10px auto;
     padding: 1em;
-    
+
     font-family: Arial,Verdana,Helvetica,sans-serif;
+}
+
+
+
+#sq_settings_body #sq_settings_left fieldset{
+    margin: 10px;
 }
 
 #sq_settings_body fieldset legend{
@@ -210,10 +339,10 @@
     clear: both;
     vertical-align: top;
     min-height: 45px;
-    
+
     margin: 7px 0 10px 0;
     padding: 0 0 10px 0;
-    
+
     font-weight: normal;
     font-size: 12px;
     border-bottom: 1px dashed #CCC;
@@ -289,6 +418,22 @@
     margin-top: 10px;
 }
 
+
+@media only screen and (max-width: 1220px){
+    #sq_settings_body fieldset{
+        max-width: 550px;
+        min-width: 510px;
+    }
+
+    #sq_settings_body #sq_settings_left,
+    #sq_settings_body #sq_settings_right{
+        float: none;
+
+    }
+    #sq_settings_body #sq_settings_left fieldset{
+        margin: 10px auto;
+    }
+}
 /************************** SWITCH ******************************/
 .sq_option_content{
     clear: both;
@@ -404,7 +549,7 @@
   line-height: 17px;
   font-size: 9px;
 }
- 
+
  .sq_option_content_small .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
   /* Note: left: 50% doesn't transition in WebKit */
   left: 31px;

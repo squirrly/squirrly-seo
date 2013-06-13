@@ -55,14 +55,17 @@ class SQ_Post extends SQ_FrontController {
         $file_name = false;
          // unhook this function so it doesn't loop infinitely
         remove_action('save_post', array($this, 'hookSavePost'), 10);
+
         if( (SQ_Tools::getValue('action')) == 'editpost' &&
              wp_is_post_revision($post_id) == '' &&
              wp_is_post_autosave($post_id) == '' &&
              get_post_status($post_id) != 'auto-draft' &&
              SQ_Tools::getValue('autosave') == ''){
 
+            $this->checkAdvMeta($post_id);
             $this->checkSeo($post_id, get_post_status($post_id));
         }
+
         if( (SQ_Tools::getValue('action')) == 'editpost' &&
              wp_is_post_autosave($post_id) == '' &&
              get_post_status($post_id) != 'auto-draft' &&
@@ -70,17 +73,13 @@ class SQ_Post extends SQ_FrontController {
 
             $this->checkImage($post_id);
         }
+
+
         add_action('save_post', array($this, 'hookSavePost'), 10);
 
     }
 
     function checkImage($post_id){
-
-        $img_dir = $this->model->getImgDir();
-        $img_url = $this->model->getImgUrl();
-
-        if(!$img_dir || !$img_url)
-            return;
 
         $content = stripslashes(SQ_Tools::getValue('post_content'));
         $tmpcontent = trim($content, "\n");
@@ -94,9 +93,9 @@ class SQ_Post extends SQ_FrontController {
                  return;
 
               foreach ($out[1] as $row){
-                 if (strpos($row,basename($_SERVER['HTTP_HOST'])) === false && strpos($row,'http') !== false){
+                 if (strpos($row,'http') !== false &&
+                         strpos($row,get_bloginfo('url')) === false){
                     if(!in_array($row, $urls)){
-                        //echo $row;
                         $urls[] = $row;
                     }
                  }
@@ -104,49 +103,37 @@ class SQ_Post extends SQ_FrontController {
             }
         }
 
-        if (!is_array($urls))
+        if (!is_array($urls) || (is_array($urls) && count($urls) == 0))
            return;
-
-        if(is_array($seo) && count($urls) == 0)
-           return;
-
 
         foreach ($urls as $url){
-            //if (strpos($url, $this->model->getImgUrl()) !== false) continue;
+            if ($file = $this->model->upload_image($url)) {
+                if (!file_is_valid_image($file['file'])) continue;
 
-            $file_name = $this->model->upload_image($url);
-            if ($file_name !== false) {
-                $localurl = $img_url . $file_name;
-                //echo '$localurl: '.$localurl;
-                $localfile = $img_dir . $file_name;
-                $wp_filetype = wp_check_filetype($file_name, null);
-
-                $content = str_replace($url, $localurl, $content);
+                $content = str_replace($url, $file['url'], $content);
 
                 $attach_id = wp_insert_attachment(array(
-                        'post_mime_type' => $wp_filetype['type'],
-                        'post_title' => preg_replace('/\.[^.]+$/', '', $file_name),
+                        'post_mime_type' => $file['type'],
+                        'post_title' => preg_replace('/\.[^.]+$/', '', $file['filename']),
                         'post_content' => '',
                         'post_status' => 'inherit',
-                        'guid' => $localurl
-                ), $localfile, $post_id);
+                        'guid' => $file['url']
+                ), $file['file'], $post_id);
 
-                $attach_data = wp_generate_attachment_metadata($attach_id, $localfile);
+                $attach_data = wp_generate_attachment_metadata($attach_id, $file['file']);
                 wp_update_attachment_metadata($attach_id, $attach_data);
             }
         }
 
 
         if ($file_name !== false){
-            $_POST['post_content'] = addslashes($content);
-
-            // update post in database
             wp_update_post(array(
                     'ID' => $post_id,
                     'post_content' => $content)
             );
         }
     }
+
     function checkSeo($post_id, $status =''){
         $args = array();
 
@@ -279,11 +266,40 @@ class SQ_Post extends SQ_FrontController {
             header('Content-Type: application/json');
             echo json_encode($return);
             break;
+        case 'sq_save_meta':
+            $return = $this->checkAdvMeta(SQ_Tools::getValue('post_id'));
+            echo json_encode($return);
+            break;
       }
       exit();
-
     }
 
+    /**
+     * Check if there are advanced settings for meta title, description and keywords
+     * @param integer $post_id
+     * @return array | false
+     *
+     */
+    private function checkAdvMeta($post_id){
+       $meta = array();
+       if (SQ_Tools::getIsset('sq_fp_title') || SQ_Tools::getIsset('sq_fp_description') || SQ_Tools::getIsset('sq_fp_keywords')){
+            if (SQ_Tools::getIsset('sq_fp_title'))
+                $meta[] = array('key' => 'sq_fp_title',
+                                'value' => SQ_Tools::getValue('sq_fp_title'));
+
+            if (SQ_Tools::getIsset('sq_fp_description'))
+                $meta[] = array('key' => 'sq_fp_description',
+                                'value' => SQ_Tools::getValue('sq_fp_description'));
+
+            if (SQ_Tools::getIsset('sq_fp_keywords'))
+                $meta[] = array('key' => 'sq_fp_keywords',
+                                'value' => SQ_Tools::getValue('sq_fp_keywords'));
+
+            $this->model->saveAdvMeta($post_id, $meta);
+            return $meta;
+       }
+       return false;
+    }
 
 }
 ?>

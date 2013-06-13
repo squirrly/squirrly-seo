@@ -71,9 +71,19 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
+= 2.0.4 =
+* Added Custom Title/Description option in all Post/Pages
+* Added SEO check if custom title is entered
+* Added Dashboard page in Squirrly SEO Tab
+* Added Account information, Blog status in dashboard
+* Added affiliate option and images in Squirrly SEO Tab
+* Validate remote images on save post
+
+
 = 2.0.3 =
 * Added attributes informations for copyright free images
 * Improved the Keyword Research results with competition results
+* Improved custom META description and keywords
 
 = 2.0.2 =
 * Fixed minor Squirrly SEO Rank Bugs

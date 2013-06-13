@@ -27,7 +27,7 @@
 }
 
 .sq_minloading {
-    
+
     height: 20px;
     width: 20px;
     background: transparent url('../img/minloading.gif') no-repeat center;
@@ -38,7 +38,7 @@
     font-weight: bold;
     color: brown;
     margin: 5px;
-    
+
 }
 .sq_beta{
     font-size: 11px;
@@ -74,14 +74,17 @@
     font-family: arial, sans-serif;
     font-size: 13px;
     font-weight: normal;
-    
+
     line-height: 10px;
     margin: 0;
     padding: 0;
 }
 
-#sq_snippet #sq_snippet_ul li#sq_snippet_update{
+#sq_snippet #sq_snippet_ul li#sq_snippet_update,
+#sq_snippet #sq_snippet_ul li#sq_snippet_customize{
     background-color: green;
+    min-width: 40px;
+    height: 10px;
     color: white;
     font-size: 12px;
     font-weight: bold;
@@ -92,23 +95,44 @@
     padding: 7px 8px;
     cursor: pointer;
     float: right;
-    margin: 13px;
+    margin: 13px 3px;
 }
 #sq_settings #sq_snippet #sq_snippet_ul li#sq_snippet_update{
     margin: 1px;
 }
 
 #sq_snippet #sq_snippet_ul #sq_snippet_title,
-#sq_snippet #sq_snippet_ul #sq_snippet_title a{
+#sq_snippet #sq_snippet_ul #sq_snippet_title_value{
     color: #12c;
     text-decoration: none;
     cursor: pointer;
     line-height: 16px;
-    height: 19px;
     font-size: 14px;
     font-weight: normal;
-    overflow: hidden;
+}
+
+#sq_snippet #sq_snippet_ul #sq_snippet_title {
     max-width: 450px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 1024px){
+    #sq_snippet #sq_snippet_ul #sq_snippet_title {
+      clear: both;
+    }
+}
+#sq_snippet #sq_snippet_ul #sq_snippet_title_value{
+    max-width: 480px;
+}
+
+#sq_snippet #sq_snippet_ul #sq_snippet_title_value input{
+    font-size: 12px;
+    width: 410px;
+    height: 20px;
+    margin: 2px 0;
+    background-color: lightgoldenrodyellow;
 }
 #sq_snippet #sq_snippet_ul #sq_snippet_url,
 #sq_snippet #sq_snippet_ul #sq_snippet_url a{
@@ -118,13 +142,21 @@
     text-decoration: none;
 }
 
-#sq_snippet #sq_snippet_ul #sq_snippet_description{
+#sq_snippet #sq_snippet_ul #sq_snippet_description,
+#sq_snippet #sq_snippet_ul #sq_snippet_description_value{
     color: #222;
     font-size: 12px;
     line-height: 16px;
     margin-top: 2px;
-    max-width: 450px;
+    max-width: 480px;
     overflow: hidden;
+}
+#sq_snippet #sq_snippet_ul #sq_snippet_description_value textarea{
+    font-size: 12px;
+    width: 410px;
+    height: 40px;
+    margin: 2px 0;
+    background-color: lightgoldenrodyellow;
 }
 #sq_snippet #sq_snippet_name{
     position: absolute;
@@ -153,4 +185,21 @@
     color: lightslategray;
     text-decoration: none;
 }
+
+#sq_snippet .sq_meta_info{
+    display: inline-block;
+    font-size: 11px;
+    color: gray;
+    margin: 4px 3px;
+    vertical-align: top;
+}
+
+#sq_snippet #sq_snippet_ul li#sq_snippet_keywords{
+    margin: 10px 0 0 0;
+    color: blue;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
 /**************************************************/

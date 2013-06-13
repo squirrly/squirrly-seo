@@ -42,116 +42,108 @@ class Model_SQ_Post {
      * @return array
      */
     public function searchPost($q, $exclude = array(), $start = 0, $nbr = 8){
-      global $wpdb;
-      $responce = array();
-      if (sizeof($exclude) > 1){
-        $exclude = join(',',$exclude);
-      }else
-        $exclude = (int)$exclude;
+        global $wpdb;
+        $responce = array();
+        if (sizeof($exclude) > 1){
+          $exclude = join(',',$exclude);
+        }else
+          $exclude = (int)$exclude;
 
-      $q = trim ($q,'"');
-      //echo "SELECT ID, post_title, post_date_gmt, post_content, post_type FROM $wpdb->posts WHERE post_status = 'publish' AND (post_title LIKE '%$q%' OR post_content LIKE '%$q%') AND ID not in ($exclude) ORDER BY post_title LIMIT " . $start . ',' . ($start + $nbr);
-      /* search in wp database */
-      $posts = $wpdb->get_results("SELECT ID, post_title, post_date_gmt, post_content, post_type FROM $wpdb->posts WHERE post_status = 'publish' AND (post_title LIKE '%$q%' OR post_content LIKE '%$q%') AND ID not in ($exclude) ORDER BY post_title LIMIT " . $start . ',' . ($start + $nbr));
+        $q = trim ($q,'"');
+        //echo "SELECT ID, post_title, post_date_gmt, post_content, post_type FROM $wpdb->posts WHERE post_status = 'publish' AND (post_title LIKE '%$q%' OR post_content LIKE '%$q%') AND ID not in ($exclude) ORDER BY post_title LIMIT " . $start . ',' . ($start + $nbr);
+        /* search in wp database */
+        $posts = $wpdb->get_results("SELECT ID, post_title, post_date_gmt, post_content, post_type FROM $wpdb->posts WHERE post_status = 'publish' AND (post_title LIKE '%$q%' OR post_content LIKE '%$q%') AND ID not in ($exclude) ORDER BY post_title LIMIT " . $start . ',' . ($start + $nbr));
 
 
-      if ($posts){
+        if ($posts){
 
-          $responce['total'] = $wpdb->num_rows;
-          foreach ($posts as $post) {
-              $responce['results'][] = array('id' => $post->ID,
-                                            'url' => get_permalink($post->ID),
-                                            'title' => $post->post_title,
-                                            'content' => $this->truncate($post->post_content, 50),
-                                            'date' => $post->post_date_gmt);
+            $responce['total'] = $wpdb->num_rows;
+            foreach ($posts as $post) {
+                $responce['results'][] = array('id' => $post->ID,
+                                              'url' => get_permalink($post->ID),
+                                              'title' => $post->post_title,
+                                              'content' => $this->truncate($post->post_content, 50),
+                                              'date' => $post->post_date_gmt);
 
-          }
+            }
 
-      }else{
-          $responce['error'] .= __('Squirrly could not find any results for: ') .' "' . stripslashes($q) . '"';
-      }
-      return json_encode($responce);
-  }
+        }else{
+            $responce['error'] .= __('Squirrly could not find any results for: ') .' "' . stripslashes($q) . '"';
+        }
+        return json_encode($responce);
+    }
 
     private function truncate($text, $length = 25){
-      if (!$length)
-          return $text;
+        if (!$length)
+            return $text;
 
-      $text = strip_tags($text);
-      $words = explode(' ', $text, $length + 1);
+        $text = strip_tags($text);
+        $words = explode(' ', $text, $length + 1);
 
-      if (count($words) > $length) {
-          array_pop($words);
-          array_push($words, '...');
-          $text = implode(' ', $words);
-      }
-      return $text;
-  }
+        if (count($words) > $length) {
+            array_pop($words);
+            array_push($words, '...');
+            $text = implode(' ', $words);
+        }
+        return $text;
+    }
 
 
 
-    /**
-    * Upload the image on server
+     /**
+    * Upload the image on server from version 2.0.4
     *
     * Add configuration page
     */
     public function upload_image($url){
-            global $wp_filesystem;
+        $dir = null;
+        $file = array();
 
-            $upload_dir = $this->getImgDir();
+        $response = wp_remote_get($url, array('timeout' => 10));
+        $file = wp_upload_bits( basename( $url ), '', wp_remote_retrieve_body( $response ), $dir);
+        $file['type'] = wp_remote_retrieve_header( $response, 'content-type' );
 
-            $file_name = wp_unique_filename($upload_dir, basename($url));
-            $file_path = $upload_dir . $file_name;
-
-            if(!file_exists($file_path))
-            {
-                    $http_response = wp_remote_get($url, array('timeout' => 10));
-
-                    if(is_wp_error($http_response))
-                            return false;
-
-                    $data = wp_remote_retrieve_body($http_response);
-
-                    add_filter('filesystem_method', array($this, 'filesystem_method'));
-
-                    WP_Filesystem();
-
-                    if (!$wp_filesystem->put_contents($file_path, $data, FS_CHMOD_FILE)) {
-                            return false;
-                    }
-
-                    return $file_name;
+        if (!isset($file['error']) || $file['error'] == '')
+            if (isset($file['url']) && $file['url'] <> ''){
+                $file['url'] = str_replace(get_bloginfo('url'), '', $file['url']);
+                $file['filename'] = basename($file['url']);
+                return $file;
             }
 
-            return false;
+        return false;
     }
 
     /**
-    * filesystem_method
-    *
-    * Change WP_Filesystem method to direct for this plugin
-    *
-    * @param string $method File System Method
-    */
-    public function filesystem_method($method){
-            return 'direct';
-    }
-    /**
-    * Get the upload path
-    */
-    public function getImgDir(){
-        return ABSPATH . '/wp-content/uploads/';
-    }
+     * Save/Update Meta in database
+     *
+     * @param integer $post_id
+     * @param array $metas [key,value]
+     * @return true
+     */
+    public function saveAdvMeta($post_id, $metas){
+        global $wpdb;
 
-    /**
-    * Get the upload url
-    */
-    public function getImgUrl() {
-        $url = parse_url(get_bloginfo('wpurl'));
-        $url = $url['scheme'] . '://'. $url['host'];
-        $wpurl = str_replace($url,'',get_bloginfo('wpurl'));
+        if ((int)$post_id == 0 || !is_array($metas)) return;
 
-        return $wpurl. '/wp-content/uploads/';
+        foreach ($metas as $meta) {
+            $sql = "SELECT `meta_value`
+                    FROM `".$wpdb->postmeta."`
+                    WHERE `meta_key` = '".$meta['key']."' AND `post_id`=".(int)$post_id  ;
+
+            if($wpdb->get_row($sql)){
+                $sql = "UPDATE `".$wpdb->postmeta."`
+                       SET `meta_value` = '".$meta['value']."'
+                       WHERE `meta_key` = '".$meta['key']."' AND `post_id`=". (int)$post_id;
+
+            }else{
+                $sql = "INSERT INTO `".$wpdb->postmeta."`
+                    (`post_id`,`meta_key`,`meta_value`)
+                    VALUES (".(int)$post_id.",'".$meta['key']."','".$meta['value']."')";
+            }
+            $wpdb->query($sql) ;
+        }
+
+        return $metas ;
     }
 
 

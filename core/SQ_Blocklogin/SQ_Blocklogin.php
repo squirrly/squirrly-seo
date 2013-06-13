@@ -48,6 +48,8 @@ class SQ_Blocklogin extends SQ_BlockController {
         $return = (object) NULL;
         //api responce variable
         $responce = '';
+        //post arguments
+        $args = array();
 
         //Check if email is set
         if (SQ_Tools::getValue('email') <> ''){
@@ -139,7 +141,7 @@ class SQ_Blocklogin extends SQ_BlockController {
         //Set the header to json
         SQ_Tools::setHeader('json');
         echo json_encode($return);
-        
+
         exit();
     }
 

@@ -2,7 +2,7 @@
 <div id="sq_options">
     <ul>
         <li id="sq_options_feedback">
-                    
+
             <span class="sq_icon <?php if(isset($_COOKIE['sq_feedback_face']) && (int)$_COOKIE['sq_feedback_face'] > 0) {echo 'sq_label_feedback_' . ((int)$_COOKIE['sq_feedback_face'] - 1); } ?>" <?php if(!isset($_COOKIE['sq_feedback_face'])) { echo 'title="'.__('How was your Squirrly experience today?',_PLUGIN_NAME_).'"';  } ?>></span>
             <?php if(!isset($_COOKIE['sq_feedback_face']) || (isset($_COOKIE['sq_feedback_face']) && (int)$_COOKIE['sq_feedback_face'] < 3)) { ?>
             <?php if(!isset(SQ_Tools::$options['sq_feedback'])) {?>
@@ -28,7 +28,7 @@
                         <br />
                     <input id="sq_feedback_submit" type="button" value="<?php _e('Send feedback',_PLUGIN_NAME_) ?>">
                     </p>
-                      
+
                   </li>
                   <li><?php _e('Go to:',_PLUGIN_NAME_) ?> <a href="<?php echo _SQ_SUPPORT_URL_?>" title="<?php _e('support page',_PLUGIN_NAME_) ?>" target="_blank"><?php _e('support page',_PLUGIN_NAME_) ?></a></li>
             </ul>
@@ -40,7 +40,7 @@
             <?php }?>
         </li>
         <li id="sq_options_support">
-                    
+
             <span class="sq_text" ><?php _e('Support',_PLUGIN_NAME_) ?></span><span class="sq_icon"></span>
             <ul class="sq_options_support_popup" style="display: none;">
               <div id="sq_options_close" >x</div>
@@ -49,17 +49,17 @@
                           <p id="sq_support_msg"><textarea class="sq_small_input" name="sq_support_message" cols="30" rows="5"></textarea></p>
                           <div id="sq_options_support_error"></div>
                           <p><input id="sq_support_submit" type="button" value="<?php _e('Send Question',_PLUGIN_NAME_) ?>"></p>
-                      
+
                   </li>
                   <li><?php _e('Go to:',_PLUGIN_NAME_) ?> <a href="<?php echo _SQ_SUPPORT_URL_?>" title="<?php _e('support page',_PLUGIN_NAME_) ?>" target="_blank"><?php _e('support page',_PLUGIN_NAME_) ?></a></li>
-            </ul>                
+            </ul>
         </li>
-        
+
         <li id="sq_options_dasboard">
             <span class="sq_push" style="display:none;">1</span>
             <span class="sq_text" ><a href="<?php echo _SQ_DASH_URL_?>user/" title="<?php _e('Go to Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span><?php _e('Profile',_PLUGIN_NAME_) ?></span></a></span><a href="<?php echo _SQ_DASH_URL_?>user/" title="<?php _e('Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span class="sq_icon"></span></a>
         </li>
-        
+
     </ul>
 </div>
 <?php }?>

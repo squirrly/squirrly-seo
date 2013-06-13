@@ -17,7 +17,6 @@ $sq_showNote = array();
 
 define('_SQ_NONCE_ID_', 'sq_none');
 
-
 if (!defined('PHP_VERSION_ID'))
 {
 	$version = explode('.', PHP_VERSION);

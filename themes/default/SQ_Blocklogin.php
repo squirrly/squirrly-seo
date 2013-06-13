@@ -17,6 +17,7 @@
               <span id="sq_register"><?php _e('Enter your email', _PLUGIN_NAME_); ?></span><span id="sq_register_wait"></span>
               <div id="sq_register_email" ><label for="sq_email"><?php _e('Your E-mail:', _PLUGIN_NAME_); ?></label><input type="text" id="sq_email" name="sq_email" autocomplete="off" /></div>
               <div id="sq_loginimage"><?php _e('Sign Up', _PLUGIN_NAME_); ?></div>
+              <div id="sq_signin"><?php _e('I already have an account', _PLUGIN_NAME_); ?></div>
               <span><?php _e('This email connects you to Squirrly.co' , _PLUGIN_NAME_); ?></span>
 
           </div>

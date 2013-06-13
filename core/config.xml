@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
         <block>
-		<name>Name</name>
-		<description>Description</description>
-		<controllers>
-			<controller></controller>
-		</controllers>
-                <actions>
-                    <action></action>
-                </actions>
-		<active>0</active>
-		<configurable>0</configurable>
-	</block>
-        <block>
 		<name>SQ_Post</name>
 		<description>Post Page</description>
 		<actions>
 
                     <action>sq_feedback</action>
                     <action>sq_support</action>
+                    <action>sq_save_meta</action>
+
                 </actions>
 		<active>1</active>
 		<path>controllers</path>
@@ -39,7 +29,6 @@
 		<description>Setting page</description>
 		<actions>
                     <action>sq_settings_update</action>
-                    <action>sq_howto</action>
                     <action>sq_get_snippet</action>
 
                     <action>sq_fixautoseo</action>
@@ -54,6 +43,15 @@
                 </actions>
 		<active>1</active>
 		<path>controllers</path>
+	</block>
+       <block>
+		<name>SQ_BlockHelp</name>
+		<description>Get started with Squirrly settings</description>
+                <actions>
+                    <action>sq_howto</action>
+                </actions>
+		<active>1</active>
+		<path>core</path>
 	</block>
         <block>
 		<name>SQ_Blocklogin</name>
@@ -111,6 +109,15 @@
 		<controllers>
 			<controller>SQ_PostMiddle</controller>
 		</controllers>
+		<active>1</active>
+		<path>core</path>
+	</block>
+       <block>
+		<name>SQ_BlockAffiliate</name>
+		<description>Affiliate Page</description>
+		<actions>
+                    <action>sq_settings_affiliate</action>
+                </actions>
 		<active>1</active>
 		<path>core</path>
 	</block>
