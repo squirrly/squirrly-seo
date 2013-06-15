@@ -36,6 +36,8 @@ class SQ_PostsList extends SQ_FrontController {
                 add_action( 'manage_' . $type . '_custom_column', array($this,'add_row' ), 10, 2 );
             }
             add_filter( 'posts_where' , array( $this, 'filterPosts' ) );
+
+
             //add_filter( 'request', array( $this, 'sortPosts' ) );
         }
     }
@@ -96,6 +98,7 @@ class SQ_PostsList extends SQ_FrontController {
 
     }
 
+
     /**
      * Add row in Post list
      *
@@ -103,7 +106,11 @@ class SQ_PostsList extends SQ_FrontController {
      * @param integer $post_id
      */
     function add_row($column, $post_id) {
+       $title = '';
+       $description = '';
+       $frontend = null;
        $cached = false;
+
        if ( $column == $this->column_id ) {
            if(isset($_COOKIE[$this->column_id.$post_id]) && $_COOKIE[$this->column_id.$post_id] <> ''){
                $cached = true;
@@ -113,7 +120,23 @@ class SQ_PostsList extends SQ_FrontController {
            }
 
            echo '<div class="'.$this->column_id.'_row '.((!$cached) ? 'sq_minloading' : '').'" ref="'.$post_id.'">'.(($cached) ? $_COOKIE[$this->column_id.$post_id] : '').'</div>';
+
+           if($frontend = SQ_ObjController::getModel('SQ_Frontend')){
+               $title = $frontend->getAdvancedMeta($post_id,'title');
+               $description = $frontend->getAdvancedMeta($post_id,'description');
+               if($post_id == get_option('page_on_front')){
+                    if (SQ_Tools::$options['sq_fp_title'] <> '' && !$title)
+                        $title = SQ_Tools::$options['sq_fp_title'];
+                    if (SQ_Tools::$options['sq_fp_description'] <> '' && !$description)
+                        $description = SQ_Tools::$options['sq_fp_description'];
+               }
+            echo '<script type="text/javascript">
+                    jQuery(\'#post-'.$post_id.'\').find(\'.row-title\').before(\''.(($description <> '') ? '<span class="sq_rank_custom_meta sq_rank_customdescription sq_rank_sprite" title="'.__('Custom description: ',_PLUGIN_NAME_).$description.'"></span>' : '') .' '.(($title <> '') ? '<span class="sq_rank_custom_meta sq_rank_customtitle sq_rank_sprite" title="'.__('Custom title: ',_PLUGIN_NAME_).$title.'"></span>' : '') .'\');
+               </script>';
+           }
         }
+
+
     }
 
     /**
@@ -137,7 +160,7 @@ class SQ_PostsList extends SQ_FrontController {
                     var __sq_more_details = "'.__('More details', _PLUGIN_NAME_).'";
                     var __sq_less_details = "'.__('Less details', _PLUGIN_NAME_).'";
                     var __sq_interval_text = "'.__('Interval: ', _PLUGIN_NAME_).'";
-                    var __sq_interval_day = "'.__('Today', _PLUGIN_NAME_).'";
+                    var __sq_interval_day = "'.__('Latest', _PLUGIN_NAME_).'";
                     var __sq_interval_week = "'.__('Last 7 days', _PLUGIN_NAME_).'";
                     var __sq_interval_month = "'.__('Last 30 days', _PLUGIN_NAME_).'";
 
@@ -148,6 +171,7 @@ class SQ_PostsList extends SQ_FrontController {
                     var __sq_rankseeless_text = "'.__('Hide rank', _PLUGIN_NAME_).'";
                     var __sq_optimize_text = "'.__('Optimize', _PLUGIN_NAME_).'";
                     if (typeof __token === "undefined") var __token = "'.SQ_Tools::$options['sq_api'].'";
+                    var __sq_ranknotpublic_text = "'.__('Not Public', _PLUGIN_NAME_).'";
 
                   </script>';
 
@@ -228,6 +252,13 @@ class SQ_PostsList extends SQ_FrontController {
                 $args['permalink'] = urlencode($args['permalink']);
 
                 $this->model->post_id = $args['post_id'];
+
+                if(get_post_status($args['post_id']) == 'draft'){
+                    $error = array('error' => 'sq_no_information',
+                                   'message' => __('Publish the article to start Squirrly Article Rank',_PLUGIN_NAME_));
+
+                    exit(json_encode($error));
+                }
 
                 $traffic = array();
                 $traffic = $this->model->getTrafficProgress();

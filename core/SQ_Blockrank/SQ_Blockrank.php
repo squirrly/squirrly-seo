@@ -10,23 +10,23 @@ class SQ_Blockrank extends SQ_BlockController {
      */
     function hookHead() {
        global $sq_postID;
-       if(get_post_status($sq_postID) <> 'draft'){
-            //Get the current post id from Wordpress
-            $this->post_id = $sq_postID;
-            //Set some variables
-            echo '<script type="text/javascript">
-                  var __sq_goto_allposts = "'.__('See it in \'All Posts\'', _PLUGIN_NAME_).'";
+       parent::hookHead();
+       //Get the current post id from Wordpress
+       $this->post_id = $sq_postID;
+       
+        //Set some variables
+        echo '<script type="text/javascript">
+              var __sq_goto_allposts = "'.__('See it in \'All Posts\'', _PLUGIN_NAME_).'";
 
-                </script>';
+            </script>';
 
-            //Load the css and javascript for the rank box
-            SQ_ObjController::getController('SQ_DisplayController', false)
+        //Load the css and javascript for the rank box
+       SQ_ObjController::getController('SQ_DisplayController', false)
                        ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/css/sq_postslist.css?ver='.SQ_VERSION_ID);
-            SQ_ObjController::getController('SQ_DisplayController', false)
-                       ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/js/sq_rank.js?ver='.SQ_VERSION_ID);
-       }
-
+        SQ_ObjController::getController('SQ_DisplayController', false)
+                   ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/js/sq_rank.js?ver='.SQ_VERSION_ID);
     }
+
 
 }
 ?>

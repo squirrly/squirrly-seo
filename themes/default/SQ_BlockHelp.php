@@ -1,5 +1,4 @@
 <div id="sq_settings" >
-
     <?php if($view->options['sq_api'] == '' || $view->options['sq_howto'] == 1) {?>
     <div id="sq_settings_howto">
         <div id="sq_settings_howto_title" ><?php _e('With Squirrly SEO, your Wordpress will get Excellent SEO on each article you write.', _PLUGIN_NAME_); ?></div>

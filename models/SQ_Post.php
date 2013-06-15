@@ -15,7 +15,7 @@ class Model_SQ_Post {
             if ( wp_default_editor() == 'tinymce' ){
                     $init['setup'] = 'window.sq_tinymce.setup';
                     $init['onchange_callback'] = 'window.sq_tinymce.callback';
-                    $init['content_css'] = (($init['content_css'] <> '') ? $init['content_css'] . ',' : '' ) . _SQ_THEME_URL_.'css/sq_frontend.css';
+                    $init['content_css'] = ((isset($init['content_css']) && $init['content_css'] <> '') ? $init['content_css'] . ',' : '' ) . _SQ_THEME_URL_.'css/sq_frontend.css';
             }
 
             return $init;

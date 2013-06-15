@@ -40,7 +40,7 @@ class Model_SQ_Blocksearch{
          * @param integer $free: 1|0
          */
         private function doFlickrSearch($params, $free = 0){
-            foreach ($params as $k => $v) {
+              foreach ($params as $k => $v) {
                   $pack[] = urlencode($k) . '=' . urlencode($v);
               }
 
@@ -67,5 +67,6 @@ class Model_SQ_Blocksearch{
                   }
               }
         }
+
 }
 ?>

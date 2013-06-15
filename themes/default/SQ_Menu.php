@@ -35,7 +35,7 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_canonical1" type="radio" class="sq_switch-input" name="sq_auto_canonical"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_canonical1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_canonical0" type="radio" class="sq_switch-input" name="sq_auto_canonical" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -52,14 +52,14 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_sitemap1" type="radio" class="sq_switch-input" name="sq_auto_sitemap"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_sitemap1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_sitemap0" type="radio" class="sq_switch-input" name="sq_auto_sitemap" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
                               <label for="sq_auto_sitemap0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
                               <span class="sq_switch-selection"></span>
                             </div>
-                            <span><?php _e('Add the <strong>XML Sitemap</strong> for search engines', _PLUGIN_NAME_); ?>: <strong><?php echo get_bloginfo('url') . '/sitemap.xml' ?></strong></span>
+                            <span><?php _e('Add the <strong>XML Sitemap</strong> for search engines', _PLUGIN_NAME_); ?>: <strong><?php echo '/sitemap.xml' ?></strong></span>
                           </div>
                       </li>
                       <li>
@@ -69,7 +69,7 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_meta1" type="radio" class="sq_switch-input" name="sq_auto_meta"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_meta1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_meta0" type="radio" class="sq_switch-input" name="sq_auto_meta" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -86,7 +86,7 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_favicon1" type="radio" class="sq_switch-input" name="sq_auto_favicon"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_favicon1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_favicon0" type="radio" class="sq_switch-input" name="sq_auto_favicon" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -103,7 +103,7 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_facebook1" type="radio" class="sq_switch-input" name="sq_auto_facebook"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_facebook1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_facebook0" type="radio" class="sq_switch-input" name="sq_auto_facebook" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -120,7 +120,7 @@
                                   $auto_option = true;
                           ?>
                           <div class="sq_option_content sq_option_content_small">
-                            <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                            <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                               <input id="sq_auto_twitter1" type="radio" class="sq_switch-input" name="sq_auto_twitter"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                               <label for="sq_auto_twitter1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                               <input id="sq_auto_twitter0" type="radio" class="sq_switch-input" name="sq_auto_twitter" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -147,7 +147,7 @@
                             $auto_option = true;
                     ?>
                     <div class="sq_option_content sq_option_content_small">
-                      <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                      <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                         <input id="sq_auto_title1" type="radio" class="sq_switch-input" name="sq_auto_title"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                         <label for="sq_auto_title1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                         <input id="sq_auto_title0" type="radio" class="sq_switch-input" name="sq_auto_title" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -164,7 +164,7 @@
                             $auto_option = true;
                     ?>
                     <div class="sq_option_content sq_option_content_small">
-                      <div class="sq_switch" style="<?php echo (($view->options['sq_use'] == 0) ? 'display:none;' : ''); ?>">
+                      <div <?php echo ($view->options['sq_beginner_user'] == 1) ? '' : 'class="sq_switch"'?> style="<?php echo (($view->options['sq_use'] == 0 || $view->options['sq_beginner_user'] == 1) ? 'display:none;' : ''); ?>">
                         <input id="sq_auto_description1" type="radio" class="sq_switch-input" name="sq_auto_description"  value="1" <?php echo ($auto_option ? "checked" : '')?> />
                         <label for="sq_auto_description1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                         <input id="sq_auto_description0" type="radio" class="sq_switch-input" name="sq_auto_description" value="0" <?php echo (!$auto_option ? "checked" : '')?> />
@@ -225,7 +225,7 @@
 
         <fieldset>
             <legend><?php _e('Squirrly Options', _PLUGIN_NAME_); ?></legend>
-            <div class="sq_option_content">
+            <div class="sq_option_content" <?php echo ($view->options['sq_beginner_user'] == 1) ? 'style="display:none"' : ''?>>
                 <div class="sq_switch">
                   <input id="ignore_warn_yes" class="sq_switch-input" type="radio" name="ignore_warn" value="0" <?php echo (($view->options['ignore_warn'] == 0) ? "checked" : '')?> />
                   <label for="ignore_warn_yes" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
@@ -236,7 +236,7 @@
                 <span><?php _e('Let Squirrly warn me if there are errors related to SEO settings', _PLUGIN_NAME_); ?></span>
             </div>
 
-            <div class="sq_option_content">
+            <div class="sq_option_content"<?php echo ($view->options['sq_beginner_user'] == 1) ? 'style="display:none"' : ''?>>
                 <div class="sq_switch">
                   <input id="sq_keyword_help1" type="radio" class="sq_switch-input" name="sq_keyword_help" value="1" <?php echo (($view->options['sq_keyword_help'] == 1) ? "checked" : '')?> />
                   <label for="sq_keyword_help1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
@@ -281,14 +281,14 @@
             <span class="sq_settings_info"><?php _e('If you don\'t see the new icon in your browser, empty the browser cache and refresh the page.', _PLUGIN_NAME_); ?></span>
           </fieldset>
 
-          <fieldset>
+          <fieldset >
             <legend><?php _e('Tool for Search Engines', _PLUGIN_NAME_); ?></legend>
             <div>
              <p class="withborder withcode">
               <span class="sq_icon sq_icon_googleplus"></span>
               <?php _e('Google Plus URL:', _PLUGIN_NAME_); ?><br /><strong><input type="text" name="sq_google_plus" value="<?php echo (($view->options['sq_google_plus'] <> '') ? $view->options['sq_google_plus'] : '')?>" size="60" /> (e.g. https://plus.google.com/00000000000000/posts)</strong>
              </p>
-             <p class="withborder withcode">
+             <p class="withborder withcode"<?php echo ($view->options['sq_beginner_user'] == 1) ? 'style="display:none"' : ''?>>
               <span class="sq_icon sq_icon_googlewt"></span>
               <?php echo sprintf(__('Google META verification code for %sWebmaster Tool%s`:', _PLUGIN_NAME_), '`<a href="http://maps.google.com/webmasters/" target="_blank">','</a>'); ?><br><strong>&lt;meta name="google-site-verification" content=" <input type="text" name="sq_google_wt" value="<?php echo (($view->options['sq_google_wt'] <> '') ? $view->options['sq_google_wt'] : '')?>" size="15" /> " /&gt;</strong>
              </p>
@@ -296,12 +296,12 @@
               <span class="sq_icon sq_icon_googleanalytics"></span>
               <?php echo sprintf(__('Google  %sAnalytics ID%s`:', _PLUGIN_NAME_), '`<a href="http://maps.google.com/analytics/" target="_blank">','</a>'); ?><br><strong><input type="text" name="sq_google_analytics" value="<?php echo (($view->options['sq_google_analytics'] <> '') ? $view->options['sq_google_analytics'] : '')?>" size="15" /> (e.g. UA-XXXXXXX-XX)</strong>
              </p>
-             <p class="withborder withcode">
+             <p class="withborder withcode" <?php echo ($view->options['sq_beginner_user'] == 1) ? 'style="display:none"' : ''?>>
               <span class="sq_icon sq_icon_facebookinsights"></span>
               <?php echo sprintf(__('Facebook META code (for %sInsights%s )`:', _PLUGIN_NAME_), '`<a href="http://www.facebook.com/insights/" target="_blank">','</a>'); ?><br><strong>&lt;meta property="fb:admins" content=" <input type="text" name="sq_facebook_insights" value="<?php echo (($view->options['sq_facebook_insights'] <> '') ? $view->options['sq_facebook_insights'] : '')?>" size="15" /> " /&gt;</strong>
              </p>
-             <p class="withcode">
-              <span class="sq_icon sq_icon_bingwt"></span>
+             <p class="withcode" <?php echo ($view->options['sq_beginner_user'] == 1) ? 'style="display:none"' : ''?>>
+              <span class="sq_icon sq_icon_bingwt" ></span>
               <?php echo sprintf(__('Bing META code (for %sWebmaster Tool%s )`:', _PLUGIN_NAME_), '`<a href="http://www.bing.com/toolbox/webmaster/" target="_blank">','</a>'); ?><br><strong>&lt;meta name="msvalidate.01" content=" <input type="text" name="sq_bing_wt" value="<?php echo (($view->options['sq_bing_wt'] <> '') ? $view->options['sq_bing_wt'] : '')?>" size="15" /> " /&gt;</strong>
              </p>
             </div>

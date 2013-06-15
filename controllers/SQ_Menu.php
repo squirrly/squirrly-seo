@@ -32,7 +32,7 @@ class SQ_Menu extends SQ_FrontController {
                 if(SQ_Tools::$options['sq_howto'] == 1){
                     $this->model->addSubmenu(array($first_page ,
                                             ucfirst(_SQ_NAME_) . __(' getting started', _PLUGIN_NAME_) ,
-                                            __('Getting started', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                                            __('Getting started', _PLUGIN_NAME_),
                                             'edit_posts',
                                             'sq_howto' ,
                                             array(SQ_ObjController::getBlock('SQ_BlockHelp'), 'init')
@@ -41,7 +41,7 @@ class SQ_Menu extends SQ_FrontController {
                 if (SQ_Tools::$options['sq_api'] <> ''){
                     $this->model->addSubmenu(array($first_page ,
                                             ucfirst(_SQ_NAME_) . __(' dashboard', _PLUGIN_NAME_) ,
-                                            __('Dashboard', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
+                                            __('Dashboard', _PLUGIN_NAME_),
                                             'edit_posts',
                                             'sq_dashboard' ,
                                             array(SQ_ObjController::getBlock('SQ_BlockDashboard'), 'init')
@@ -75,7 +75,7 @@ class SQ_Menu extends SQ_FrontController {
             if(SQ_ObjController::getController('SQ_PostMiddle'))
                 foreach($this->post_type as $type)
                     $this->model->addMeta(array('postmiddle'._SQ_NAME_,
-                                                __('Squirrly article rank', _PLUGIN_NAME_),
+                                                __('Squirrly Article Rank', _PLUGIN_NAME_),
                                                 array(SQ_ObjController::getController('SQ_PostMiddle'), 'init'),
                                                 $type,
                                                 'normal',
@@ -118,6 +118,10 @@ class SQ_Menu extends SQ_FrontController {
 
 
           switch (SQ_Tools::getValue('action')){
+
+            case 'sq_beginner_set':
+                SQ_Tools::saveOptions('sq_beginner_user', (int)SQ_Tools::getValue('sq_beginner_user'));
+                break;
 
             case 'sq_settings_update':
                 if(SQ_Tools::getValue('sq_use') == '') return;

@@ -81,7 +81,8 @@
 }
 
 #sq_snippet #sq_snippet_ul li#sq_snippet_update,
-#sq_snippet #sq_snippet_ul li#sq_snippet_customize{
+#sq_snippet #sq_snippet_ul li#sq_snippet_customize,
+#sq_snippet #sq_snippet_ul li#sq_snippet_reset{
     background-color: green;
     min-width: 40px;
     height: 10px;
@@ -96,6 +97,7 @@
     cursor: pointer;
     float: right;
     margin: 13px 3px;
+    text-align: center;
 }
 #sq_settings #sq_snippet #sq_snippet_ul li#sq_snippet_update{
     margin: 1px;

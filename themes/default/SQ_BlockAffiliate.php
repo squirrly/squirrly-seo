@@ -42,19 +42,20 @@
                   </div>
                 </li>
             </ul>
-            <?php if (SQ_Tools::$options['sq_api'] <> '') {?>
-            <p>
-                <?php _e('Your affiliate account is set and ready to go. Above you have the affiliate link. ', _PLUGIN_NAME_); ?>
-                <br />
-                <?php echo sprintf(__('Check your affiliate page: %sAffiliate page%s', _PLUGIN_NAME_) , '<a href="'._SQ_DASH_URL_ . 'login/?token='.SQ_Tools::$options['sq_api'].'&redirect_to='._SQ_DASH_URL_.'user/affiliate'.'" target="_blank" style="font-weight:bold">', '</a>'); ?>
-            </p>
-            <?php }else{ ?>
-            <p>
-                <?php _e('After you connect to Squirrly you can begin to use your free Squirrly affiliate link immediately!', _PLUGIN_NAME_); ?>
-                <br />
-                <?php _e('You\'ll also get an email on how to login to the affiliate area so you can get started.', _PLUGIN_NAME_); ?>
-            </p>
-            <?php }?>
+            <?php
+                if (SQ_Tools::$options['sq_api'] <> '') {
+                   if (SQ_Tools::$options['sq_affiliate_link'] <> '') {
+                      echo __('Your affiliate account is set and ready to go. Above you have the affiliate link. ', _PLUGIN_NAME_);
+                      echo '<br />';
+                      echo sprintf(__('Check your affiliate page: %sAffiliate page%s', _PLUGIN_NAME_) , '<a href="'._SQ_DASH_URL_ . 'login/?token='.SQ_Tools::$options['sq_api'].'&redirect_to='._SQ_DASH_URL_.'user/affiliate'.'" target="_blank" style="font-weight:bold">', '</a>');
+                   }else{
+                        echo sprintf(__('%sTerms of Use for our Affiliate Program%s', _PLUGIN_NAME_) , '<a href="http://www.squirrly.co/partnertermsofuse-pag68354.html" target="_blank" style="font-weight:bold">', '</a>');
+                   }
+
+                }else{
+                    echo __('After you connect to Squirrly you can begin to use your free Squirrly affiliate link immediately!', _PLUGIN_NAME_);
+                }
+             ?>
           </div>
 
         </fieldset>
@@ -64,8 +65,8 @@
           <div>
               <ul class="sq_settings_affiliate_info">
                   <?php
-                  $sq_affiliate_images[] = 'http://static.api.squirrly.co/default/img/banners/banner1.jpg';
-                  $sq_affiliate_images[] = 'http://static.api.squirrly.co/default/img/banners/banner2.jpg';
+                  $sq_affiliate_images[] = _SQ_STATIC_API_URL_ . 'default/img/banners/banner1.jpg';
+                  $sq_affiliate_images[] = _SQ_STATIC_API_URL_ . 'default/img/banners/banner2.jpg';
 
                   foreach($sq_affiliate_images as $sq_affiliate_image){
                       echo '<li><a href="'.SQ_Tools::$options['sq_affiliate_link'].'" target="_blank"><img src="'.$sq_affiliate_image.'" /></a>';

@@ -28,7 +28,9 @@
 		<name>SQ_Menu</name>
 		<description>Setting page</description>
 		<actions>
+                    <action>sq_beginner_set</action>
                     <action>sq_settings_update</action>
+
                     <action>sq_get_snippet</action>
 
                     <action>sq_fixautoseo</action>
@@ -37,9 +39,6 @@
                     <action>sq_fixcomments</action>
 
                     <action>sq_warnings_off</action>
-
-
-
                 </actions>
 		<active>1</active>
 		<path>controllers</path>

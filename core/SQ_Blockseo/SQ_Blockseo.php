@@ -10,6 +10,8 @@ class SQ_Blockseo extends SQ_BlockController {
         echo '<script type="text/javascript">
              var __snippetsavechanges = "'.__('Save changes', _PLUGIN_NAME_).'";
              var __snippetsavecancel = "'.__('Cancel', _PLUGIN_NAME_).'";
+             var __snippetreset = "'.__('Reset', _PLUGIN_NAME_).'";
+
              var __snippetcustomize = "'.__('Customize Title', _PLUGIN_NAME_).'";
              var __snippetkeyword = "'.__('manage keywords', _PLUGIN_NAME_).'";
              var __snippetshort = "'.__('Too short', _PLUGIN_NAME_).'";

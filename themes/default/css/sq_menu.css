@@ -3,9 +3,9 @@
 }
 
 #sq_settings #sq_settings_title{
-    font-size: 18px;
+    font-size: 19px;
     font-weight: normal;
-    line-height: 30px;
+    line-height: 36px;
     color: #333;
     margin: 0 15px 3px 0;
     padding-bottom: 5px;
@@ -276,13 +276,19 @@
     max-width: 540px;
     min-width: 500px;
 
-    background: white;
+    background: #fcfcfc;
     border: 1px solid #8E8E8E;
     font-size: 1.1em;
     margin: 10px auto;
     padding: 1em;
 
     font-family: Arial,Verdana,Helvetica,sans-serif;
+
+    text-shadow: 1px 1px white;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 
@@ -292,7 +298,7 @@
 }
 
 #sq_settings_body fieldset legend{
-    background: #F1F1F1 repeat-x top left;
+    background: #f3f3f3 repeat-x top left;
     border: 1px solid #364A14;
     font-weight: 700;
     margin: 0;
@@ -300,6 +306,12 @@
     line-height: 20px;
     text-align: left;
     color: #333;
+
+
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 #sq_settings_body span.sq_settings_info {
@@ -480,6 +492,7 @@
 
 .sq_switch-label:active {
   font-weight: bold;
+
 }
 
 .sq_switch-label-off {
@@ -497,7 +510,7 @@
 .sq_switch-input:checked + .sq_switch-label {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.65);
-  text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
   -webkit-transition: 0.15s ease-out;
   -moz-transition: 0.15s ease-out;
   -o-transition: 0.15s ease-out;
@@ -530,6 +543,7 @@
   -moz-transition: left 0.15s ease-out;
   -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
+
 }
 
 .sq_option_content_small{
@@ -564,4 +578,34 @@
 
 .sq_option_content_small > span{
     font-size: 11px !important;
+}
+
+.sq_option_content .sq_beginner_user {
+    float: none;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.sq_option_content .sq_beginner_user {
+    float: none !important;
+    margin: 0 auto;
+    height: 32px;
+    width: 200px;
+}
+
+.sq_option_content .sq_beginner_user .sq_switch-label{
+    width: 97px !important;
+    font-size: 14px!important;
+    line-height: 30px!important;
+    color: lightgoldenrodyellow;
+}
+
+.sq_option_content .sq_beginner_user .sq_switch-selection {
+  width: 95px;
+  height: 28px;
+}
+
+.sq_option_content .sq_beginner_user  .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
+  /* Note: left: 50% doesn't transition in WebKit */
+  left: 103px;
 }

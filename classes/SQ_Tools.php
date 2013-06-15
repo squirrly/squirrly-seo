@@ -79,9 +79,14 @@ class SQ_Tools extends SQ_FrontController {
      */
     public function hookActionlink($links, $file) {
           if ($file == _PLUGIN_NAME_. '/squirrly.php'){
-            $settings_link = '<a href="' . admin_url('admin.php?page=squirrly') . '">' . __('Settings', _PLUGIN_NAME_) . '</a>';
-            array_unshift($links, $settings_link);
+            $link = '<a href="' . admin_url('admin.php?page=squirrly') . '">' . __('Settings', _PLUGIN_NAME_) . '</a>';
+            array_unshift($links, $link);
+            if(SQ_Tools::$options['sq_howto'] == 1){
+              $link = '<a href="' . admin_url('admin.php?page=sq_howto') . '">' . __('Getting started', _PLUGIN_NAME_) . '</a>';
+              array_unshift($links, $link);
+            }
           }
+
           return $links;
     }
 
@@ -134,6 +139,7 @@ class SQ_Tools extends SQ_FrontController {
     */
     public static function getOptions(){
         $default = array(
+            'sq_beginner_user' => 1,
             'sq_api' => '',
             'sq_use' => 1,
             'sq_howto' => 1,

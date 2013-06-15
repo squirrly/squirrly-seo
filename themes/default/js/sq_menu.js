@@ -28,11 +28,25 @@ jQuery(document).ready(function() {
                 nonce: sqQuery.nonce
             }
         ).success(function(response) {
-            location.href = "?page=squirrly";
+            location.href = "?page=sq_dashboard";
         });
     });
 
-    jQuery('#sq_settings').find('input[type=radio]').bind('click',function(){
+    jQuery('#sq_settings').find('input[name=sq_beginner_user]').bind('click',function() {
+        jQuery.getJSON(
+            sqQuery.ajaxurl,
+            {
+                action: 'sq_beginner_set',
+                sq_beginner_user: jQuery(this).val(),
+                nonce: sqQuery.nonce
+            }
+        ).success(function(response) {
+            sq_showSaved();
+        });
+    });
+
+
+    jQuery('#sq_settings_form').find('input[type=radio]').bind('click',function(){
         sq_submitSettings();
         sq_getSnippet();
     });
@@ -116,6 +130,10 @@ jQuery(document).ready(function() {
         jQuery('#sq_twitter_account').hide();
     });
 });
+
+function sq_showSaved(){
+
+}
 
 function sq_trackLength (field, type){
     var min = 0;

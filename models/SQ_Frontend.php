@@ -304,7 +304,10 @@ class Model_SQ_Frontend {
         }
 
         /* Check if is a predefined Title */
-        if($homepage && SQ_Tools::$options['sq_auto_seo'] <> 1 && SQ_Tools::$options['sq_fp_title'] <> ''){
+        if($homepage &&
+                SQ_Tools::$options['sq_auto_seo'] <> 1 &&
+                SQ_Tools::$options['sq_fp_title'] <> '' &&
+                !$this->getAdvancedMeta($post->ID, 'title')){
             $title = $this->clearTitle( SQ_Tools::$options['sq_fp_title'] );
         }
 
@@ -357,7 +360,10 @@ class Model_SQ_Frontend {
         $description = '';
 
         if(is_home() || is_single() || is_page() || $this->checkPostsPage()) {
-            if(is_home() && SQ_Tools::$options['sq_auto_seo'] <> 1 && SQ_Tools::$options['sq_fp_description'] <> ''){
+            if(is_home() &&
+                    SQ_Tools::$options['sq_auto_seo'] <> 1 &&
+                    SQ_Tools::$options['sq_fp_description'] <> '' &&
+                    !$this->getAdvancedMeta($post->ID, 'description')){
                 $description = strip_tags( SQ_Tools::$options['sq_fp_description'] );
 
             }else{
@@ -386,11 +392,20 @@ class Model_SQ_Frontend {
         return '';
     }
 
-    private function clearDescription($description){
-        $description = str_replace(array('"',"\r\n","\n","&nbsp;","  "), array('',' ',' ',' ',' '), $description);
-        $description = trim(strip_tags(html_entity_decode($description)));
+    private function clearDescription ( $description ){
 
-        return $description;
+        $description = str_replace(array("&nbsp;","  ","\r","\n"), array(' ','','',' '), $description);
+        $search = array ("'<script[^>]*?>.*?<\/script>'si",	// strip out javascript
+                      "/<form.*?<\/form>/si",
+                      "/<iframe.*?<\/iframe>/si"
+                      );
+
+        if(function_exists('preg_replace'))
+            $description =  preg_replace($search, '', $description);
+
+        $description =  html_entity_decode($description);
+        $description =  strip_tags($description);
+        return trim ( $description );
     }
 
     /**
@@ -1123,7 +1138,7 @@ class Model_SQ_Frontend {
      * @param type $post_id
      * @return boolean
      */
-    private function getAdvancedMeta($post_id, $meta = 'title'){
+    public function getAdvancedMeta($post_id, $meta = 'title'){
         global $wpdb;
         $field = '';
 
@@ -1165,7 +1180,7 @@ class Model_SQ_Frontend {
      * @param type $post_id
      * @return boolean
      */
-    private function getOtherPluginsMeta($post_id, $meta = 'title'){
+    public function getOtherPluginsMeta($post_id, $meta = 'title'){
         global $wpdb;
         $field = '';
 
