@@ -305,9 +305,9 @@ class Model_SQ_Frontend {
 
         /* Check if is a predefined Title */
         if($homepage &&
-                SQ_Tools::$options['sq_auto_seo'] <> 1 &&
+                SQ_Tools::$options['sq_auto_seo'] == 0 &&
                 SQ_Tools::$options['sq_fp_title'] <> '' &&
-                !$this->getAdvancedMeta($post->ID, 'title')){
+                (!isset($post) || !$this->getAdvancedMeta($post->ID, 'title'))){
             $title = $this->clearTitle( SQ_Tools::$options['sq_fp_title'] );
         }
 
@@ -361,9 +361,9 @@ class Model_SQ_Frontend {
 
         if(is_home() || is_single() || is_page() || $this->checkPostsPage()) {
             if(is_home() &&
-                    SQ_Tools::$options['sq_auto_seo'] <> 1 &&
+                    SQ_Tools::$options['sq_auto_seo'] == 0 &&
                     SQ_Tools::$options['sq_fp_description'] <> '' &&
-                    !$this->getAdvancedMeta($post->ID, 'description')){
+                    (!isset($post) || !$this->getAdvancedMeta($post->ID, 'description'))){
                 $description = strip_tags( SQ_Tools::$options['sq_fp_description'] );
 
             }else{
