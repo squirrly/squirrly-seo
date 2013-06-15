@@ -157,37 +157,40 @@ class SQ_Traffic extends SQ_FrontController {
      */
     private function createBdTables(){
         global $wpdb;
+        if($wpdb->get_var("SHOW TABLES LIKE '".$this->analytics_table."'") != $this->analytics_table) {
+            $sql = "CREATE TABLE `".$this->analytics_table."` (
+                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+                    `count` INT( 9 ) NOT NULL DEFAULT 0,
+                    `unique` INT( 9 ) NOT NULL DEFAULT 0,
+                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
+                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
+                    `indexed` tinyint( 1 ) NOT NULL DEFAULT -1,
+                    `global_rank` int( 3 ) NOT NULL DEFAULT -1,
+                    `local_rank` int( 3 ) NOT NULL DEFAULT -1,
+                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+                    `other_keywords` text collate utf8_unicode_ci NOT NULL default '',
+                    `date` DATE default NULL,
+                     PRIMARY KEY ( `id` ),
+                     KEY `post_id` USING BTREE (`post_id`)
+                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
 
-        $sql = "CREATE TABLE `".$this->analytics_table."` (
-                `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
-                `count` INT( 9 ) NOT NULL DEFAULT 0,
-                `unique` INT( 9 ) NOT NULL DEFAULT 0,
-                `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
-                `home` tinyint( 1 ) NOT NULL DEFAULT 0,
-                `indexed` tinyint( 1 ) NOT NULL DEFAULT -1,
-                `global_rank` int( 3 ) NOT NULL DEFAULT -1,
-                `local_rank` int( 3 ) NOT NULL DEFAULT -1,
-                `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
-                `other_keywords` text collate utf8_unicode_ci NOT NULL default '',
-                `date` DATE default NULL,
-                 PRIMARY KEY ( `id` ),
-                 KEY `post_id` USING BTREE (`post_id`)
-                ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
+            $wpdb->query($sql);
+        }
 
-        $wpdb->query($sql);
+        if($wpdb->get_var("SHOW TABLES LIKE '".$this->keyword_table."'") != $this->keyword_table) {
+            $sql = "CREATE TABLE `".$this->keyword_table."` (
+                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
+                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
+                    `referral` varchar(96) collate utf8_unicode_ci NOT NULL default '',
+                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+                    `date` DATE default NULL,
+                     PRIMARY KEY ( `id` ),
+                     KEY `post_id` USING BTREE (`post_id`)
+                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
 
-        $sql = "CREATE TABLE `".$this->keyword_table."` (
-                `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
-                `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
-                `home` tinyint( 1 ) NOT NULL DEFAULT 0,
-                `referral` varchar(96) collate utf8_unicode_ci NOT NULL default '',
-                `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
-                `date` DATE default NULL,
-                 PRIMARY KEY ( `id` ),
-                 KEY `post_id` USING BTREE (`post_id`)
-                ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
-
-        $wpdb->query($sql);
+            $wpdb->query($sql);
+        }
         //Save database created
         SQ_Tools::saveOptions('sq_dbtables', 1);
     }
@@ -287,7 +290,7 @@ class SQ_Traffic extends SQ_FrontController {
 
         $host = $refer['host'];
         $refer = $refer['query'];
-        
+
         $return = array('domain'=>$host,'keyword'=>'');
 
         if(strstr($host,'google') || strstr($host,'ask'))
