@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+
     jQuery('#sq_email').bind('keypress', function(event) {
 
         if (event.keyCode == 13)
@@ -32,6 +33,15 @@ jQuery(document).ready(function() {
         jQuery('#sq_email').focus();
     });
 
+    jQuery('#sq_signup').bind('click', function(event){
+        jQuery('#sq_autologin').show();
+        jQuery('#sq_blocklogin').find('ul').hide();
+
+        //jQuery('#sq_blocklogin').find('.sq_message').html(response.info).show();
+        //jQuery('#sq_user').val(jQuery('#sq_email').val());
+        jQuery('#sq_email').focus();
+    });
+
     jQuery('#sq_login').bind('click', function(){
       jQuery('#sq_login').addClass('sq_minloading');
       jQuery('#sq_login').attr("disabled", "disabled");
@@ -51,9 +61,7 @@ jQuery(document).ready(function() {
            jQuery('#sq_login').removeClass('sq_minloading');
            if (typeof response.token != 'undefined'){
              __token = response.token;
-             jQuery('#sq_blocklogin').remove();
-             //window.sq_main.load();
-             location.reload();
+             sq_reload(response);
            }else
                if(typeof response.error != 'undefined')
                    jQuery('#sq_blocklogin').find('.sq_error').html(response.error);
@@ -69,9 +77,7 @@ jQuery(document).ready(function() {
 
                         if (typeof response.token != 'undefined'){
                           __token = response.token;
-                          jQuery('#sq_blocklogin').remove();
-                          //window.sq_main.load();
-                          location.reload();
+                          sq_reload(response);
                         }else
                           if(typeof response.error != 'undefined')
                               jQuery('#sq_blocklogin').find('.sq_error').html(response.error);
@@ -115,8 +121,11 @@ function sq_autoLogin(){
        if (typeof response.token != 'undefined'){
          __token = response.token;
          jQuery('#sq_blocklogin').remove();
+         if (typeof response.success != 'undefined'){
+              jQuery('#sq_login_success').html(response.success);
+         }
          //window.sq_main.load();
-         location.reload();
+         sq_reload();
        }else{
            if(typeof response.info != 'undefined'){
                jQuery('#sq_autologin').hide();
@@ -166,6 +175,20 @@ function sq_autoLogin(){
     });
 }
 
+function sq_reload(response){
+    if (typeof response.success != 'undefined'){
+       jQuery('#sq_login_success').html(response.success);
+    }
+    if (jQuery('#content-html').length > 0){
+        jQuery('#sq_blocklogin').remove();
+        location.reload();
+    }else{
+        jQuery('#sq_blocklogin').html(jQuery('#sq_login_success'));
+        jQuery('#sq_blocklogin').append(jQuery('#sq_goto_newpost'));
+        jQuery('#sq_login_success').show();
+        jQuery('#sq_goto_newpost').show();
+    }
+}
 function checkEmail(email)
 {
     var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;

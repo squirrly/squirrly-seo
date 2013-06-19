@@ -13,7 +13,7 @@ class SQ_Blockrank extends SQ_BlockController {
        parent::hookHead();
        //Get the current post id from Wordpress
        $this->post_id = $sq_postID;
-       
+
         //Set some variables
         echo '<script type="text/javascript">
               var __sq_goto_allposts = "'.__('See it in \'All Posts\'', _PLUGIN_NAME_).'";
@@ -27,6 +27,9 @@ class SQ_Blockrank extends SQ_BlockController {
                    ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/js/sq_rank.js?ver='.SQ_VERSION_ID);
     }
 
+    function hookGetContent(){
+        echo '<div id="sq_rank_default_text">'.__('Publish the article to start Squirrly Article Rank', _PLUGIN_NAME_).'</div>';
+    }
 
 }
 ?>

@@ -110,6 +110,9 @@ class SQ_Post extends SQ_FrontController {
             if ($file = $this->model->upload_image($url)) {
                 if (!file_is_valid_image($file['file'])) continue;
 
+                //encode special characters
+                $file['url'] = str_replace($file['filename'],  urlencode($file['filename']),$file['url']);
+
                 $content = str_replace($url, $file['url'], $content);
 
                 $attach_id = wp_insert_attachment(array(

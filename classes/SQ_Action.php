@@ -15,7 +15,7 @@ class SQ_Action extends SQ_FrontController{
     */
     function hookInit(){
         /* Only if ajax */
-        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        if((isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') || strpos($_SERVER['PHP_SELF'], '/admin-ajax.php') !== false) {
             $this->actions = array();
             $this->getActions(((isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : ''))));
         }
@@ -29,6 +29,7 @@ class SQ_Action extends SQ_FrontController{
     function hookMenu(){
         /* Only if post */
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') return;
+        if (strpos($_SERVER['PHP_SELF'], '/admin-ajax.php') !== false) return;
 
         $this->actions = array();
         $this->getActions(((isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : ''))));
@@ -149,7 +150,7 @@ class SQ_Action extends SQ_FrontController{
 
        SQ_Tools::dump($url);
 
-       return SQ_Tools::sq_remote_get($url);
+       return SQ_Tools::sq_remote_get($url,array('timeout' => 60));
 
    }
 

@@ -28,7 +28,7 @@
             <ul class="sq_settings_affiliate_info">
                 <li>
                   <div>
-                      <span><?php _e('- Recurring 45% commission', _PLUGIN_NAME_); ?></span>
+                      <span><?php echo sprintf(__('- Recurring 45%s commission', _PLUGIN_NAME_),'%'); ?></span>
                   </div>
                 </li>
                 <li>

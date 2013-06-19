@@ -278,6 +278,7 @@
                     <span class="sq_settings_info"><?php echo ((defined('SQ_MESSAGE_FAVICON')) ? SQ_MESSAGE_FAVICON : '')?></span>
                </p>
             </div>
+            <span class="sq_settings_info"><?php echo sprintf(__('You can use %shttp://convertico.com/%s to convert your photo to icon and upload it here after that.', _PLUGIN_NAME_),'<a href="http://convertico.com/" target="_blank">','</a>'); ?></span>
             <span class="sq_settings_info"><?php _e('If you don\'t see the new icon in your browser, empty the browser cache and refresh the page.', _PLUGIN_NAME_); ?></span>
           </fieldset>
 

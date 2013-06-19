@@ -50,7 +50,7 @@ To suggest them, it checks how much the keyword is discussed on Twitter (we have
 
 * "Great SEO info at a click"
 
-You can read reviews from Internet Marketing experts on http://www.squirrly.co/reviews-pag68312.html
+<strong>You can read reviews from Internet Marketing experts on http://www.squirrly.co/reviews-pag68312.html</strong>
 
 [youtube http://www.youtube.com/watch?v=HYTcdLXNhhw]
 
@@ -268,8 +268,8 @@ used our SEO techniques, and they have gotten lots of hits from search engines d
 - Facebook META Code support
 - Automatically adds the correct seo title in the home page
 - Automatically adds the correct seo description and seo keywords in all pages
-- Automatically adds canonical link in home page
-- Automatically adds the XML Sitemap for search engines: http://igamify.co/sitemap.xml
+- Automatically adds canonical link in all pages
+- Automatically adds the XML Sitemap for search engines: /sitemap.xml
 - Automatically PING the XML Sitemap in google blogs
 - Automatically adds the required METAs for home page (icon, author, language, dc publisher, etc.)
 - Automatically adds the favicon and the icon for Apple devices.
@@ -288,11 +288,11 @@ used our SEO techniques, and they have gotten lots of hits from search engines d
 
 And the best ones that we have (and the others don't):
 
- - *Keyword research*: find the perfect keywords for your articles
- - *Inspiration box*: pulls images, tweets, wikis and blogs, so that you can inspire yourself very fast on what to write in your article.
- - *Read industry-related blogs*, straight from your wordpress. The KeenSkim filter that we use, will mark the relevant content, so that you can reduce 60% of your reading time and start writing your next great article.
- - *SEO Live Assistant*: Checks your SEO in real time. Before you click the Post button, you know if your article is perfectly optimized or not.
- - *SEO Rank: A great tool to track your progress on each article. You get Traffic, Social, Inbound-Links and Search engines Rank information instantly.
+ - *Keyword research*: find the keywords that are easier to rank for
+ - *SEO Live Assistant*: Your Wordpress gives you SEO adivce as you type your article
+ - *Inspiration box*: get images you can use for free, tweets you can quote and get up to date with latest news about your subject
+ - *SEO Rank*: Measure and Monitor the impact of SEO and Social Signals for each of your articles
 
 = Where can I enter the title and page description? =
-If you click the Squirrly tab in your dashboard, go to the "First Page Optimization" section and click Change it. You can enter custom Title, Description and Keywords.
+If you click the Squirrly tab in your dashboard, go to the "First Page Optimization" section and switch to Custom. You can enter custom Title, Description and Keywords.
+If you are an advanced user then in each post/page edit you can customize the title and description from snippet section

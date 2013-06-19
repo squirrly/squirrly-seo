@@ -646,7 +646,7 @@ class SQ_Tools extends SQ_FrontController {
                         'description' => 240,
                         'url' => 45);
 
-        $content = self::sq_remote_get($url,array('timeout' => 5));
+        $content = self::sq_remote_get($url,array('timeout' => 10));
 
         //echo '<pre>'.  htmlentities(print_r($content,true)).'</pre>';
         $title_regex = "/<title[^>]*>([^<>]*)<\/title>/si";

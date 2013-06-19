@@ -202,43 +202,45 @@ class SQ_PostsList extends SQ_FrontController {
      * @return string
      */
     public function action(){
+
           parent::action();
 
           switch (SQ_Tools::getValue('action')){
             case 'sq_posts_rank':
-                if (!is_array(SQ_Tools::getValue('posts'))) return;
 
-                $posts = SQ_Tools::getValue('posts');
-                $args['posts'] = join(',',$posts);
+                if (is_array(SQ_Tools::getValue('posts'))){
+                    $posts = SQ_Tools::getValue('posts');
+                    $args['posts'] = join(',',$posts);
 
-                //Send totals to api
-                $args['visit'] = '';
-                $args['unique'] = '';
-                $args['avgmonth'] = '';
+                    //Send totals to api
+                    $args['visit'] = '';
+                    $args['unique'] = '';
+                    $args['avgmonth'] = '';
 
-                //$args['rank'] = '';
-                foreach ($posts as $post_id){
-                    $this->model->post_id = (int)$post_id;
+                    //$args['rank'] = '';
+                    foreach ($posts as $post_id){
+                        $this->model->post_id = (int)$post_id;
 
-                    $traffic = array();
-                    $traffic = $this->model->getTrafficProgress();
-                    if (is_array($traffic)){
-                        $args['visit'] .= (($args['visit'] <> '') ? ',' : '') . (int)$traffic['month']['count'];
-                        $args['unique'] .= (($args['unique'] <> '') ? ',' : '') . (int)$traffic['month']['unique'];
-                        $args['avgmonth'] .= (($args['avgmonth'] <> '') ? ',' : '') . (int)$traffic['month']['average']['count'];
+                        $traffic = array();
+                        $traffic = $this->model->getTrafficProgress();
+                        if (is_array($traffic)){
+                            $args['visit'] .= (($args['visit'] <> '') ? ',' : '') . (int)$traffic['month']['count'];
+                            $args['unique'] .= (($args['unique'] <> '') ? ',' : '') . (int)$traffic['month']['unique'];
+                            $args['avgmonth'] .= (($args['avgmonth'] <> '') ? ',' : '') . (int)$traffic['month']['average']['count'];
+                        }
+                        //$args['average'] = (int)$traffic['global']['average']['count'];
                     }
-                    //$args['average'] = (int)$traffic['global']['average']['count'];
+                    $global = array();
+                    $global = $this->model->getGlobalAverage();
+                    $args['average'] = $global['count'];
+                    //////////////////////////////
+                    SQ_Tools::dump($args);
+                    $response = SQ_Action::apiCall('sq/pack/total',$args);
+                    //echo 'responce'.$response;
+                    $return = json_decode($response);
                 }
-                $global = array();
-                $global = $this->model->getGlobalAverage();
-                $args['average'] = $global['count'];
-                //////////////////////////////
-                SQ_Tools::dump($args);
-                $response = SQ_Action::apiCall('sq/pack/total',$args);
-                //echo 'responce'.$response;
-                $return = json_decode($response);
 
-                if (!is_object($return))
+                if (!isset($return) || !is_object($return))
                 $return = (object) NULL;
 
                 SQ_Tools::setHeader('json');
