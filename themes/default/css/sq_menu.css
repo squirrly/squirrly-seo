@@ -523,8 +523,9 @@
         float: none;
 
     }
-    #sq_settings_body #sq_settings_left fieldset{
-        margin: 10px auto;
+    #sq_settings_body #sq_settings_left fieldset,
+    #sq_settings_body #sq_settings_right fieldset{
+        margin: 10px auto 20px auto;
     }
 }
 /************************** SWITCH ******************************/
