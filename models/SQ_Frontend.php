@@ -33,7 +33,7 @@ class Model_SQ_Frontend {
      * @return string
      */
     function setStart(){
-        return "\n\n<!-- Squirrly Wordpress SEO Plugin -->\n";
+        return "\n\n<!-- Squirrly Wordpress SEO Plugin ".SQ_VERSION.", visit: http://www.squirrly.co/ -->\n";
     }
 
     /**
