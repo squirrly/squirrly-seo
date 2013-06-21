@@ -114,6 +114,11 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 * Added affiliate option and images in Squirrly SEO Tab
 * Validate remote images on save post to prevent bad images integration
 * Compatible with Twitter search 1.1
+* Changed the Sign-up messages
+* Changed the timeout for remote API requests
+* Fixed Squirrly SEO loading loop when all posts are not public in All posts
+* Add default message in SEO Article Rank when adding a new Post/Page
+* Added support options in Squirrly SEO Settings
 
 = 2.0.3 =
 * Added attributes informations for copyright free images
@@ -288,7 +293,7 @@ used our SEO techniques, and they have gotten lots of hits from search engines d
 
 And the best ones that we have (and the others don't):
 
- - *Keyword research*: find the keywords that are easier to rank for
+ - *Keyword research and Analysis*: find the keywords that are easier to rank for
  - *SEO Live Assistant*: Your Wordpress gives you SEO adivce as you type your article
  - *Inspiration box*: get images you can use for free, tweets you can quote and get up to date with latest news about your subject
  - *SEO Rank*: Measure and Monitor the impact of SEO and Social Signals for each of your articles

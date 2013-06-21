@@ -1,5 +1,7 @@
 <div id="sq_settings" >
+    <?php SQ_ObjController::getBlock('SQ_BlockSupport')->init();?>
     <form id="sq_settings_form" name="settings" action="" method="post" enctype="multipart/form-data">
+     <div id="sq_settings_title" ><?php _e('Join Squirrly today!', _PLUGIN_NAME_); ?> </div>
      <div id="sq_settings_body">
         <?php
           if (SQ_Tools::$options['sq_api'] == ''){
@@ -81,6 +83,12 @@
         </fieldset>
        <?php }?>
        </div>
+        <div id="sq_settings_title" style="text-align: right">
+         <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('See Squirrly in action', _PLUGIN_NAME_)?></a>
+         <input id="sq_goto_dashboard" type="button" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> value="<?php _e('See dashboard', _PLUGIN_NAME_)?>" />
+         <input id="sq_goto_settings" type="button" value="<?php _e('Go to settings', _PLUGIN_NAME_)?> &raquo;" />
+       </div>
+
         <input type="hidden" name="action" value="sq_settings_affiliate" />
         <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(_SQ_NONCE_ID_); ?>" />
     </form>

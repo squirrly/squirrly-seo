@@ -4,13 +4,6 @@
  */
 class SQ_BlockHelp extends SQ_BlockController {
 
-
-    function hookHead() {
-       parent::hookHead();
-       SQ_ObjController::getController('SQ_DisplayController', false)
-                  ->loadMedia('sq_menu.css?ver='.SQ_VERSION_ID);
-    }
-
     function action(){
         parent::action();
         switch (SQ_Tools::getValue('action')){

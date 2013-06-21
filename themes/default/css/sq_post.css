@@ -169,21 +169,31 @@
 }
 
 #sq_blocklogin #sq_signin{
-    color: blue;
+    color: #11a5c1;
     margin: 5px;
     cursor: pointer;
 }
 /*******************************************/
 #sq_options{
+    float: right;
     position: relative;
-    clear: both;
     height: 40px;
+    margin: 0;
+    padding: 0;
+    z-index: 1003;
+}
+#postsquirrly #sq_options{
+    float: none;
+}
+
+#sq_options > ul{
+    margin: 10px 0;
 }
 
 #sq_options > ul > li{
     position: relative;
     width: 115px;
-    float: left;
+    float: right;
 
     color: #444444;
     font-family: Segoe UI;
@@ -339,3 +349,38 @@
     cursor: pointer;
     z-index: 2;
 }
+
+/************************** FACEBOOK *********************************/
+#sq_options_feedback .sq_options_feedback_popup li{
+    clear: both;
+}
+
+#sq_facebook_b {
+    padding: 6px 0;
+    clear: both;
+}
+
+#sq_facebook_b > span{
+    display: block;
+    float: left;
+
+    font-weight: bold;
+    color: darkgreen;
+}
+#sq_facebook_b .sq_facebook_title{
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px auto;
+}
+#sq_facebook_b .sq_facebook_image{
+    width: 100px;
+    margin: 3px 7px 5px 24px;
+}
+#sq_facebook_b .sq_facebook_image img{
+    width: 100px;
+}
+#sq_facebook_b .sq_facebook_frame{
+    margin-top: 35px;
+}
+/*********************************************************************/

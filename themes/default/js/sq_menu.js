@@ -4,6 +4,16 @@ jQuery(document).ready(function() {
         location.href = "?page=sq_dashboard";
     });
 
+    jQuery('#sq_beginner_on').bind('click',function(){
+        jQuery('#sq_beginner_option_details').show();
+        jQuery('#sq_advanced_option_details').hide();
+    });
+
+    jQuery('#sq_beginner_off').bind('click',function(){
+        jQuery('#sq_beginner_option_details').hide();
+        jQuery('#sq_advanced_option_details').show();
+    });
+
     jQuery("#sq_goto_settings").bind('click',function() {
         location.href = "?page=squirrly";
     });

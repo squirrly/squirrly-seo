@@ -1,5 +1,4 @@
 jQuery(document).ready(function() {
-
     jQuery('#sq_email').bind('keypress', function(event) {
 
         if (event.keyCode == 13)
@@ -183,6 +182,7 @@ function sq_reload(response){
         jQuery('#sq_blocklogin').remove();
         location.reload();
     }else{
+        jQuery('#sq_blocklogin').addClass('sq_login_done');
         jQuery('#sq_blocklogin').html(jQuery('#sq_login_success'));
         jQuery('#sq_blocklogin').append(jQuery('#sq_goto_newpost'));
         jQuery('#sq_login_success').show();

@@ -1,14 +1,15 @@
 #sq_settings {
+    font-family: Arial, sans-serif;
     position: relative;
 }
 
 #sq_settings #sq_settings_title{
     font-size: 19px;
     font-weight: normal;
-    line-height: 36px;
+    line-height: 50px;
     color: #333;
     margin: 0 15px 3px 0;
-    padding-bottom: 5px;
+    padding-bottom: 6px 0;
     height: auto;
     border-bottom: 1px solid #CCC;
     box-shadow: 0px 3px 12px -8px black;
@@ -38,7 +39,7 @@
     background-color: #FFF;
     line-height: 35px;
     color: #504310;
-    font-size: 18px;
+    font-size: 15px;
     text-shadow: 0.1em 0.1em #FFFF52;
     background: #FFD424;
     cursor: pointer;
@@ -47,16 +48,19 @@
     -webkit-border-radius: 4px;
     border-radius: 4px;
     font-weight: bold;
-    padding: 5px 10px;
-    width: 300px;
+    padding: 0px 10px;
+    margin: 6px 0 5px 6px;
+    width: 250px;
     text-align: center;
     text-decoration: none;
 }
 
 #sq_settings #sq_goto_newpost{
     display: block;
+    font-size: 18px;
     height: 20px;
     margin: 6px auto;
+    padding: 5px 10px;
     height: 35px;
 
 }
@@ -77,10 +81,12 @@
 }
 #sq_settings #sq_login_success li{
     text-align: left;
-    font-size: 12px;
+    font-size: 13px;
     padding: 10px;
     margin: 0 7px;
 }
+
+
 /**************************** LOGIN **********************************/
 #sq_settings_login #sq_blocklogin label{
     width: 80px;
@@ -88,20 +94,37 @@
 #sq_settings_login .sq_box{
     max-width: 540px;
     min-width: 500px;
-    border: 1px solid #8E8E8E;
+    background: #f0f0f0 url('../img/settings_login.jpg') 0px 0px  no-repeat;
+    border: 1px solid #ddd;
     font-size: 1.1em;
     margin: 20px auto;
     padding: 1em;
     font-family: Arial,Verdana,Helvetica,sans-serif;
     box-shadow: 0 5px 9px -5px #222;
     text-align: center;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
+#sq_settings_login .sq_login_done{
+    background: #f0f0f0 url('../img/settings_login_done.jpg') 0px 0px  no-repeat;
+}
+
+
 #sq_settings_login .sq_box .sq_header{
-    color: #1d9ed4 !important;
-    font-size: 26px !important;
+    color: #11a5c1;
+    font-size: 28px;
+    font-weight: bold;
     margin: 0;
     padding: 5px 0;
+    line-height: 29px;
+    text-shadow: 1px 2px white;
+}
+
+#sq_settings_login .sq_login_done .sq_header{
+    font-size: 24px;
 }
 
 #sq_settings_login #sq_blocklogin ul li{
@@ -168,6 +191,7 @@
 /****************************HOW TO **********************************/
 
 #sq_settings #sq_settings_howto{
+    font-family: 'Segoe UI', Arial, sans-serif;
     position: relative;
     background: #ED6612 url('../img/settings_howto.jpg') 24px 13px  no-repeat;
 
@@ -183,7 +207,7 @@
 #sq_settings #sq_settings_howto #sq_settings_howto_title{
     display: block;
     width: 100%;
-    font-size: 31px;
+    font-size: 28px;
     font-weight: bold;
     line-height: 39px;
     color: #11A5C1;
@@ -340,12 +364,18 @@
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+
+    box-shadow: 0 5px 9px -6px #222;
 }
 
 
 
 #sq_settings_body #sq_settings_left fieldset{
-    margin: 10px;
+    margin: 10px 10px 22px 10px;
+}
+
+#sq_settings_body #sq_settings_right fieldset{
+    margin: 10px 0px 22px 0px;
 }
 
 #sq_settings_body fieldset legend{
@@ -511,6 +541,7 @@
     vertical-align: middle;
     line-height: 12px;
     font-size: 12px;
+    text-shadow: 1px 1px #FFF;
 }
 
 .sq_switch {
@@ -631,6 +662,8 @@
     font-size: 11px !important;
 }
 
+/**************************** DASHBOARD  **********************************/
+
 .sq_option_content .sq_beginner_user {
     float: none;
     margin: 0 auto;
@@ -659,4 +692,24 @@
 .sq_option_content .sq_beginner_user  .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
   /* Note: left: 50% doesn't transition in WebKit */
   left: 103px;
+}
+
+#sq_settings .sq_option_details .sq_header{
+    text-align: left;
+    font-size: 22px;;
+    padding: 14px 0;
+    margin: 20px auto 8px auto;
+    color: #008000;
+}
+#sq_settings .sq_option_details ul{
+    padding: 0;
+    margin: 5px;
+}
+#sq_settings .sq_option_details li{
+    color: #333;
+    list-style: circle;
+    text-align: left;
+    font-size: 13px;
+    padding: 10px 0;
+    margin: 0 5px 0 35px;
 }

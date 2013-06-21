@@ -4,12 +4,8 @@
 		<name>SQ_Post</name>
 		<description>Post Page</description>
 		<actions>
-
-                    <action>sq_feedback</action>
-                    <action>sq_support</action>
-                    <action>sq_save_meta</action>
-
-                </actions>
+                  <action>sq_save_meta</action>
+              </actions>
 		<active>1</active>
 		<path>controllers</path>
 	</block>
@@ -49,6 +45,19 @@
                 <actions>
                     <action>sq_howto</action>
                 </actions>
+		<active>1</active>
+		<path>core</path>
+	</block>
+       <block>
+		<name>SQ_BlockSupport</name>
+		<description>The support icons</description>
+              <controllers>
+			<controller>SQ_Post</controller>
+		</controllers>
+              <actions>
+                    <action>sq_feedback</action>
+                    <action>sq_support</action>
+              </actions>
 		<active>1</active>
 		<path>core</path>
 	</block>

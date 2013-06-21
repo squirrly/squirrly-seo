@@ -102,6 +102,7 @@ class SQ_Menu extends SQ_FrontController {
 
             /* Get the options from Database*/
             $this->options = SQ_Tools::$options;
+            SQ_ObjController::getBlock('SQ_BlockSupport')->init();
             parent::init();
 
 
