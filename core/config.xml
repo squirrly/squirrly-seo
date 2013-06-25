@@ -24,9 +24,7 @@
 		<name>SQ_Menu</name>
 		<description>Setting page</description>
 		<actions>
-                    <action>sq_beginner_set</action>
                     <action>sq_settings_update</action>
-
                     <action>sq_get_snippet</action>
 
                     <action>sq_fixautoseo</action>
@@ -38,6 +36,15 @@
                 </actions>
 		<active>1</active>
 		<path>controllers</path>
+	</block>
+       <block>
+		<name>SQ_BlockDashboard</name>
+		<description></description>
+                <actions>
+                    <action>sq_beginner_set</action>
+                </actions>
+		<active>1</active>
+		<path>core</path>
 	</block>
        <block>
 		<name>SQ_BlockHelp</name>

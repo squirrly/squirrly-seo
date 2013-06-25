@@ -120,10 +120,6 @@ class SQ_Menu extends SQ_FrontController {
 
           switch (SQ_Tools::getValue('action')){
 
-            case 'sq_beginner_set':
-                SQ_Tools::saveOptions('sq_beginner_user', (int)SQ_Tools::getValue('sq_beginner_user'));
-                break;
-
             case 'sq_settings_update':
                 if(SQ_Tools::getValue('sq_use') == '') return;
 

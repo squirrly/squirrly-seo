@@ -1,6 +1,7 @@
 <div id="sq_settings" >
     <?php SQ_ObjController::getBlock('SQ_BlockSupport')->init(); ?>
     <?php  if ($view->options['sq_api'] <> ''){ ?>
+    <form id="sq_settings_dashboard_form" name="settings" action="" method="post" enctype="multipart/form-data">
     <div id="sq_settings_title" ><?php _e('Squirrly dashboard', _PLUGIN_NAME_); ?> </div>
     <div id="sq_settings_body">
         <fieldset>
@@ -54,5 +55,6 @@
         </div>
 
     </div>
+    </form>
     <?php }?>
 </div>

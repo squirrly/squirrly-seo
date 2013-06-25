@@ -43,14 +43,14 @@ jQuery(document).ready(function() {
     });
 
     jQuery('#sq_settings').find('input[name=sq_beginner_user]').bind('click',function() {
-        jQuery.getJSON(
+         jQuery.getJSON(
             sqQuery.ajaxurl,
             {
                 action: 'sq_beginner_set',
-                sq_beginner_user: jQuery(this).val(),
+                sq_beginner_user: jQuery('#sq_settings').find('input[name=sq_beginner_user]:checked').val(),
                 nonce: sqQuery.nonce
             }
-        ).success(function(response) {
+        ).success(function() {
             sq_showSaved();
         });
     });

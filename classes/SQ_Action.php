@@ -14,6 +14,7 @@ class SQ_Action extends SQ_FrontController{
     * @return void
     */
     function hookInit(){
+
         /* Only if ajax */
         if((isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') || strpos($_SERVER['PHP_SELF'], '/admin-ajax.php') !== false) {
             $this->actions = array();
@@ -99,7 +100,7 @@ class SQ_Action extends SQ_FrontController{
                    }
 
 
-           }
+           } SQ_Tools::dump($this->actions);
 
            /* add the actions in WP */
            foreach ($this->actions as $actions){

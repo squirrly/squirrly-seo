@@ -10,22 +10,18 @@ Squirrly SEO Plugin helps you write excellent SEO articles for your WordPress an
 == Description ==
 <strong>The three things you should look for in a seo plugin:</strong>
 
-1) to increase the chances of being found on search engines, by writting better optimized content
+1) to increase the chances of <strong>being found on search engines</strong>, by writting better optimized content
 
-2) to help you measure the improvement of your site, in terms of ranking, traffic, links and Social Signals.
+2) to help you <strong>measure the improvement</strong> of your site, in terms of ranking, traffic, links and Social Signals.
 
-3) to get great support
+3) to get <strong>great support</strong>
 
 <strong>SEO Plugin by Squirrly helps you write rich content that will be found by potential customers on search engines, research and analyze keywords that will give you a better chance of being found on google, it helps you measure the social signals that come to your site from various social networks and with one click you can check the SEO improvement of each article.</strong>
 
 
-All of these help you get Excellent SEO on all your articles and measure the success of your site.
+All of these help you get <strong>Excellent SEO on all your articles and measure the success of your site</strong>.
 
-"Wow ,I've been using your tool for a week now and one of my blog ranked no1 out of a million for its key word... amazing" - Pierre Perpal
-
-Pierre worked hard to get that, and even though success stories keep coming in, they don't happen for all of our users. SEO Plugin by Squirrly does not guarantee that you will succeed.
-
-It's just a tool that makes it possible to reach such results. It's a door opener.
+<em>"Wow ,I've been using your tool for a week now and one of my blog ranked no1 out of a million for its key word... amazing"</em> - <strong>Pierre Perpal</strong>. Pierre worked hard to get that, and even though success stories keep coming in, they don't happen for all of our users. SEO Plugin by Squirrly does not guarantee that you will succeed. It's just a tool that makes it possible to reach such results. It's a door opener.
 
 <strong>How does Squirrly help you boost your ranking in search engines?</strong>
 
@@ -42,13 +38,13 @@ To suggest them, it checks how much the keyword is discussed on Twitter (we have
 <strong>The SEO analytics</strong> (that we call Article Rank), helps you measure the improvement and impact of each article you've written on your blog using Squirrly.
 
 <h3>Reviews</h3>
-* "You can be confident that without ever leaving your Add New Blog page you have a strong keyword, good and current content, and your post will be 100% optimized for the search engines." - Jason Fox Marketing
+* <em>"You can be confident that without ever leaving your Add New Blog page you have a strong keyword, good and current content, and your post will be 100% optimized for the search engines."</em> - <strong>Jason Fox Marketing</strong>
 
-* "Features that exceed the stereotypical plugin" - Robert, Yieldkit
+* <em>"Features that exceed the stereotypical plugin"</em> - <strong>Robert, Yieldkit</strong>
 
-* "It's amazing! seeing a huge boost in traffic"
+* <em>"It's amazing! seeing a huge boost in traffic"</em>
 
-* "Great SEO info at a click"
+* <em>"Great SEO info at a click"</em>
 
 <strong>You can read reviews from Internet Marketing experts on http://www.squirrly.co/reviews-pag68312.html</strong>
 

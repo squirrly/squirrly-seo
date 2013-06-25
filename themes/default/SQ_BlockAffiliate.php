@@ -1,6 +1,6 @@
 <div id="sq_settings" >
     <?php SQ_ObjController::getBlock('SQ_BlockSupport')->init();?>
-    <form id="sq_settings_form" name="settings" action="" method="post" enctype="multipart/form-data">
+    <form id="sq_settings_affiliate_form" name="settings" action="" method="post" enctype="multipart/form-data">
      <div id="sq_settings_title" ><?php _e('Join Squirrly today!', _PLUGIN_NAME_); ?> </div>
      <div id="sq_settings_body">
         <?php
