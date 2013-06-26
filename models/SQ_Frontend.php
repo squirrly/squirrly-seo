@@ -88,11 +88,8 @@ class Model_SQ_Frontend {
      * @return string
      */
     private function setMetaInBuffer($buffer) {
-
         global $wp_query;
-        $options = SQ_Tools::$options;
 
-        //SQ_Tools::dump($buffer);
         $title = $this->getCustomTitle();
         if (isset ($title) && !empty($title) && $title <> ''){
             $buffer = @preg_replace('/<title[^<>]*>([^<>]*)<\/title>/si',sprintf("<title>%s</title>" , $title),$buffer, 1, $count);
@@ -100,21 +97,21 @@ class Model_SQ_Frontend {
                $buffer .= sprintf("<title>%s</title>" , $title) . "\n" ;
         }
 
-        if($options['sq_auto_description'] == 1){
-            $description = $this->setCustomDescription();
-            if (isset ($description) && !empty($description) && $description <> ''){
-                    $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$description, $buffer, 1, $count);
-                    if ($count == 0)
-                       $buffer .= $description . "\n" ;
-            }
 
-            $keyword = $this->setCustomKeyword();
-            if (isset ($keyword) && !empty($keyword) && $keyword <> ''){
-                    $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$keyword, $buffer, 1, $count);
-                    if ($count == 0)
-                       $buffer .= $keyword . "\n" ;
-            }
+        $description = $this->setCustomDescription();
+        if (isset ($description) && !empty($description) && $description <> ''){
+            $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$description, $buffer, 1, $count);
+            if ($count == 0)
+               $buffer .= $description . "\n" ;
         }
+
+        $keyword = $this->setCustomKeyword();
+        if (isset ($keyword) && !empty($keyword) && $keyword <> ''){
+                $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$keyword, $buffer, 1, $count);
+                if ($count == 0)
+                   $buffer .= $keyword . "\n" ;
+        }
+
         return $buffer;
     }
 
@@ -131,7 +128,6 @@ class Model_SQ_Frontend {
         global $wp_query;
         $ret = '';
         $options = SQ_Tools::$options;
-        SQ_Tools::dump($wp_query);
 
         if (!function_exists('preg_replace')) return $ret;
 
@@ -285,33 +281,34 @@ class Model_SQ_Frontend {
         $title = '';
         $optitle = '';
         $sep = '|';
-        $homepage = (is_home() || ($wp_query->query_vars['name'] == '' && !is_preview()));
 
-        if ($this->checkHomePosts()){
+        //If its a home page and home page title is activated
+        if ($this->isHomePage() && $this->checkHomePosts() && SQ_Tools::$options['sq_auto_title'] == 1){ //for homepage
             $title = $this->clearTitle( $this->grabTitleFromPost() );
             if (get_bloginfo('name') <> '' )
                 $title .= " ".$sep." " . get_bloginfo('name');
-
-        }elseif(is_single() || is_page()){
+        }
+        //If its a post/page
+        if(!$this->isHomePage() && (is_single() || is_page())){
             $post = $wp_query->get_queried_object();
             $title = $this->clearTitle( $this->grabTitleFromPost($post->ID) );
-
         }
 
+        //If title then clear it
         if ($title <> ''){
             $title = $this->clearTitle($title);
             $title = $this->truncate($title, $this->min_title_length, $this->max_title_length);
         }
 
         /* Check if is a predefined Title */
-        if($homepage &&
+        if($this->isHomePage() &&
+                SQ_Tools::$options['sq_auto_title'] == 1 &&
                 SQ_Tools::$options['sq_auto_seo'] == 0 &&
                 SQ_Tools::$options['sq_fp_title'] <> '' &&
                 (!isset($post) || !$this->getAdvancedMeta($post->ID, 'title'))){
             $title = $this->clearTitle( SQ_Tools::$options['sq_fp_title'] );
         }
 
-        //SQ_Tools::dump($title);
         return $title;
     }
 
@@ -356,27 +353,36 @@ class Model_SQ_Frontend {
      */
     private function setCustomDescription() {
         global $wp_query;
-        $description_min_lng = 10;
+        $sep = '|';
         $description = '';
 
-        if(is_home() || is_single() || is_page() || $this->checkPostsPage()) {
-            if(is_home() &&
-                    SQ_Tools::$options['sq_auto_seo'] == 0 &&
-                    SQ_Tools::$options['sq_fp_description'] <> '' &&
-                    (!isset($post) || !$this->getAdvancedMeta($post->ID, 'description'))){
-                $description = strip_tags( SQ_Tools::$options['sq_fp_description'] );
+        if ($this->isHomePage() && $this->checkHomePosts() && SQ_Tools::$options['sq_auto_description'] == 1){ //for homepage
+            $description = $this->grabDescriptionFromPost();
+        }
+        //If its a post/page
+        if(!$this->isHomePage() && (is_single() || is_page() || $this->checkPostsPage())){
+            $description = $this->grabDescriptionFromPost();
+        }
 
-            }else{
-                $description = $this->grabDescriptionFromPost();
-                if ($description <> '' && strlen($description) < $description_min_lng) $description = '';
+        if(is_category()) {
+            $category = get_category(get_query_var('cat'),false);
+            $description = SQ_Tools::i18n($category->category_description);
+            if($description == '') $description = SQ_Tools::i18n($category->cat_name);
+            if($description == '')  $description = $this->grabDescriptionFromPost();
 
-            }
-        }elseif(is_category()) {
-            $description = SQ_Tools::i18n(category_description());
-            if($description == '')
-                $description = $this->grabDescriptionFromPost();
+            if ($this->isHomePage() && $description <> '')
+                if (get_bloginfo('name') <> '' )
+                  $description .= " ".$sep." " . get_bloginfo('name');
+        }
 
-            if ($description <> '' && strlen($description) < $description_min_lng) $description = '';
+        /* Check if is a predefined Title */
+         if($this->isHomePage() &&
+                SQ_Tools::$options['sq_auto_description'] == 1 &&
+                SQ_Tools::$options['sq_auto_seo'] == 0 &&
+                SQ_Tools::$options['sq_fp_description'] <> '' &&
+                (!isset($post) || !$this->getAdvancedMeta($post->ID, 'description'))){
+
+            $description = strip_tags( SQ_Tools::$options['sq_fp_description'] );
         }
 
         $description = (($description <> '') ? $description : $this->title);
@@ -384,16 +390,17 @@ class Model_SQ_Frontend {
             $this->description = $this->clearDescription($description);
 
             if ($this->description <> ''){ //prevent blank description
-                return sprintf("<meta name=\"description\" content=\"%s\" />" , $this->description ) ;
+                $description = sprintf("<meta name=\"description\" content=\"%s\" />" , $this->description ) ;
             }else{
-                return '';
+                $description = '';
             }
         }
-        return '';
+
+        return $description;
+
     }
 
     private function clearDescription ( $description ){
-
         $description = str_replace(array("&nbsp;","  ","\r","\n"), array(' ','','',' '), $description);
         $search = array ("'<script[^>]*?>.*?<\/script>'si",	// strip out javascript
                       "/<form.*?<\/form>/si",
@@ -420,7 +427,7 @@ class Model_SQ_Frontend {
         if($this->checkPostsPage()){
             $post = $wp_query->get_queried_object();
             $keywords = stripcslashes(SQ_Tools::i18n($this->grabKeywordsFromPost($post->ID)));
-        }elseif(is_single()){
+        }elseif(is_single() || is_page()){
             $post = $wp_query->get_queried_object();
             $keywords = stripcslashes(SQ_Tools::i18n($this->grabKeywordsFromPost($post->ID)));
         }else {
@@ -428,18 +435,21 @@ class Model_SQ_Frontend {
         }
 
         /* Check if is a predefined Keyword */
-        if((is_home() && SQ_Tools::$options['sq_auto_seo'] <> 1 && SQ_Tools::$options['sq_fp_keywords'] <> '') || $keywords == ''){
-            $keywords = strip_tags( SQ_Tools::$options['sq_fp_keywords'] );
-        }
+        if (SQ_Tools::$options['sq_auto_description'] == 1) //
+            if(($this->isHomePage() &&
+                    SQ_Tools::$options['sq_auto_seo'] <> 1 &&
+                    SQ_Tools::$options['sq_fp_keywords'] <> '') || $keywords == ''){
+                $keywords = strip_tags( SQ_Tools::$options['sq_fp_keywords'] );
+            }
 
         if (isset ($keywords) && !empty($keywords) && !(is_home() && is_paged())) {
             $keywords = str_replace('"','',$keywords);
-
             return sprintf("<meta name=\"keywords\" content=\"%s\" />" , $keywords) ;
         }
 
         return false;
     }
+
     /**
      * Get the copyright meta
      *
@@ -1034,6 +1044,16 @@ class Model_SQ_Frontend {
     }
 
     /**
+     * Check if is the homepage
+     *
+     * @return bool
+     */
+    private function isHomePage() {
+        global $wp_query;
+        return (is_home() || (isset($wp_query->query) && count($wp_query->query) == 0 && !is_preview()));
+    }
+
+    /**
      * Check if page is shown in front
      *
      * @return bool
@@ -1209,7 +1229,6 @@ class Model_SQ_Frontend {
             $row = $wpdb->get_row($sql);
 
             if($row && $row->meta_value <> ''){
-                //SQ_Tools::dump($meta,$field,(int)$post_id,$row->meta_value);
                 return $row->meta_value;
             }
         }

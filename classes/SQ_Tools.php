@@ -298,11 +298,16 @@ class SQ_Tools extends SQ_FrontController {
 
             curl_close($ch);
 
+            self::dump('CURL',$url, $cookie_string, $response);//output debug
             return $response;
         }else{
             $response = wp_remote_get($url, array('timeout'=>$timeout, 'cookies' => $cookies ));
-            return self::cleanResponce(wp_remote_retrieve_body($response));
+            $response = self::cleanResponce(wp_remote_retrieve_body($response));
+            self::dump('CURL',$url, $cookie_string, $response);//output debug
+
+            return $response;
         }
+
     }
 
     /**
@@ -648,7 +653,6 @@ class SQ_Tools extends SQ_FrontController {
 
         $content = self::sq_remote_get($url,array('timeout' => 10));
 
-        //echo '<pre>'.  htmlentities(print_r($content,true)).'</pre>';
         $title_regex = "/<title[^>]*>([^<>]*)<\/title>/si";
         preg_match($title_regex, $content, $title);
 

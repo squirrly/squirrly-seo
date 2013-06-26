@@ -25,7 +25,7 @@ class SQ_Ranking extends SQ_FrontController {
     public function processRanking(&$return, $post_id){
        $return->global_rank = $this->findTodayRank($post_id, 'global_rank');
        $saved_keyword = $this->findTodayRank($post_id, 'keyword');
-       SQ_Tools::dump($return);
+
        if ($return->global_rank == -1 || $return->seo->keyword <> $saved_keyword){
         //   echo "global_rank: " .$return->global_rank;
         $return->global_rank = $this->getGoogleRank($post_id, $return->seo->keyword);
@@ -56,7 +56,7 @@ class SQ_Ranking extends SQ_FrontController {
      */
     public function checkIndexed(&$return, $post_id){
         $return->indexed = $this->findHistoryIndexed($post_id);
-        //SQ_Tools::dump($return->indexed);
+
         //If is indexed search is a keyword is indexed
         if ($return->indexed == 1){
             $this->processRanking($return, $post_id);
@@ -226,7 +226,7 @@ class SQ_Ranking extends SQ_FrontController {
        //Grab the remote informations from google
        $response = SQ_Tools::sq_remote_get($url, array('timeout' => 10));
        $response = utf8_decode($response);
-       SQ_Tools::dump($url, $response);
+
        //echo ;
        //Check the values for block IP
        if (strpos($response,"computer virus or spyware application") !== false ||
@@ -342,7 +342,7 @@ class SQ_Ranking extends SQ_FrontController {
                 FROM `".$this->analytics_table."` analytics
                 WHERE analytics.`post_id`=".(int)$post_id." AND DATE(analytics.`date`)='".date('Y-m-d', $this->now)."'";
         $row = $wpdb->get_row($sql);
-        SQ_Tools::dump($sql);
+
         if($row){
             $sql = "UPDATE `".$this->analytics_table."` analytics
                     SET analytics.`indexed`='1'

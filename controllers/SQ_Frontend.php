@@ -21,7 +21,7 @@ class SQ_Frontend extends SQ_FrontController {
         function hookLoaded(){
             if ( self::$options['sq_use'] == 1 ){
                //Use buffer only for meta Title
-               if(self::$options['sq_auto_title'] == 1)
+               //if(self::$options['sq_auto_title'] == 1)
                 $this->model->startBuffer();
             }
         }
@@ -41,14 +41,14 @@ class SQ_Frontend extends SQ_FrontController {
         public function hookFronthead(){
             parent::hookHead();
 
-            SQ_Tools::dump(self::$options);
+            SQ_Tools::dump(self::$options,  $GLOBALS['wp_query']); //output debug
 
             if ( isset(self::$options['sq_use']) && (int)self::$options['sq_use'] == 1 ){
                 echo $this->model->setHeader();
 
                 //Use buffer only for meta Title
-                if(self::$options['sq_auto_title'] == 1)
-                    $this->model->flushHeader();
+                //if(self::$options['sq_auto_title'] == 1)
+                $this->model->flushHeader();
             }
 
 
@@ -61,8 +61,8 @@ class SQ_Frontend extends SQ_FrontController {
         function hookFrontfooter(){
             if ( isset(self::$options['sq_use']) && (int)self::$options['sq_use'] == 1 ){
                 //Use buffer only for meta Title
-                if(self::$options['sq_auto_title'] == 1)
-                    $this->model->flushHeader();
+                //if(self::$options['sq_auto_title'] == 1)
+                $this->model->flushHeader();
             }
             //RECORD THE TRAFFIC
             $this->model->recordTraffic();

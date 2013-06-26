@@ -171,10 +171,11 @@
                         <label for="sq_auto_description0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
                         <span class="sq_switch-selection"></span>
                       </div>
-                      <span><?php _e('Add the correct <strong>description</strong> and <strong>keywords</strong> in all pages', _PLUGIN_NAME_); ?></span>
+                      <span><?php _e('Add the correct <strong>description</strong> and <strong>keywords</strong> in home page', _PLUGIN_NAME_); ?></span>
                     </div>
                 </li>
             </ul>
+
 
             <?php
 
@@ -182,6 +183,33 @@
                 if($view->options['sq_fp_title'] == '' || $view->options['sq_auto_seo'] == 1)
                  $auto_option = true;
             ?>
+
+            <div class="sq_option_content">
+                <div class="sq_switch">
+                  <input id="sq_automatically" type="radio" class="sq_switch-input" name="sq_auto_seo" value="1" <?php echo ($auto_option ? "checked" : '')?> />
+                  <label for="sq_automatically" class="sq_switch-label sq_switch-label-off"><?php _e('Auto', _PLUGIN_NAME_); ?></label>
+                  <input id="sq_customize" type="radio" class="sq_switch-input" name="sq_auto_seo"  value="0" <?php echo (!$auto_option ? "checked" : '')?> />
+                  <label for="sq_customize" class="sq_switch-label sq_switch-label-on"><?php _e('Custom', _PLUGIN_NAME_); ?></label>
+                  <span class="sq_switch-selection"></span>
+                </div>
+                <span class="sq_option_info_small"><?php _e('Home page SEO optimization', _PLUGIN_NAME_); ?></span>
+            </div>
+
+            <div id="sq_customize_settings" <?php echo (!$auto_option ? '' : 'style="display: none;"')?>>
+             <p class="withborder">
+              <?php _e('Title:', _PLUGIN_NAME_); ?><input type="text" name="sq_fp_title" value="<?php echo (($view->options['sq_fp_title'] <> '') ? $view->options['sq_fp_title'] : '')?>" size="75" /><span id="sq_title_info" />
+              <span id="sq_fp_title_length"></span><span class="sq_settings_info"><?php _e('Tips: Length 10-75 chars', _PLUGIN_NAME_); ?></span>
+             </p>
+             <p class="withborder">
+              <?php _e('Description:', _PLUGIN_NAME_); ?><textarea name="sq_fp_description" cols="70" rows="3" ><?php echo (($view->options['sq_fp_description'] <> '') ? $view->options['sq_fp_description'] : '')?></textarea><span id="sq_description_info" />
+              <span id="sq_fp_description_length"></span><span class="sq_settings_info"><?php _e('Tips: Length 70-165 chars', _PLUGIN_NAME_); ?></span>
+             </p>
+             <p class="withborder">
+              <?php _e('Keywords:', _PLUGIN_NAME_); ?><input type="text" name="sq_fp_keywords" value="<?php echo (($view->options['sq_fp_keywords'] <> '') ? $view->options['sq_fp_keywords'] : '')?>" size="70" />
+              <span id="sq_fp_keywords_length"></span><span class="sq_settings_info"><?php _e('Tips: 2-4 keywords', _PLUGIN_NAME_); ?></span>
+             </p>
+           </div>
+
             <div id="sq_snippet">
                 <div id="sq_snippet_name"><?php _e('Squirrly Snippet',_PLUGIN_NAME_)?></div>
 
@@ -196,31 +224,9 @@
             </div>
 
 
-            <div class="sq_option_content">
-                <div class="sq_switch">
-                  <input id="sq_automatically" type="radio" class="sq_switch-input" name="sq_auto_seo" value="1" <?php echo ($auto_option ? "checked" : '')?> />
-                  <label for="sq_automatically" class="sq_switch-label sq_switch-label-off"><?php _e('Auto', _PLUGIN_NAME_); ?></label>
-                  <input id="sq_customize" type="radio" class="sq_switch-input" name="sq_auto_seo"  value="0" <?php echo (!$auto_option ? "checked" : '')?> />
-                  <label for="sq_customize" class="sq_switch-label sq_switch-label-on"><?php _e('Custom', _PLUGIN_NAME_); ?></label>
-                  <span class="sq_switch-selection"></span>
-                </div>
-            </div>
 
-           <div id="sq_customize_settings" <?php echo (!$auto_option ? '' : 'style="display: none;"')?>>
 
-             <p class="withborder">
-              <?php _e('Title:', _PLUGIN_NAME_); ?><input type="text" name="sq_fp_title" value="<?php echo (($view->options['sq_fp_title'] <> '') ? $view->options['sq_fp_title'] : '')?>" size="75" /><span id="sq_title_info" />
-              <span id="sq_fp_title_length"></span><span class="sq_settings_info"><?php _e('Tips: Length 10-75 chars', _PLUGIN_NAME_); ?></span>
-             </p>
-             <p class="withborder">
-              <?php _e('Description:', _PLUGIN_NAME_); ?><textarea name="sq_fp_description" cols="70" rows="3" ><?php echo (($view->options['sq_fp_description'] <> '') ? $view->options['sq_fp_description'] : '')?></textarea><span id="sq_description_info" />
-              <span id="sq_fp_description_length"></span><span class="sq_settings_info"><?php _e('Tips: Length 70-165 chars', _PLUGIN_NAME_); ?></span>
-             </p>
-             <p class="withborder">
-              <?php _e('Keywords:', _PLUGIN_NAME_); ?><input type="text" name="sq_fp_keywords" value="<?php echo (($view->options['sq_fp_keywords'] <> '') ? $view->options['sq_fp_keywords'] : '')?>" size="70" />
-              <span id="sq_fp_keywords_length"></span><span class="sq_settings_info"><?php _e('Tips: 2-4 keywords', _PLUGIN_NAME_); ?></span>
-             </p>
-           </div>
+
         </fieldset>
 
         <fieldset>

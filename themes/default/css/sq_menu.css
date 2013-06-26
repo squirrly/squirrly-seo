@@ -634,6 +634,11 @@
     padding: 0px 0;
     height: 20px;
 }
+.sq_option_content > span.sq_option_info_small{
+    line-height: 20px;
+    font-size: 11px;
+    color: #777;
+}
 
 .sq_option_content_small .sq_switch {
   margin: 0px 9px 0 0;
@@ -713,4 +718,12 @@
     font-size: 13px;
     padding: 10px 0;
     margin: 0 5px 0 35px;
+}
+
+#sq_settings #sq_customize_settings{
+    border: 1px solid #DDD;
+    padding: 6px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }

@@ -95,15 +95,14 @@ class SQ_Traffic extends SQ_FrontController {
 
         $sql.= " GROUP BY analytics.`post_id`
                 ) as totals";
-        SQ_Tools::dump($sql);
-        //echo "Average: ".$sql;
+
+
         $row = $wpdb->get_row($sql);
-        //if ($row->old > 7)
-            $average = array(
-                             'count' => number_format($row->count,2,'.',''),
-                             'unique' => number_format($row->unique,2,'.',''),
-                             'old' => $row->old,
-                            );
+        $average = array(
+                         'count' => number_format($row->count,2,'.',''),
+                         'unique' => number_format($row->unique,2,'.',''),
+                         'old' => $row->old,
+                        );
 
         return $average;
     }

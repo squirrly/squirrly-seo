@@ -145,7 +145,6 @@ class SQ_PostsList extends SQ_FrontController {
      */
     function hookFooter() {
         if (!$this->is_list) return;
-        SQ_Tools::dump($this->posts);
 
         $posts = '';
         foreach($this->posts as $post) {
@@ -234,7 +233,7 @@ class SQ_PostsList extends SQ_FrontController {
                     $global = $this->model->getGlobalAverage();
                     $args['average'] = $global['count'];
                     //////////////////////////////
-                    SQ_Tools::dump($args);
+
                     $response = SQ_Action::apiCall('sq/pack/total',$args);
                     //echo 'responce'.$response;
                     $return = json_decode($response);

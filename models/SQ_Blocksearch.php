@@ -50,7 +50,6 @@ class Model_SQ_Blocksearch{
               $rsp = wp_remote_fopen($url);
               $rsp_obj = unserialize($rsp);
 
-              SQ_Tools::dump($rsp_obj['photos']['photo']);
               // if we have photos
               if ($rsp_obj && $rsp_obj['photos']['total'] > 0) {
                   foreach ($rsp_obj['photos']['photo'] as $photo) {
