@@ -116,6 +116,7 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 * Add default message in SEO Article Rank when adding a new Post/Page
 * Added support options in Squirrly SEO Settings
 * Added the Russian translation in Squirly SEO
+* Added the Brazilian translation in Squirly SEO
 
 = 2.0.3 =
 * Added attributes informations for copyright free images

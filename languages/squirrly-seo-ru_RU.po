@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: squirrly-seo\n"
-"POT-Creation-Date: 2013-06-22 16:13+0200\n"
-"PO-Revision-Date: 2013-06-22 16:14+0200\n"
+"POT-Creation-Date: 2013-06-27 13:42+0200\n"
+"PO-Revision-Date: 2013-06-27 13:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Squirrly UK <support@squirrly.co>\n"
 "Language: en\n"
@@ -65,21 +65,21 @@ msgstr "Настройки"
 msgid "Getting started"
 msgstr "Введение"
 
-#: classes/SQ_Tools.php:389
+#: classes/SQ_Tools.php:394
 msgid "Fix it for me!"
 msgstr "Починить это!"
 
-#: classes/SQ_Tools.php:395
+#: classes/SQ_Tools.php:400
 msgid "Let Squirrly optimize your SEO automatically (recommended)"
 msgstr ""
 "Разрешить Squirrly автоматически оптимизировать ваш SEO (Поиско́вая "
 "оптимиза́ция) (рекомендуется)\t"
 
-#: classes/SQ_Tools.php:403
+#: classes/SQ_Tools.php:408
 msgid "You're blocking google from indexing your site!"
 msgstr "Вы блокируете индексирования вашего сайта в Google!"
 
-#: classes/SQ_Tools.php:409
+#: classes/SQ_Tools.php:414
 msgid ""
 "It is highly recommended that you include the %postname% variable in the "
 "permalink structure. <br />Go to Settings > Permalinks and add /%postname%/ "
@@ -106,11 +106,11 @@ msgid " settings"
 msgstr "настройки"
 
 #: controllers/SQ_Menu.php:58
-msgid "Earn money with "
+msgid "Make money with "
 msgstr "Заработать  деньги с"
 
 #: controllers/SQ_Menu.php:59
-msgid "Earn money"
+msgid "Make money"
 msgstr "Заработать  деньги"
 
 #: controllers/SQ_Menu.php:78
@@ -129,67 +129,67 @@ msgstr "Индивидуальное описание:"
 msgid "Custom title: "
 msgstr "Индивидуальное название: "
 
-#: controllers/SQ_PostsList.php:158
+#: controllers/SQ_PostsList.php:157
 msgid "Squirrly article rank"
 msgstr "Рейтинг статеи Squirrly"
 
-#: controllers/SQ_PostsList.php:159 core/SQ_Blockseo/SQ_Blockseo.php:21
+#: controllers/SQ_PostsList.php:158 core/SQ_Blockseo/SQ_Blockseo.php:21
 msgid "Update"
 msgstr "Обновление"
 
-#: controllers/SQ_PostsList.php:160
+#: controllers/SQ_PostsList.php:159
 msgid "More details"
 msgstr "Подробнее"
 
-#: controllers/SQ_PostsList.php:161
+#: controllers/SQ_PostsList.php:160
 msgid "Less details"
 msgstr "Менее подробно"
 
-#: controllers/SQ_PostsList.php:162
+#: controllers/SQ_PostsList.php:161
 msgid "Interval: "
 msgstr "Интервал:"
 
-#: controllers/SQ_PostsList.php:163 models/SQ_PostsList.php:30
+#: controllers/SQ_PostsList.php:162 models/SQ_PostsList.php:30
 msgid "Latest"
 msgstr "Последние"
 
-#: controllers/SQ_PostsList.php:164 models/SQ_PostsList.php:31
+#: controllers/SQ_PostsList.php:163 models/SQ_PostsList.php:31
 msgid "Last 7 days"
 msgstr "За последние 7 дней"
 
-#: controllers/SQ_PostsList.php:165 models/SQ_PostsList.php:32
+#: controllers/SQ_PostsList.php:164 models/SQ_PostsList.php:32
 msgid "Last 30 days"
 msgstr "За последние 30 дней"
 
-#: controllers/SQ_PostsList.php:167 core/SQ_Blockrank/SQ_Blockrank.php:19
+#: controllers/SQ_PostsList.php:166 core/SQ_Blockrank/SQ_Blockrank.php:19
 msgid "See it in 'All Posts'"
 msgstr "Посмотреть в папке \"Все посты\""
 
-#: controllers/SQ_PostsList.php:168
+#: controllers/SQ_PostsList.php:167
 msgid "progress"
 msgstr "прогресс"
 
-#: controllers/SQ_PostsList.php:169
+#: controllers/SQ_PostsList.php:168
 msgid "optimized"
 msgstr "оптимизированный"
 
-#: controllers/SQ_PostsList.php:170
+#: controllers/SQ_PostsList.php:169
 msgid "See rank"
 msgstr "Показать рейтинг"
 
-#: controllers/SQ_PostsList.php:171
+#: controllers/SQ_PostsList.php:170
 msgid "Hide rank"
 msgstr "Скрыть рейтинг"
 
-#: controllers/SQ_PostsList.php:172
+#: controllers/SQ_PostsList.php:171
 msgid "Optimize"
 msgstr "Оптимизировать"
 
-#: controllers/SQ_PostsList.php:174
+#: controllers/SQ_PostsList.php:173
 msgid "Not Public"
 msgstr "Не публичный"
 
-#: controllers/SQ_PostsList.php:260 core/SQ_Blockrank/SQ_Blockrank.php:31
+#: controllers/SQ_PostsList.php:259 core/SQ_Blockrank/SQ_Blockrank.php:31
 msgid "Publish the article to start Squirrly Article Rank"
 msgstr "Опубликуйте статью, чтобы начать Squirrly Article Rank"
 
@@ -351,15 +351,15 @@ msgstr "Персонализация Название"
 msgid "manage keywords"
 msgstr "управления ключевыми словами"
 
-#: core/SQ_Blockseo/SQ_Blockseo.php:17 themes/default/SQ_Menu.php:321
+#: core/SQ_Blockseo/SQ_Blockseo.php:17 themes/default/SQ_Menu.php:327
 msgid "Too short"
 msgstr "Слишком короткий"
 
-#: core/SQ_Blockseo/SQ_Blockseo.php:18 themes/default/SQ_Menu.php:322
+#: core/SQ_Blockseo/SQ_Blockseo.php:18 themes/default/SQ_Menu.php:328
 msgid "Too long"
 msgstr "Слишком длинный"
 
-#: core/SQ_Blockseo/SQ_Blockseo.php:20 themes/default/SQ_Menu.php:186
+#: core/SQ_Blockseo/SQ_Blockseo.php:20 themes/default/SQ_Menu.php:214
 msgid "Squirrly Snippet"
 msgstr "Squirrly образец"
 
@@ -399,7 +399,7 @@ msgstr "Поддержка плагинов"
 msgid "Message sent..."
 msgstr "Сообщение послано..."
 
-#: core/SQ_Loading/SQ_Loading.php:26
+#: core/SQ_Loading/SQ_Loading.php:23
 msgid ""
 "For Squirrly to work properly you have to use a higher version of Internet "
 "Explorer. <br /> We recommend you to use Chrome or Mozilla."
@@ -407,11 +407,7 @@ msgstr ""
 "Чтобы Squirrly работал исправно, вы должны использовать более высокую версию "
 "Internet Explorer. <br /> Мы рекомендуем использовать Chrome или Mozilla."
 
-#: core/SQ_Loading/SQ_Loading.php:28
-msgid "Can not connect to Squirrly. Error: "
-msgstr "Не удается подключиться к Squirrly. Ошибка:"
-
-#: core/SQ_Loading/SQ_Loading.php:36
+#: core/SQ_Loading/SQ_Loading.php:30
 msgid ""
 "You haven`t used Squirrly SEO to optimize your article. Do you want to "
 "optimize for a keyword before publishing?"
@@ -482,91 +478,91 @@ msgstr "Все ваши статьи"
 msgid "Optimize this article to start Squirrly Article Rank"
 msgstr "Оптимизировать эту статью, чтобы начать Squirrly Article Rank "
 
-#: models/SQ_PostsList.php:114
+#: models/SQ_PostsList.php:111
 msgid "There are no information for this post yet."
 msgstr "Для этого поста еще нет информации."
 
-#: models/SQ_PostsList.php:132 models/SQ_PostsList.php:251
+#: models/SQ_PostsList.php:129 models/SQ_PostsList.php:247
 msgid "Traffic to article"
 msgstr "Трафик на статью"
 
-#: models/SQ_PostsList.php:133
+#: models/SQ_PostsList.php:130
 msgid "Social impact"
 msgstr "Социальный эффект"
 
-#: models/SQ_PostsList.php:134
+#: models/SQ_PostsList.php:131
 msgid "Links to article"
 msgstr "Ссылки на статью"
 
-#: models/SQ_PostsList.php:197
+#: models/SQ_PostsList.php:193
 msgid "Google Indexed"
 msgstr "проиндексирован на Google"
 
-#: models/SQ_PostsList.php:202
+#: models/SQ_PostsList.php:198
 msgid "pos"
 msgstr "pos"
 
-#: models/SQ_PostsList.php:202 themes/default/SQ_Menu.php:21
+#: models/SQ_PostsList.php:198 themes/default/SQ_Menu.php:21
 #: themes/default/SQ_Menu.php:40 themes/default/SQ_Menu.php:57
 #: themes/default/SQ_Menu.php:74 themes/default/SQ_Menu.php:91
 #: themes/default/SQ_Menu.php:108 themes/default/SQ_Menu.php:125
 #: themes/default/SQ_Menu.php:152 themes/default/SQ_Menu.php:169
-#: themes/default/SQ_Menu.php:231 themes/default/SQ_Menu.php:242
-#: themes/default/SQ_Menu.php:253
+#: themes/default/SQ_Menu.php:237 themes/default/SQ_Menu.php:248
+#: themes/default/SQ_Menu.php:259
 msgid "Yes"
 msgstr "Да"
 
-#: models/SQ_PostsList.php:202 themes/default/SQ_Menu.php:23
+#: models/SQ_PostsList.php:198 themes/default/SQ_Menu.php:23
 #: themes/default/SQ_Menu.php:42 themes/default/SQ_Menu.php:59
 #: themes/default/SQ_Menu.php:76 themes/default/SQ_Menu.php:93
 #: themes/default/SQ_Menu.php:110 themes/default/SQ_Menu.php:127
 #: themes/default/SQ_Menu.php:154 themes/default/SQ_Menu.php:171
-#: themes/default/SQ_Menu.php:233 themes/default/SQ_Menu.php:244
-#: themes/default/SQ_Menu.php:255
+#: themes/default/SQ_Menu.php:239 themes/default/SQ_Menu.php:250
+#: themes/default/SQ_Menu.php:261
 msgid "No"
 msgstr "Нет"
 
-#: models/SQ_PostsList.php:202
+#: models/SQ_PostsList.php:198
 msgid "for:"
 msgstr "для:"
 
-#: models/SQ_PostsList.php:202
+#: models/SQ_PostsList.php:198
 msgid "(searched with the url)"
 msgstr "(искать с URL)"
 
-#: models/SQ_PostsList.php:222
+#: models/SQ_PostsList.php:218
 msgid "This article|Average"
 msgstr "Эта статья | Средняя"
 
-#: models/SQ_PostsList.php:258
+#: models/SQ_PostsList.php:254
 msgid "Visits"
 msgstr "Просмотры"
 
-#: models/SQ_PostsList.php:261
+#: models/SQ_PostsList.php:257
 msgid "Unique"
 msgstr "Уникальные"
 
-#: models/SQ_PostsList.php:373
+#: models/SQ_PostsList.php:369
 msgid "Google result for: "
 msgstr "Результаты Google для:"
 
-#: models/SQ_PostsList.php:407
+#: models/SQ_PostsList.php:402
 msgid "Change"
 msgstr "Изменить"
 
-#: models/SQ_PostsList.php:407
+#: models/SQ_PostsList.php:402
 msgid "since"
 msgstr "с"
 
-#: models/SQ_PostsList.php:408 models/SQ_PostsList.php:483
+#: models/SQ_PostsList.php:403 models/SQ_PostsList.php:478
 msgid "Current position"
 msgstr "Текущая позиция"
 
-#: models/SQ_PostsList.php:442
+#: models/SQ_PostsList.php:437
 msgid "Recommended by Squirrly"
 msgstr "Рекомендовано Squirrly"
 
-#: models/SQ_PostsList.php:482
+#: models/SQ_PostsList.php:477
 msgid "Keyword"
 msgstr "Ключевое слово"
 
@@ -643,88 +639,88 @@ msgid "See dashboard"
 msgstr "Перейти на панель управления"
 
 #: themes/default/SQ_BlockAffiliate.php:89
-#: themes/default/SQ_BlockDashboard.php:53 themes/default/SQ_BlockHelp.php:22
+#: themes/default/SQ_BlockDashboard.php:54 themes/default/SQ_BlockHelp.php:22
 msgid "Go to settings"
 msgstr "Перейдите в раздел Настройки"
 
-#: themes/default/SQ_BlockDashboard.php:4
+#: themes/default/SQ_BlockDashboard.php:5
 msgid "Squirrly dashboard"
 msgstr "Панель управления Squirrly "
 
-#: themes/default/SQ_BlockDashboard.php:7
+#: themes/default/SQ_BlockDashboard.php:8
 msgid "User level"
 msgstr "Уровень пользователя"
 
-#: themes/default/SQ_BlockDashboard.php:11
+#: themes/default/SQ_BlockDashboard.php:12
 msgid "Beginner"
 msgstr "Начинающий"
 
-#: themes/default/SQ_BlockDashboard.php:13
+#: themes/default/SQ_BlockDashboard.php:14
 msgid "Advanced"
 msgstr "Продвинутый"
 
-#: themes/default/SQ_BlockDashboard.php:17
+#: themes/default/SQ_BlockDashboard.php:18
 msgid "Select Advanced only if you have SEO knowledge."
 msgstr ""
 "Выберите « Продвинутый » только если у вас есть знания в сфере SEO "
 "(поисковой оптимизации)."
 
-#: themes/default/SQ_BlockDashboard.php:20
+#: themes/default/SQ_BlockDashboard.php:21
 msgid "What does the Beginner option bring you:"
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:22
+#: themes/default/SQ_BlockDashboard.php:23
 msgid ""
 "Squirrly <strong>finds the optimum Title and Description</strong> for each "
 "page of your blog but you can still customize the home page Title and "
 "Description if you want."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:23
+#: themes/default/SQ_BlockDashboard.php:24
 msgid ""
 "Squirrly <strong>manages the sitemap</strong> for your blog and pings it to "
 "Google and Bing every time you add a new article. This ensures that your "
 "articles get indexed much faster."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:24
+#: themes/default/SQ_BlockDashboard.php:25
 msgid ""
 "Squirrly <strong>adds the Facebook required meta</strong>, so that when your "
 "readers share your page or article, it looks really good."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:25
+#: themes/default/SQ_BlockDashboard.php:26
 msgid ""
 "You can connect your site with your <strong>Google Plus</strong> and "
 "<strong>Google Analytics</strong> accounts."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:26
+#: themes/default/SQ_BlockDashboard.php:27
 msgid ""
 "You can add the site icon (also known as favicon) and Squirrly will set it "
 "up to look good for <strong>Apple devices</strong>."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:31
+#: themes/default/SQ_BlockDashboard.php:32
 msgid "What does the Advanced option bring you:"
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:33
+#: themes/default/SQ_BlockDashboard.php:34
 msgid "More <strong>SEO options</strong> are available on the Settings page."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:34
+#: themes/default/SQ_BlockDashboard.php:35
 msgid ""
 "You can connect your site with <strong>Google Webmaster Tools</strong>, "
 "<strong>Bing Webmaster Tools</strong> and <strong>Facebook Insights</strong>."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:35
+#: themes/default/SQ_BlockDashboard.php:36
 msgid ""
 "You can see the <strong>Snippet</strong> when you edit your Post or Page."
 msgstr ""
 
-#: themes/default/SQ_BlockDashboard.php:36
+#: themes/default/SQ_BlockDashboard.php:37
 msgid ""
 "You can <strong>customize the Title and Description</strong> of each Post/"
 "Page from within the snippet."
@@ -992,7 +988,7 @@ msgstr "Спасибо! завтра тоже Вы можете отправит
 msgid "Squirrly settings"
 msgstr "Настройки Squirrly "
 
-#: themes/default/SQ_Menu.php:4 themes/default/SQ_Menu.php:315
+#: themes/default/SQ_Menu.php:4 themes/default/SQ_Menu.php:321
 msgid "Save settings"
 msgstr "Сохранить настройки"
 
@@ -1052,16 +1048,52 @@ msgstr "Добавить правильное <strong>название</strong> 
 #: themes/default/SQ_Menu.php:174
 msgid ""
 "Add the correct <strong>description</strong> and <strong>keywords</strong> "
-"in all pages"
+"in home page"
 msgstr ""
 "Добавить правильное <strong>описание</strong> и <strong>ключевые слова</"
 "strong> на всех страницах"
 
+#: themes/default/SQ_Menu.php:190
+msgid "Auto"
+msgstr "Автоматически "
+
 #: themes/default/SQ_Menu.php:192
+msgid "Custom"
+msgstr "Индивидуальное"
+
+#: themes/default/SQ_Menu.php:195
+msgid "Home page SEO optimization"
+msgstr "для оптимизации Squirrly Live SEO"
+
+#: themes/default/SQ_Menu.php:200
+msgid "Title:"
+msgstr "Название:"
+
+#: themes/default/SQ_Menu.php:201
+msgid "Tips: Length 10-75 chars"
+msgstr "Советы: длина 10-75 символов"
+
+#: themes/default/SQ_Menu.php:204
+msgid "Description:"
+msgstr "Описание:"
+
+#: themes/default/SQ_Menu.php:205
+msgid "Tips: Length 70-165 chars"
+msgstr "Советы: длина 70-165 символов"
+
+#: themes/default/SQ_Menu.php:208
+msgid "Keywords:"
+msgstr "Ключевые слова:"
+
+#: themes/default/SQ_Menu.php:209
+msgid "Tips: 2-4 keywords"
+msgstr "Советы: 2-4 ключевых слов"
+
+#: themes/default/SQ_Menu.php:220
 msgid "Check with google ..."
 msgstr "Проверьте с Google..."
 
-#: themes/default/SQ_Menu.php:195
+#: themes/default/SQ_Menu.php:223
 msgid ""
 "If you don't see any changes in custom optimization, check if another SEO "
 "plugin affects Squirrly SEO"
@@ -1069,79 +1101,47 @@ msgstr ""
 "Если вы не видите изменений в пользовательской оптимизации, убедитесь, что "
 "другие плагины не влияют на SEO Squirrly"
 
-#: themes/default/SQ_Menu.php:202
-msgid "Auto"
-msgstr "Автоматически "
-
-#: themes/default/SQ_Menu.php:204
-msgid "Custom"
-msgstr "Индивидуальное"
-
-#: themes/default/SQ_Menu.php:212
-msgid "Title:"
-msgstr "Название:"
-
-#: themes/default/SQ_Menu.php:213
-msgid "Tips: Length 10-75 chars"
-msgstr "Советы: длина 10-75 символов"
-
-#: themes/default/SQ_Menu.php:216
-msgid "Description:"
-msgstr "Описание:"
-
-#: themes/default/SQ_Menu.php:217
-msgid "Tips: Length 70-165 chars"
-msgstr "Советы: длина 70-165 символов"
-
-#: themes/default/SQ_Menu.php:220
-msgid "Keywords:"
-msgstr "Ключевые слова:"
-
-#: themes/default/SQ_Menu.php:221
-msgid "Tips: 2-4 keywords"
-msgstr "Советы: 2-4 ключевых слов"
-
-#: themes/default/SQ_Menu.php:227
+#: themes/default/SQ_Menu.php:233
 msgid "Squirrly Options"
 msgstr "Опции Squirrly"
 
-#: themes/default/SQ_Menu.php:236
+#: themes/default/SQ_Menu.php:242
 msgid "Let Squirrly warn me if there are errors related to SEO settings"
 msgstr ""
 "Позвольте Squirrly вас предупреждать в случае, ошибок, связанных с "
 "настройками SEO"
 
-#: themes/default/SQ_Menu.php:247
+#: themes/default/SQ_Menu.php:253
 msgid ""
 "Show <strong>\"Enter a keyword\"</strong> bubble when posting a new article."
 msgstr ""
 "Показать пузырь <strong>\"Введите ключевое слово \"</strong> при написании "
 "новой статьи"
 
-#: themes/default/SQ_Menu.php:258
+#: themes/default/SQ_Menu.php:264
 msgid ""
 "Always show <strong>Keyword Informations</strong> about the selected keyword."
 msgstr ""
 "Всегда показывать <strong>Информацию (о Ключевых  словах) </strong> о "
 "выбранных ключевых словах."
 
-#: themes/default/SQ_Menu.php:266
+#: themes/default/SQ_Menu.php:272
 msgid "Change the Website Icon"
 msgstr "Изменить Икону Сайта"
 
-#: themes/default/SQ_Menu.php:269
+#: themes/default/SQ_Menu.php:275
 msgid "File types: JPG, JPEG, GIF and PNG."
 msgstr "Типы файлов: JPG, JPEG, GIF и PNG"
 
-#: themes/default/SQ_Menu.php:272
+#: themes/default/SQ_Menu.php:278
 msgid "Upload file:"
 msgstr "Загрузить файл:"
 
-#: themes/default/SQ_Menu.php:277
+#: themes/default/SQ_Menu.php:283
 msgid "Upload"
 msgstr "Загружать "
 
-#: themes/default/SQ_Menu.php:281
+#: themes/default/SQ_Menu.php:287
 #, php-format
 msgid ""
 "You can use %shttp://convertico.com/%s to convert your photo to icon and "
@@ -1150,7 +1150,7 @@ msgstr ""
 "Вы можете использовать %shttp://convertico.com/%s чтобы конвертировать ваши "
 "фотографии в иконки и загрузить их сюда."
 
-#: themes/default/SQ_Menu.php:282
+#: themes/default/SQ_Menu.php:288
 msgid ""
 "If you don't see the new icon in your browser, empty the browser cache and "
 "refresh the page."
@@ -1158,33 +1158,36 @@ msgstr ""
 "Если вы не видите новый значок в вашем браузере, очистьте кэш браузера и "
 "обновите страницу."
 
-#: themes/default/SQ_Menu.php:286
+#: themes/default/SQ_Menu.php:292
 msgid "Tool for Search Engines"
 msgstr "Инструмент для поисковых систем"
 
-#: themes/default/SQ_Menu.php:290
+#: themes/default/SQ_Menu.php:296
 msgid "Google Plus URL:"
 msgstr "Google Plus URL:"
 
-#: themes/default/SQ_Menu.php:294
+#: themes/default/SQ_Menu.php:300
 #, php-format
 msgid "Google META verification code for %sWebmaster Tool%s`:"
 msgstr "Google META код проверки для %sWebmaster Tool%s`:"
 
-#: themes/default/SQ_Menu.php:298
+#: themes/default/SQ_Menu.php:304
 #, php-format
 msgid "Google  %sAnalytics ID%s`:"
 msgstr "Google %sAnalytics ID%s`:"
 
-#: themes/default/SQ_Menu.php:302
+#: themes/default/SQ_Menu.php:308
 #, php-format
 msgid "Facebook META code (for %sInsights%s )`:"
 msgstr "Код Facebook META (для %sInsights%s )`:"
 
-#: themes/default/SQ_Menu.php:306
+#: themes/default/SQ_Menu.php:312
 #, php-format
 msgid "Bing META code (for %sWebmaster Tool%s )`:"
 msgstr "Код Bing META (для %sWebmaster Tool%s )`: "
+
+#~ msgid "Can not connect to Squirrly. Error: "
+#~ msgstr "Не удается подключиться к Squirrly. Ошибка:"
 
 #~ msgid "Write a new post with Squirrly"
 #~ msgstr "Написать новый пост с Squirrly"
