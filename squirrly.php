@@ -4,7 +4,7 @@ Copyright (c) 2012, Squirrly Limited.
 The copyrights to the software code in this file are licensed under the (revised) BSD open source license.
 
 Plugin Name: SEO Plugin by SQUIRRLY
-Plugin URI: http://my.squirrly.co
+Plugin URI: https://my.squirrly.co
 Description: Squirrly SEO Plugin helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time. <BR> <a href="http://my.squirrly.co/user" target="_blank"><strong>Check your profile</strong></a>
 Author: cifi, calinvingan, florinmuresan, lucianpacurar
 Version: 2.0.6

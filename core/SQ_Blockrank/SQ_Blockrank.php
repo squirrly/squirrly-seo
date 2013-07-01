@@ -16,8 +16,9 @@ class SQ_Blockrank extends SQ_BlockController {
 
         //Set some variables
         echo '<script type="text/javascript">
-              var __sq_goto_allposts = "'.__('See it in \'All Posts\'', _PLUGIN_NAME_).'";
-
+              if(jQuery("#new-post-slug").length == 0){
+                jQuery("#sq_rank_default_text").show();
+              };
             </script>';
 
         //Load the css and javascript for the rank box
@@ -28,7 +29,7 @@ class SQ_Blockrank extends SQ_BlockController {
     }
 
     function hookGetContent(){
-        echo '<div id="sq_rank_default_text">'.__('Publish the article to start Squirrly Article Rank', _PLUGIN_NAME_).'</div>';
+        echo '<div id="sq_rank_default_text" style="display:none">'.__('Publish the article to start Squirrly Article Rank', _PLUGIN_NAME_).'</div>';
     }
 
 }
