@@ -101,7 +101,11 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 == Changelog ==
 = 2.0.6 =
+(stable)
 * Fixed header issue for remote requests
+* Added SSL connection to https://my.squirrly.co
+* Fixed post list loading issue in some cases
+* Fixed Squirrly SEO Status Info for expired trial version
 
 = 2.0.5 =
 * Fixed Squirrly SEO loading loop when all posts are not public in All posts
