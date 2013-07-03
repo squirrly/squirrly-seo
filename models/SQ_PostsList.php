@@ -117,7 +117,7 @@ class Model_SQ_PostsList{
     private function changeOffpage($global){
         if (!is_object($global)) return false;
         if(SQ_Tools::getValue('sq_debug') !== 'on')
-            return "<script>jQuery('#sq_rank_global-".$this->post_id."').html('".(($global->offpage > 0) ? '+' : (($global->offpage < 0) ? '-' : '')) . $global->offpage."');</script>";
+            return "<script>jQuery('#sq_rank_global-".$this->post_id."').html('".(($global->offpage > 0) ? '+' : '') . $global->offpage."');</script>";
     }
     /**
      * Pack the Total scores in the Brief Zone
