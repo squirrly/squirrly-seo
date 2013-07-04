@@ -1,5 +1,5 @@
 <div id="sq_research" style="display: none">
-        <div id="sq_research_title" ><?php _e('Squirrly Keyword Research', _PLUGIN_NAME_); ?><span class="sq_beta">beta</span>
+        <div id="sq_research_title" ><?php _e('Squirrly Keyword Research', _PLUGIN_NAME_); ?>
               <input class="sq_keywords_research_clear" type="button" value="<?php _e('Clear', _PLUGIN_NAME_); ?>" />
         </div>
         <div id="sq_research_body">
