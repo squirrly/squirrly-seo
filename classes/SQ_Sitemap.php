@@ -75,7 +75,7 @@ class SQ_Sitemap extends SQ_FrontController {
         /* where */
         $query['where'] = '(';
 
-       
+
         if($wpCompat)
             $query['where'] .= "(post_status = 'publish' AND post_date_gmt <= '" . gmdate('Y-m-d H:i:59') . "')";
         else
@@ -324,9 +324,11 @@ class SQ_Sitemap extends SQ_FrontController {
     * @return string
     */
     private function getTimestamp($time) {
+           if ($time == '') $time = time();
            list($date, $hours) = explode(' ', $time);
            list($year,$month,$day) = explode('-',$date);
            list($hour,$min,$sec) = explode(':',$hours);
+
            return mktime(intval($hour), intval($min), intval($sec), intval($month), intval($day), intval($year));
     }
     /**

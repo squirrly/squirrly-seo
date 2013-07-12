@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: squirrly_seo\n"
-"POT-Creation-Date: 2013-06-27 13:43+0200\n"
-"PO-Revision-Date: 2013-06-27 13:58+0200\n"
-"Last-Translator: Squirrly <contact@squirrly.co>\n"
+"POT-Creation-Date: 2013-07-11 17:02+0200\n"
+"PO-Revision-Date: 2013-07-11 17:02+0200\n"
+"Last-Translator: \n"
 "Language-Team: Squirrly UK <contact@squirrly.co>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,27 +55,23 @@ msgstr "Atentie:"
 msgid "Note: "
 msgstr "Atentie:"
 
-#: classes/SQ_Tools.php:82 controllers/SQ_Menu.php:52
-msgid "Settings"
-msgstr "Setari"
-
-#: classes/SQ_Tools.php:85 controllers/SQ_Menu.php:35
+#: classes/SQ_Tools.php:83 controllers/SQ_Menu.php:35
 msgid "Getting started"
 msgstr "Ajutor"
 
-#: classes/SQ_Tools.php:394
+#: classes/SQ_Tools.php:425
 msgid "Fix it for me!"
 msgstr "Repara-l"
 
-#: classes/SQ_Tools.php:400
+#: classes/SQ_Tools.php:431
 msgid "Let Squirrly optimize your SEO automatically (recommended)"
 msgstr "Lasa Squirrly sa optimizeze SEO automat (recomandat)"
 
-#: classes/SQ_Tools.php:408
+#: classes/SQ_Tools.php:439
 msgid "You're blocking google from indexing your site!"
 msgstr "Blochezi accesul la google spre indexarea site-ului"
 
-#: classes/SQ_Tools.php:414
+#: classes/SQ_Tools.php:445
 msgid ""
 "It is highly recommended that you include the %postname% variable in the "
 "permalink structure. <br />Go to Settings > Permalinks and add /%postname%/ "
@@ -101,15 +97,19 @@ msgstr "Dashboard"
 msgid " settings"
 msgstr "setari"
 
-#: controllers/SQ_Menu.php:58
+#: controllers/SQ_Menu.php:52
+msgid "Settings"
+msgstr "Setari"
+
+#: controllers/SQ_Menu.php:59
 msgid "Make money with "
 msgstr "Castiga bani cu"
 
-#: controllers/SQ_Menu.php:59
+#: controllers/SQ_Menu.php:60
 msgid "Make money"
 msgstr "Castiga Bani"
 
-#: controllers/SQ_Menu.php:78
+#: controllers/SQ_Menu.php:79
 msgid "Squirrly Article Rank"
 msgstr "Squirrly article rank"
 
@@ -157,7 +157,7 @@ msgstr "Ultimele 7 zile"
 msgid "Last 30 days"
 msgstr "Ultimele 30 zile"
 
-#: controllers/SQ_PostsList.php:166 core/SQ_Blockrank/SQ_Blockrank.php:19
+#: controllers/SQ_PostsList.php:166
 msgid "See it in 'All Posts'"
 msgstr "Arata-l in 'Lista Articole'"
 
@@ -185,7 +185,7 @@ msgstr "Optimizare"
 msgid "Not Public"
 msgstr "Ciorna"
 
-#: controllers/SQ_PostsList.php:259 core/SQ_Blockrank/SQ_Blockrank.php:31
+#: controllers/SQ_PostsList.php:259 core/SQ_Blockrank/SQ_Blockrank.php:32
 msgid "Publish the article to start Squirrly Article Rank"
 msgstr "Publica articolul pentru a pornit Squirrly Rank"
 
@@ -621,17 +621,17 @@ msgstr ""
 msgid "Squirrly banners you can use"
 msgstr "Bannere Squirrly"
 
-#: themes/default/SQ_BlockAffiliate.php:87 themes/default/SQ_BlockHelp.php:20
-#: themes/default/SQ_Menu.php:4
-msgid "See Squirrly in action"
-msgstr "Vezi Squirrly in actiune"
+#: themes/default/SQ_BlockAffiliate.php:87
+#: themes/default/SQ_BlockDashboard.php:54 themes/default/SQ_Menu.php:4
+msgid "Optimize with Squirrly"
+msgstr "Optimizeaza cu Squirrly"
 
-#: themes/default/SQ_BlockAffiliate.php:88 themes/default/SQ_BlockHelp.php:21
+#: themes/default/SQ_BlockAffiliate.php:88
 msgid "See dashboard"
 msgstr "Vezi Dashboard"
 
 #: themes/default/SQ_BlockAffiliate.php:89
-#: themes/default/SQ_BlockDashboard.php:54 themes/default/SQ_BlockHelp.php:22
+#: themes/default/SQ_BlockDashboard.php:55
 msgid "Go to settings"
 msgstr "Mergi la setari"
 
@@ -733,7 +733,7 @@ msgstr ""
 "Poti <strong>modifica Titlul si Meta Descrierea</strong> in fiecare Pagina/"
 "Post din interiorul snippet-ului."
 
-#: themes/default/SQ_BlockHelp.php:4
+#: themes/default/SQ_BlockHelp.php:10
 msgid ""
 "With Squirrly SEO, your Wordpress will get Excellent SEO on each article you "
 "write."
@@ -741,11 +741,11 @@ msgstr ""
 "Cu Squirrly SEO, articolele tale vor avea un SEO excelent la fiecare articol "
 "scris."
 
-#: themes/default/SQ_BlockHelp.php:6
+#: themes/default/SQ_BlockHelp.php:12
 msgid "SEO Software"
 msgstr "Software SEO"
 
-#: themes/default/SQ_BlockHelp.php:6
+#: themes/default/SQ_BlockHelp.php:12
 msgid ""
 "delivered as a plugin for Wordpress. <br /><br />We connect your wordpress "
 "with Squirrly, so that we can find the best SEO opportunities, give you "
@@ -755,9 +755,13 @@ msgstr ""
 "Squirrly pentru a gasi solutiile SEO cele mai bune, pentru a va oferi "
 "rapoarte si pentru a analiza competitia."
 
-#: themes/default/SQ_BlockHelp.php:19
+#: themes/default/SQ_BlockHelp.php:20
 msgid "Don't show this page"
-msgstr "u afisa aceasta pagina"
+msgstr "Nu afisa aceasta pagina"
+
+#: themes/default/SQ_BlockHelp.php:21
+msgid "<< START HERE >>"
+msgstr "<< PASUL URMATOR >>"
 
 #: themes/default/SQ_Blocklogin.php:2
 msgid "Squirrly.co Login"
@@ -1202,11 +1206,11 @@ msgstr "Facebook META code (pentru %sInsights%s):"
 msgid "Bing META code (for %sWebmaster Tool%s )`:"
 msgstr "Bing META code (pentru %sWebmaster Tool%s):"
 
+#~ msgid "See Squirrly in action"
+#~ msgstr "Vezi Squirrly in actiune"
+
 #~ msgid "Can not connect to Squirrly. Error: "
 #~ msgstr "Nu se poate conecta la Squirrly. Eroare: "
-
-#~ msgid "Write a new post with Squirrly"
-#~ msgstr "Scrie un nou articol cu Squirrly"
 
 #~ msgid "Today"
 #~ msgstr "Azi"

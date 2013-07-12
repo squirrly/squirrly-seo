@@ -51,6 +51,7 @@
 
 
         <div id="sq_settings_title" style="text-align: right">
+            <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('Optimize with Squirrly', _PLUGIN_NAME_)?></a>
           <input id="sq_goto_settings" type="button" value="<?php _e('Go to settings', _PLUGIN_NAME_)?> &raquo;" />
         </div>
 

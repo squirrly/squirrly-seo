@@ -3,7 +3,7 @@
     <ul>
         <li id="sq_options_dasboard">
             <span class="sq_push" style="display:none;">1</span>
-            <span class="sq_text" ><a href="<?php echo _SQ_DASH_URL_?>user/" title="<?php _e('Go to Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span><?php _e('Profile',_PLUGIN_NAME_) ?></span></a></span><a href="<?php echo _SQ_DASH_URL_?>user/" title="<?php _e('Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span class="sq_icon"></span></a>
+            <span class="sq_text" ><a href="<?php echo _SQ_DASH_URL_?>login/?token=<?php echo SQ_Tools::$options['sq_api']?>&redirect_to=<?php echo _SQ_DASH_URL_?>user/dashboard" title="<?php _e('Go to Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span><?php _e('Profile',_PLUGIN_NAME_) ?></span></a></span><a href="<?php echo _SQ_DASH_URL_?>user/" title="<?php _e('Profile',_PLUGIN_NAME_) ?>" target="_blank" ><span class="sq_icon"></span></a>
         </li>
         <li id="sq_options_support">
 

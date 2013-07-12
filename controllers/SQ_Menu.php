@@ -46,14 +46,15 @@ class SQ_Menu extends SQ_FrontController {
                                             'sq_dashboard' ,
                                             array(SQ_ObjController::getBlock('SQ_BlockDashboard'), 'init')
                                       ));
-                }
-                $this->model->addSubmenu(array($first_page ,
+
+                    $this->model->addSubmenu(array($first_page ,
                                             ucfirst(_SQ_NAME_) . __(' settings', _PLUGIN_NAME_) ,
                                             __('Settings', _PLUGIN_NAME_). SQ_Tools::showNotices(SQ_Tools::$errors_count, 'errors_count'),
                                             'edit_posts',
                                             preg_replace ('/\s/','_',_SQ_NAME_),
                                             array($this,'showMenu')
                                       ));
+                }
                 $this->model->addSubmenu(array($first_page ,
                                             __('Make money with ', _PLUGIN_NAME_) . ucfirst(_SQ_NAME_),
                                             __('Make money', _PLUGIN_NAME_),

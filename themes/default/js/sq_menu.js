@@ -262,7 +262,8 @@ function sq_getUserInfo(api_url, token){
     jQuery.getJSON(
         api_url + 'sq/user/info/?callback=?',
         {
-          token: token
+          token: token,
+          lang: (document.getElementsByTagName("html")[0].getAttribute("lang") || window.navigator.language)
         }
     ).success(function(response) {
        //jQuery('#sq_userinfo').removeClass('sq_loading').removeClass('sq_error');
@@ -282,7 +283,8 @@ function sq_getUserStatus(api_url, token){
     jQuery.getJSON(
         api_url + 'sq/user/status/?callback=?',
         {
-          token: token
+          token: token,
+          lang: (document.getElementsByTagName("html")[0].getAttribute("lang") || window.navigator.language),
         }
     ).success(function(response) {
        jQuery('#sq_userinfo').removeClass('sq_loading').removeClass('sq_error');

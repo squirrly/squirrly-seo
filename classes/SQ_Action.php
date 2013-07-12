@@ -124,6 +124,7 @@ class SQ_Action extends SQ_FrontController{
        if (SQ_Tools::$options['sq_api'] == '' && $module <> 'sq/login' && $module <> 'sq/register') return false;
 
        $extra = array('user_url' => urlencode(get_bloginfo('wpurl')),
+                      'lang' => WPLANG,
                       'versq' => SQ_VERSION_ID,
                       'verwp' => WP_VERSION_ID,
                       'verphp' => PHP_VERSION_ID,

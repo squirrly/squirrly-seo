@@ -1,7 +1,7 @@
 <div id="sq_settings" >
   <form id="sq_settings_form" name="settings" action="" method="post" enctype="multipart/form-data">
 
-  <div id="sq_settings_title" ><?php _e('Squirrly settings', _PLUGIN_NAME_); ?> <input type="submit" name="sq_update" value="<?php _e('Save settings', _PLUGIN_NAME_)?> &raquo;" /> <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('See Squirrly in action', _PLUGIN_NAME_)?></a></div>
+  <div id="sq_settings_title" ><?php _e('Squirrly settings', _PLUGIN_NAME_); ?> <input type="submit" name="sq_update" value="<?php _e('Save settings', _PLUGIN_NAME_)?> &raquo;" /> <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('Optimize with Squirrly', _PLUGIN_NAME_)?></a></div>
   <div id="sq_settings_body">
     <div id="sq_settings_left" >
         <?php

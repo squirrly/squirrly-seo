@@ -1,4 +1,10 @@
 <div id="sq_settings" >
+    <?php
+        if ($view->options['sq_api'] == ''){
+            echo '<div id="sq_settings_login">';
+            SQ_ObjController::getBlock('SQ_Blocklogin')->init();
+            echo '</div>';
+        }?>
     <?php if($view->options['sq_api'] == '' || $view->options['sq_howto'] == 1) {?>
     <div id="sq_settings_howto">
         <div id="sq_settings_howto_title" ><?php _e('With Squirrly SEO, your Wordpress will get Excellent SEO on each article you write.', _PLUGIN_NAME_); ?></div>
@@ -9,16 +15,9 @@
         </div>
     </div>
     <?php }?>
-    <?php
-        if ($view->options['sq_api'] == ''){
-            echo '<div id="sq_settings_login">';
-            SQ_ObjController::getBlock('SQ_Blocklogin')->init();
-            echo '</div>';
-        }?>
+
     <div id="sq_settings_title" style="text-align: right">
-      <span id="sq_settings_howto_close" ><?php _e('Don\'t show this page', _PLUGIN_NAME_)?> </span>
-      <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('See Squirrly in action', _PLUGIN_NAME_)?></a>
-      <input id="sq_goto_dashboard" type="button" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> value="<?php _e('See dashboard', _PLUGIN_NAME_)?>" />
-      <input id="sq_goto_settings" type="button" value="<?php _e('Go to settings', _PLUGIN_NAME_)?> &raquo;" />
+      <?php if($view->options['sq_api'] <> '') {?><span id="sq_settings_howto_close" ><?php _e('Don\'t show this page', _PLUGIN_NAME_)?> </span><?php }?>
+      <a href="post-new.php" id="sq_goto_newpost" <?php echo (($view->options['sq_api'] <> '') ? '' : 'style="display:none"') ?> /><?php _e('<< START HERE >>', _PLUGIN_NAME_)?></a>
     </div>
 </div>

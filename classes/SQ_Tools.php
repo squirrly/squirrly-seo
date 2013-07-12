@@ -79,8 +79,6 @@ class SQ_Tools extends SQ_FrontController {
      */
     public function hookActionlink($links, $file) {
           if ($file == _PLUGIN_NAME_. '/squirrly.php'){
-            $link = '<a href="' . admin_url('admin.php?page=squirrly') . '">' . __('Settings', _PLUGIN_NAME_) . '</a>';
-            array_unshift($links, $link);
             if(SQ_Tools::$options['sq_howto'] == 1){
               $link = '<a href="' . admin_url('admin.php?page=sq_howto') . '">' . __('Getting started', _PLUGIN_NAME_) . '</a>';
               array_unshift($links, $link);
@@ -243,6 +241,9 @@ class SQ_Tools extends SQ_FrontController {
         return $message;
     }
 
+    /**
+     * Load the multilanguage support from .mo
+     */
     private function loadMultilanguage(){
         if ( !defined('WP_PLUGIN_DIR') ) {
                 load_plugin_textdomain( _PLUGIN_NAME_, _PLUGIN_NAME_ . '/languages/' );
@@ -364,6 +365,11 @@ class SQ_Tools extends SQ_FrontController {
         return false;
     }
 
+    /**
+     * Get the Json from responce if any
+     * @param string $response
+     * @return string
+     */
     private static function cleanResponce($response){
 
        if (function_exists('substr_count'))
