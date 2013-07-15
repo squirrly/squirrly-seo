@@ -80,6 +80,7 @@ class SQ_Post extends SQ_FrontController {
     }
 
     function checkImage($post_id){
+        @set_time_limit(90);
 
         $content = stripslashes(SQ_Tools::getValue('post_content'));
         $tmpcontent = trim($content, "\n");
