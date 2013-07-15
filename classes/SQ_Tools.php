@@ -10,7 +10,7 @@ class SQ_Tools extends SQ_FrontController {
     public static $options = array();
     public $flash_data = null;
     public $showNote = array();
-    
+
 
     static $errors_count = 0;
     private static $debug;
@@ -489,14 +489,6 @@ class SQ_Tools extends SQ_FrontController {
      */
     public static function getPrivateBlog() {
         return ((int)get_option( 'blog_public' ) == 0 );
-    }
-
-    /**
-     * Check if the blog comments is in private mode
-     * @return bool
-     */
-    private static function getCommentsNotification() {
-        return ((int)get_option( 'comments_notify' ) == 1 );
     }
 
     /**

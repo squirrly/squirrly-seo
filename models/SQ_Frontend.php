@@ -56,8 +56,6 @@ class Model_SQ_Frontend {
      * @return type
      */
     function startBuffer(){
-
-        if (is_feed()) return;
         ob_start(array($this,'getBuffer'));
     }
 
@@ -258,7 +256,7 @@ class Model_SQ_Frontend {
         if (is_home()){
             $args = array('numberposts' => 1);
 
-                $date = date('Y-m-d', strtotime(get_lastpostmodified('blog')));
+                $date = date('Y-m-d', strtotime(get_lastpostmodified()));
 
         }elseif(is_single()){
             $post = $this->post;

@@ -18,7 +18,7 @@ class SQ_Sitemap extends SQ_FrontController {
 
         $this->file = ABSPATH . $this->filename;
         //For sitemap ping
-        $this->args['timeout'] = 10;
+        $this->args['timeout'] = 5;
         $this->opt = array( 'home' => array(1,'daily'),
                             'page' => array(0.6,'monthly'),
                             'post' => array(0.6,'monthly'),
@@ -243,7 +243,7 @@ class SQ_Sitemap extends SQ_FrontController {
             if($tags && is_array($tags) && count($tags)>0) {
                 foreach($tags AS $tag) {
                     if ($count > 3000) break; //not to have a memory break
-                    $this->addLine(get_tag_link($tag->term_id),0,$this->opt['tag'][1],$this->opt['tag'][0]);
+                    $this->addLine(get_tag_link($tag->term_id),strtotime(get_lastpostmodified()),$this->opt['tag'][1],$this->opt['tag'][0]);
                     $count++;
                 }
             }
@@ -309,11 +309,11 @@ class SQ_Sitemap extends SQ_FrontController {
     private function doPing(){
         //Ping Google
         $google_url="http://www.google.com/webmasters/sitemaps/ping?sitemap=" . urlencode($this->getXmlUrl());
-        $response = wp_remote_get( $google_url, $this->args);
+        SQ_Tools::sq_remote_get( $google_url, $this->args);
 
         //Ping Bing
         $bing_url="http://www.bing.com/webmaster/ping.aspx?siteMap=" . urlencode($this->getXmlUrl());
-        $response = wp_remote_get( $bing_url, $this->args);
+        SQ_Tools::sq_remote_get( $bing_url, $this->args);
 
     }
 
@@ -324,7 +324,8 @@ class SQ_Sitemap extends SQ_FrontController {
     * @return string
     */
     private function getTimestamp($time) {
-           if ($time == '') $time = time();
+
+           $time = date('Y-m-d H:i:s');
            list($date, $hours) = explode(' ', $time);
            list($year,$month,$day) = explode('-',$date);
            list($hour,$min,$sec) = explode(':',$hours);
