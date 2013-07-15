@@ -100,6 +100,10 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
+= 2.0.7 =
+* Added the Squirrly SEO Traffic Progress report
+* Fixed minor frontend bugs
+
 = 2.0.6 =
 (stable)
 * Fixed header issue for remote requests
