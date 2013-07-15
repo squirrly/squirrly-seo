@@ -119,12 +119,11 @@ function sq_autoLogin(){
        jQuery('#sq_register_wait').removeClass('sq_minloading');
        if (typeof response.token != 'undefined'){
          __token = response.token;
-         jQuery('#sq_blocklogin').remove();
          if (typeof response.success != 'undefined'){
               jQuery('#sq_login_success').html(response.success);
          }
          //window.sq_main.load();
-         sq_reload();
+         sq_reload(response);
        }else{
            if(typeof response.info != 'undefined'){
                jQuery('#sq_autologin').hide();
@@ -182,6 +181,7 @@ function sq_reload(response){
         jQuery('#sq_blocklogin').remove();
         location.reload();
     }else{
+        if(jQuery('#sq_blocklogin').length == 0)  jQuery('#sq_settings').prepend('<div id="sq_blocklogin">');
         jQuery('#sq_blocklogin').addClass('sq_login_done');
         jQuery('#sq_blocklogin').html(jQuery('#sq_login_success'));
         jQuery('#sq_blocklogin').append(jQuery('#sq_goto_newpost'));
