@@ -249,6 +249,8 @@ function sq_submitSettings(){
                 sq_google_analytics: jQuery('#sq_settings').find('input[name=sq_google_analytics]').val(),
                 sq_facebook_insights: jQuery('#sq_settings').find('input[name=sq_facebook_insights]').val(),
                 sq_bing_wt: jQuery('#sq_settings').find('input[name=sq_bing_wt]').val(),
+                sq_ws: jQuery('#sq_settings').find('input[name=sq_ws]:checked').val(),
+
 
                 nonce: sqQuery.nonce
             }

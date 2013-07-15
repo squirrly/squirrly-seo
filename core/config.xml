@@ -16,6 +16,7 @@
                     <action>sq_post_rank_brief</action>
                     <action>sq_posts_rank</action>
                     <action>sq_post_rank</action>
+                    <action>sq_posts_status_close</action>
                 </actions>
 		<active>1</active>
 		<path>controllers</path>

@@ -1,7 +1,7 @@
 <?php
 
 class Model_SQ_Frontend {
-    private $header = '';
+
     /** @var string */
     private $title;
 
@@ -22,6 +22,12 @@ class Model_SQ_Frontend {
 
     /** @var integer */
     private $max_keywrods = 4;
+
+    /** @var object Current post */
+    private $post;
+
+    /** @var array Meta custom content */
+    private $meta;
 
     function __construct() {
         SQ_ObjController::getController('SQ_Tools', false);
@@ -89,6 +95,7 @@ class Model_SQ_Frontend {
      */
     private function setMetaInBuffer($buffer) {
         global $wp_query;
+        $this->post = $wp_query->get_queried_object();
 
         $title = $this->getCustomTitle();
         if (isset ($title) && !empty($title) && $title <> ''){
@@ -101,15 +108,11 @@ class Model_SQ_Frontend {
         $description = $this->setCustomDescription();
         if (isset ($description) && !empty($description) && $description <> ''){
             $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$description, $buffer, 1, $count);
-            if ($count == 0)
-               $buffer .= $description . "\n" ;
         }
 
         $keyword = $this->setCustomKeyword();
         if (isset ($keyword) && !empty($keyword) && $keyword <> ''){
                 $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si',$keyword, $buffer, 1, $count);
-                if ($count == 0)
-                   $buffer .= $keyword . "\n" ;
         }
 
         return $buffer;
@@ -127,33 +130,33 @@ class Model_SQ_Frontend {
     function setHeader(){
         global $wp_query;
         $ret = '';
-        $options = SQ_Tools::$options;
+        $this->post = $wp_query->get_queried_object();
+        $this->meta['blogname'] = get_bloginfo('name');
 
         if (!function_exists('preg_replace')) return $ret;
 
         if (is_home() || is_single() ||  is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search() || is_404()){
 
             $ret .= $this->setStart();
-
             /* Meta setting*/
             $this->title = $this->clearTitle($this->getCustomTitle());
 
-            if($options['sq_auto_description'] == 1){
+            if(SQ_Tools::$options['sq_auto_description'] == 1){
                 $ret .= $this->setCustomDescription(). "\n" ;
                 $ret .= $this->setCustomKeyword(). "\n" ;
             }
 
-            if($options['sq_auto_canonical'] == 1)
+            if(SQ_Tools::$options['sq_auto_canonical'] == 1)
                $ret .= $this->setCanonical();
 
-            if($options['sq_auto_sitemap'] == 1)
+            if(SQ_Tools::$options['sq_auto_sitemap'] == 1)
                 $ret .= $this->getXMLSitemap();
             /* Auto setting*/
 
-            if($options['sq_auto_favicon'] == 1)
+            if(SQ_Tools::$options['sq_auto_favicon'] == 1)
                 $ret .= $this->getFavicon();
 
-            if($options['sq_auto_meta'] == 1){
+            if(SQ_Tools::$options['sq_auto_meta'] == 1){
                 $ret .= $this->getCopyright();
                 $ret .= $this->getPublisher();
                 $ret .= $this->getLanguage();
@@ -161,11 +164,11 @@ class Model_SQ_Frontend {
                 $ret .= $this->getTheDate();
             }
 
-            if($options['sq_auto_facebook'] == 1)
-                $ret .= $this->getFacebookObject($options)."\n";
+            if(SQ_Tools::$options['sq_auto_facebook'] == 1)
+                $ret .= $this->getFacebookObject(SQ_Tools::$options)."\n";
 
-            if($options['sq_auto_twitter'] == 1)
-                $ret .= $this->getTwitterCard($options)."\n";
+            if(SQ_Tools::$options['sq_auto_twitter'] == 1)
+                $ret .= $this->getTwitterCard(SQ_Tools::$options)."\n";
             /* SEO optimizer tool*/
             $ret .= $this->getGoogleWT();
             $ret .= $this->getGoogleAnalytics();
@@ -196,9 +199,9 @@ class Model_SQ_Frontend {
         $meta .= (($sq_twitter_site <> '') ? sprintf('<meta name="twitter:site" value="%s" />' , $sq_twitter_site) . "\n"  : '');
 
         $meta .= sprintf('<meta name="twitter:title" content="%s">' , $this->title) . "\n" ;
-        $meta .= (($this->title == $this->description) ? sprintf('<meta name="twitter:description" content="%s">' , $this->description . ' | ' . get_bloginfo('name')) . "\n" : '');
+        $meta .= (($this->title == $this->description) ? sprintf('<meta name="twitter:description" content="%s">' , $this->description . ' | ' . $this->meta['blogname']) . "\n" : '');
         $meta .= ((isset($this->thumb_image) && $this->thumb_image <> '') ? sprintf('<meta name="twitter:image:src" content="%s">' , $this->thumb_image) . "\n" : '');
-        $meta .= ((get_bloginfo('name') <> '') ? sprintf('<meta name="twitter:domain" content="%s">' , get_bloginfo('name')) . "\n" : '') ;
+        $meta .= (($this->meta['blogname'] <> '') ? sprintf('<meta name="twitter:domain" content="%s">' , $this->meta['blogname']) . "\n" : '') ;
 
         return $meta;
     }
@@ -222,7 +225,7 @@ class Model_SQ_Frontend {
         $meta .= ((isset($this->thumb_image) && $this->thumb_image <> '') ? sprintf('<meta property="og:image" content="%s" />' , $this->thumb_image) . "\n" : '') ;
         $meta .= sprintf('<meta property="og:title" content="%s" />' , $this->title) . "\n" ;
         $meta .= sprintf('<meta property="og:description" content="%s" />' , $this->description) . "\n" ;
-        $meta .= ((get_bloginfo('name') <> '') ? sprintf('<meta property="og:site_name" content="%s" />' , get_bloginfo('name')) . "\n" : '');
+        $meta .= (($this->meta['blogname'] <> '') ? sprintf('<meta property="og:site_name" content="%s" />' , $this->meta['blogname']) . "\n" : '');
         $meta .= sprintf('<meta property="og:type" content="%s" />' , 'blog') . "\n" ;
 
         return $meta;
@@ -254,13 +257,11 @@ class Model_SQ_Frontend {
 
         if (is_home()){
             $args = array('numberposts' => 1);
-            $posts = wp_get_recent_posts( $args );
-            foreach ($posts as $post){
-                $date = date('Y-m-d', strtotime($post['post_date']));
-            }
+
+                $date = date('Y-m-d', strtotime(get_lastpostmodified('blog')));
 
         }elseif(is_single()){
-            $post = $wp_query->get_queried_object();
+            $post = $this->post;
             $date = date('Y-m-d', strtotime($post->post_date));
         }
 
@@ -285,12 +286,12 @@ class Model_SQ_Frontend {
         //If its a home page and home page title is activated
         if ($this->isHomePage() && $this->checkHomePosts() && SQ_Tools::$options['sq_auto_title'] == 1){ //for homepage
             $title = $this->clearTitle( $this->grabTitleFromPost() );
-            if (get_bloginfo('name') <> '' )
-                $title .= " ".$sep." " . get_bloginfo('name');
+            if ($this->meta['blogname'] <> '' )
+                $title .= " ".$sep." " . $this->meta['blogname'];
         }
         //If its a post/page
         if(!$this->isHomePage() && (is_single() || is_page())){
-            $post = $wp_query->get_queried_object();
+            $post = $this->post;
             $title = $this->clearTitle( $this->grabTitleFromPost($post->ID) );
         }
 
@@ -322,7 +323,7 @@ class Model_SQ_Frontend {
     public function getImageFromContent() {
         global $wp_query;
 
-        $post = $wp_query->get_queried_object();
+        $post = $this->post;
 
         if (!$post)
             foreach ($wp_query->posts as $post){
@@ -371,8 +372,8 @@ class Model_SQ_Frontend {
             if($description == '')  $description = $this->grabDescriptionFromPost();
 
             if ($this->isHomePage() && $description <> '')
-                if (get_bloginfo('name') <> '' )
-                  $description .= " ".$sep." " . get_bloginfo('name');
+                if ($this->meta['blogname'] <> '' )
+                  $description .= " ".$sep." " . $this->meta['blogname'];
         }
 
         /* Check if is a predefined Title */
@@ -424,13 +425,13 @@ class Model_SQ_Frontend {
         global $wp_query;
         $keywords = '';
 
-        if($this->checkPostsPage()){
-            $post = $wp_query->get_queried_object();
+        if($this->checkPostsPage() && SQ_Tools::$options['sq_auto_description'] == 1){
+            $post = $this->post;
             $keywords = stripcslashes(SQ_Tools::i18n($this->grabKeywordsFromPost($post->ID)));
         }elseif(is_single() || is_page()){
-            $post = $wp_query->get_queried_object();
+            $post = $this->post;
             $keywords = stripcslashes(SQ_Tools::i18n($this->grabKeywordsFromPost($post->ID)));
-        }else {
+        }elseif(SQ_Tools::$options['sq_auto_description'] == 1) {
             $keywords = trim(SQ_Tools::i18n($this->grabKeywordsFromPost()));
         }
 
@@ -458,7 +459,7 @@ class Model_SQ_Frontend {
     private function getCopyright(){
         $name = $this->getAuthorLinkFromBlog();
         if (!$name)
-            $name = get_bloginfo('blogname');
+            $name = $this->meta['blogname'];
 
         if (($this->checkHomePosts() || $this->checkFrontPage()) && $name )
             return sprintf("<meta name=\"copyright\" content=\"%s\" />" . "\n", $name) . "\n" ;
@@ -476,7 +477,7 @@ class Model_SQ_Frontend {
         if ($author == '')
             $author = $this->getAuthorLinkFromBlog();
         elseif (!$author)
-            $author = get_bloginfo('blogname');
+            $author = $this->meta['blogname'];
         elseif(strpos($author,'plus.google.com') === false && is_numeric($author))
              $author = 'https://plus.google.com/'.$author.'/posts';
 
@@ -534,7 +535,7 @@ class Model_SQ_Frontend {
     private function getDCPublisher(){
         $name = $this->getAuthorLinkFromBlog();
         if (!$name)
-            $name = get_bloginfo('blogname');
+            $name = $this->meta['blogname'];
 
         if ( ($this->checkHomePosts() || $this->checkFrontPage()) && $name )
             return sprintf("<meta name=\"DC.Publisher\" content=\"%s\" />" , $name) . "\n" ;
@@ -1060,7 +1061,7 @@ class Model_SQ_Frontend {
      */
     private function checkFrontPage() {
         global $wp_query;
-        $post = $wp_query->get_queried_object();
+        $post = $this->post;
         return is_page() && get_option('show_on_front') == 'page' && $post->ID == get_option('page_on_front');
     }
 
@@ -1071,7 +1072,7 @@ class Model_SQ_Frontend {
      */
     private function checkPostsPage() {
         global $wp_query;
-        $post = $wp_query->get_queried_object();
+        $post = $this->post;
 
         return is_home() && get_option('show_on_front') == 'page' && $post->ID == get_option('page_for_posts');
     }
@@ -1161,6 +1162,7 @@ class Model_SQ_Frontend {
     public function getAdvancedMeta($post_id, $meta = 'title'){
         global $wpdb;
         $field = '';
+        $cond = '';
 
         if (!isset($post_id) || (int)$post_id == 0) return '';
 
@@ -1179,17 +1181,31 @@ class Model_SQ_Frontend {
                 $field = 'sq_fp_title';
         }
 
-        if ($field <> ''){
-            $sql = "SELECT `meta_value`
-                           FROM `".$wpdb->postmeta."`
-                           WHERE `meta_key` = '$field' AND `post_id`=".(int)$post_id  ;
-           //echo "History: ".$sql;
-            $row = $wpdb->get_row($sql);
+        if ($field <> '' && isset($this->meta[$field]))
+            return $this->meta[$field];
 
-            if($row && $row->meta_value <> ''){
-                return $row->meta_value;
+        // Get the custom Squirrly meta
+        //////////////////////////////////////////
+        $fields = array('sq_fp_title' => '','sq_fp_description' => '','sq_fp_keywords' => '');
+
+        foreach ($fields as $meta_key => $meta_value) {
+            $cond .= ($cond <> '' ? ' OR ' : '') . "`meta_key` = '$meta_key'";
+        }
+
+        $sql = "SELECT `meta_key`, `meta_value`
+                       FROM `".$wpdb->postmeta."`
+                       WHERE ($cond) AND `post_id`=".(int)$post_id  ;
+
+        if($rows = $wpdb->get_results($sql)){
+            foreach ($rows as $row) {
+                $this->meta[$row->meta_key] = $row->meta_value;
             }
         }
+        $this->meta = @array_merge($fields,$this->meta);
+        //////////////////////////////////////////
+
+        if ($field <> '')
+            return $this->meta[$field];
         /////////////
         return false;
     }
@@ -1203,6 +1219,7 @@ class Model_SQ_Frontend {
     public function getOtherPluginsMeta($post_id, $meta = 'title'){
         global $wpdb;
         $field = '';
+        $cond = '';
 
         if (!isset($post_id) || (int)$post_id == 0) return '';
 
@@ -1221,17 +1238,31 @@ class Model_SQ_Frontend {
                 $field = '_yoast_wpseo_title';
         }
 
-        if ($field <> ''){
-            $sql = "SELECT `meta_value`
-                           FROM `".$wpdb->postmeta."`
-                           WHERE `meta_key` = '$field' AND `post_id`=".(int)$post_id  ;
-           //echo "History: ".$sql;
-            $row = $wpdb->get_row($sql);
+        if ($field <> '' && isset($this->meta[$field]))
+            return $this->meta[$field];
 
-            if($row && $row->meta_value <> ''){
-                return $row->meta_value;
+        // Get the custom Squirrly meta
+        //////////////////////////////////////////
+        $fields = array('_yoast_wpseo_title'=> '','_yoast_wpseo_metadesc'=> '','_yoast_wpseo_focuskw'=> '');
+
+        foreach ($fields as $meta_key => $meta_value) {
+            $cond .= ($cond <> '' ? ' OR ' : '') . "`meta_key` = '$meta_key'";
+        }
+
+        $sql = "SELECT `meta_key`, `meta_value`
+                       FROM `".$wpdb->postmeta."`
+                       WHERE ($cond) AND `post_id`=".(int)$post_id  ;
+           //echo "History: ".$sql;
+        $rows = $wpdb->get_results($sql);
+        if($rows){
+            foreach ($rows as $row) {
+                $this->meta[$row->meta_key] = $row->meta_value;
             }
         }
+        $this->meta = @array_merge($fields,$this->meta);
+        //////////////////////////////////////////
+        if ($field <> '')
+            return $this->meta[$field];
         /////////////
         return false;
     }

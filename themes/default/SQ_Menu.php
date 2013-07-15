@@ -110,7 +110,7 @@
                               <label for="sq_auto_facebook0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
                               <span class="sq_switch-selection"></span>
                             </div>
-                            <span><?php echo __('Add the <strong>Facebook meta objects</strong> for a good looking share. ', _PLUGIN_NAME_) . '<a href="https://developers.facebook.com/tools/debug/og/object?q='. urlencode(get_bloginfo('wpurl')) .'" target="_blank" title="Facebook Object Validator">Check here</a>'; ?></span>
+                            <span><?php echo __('Add the <strong>Facebook meta objects</strong> for a good looking share. ', _PLUGIN_NAME_) . ' <a href="https://developers.facebook.com/tools/debug/og/object?q='. urlencode(get_bloginfo('wpurl')) .'" target="_blank" title="Facebook Object Validator">Check here</a>'; ?></span>
                           </div>
                      </li>
                      <li>
@@ -127,7 +127,7 @@
                               <label for="sq_auto_twitter0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
                               <span class="sq_switch-selection"></span>
                             </div>
-                            <span><?php echo __('Add the <strong>Twitter card</strong> in your tweets. ', _PLUGIN_NAME_) . '<a href="https://dev.twitter.com/docs/cards/validation/validator" target="_blank" title="Twitter Card Validator">Check here</a> <em>(Select Summary > Validate URLs)</em>'; ?></span>
+                            <span><?php echo __('Add the <strong>Twitter card</strong> in your tweets. ', _PLUGIN_NAME_) . ' <a href="https://dev.twitter.com/docs/cards/validation/validator" target="_blank" title="Twitter Card Validator">Check here</a> <em>(Select Summary > Validate URLs)</em>'; ?></span>
                             <span id="sq_twitter_account" style="float:left; font-weight: bold; color: darksalmon; <?php echo (!$auto_option ? 'display:none;' : ''); ?>" ><?php _e('Your twitter account: ', _PLUGIN_NAME_); ?><input type="text" name="sq_twitter_account" value="<?php echo (($view->options['sq_twitter_account'] <> '') ? $view->options['sq_twitter_account'] : '')?>" size="30" style="width:150px;" /> </span>
                           </div>
                      </li>
@@ -262,6 +262,17 @@
                   <span class="sq_switch-selection"></span>
                 </div>
                 <span><?php _e('Always show <strong>Keyword Informations</strong> about the selected keyword.', _PLUGIN_NAME_); ?></span>
+            </div>
+
+            <div class="sq_option_content">
+                <div class="sq_switch">
+                  <input id="sq_audit1" type="radio" class="sq_switch-input" name="sq_ws" value="1" <?php echo (($view->options['sq_ws'] == 1) ? "checked" : '')?> />
+                  <label for="sq_audit1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
+                  <input id="sq_audit0" type="radio" class="sq_switch-input" name="sq_ws"  value="0" <?php echo (($view->options['sq_ws'] == 0) ? "checked" : '')?> />
+                  <label for="sq_audit0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
+                  <span class="sq_switch-selection"></span>
+                </div>
+                <span><?php _e('Let Squirrly inform me about the progress of my <strong>Wordpress site</strong>.', _PLUGIN_NAME_); ?></span>
             </div>
        </fieldset>
    </div>

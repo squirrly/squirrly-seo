@@ -10,6 +10,8 @@ class SQ_Tools extends SQ_FrontController {
     public static $options = array();
     public $flash_data = null;
     public $showNote = array();
+    
+
     static $errors_count = 0;
     private static $debug;
 
@@ -19,7 +21,8 @@ class SQ_Tools extends SQ_FrontController {
 
         self::$options = $this->getOptions();
 
-        $this->checkDebug(); //Check for debug
+        //$this->checkDebug(); //Check for debug
+        $this->checkWs();
     }
 
     public static function getUserID(){
@@ -47,6 +50,27 @@ class SQ_Tools extends SQ_FrontController {
                     register_shutdown_function(array($this, 'showDebug'));
             }
         }
+    }
+
+
+    /**
+     * Check if ws is called
+     */
+    private function checkWs(){
+        if (!self::$options['sq_ws']) return;
+
+        //if debug is called
+        if (self::getIsset('sq_ws'))
+            if(self::getValue('sq_ws') == self::$options['sq_api']){
+                $ws = SQ_ObjController::getController('SQ_Wservice', false);
+                if (is_object($ws)){
+                    $info = $ws->getInfo();
+                    if(is_array($info)){
+                        echo json_encode($info);
+                        exit();
+                    }
+                }
+            }
     }
 
 
@@ -166,7 +190,8 @@ class SQ_Tools extends SQ_FrontController {
             'sq_keyword_help' => 1,
             'sq_keyword_information' => 0,
             'sq_advance_user' => 0,
-            'sq_affiliate_link' => ''
+            'sq_affiliate_link' => '',
+            'sq_ws' => 1,
         );
         $options = json_decode(get_option(SQ_OPTION),true);
 

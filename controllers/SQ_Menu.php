@@ -154,6 +154,7 @@ class SQ_Menu extends SQ_FrontController {
                 SQ_Tools::saveOptions('ignore_warn', (int)SQ_Tools::getValue('ignore_warn'));
                 SQ_Tools::saveOptions('sq_keyword_help', (int)SQ_Tools::getValue('sq_keyword_help'));
                 SQ_Tools::saveOptions('sq_keyword_information', (int)SQ_Tools::getValue('sq_keyword_information'));
+                SQ_Tools::saveOptions('sq_ws', (int)SQ_Tools::getValue('sq_ws'));
 
 
                 //update_option('blog_public', (int)SQ_Tools::getValue('sq_google_index'));

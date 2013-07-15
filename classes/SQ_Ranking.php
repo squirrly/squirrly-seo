@@ -122,7 +122,7 @@ class SQ_Ranking extends SQ_FrontController {
      * @param integer $post_id
      * @return string
      */
-    function getRank($post_id = ""){
+    public function getRank($post_id = ""){
         global $wpdb;
 
         //Check if ranks is saved in database

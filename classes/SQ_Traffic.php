@@ -20,6 +20,58 @@ class SQ_Traffic extends SQ_FrontController {
     function init() { return; }
     function action() {}
 
+    public function getAnalyticsTable(){
+        return $this->analytics_table;
+    }
+
+    public function getKeywordTable(){
+        return $this->keyword_table;
+    }
+
+    /**
+     * Create the tables for traffic and keyword
+     * @global type $wpdb
+     */
+    private function createBdTables(){
+        global $wpdb;
+        if($wpdb->get_var("SHOW TABLES LIKE '".$this->analytics_table."'") != $this->analytics_table) {
+            $sql = "CREATE TABLE `".$this->analytics_table."` (
+                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+                    `count` INT( 9 ) NOT NULL DEFAULT 0,
+                    `unique` INT( 9 ) NOT NULL DEFAULT 0,
+                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
+                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
+                    `indexed` tinyint( 1 ) NOT NULL DEFAULT -1,
+                    `global_rank` int( 3 ) NOT NULL DEFAULT -1,
+                    `local_rank` int( 3 ) NOT NULL DEFAULT -1,
+                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+                    `other_keywords` text collate utf8_unicode_ci NOT NULL default '',
+                    `date` DATE default NULL,
+                     PRIMARY KEY ( `id` ),
+                     KEY `post_id` USING BTREE (`post_id`)
+                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
+
+            $wpdb->query($sql);
+        }
+
+        if($wpdb->get_var("SHOW TABLES LIKE '".$this->keyword_table."'") != $this->keyword_table) {
+            $sql = "CREATE TABLE `".$this->keyword_table."` (
+                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
+                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
+                    `referral` varchar(96) collate utf8_unicode_ci NOT NULL default '',
+                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+                    `date` DATE default NULL,
+                     PRIMARY KEY ( `id` ),
+                     KEY `post_id` USING BTREE (`post_id`)
+                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
+
+            $wpdb->query($sql);
+        }
+        //Save database created
+        SQ_Tools::saveOptions('sq_dbtables', 1);
+    }
+
     /**
      * Get the aray accourding to the passed days
      * @param integer $interval
@@ -150,49 +202,7 @@ class SQ_Traffic extends SQ_FrontController {
 
     }
 
-    /**
-     * Create the tables for traffic and keyword
-     * @global type $wpdb
-     */
-    private function createBdTables(){
-        global $wpdb;
-        if($wpdb->get_var("SHOW TABLES LIKE '".$this->analytics_table."'") != $this->analytics_table) {
-            $sql = "CREATE TABLE `".$this->analytics_table."` (
-                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
-                    `count` INT( 9 ) NOT NULL DEFAULT 0,
-                    `unique` INT( 9 ) NOT NULL DEFAULT 0,
-                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
-                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
-                    `indexed` tinyint( 1 ) NOT NULL DEFAULT -1,
-                    `global_rank` int( 3 ) NOT NULL DEFAULT -1,
-                    `local_rank` int( 3 ) NOT NULL DEFAULT -1,
-                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
-                    `other_keywords` text collate utf8_unicode_ci NOT NULL default '',
-                    `date` DATE default NULL,
-                     PRIMARY KEY ( `id` ),
-                     KEY `post_id` USING BTREE (`post_id`)
-                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
 
-            $wpdb->query($sql);
-        }
-
-        if($wpdb->get_var("SHOW TABLES LIKE '".$this->keyword_table."'") != $this->keyword_table) {
-            $sql = "CREATE TABLE `".$this->keyword_table."` (
-                    `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
-                    `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
-                    `home` tinyint( 1 ) NOT NULL DEFAULT 0,
-                    `referral` varchar(96) collate utf8_unicode_ci NOT NULL default '',
-                    `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
-                    `date` DATE default NULL,
-                     PRIMARY KEY ( `id` ),
-                     KEY `post_id` USING BTREE (`post_id`)
-                    ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ";
-
-            $wpdb->query($sql);
-        }
-        //Save database created
-        SQ_Tools::saveOptions('sq_dbtables', 1);
-    }
 
     /**
      * Save the cookie for the unique visitor
@@ -219,10 +229,10 @@ class SQ_Traffic extends SQ_FrontController {
                     return;
         }
 
+        //Dont save if is admin
         if (is_admin() || is_super_admin() || isset($_COOKIE['sq_snippet']) || SQ_Tools::getIsset('sq_bot')){
             return;
         }
-
 
         //Save only the home page, posts and pages
         if (is_single() || is_page()) {
@@ -230,7 +240,6 @@ class SQ_Traffic extends SQ_FrontController {
         }elseif (is_home()) {
             $home = 1;
         }else return;
-
 
         //Save Keyword
         if ($referral  = $this->getReferralKeyword())
@@ -241,7 +250,6 @@ class SQ_Traffic extends SQ_FrontController {
 
                 $wpdb->query($wpdb->prepare($sql));
             }
-
 
         $sql = "SELECT analytics.`id`,analytics.`count`,analytics.`unique`
                        FROM `".$this->analytics_table."` analytics
@@ -279,7 +287,7 @@ class SQ_Traffic extends SQ_FrontController {
         if (!function_exists('parse_url') || !function_exists('preg_match')) return '';
 
         $keywords = '';
-        if (!isset($_SERVER['HTTP_REFERER']))
+        if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == '')
             return false;
 
         $refer = parse_url($_SERVER['HTTP_REFERER']);

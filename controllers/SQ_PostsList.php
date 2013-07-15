@@ -131,7 +131,7 @@ class SQ_PostsList extends SQ_FrontController {
                         $description = SQ_Tools::$options['sq_fp_description'];
                }
             echo '<script type="text/javascript">
-                    jQuery(\'#post-'.$post_id.'\').find(\'.row-title\').before(\''.(($description <> '') ? '<span class="sq_rank_custom_meta sq_rank_customdescription sq_rank_sprite" title="'.__('Custom description: ',_PLUGIN_NAME_).$description.'"></span>' : '') .' '.(($title <> '') ? '<span class="sq_rank_custom_meta sq_rank_customtitle sq_rank_sprite" title="'.__('Custom title: ',_PLUGIN_NAME_).$title.'"></span>' : '') .'\');
+                    jQuery(\'#post-'.$post_id.'\').find(\'.row-title\').before(\''.(($description <> '') ? '<span class="sq_rank_custom_meta sq_rank_customdescription sq_rank_sprite" title="'.__('Custom description: ',_PLUGIN_NAME_) . ' ' .$description.'"></span>' : '') .' '.(($title <> '') ? '<span class="sq_rank_custom_meta sq_rank_customtitle sq_rank_sprite" title="'.__('Custom title: ',_PLUGIN_NAME_) . ' '.$title.'"></span>' : '') .'\');
                </script>';
            }
         }
@@ -206,6 +206,14 @@ class SQ_PostsList extends SQ_FrontController {
 
           switch (SQ_Tools::getValue('action')){
             case 'sq_posts_rank':
+                $args = array();
+                $progress = array();
+
+                //Check the global progress in traffic for optimized and not optimized articles
+                $status = SQ_ObjController::getModel('SQ_BlockStatus');
+                if (is_object($status) && SQ_Tools::$options['sq_ws'] == 1){
+                    $progress = $status->getGlobalProgress();
+                }
 
                 if (is_array(SQ_Tools::getValue('posts'))){
                     $posts = SQ_Tools::getValue('posts');
@@ -215,6 +223,7 @@ class SQ_PostsList extends SQ_FrontController {
                     $args['visit'] = '';
                     $args['unique'] = '';
                     $args['avgmonth'] = '';
+
 
                     //$args['rank'] = '';
                     foreach ($posts as $post_id){
@@ -232,6 +241,7 @@ class SQ_PostsList extends SQ_FrontController {
                     $global = array();
                     $global = $this->model->getGlobalAverage();
                     $args['average'] = $global['count'];
+                    $args['progress'] = $progress;
                     //////////////////////////////
 
                     $response = SQ_Action::apiCall('sq/pack/total',$args);
@@ -241,6 +251,14 @@ class SQ_PostsList extends SQ_FrontController {
 
                 if (!isset($return) || !is_object($return))
                 $return = (object) NULL;
+
+                //Set the progress information for the article
+                if (is_array($progress) && !isset($return->status) && is_object($status)){
+                    if(SQ_Tools::$options['sq_ws'] == 1)
+                        $return->status = $status->packStatus($progress);
+                    else
+                        $return->status = '';
+                }
 
                 SQ_Tools::setHeader('json');
                 echo json_encode($return);
@@ -319,6 +337,11 @@ class SQ_PostsList extends SQ_FrontController {
                 SQ_Tools::setHeader('json');
                 echo json_encode($return);
                 exit();
+            case 'sq_posts_status_close':
+                SQ_Tools::saveOptions('sq_posts_status_close', time());
+                exit();
+
+
           }
 
 
