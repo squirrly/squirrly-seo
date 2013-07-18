@@ -1,0 +1,1232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: squirrly-seo\n"
+"POT-Creation-Date: 2013-07-18 05:40+0200\n"
+"PO-Revision-Date: 2013-07-18 05:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: Squirrly UK <support@squirrly.co>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: d:\\pagini_net\\se_lucreaza\\squirrly\\wordpress\\wp-"
+"content\\plugins\\squirrly-seo\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: squirrly.php:45
+msgid ""
+"For Squirrly to work, the PHP version has to be equal or greater then 5.1"
+msgstr ""
+"Para que funcione Squirrly, la versión de PHP tiene que ser mayor o igual de "
+"5.1"
+
+#: classes/SQ_Error.php:20
+msgid ""
+"Function get_class does not exists! Is required for Squirrly to work "
+"properly."
+msgstr ""
+"La función get_class no existe! Es necesaria para que Squirrly funcione "
+"correctamente."
+
+#: classes/SQ_Error.php:23
+msgid ""
+"Function file_exists does not exists! Is required for Squirrly to work "
+"properly."
+msgstr ""
+"La función file_exists no existe! Es necesaria para que Squirrly funcione "
+"correctamente."
+
+#: classes/SQ_Error.php:27
+msgid "The home directory is not set!"
+msgstr "El directorio home no está establecido!"
+
+#: classes/SQ_Error.php:31
+msgid "The PHP version has to be greater then 4.0"
+msgstr "La versión de PHP tiene que ser mayor o igual de 4.0"
+
+#: classes/SQ_Error.php:69
+msgid "Turn off warnings!"
+msgstr "Desactiva las advertencias!"
+
+#: classes/SQ_Error.php:70
+msgid "Notice: "
+msgstr "Aviso:"
+
+#: classes/SQ_Error.php:74
+msgid "Note: "
+msgstr "Nota:"
+
+#: classes/SQ_Tools.php:107 controllers/SQ_Menu.php:35
+msgid "Getting started"
+msgstr "Primeros pasos"
+
+#: classes/SQ_Tools.php:450
+msgid "Fix it for me!"
+msgstr "Soluciónalo por mí!"
+
+#: classes/SQ_Tools.php:456
+msgid "Let Squirrly optimize your SEO automatically (recommended)"
+msgstr "Dejar a Squirrly que optimice tu SEO automáticamente (recomendado)"
+
+#: classes/SQ_Tools.php:464
+msgid "You're blocking google from indexing your site!"
+msgstr "Estás impidiendo que Google indexe tu sitio web!"
+
+#: classes/SQ_Tools.php:470
+msgid ""
+"It is highly recommended that you include the %postname% variable in the "
+"permalink structure. <br />Go to Settings > Permalinks and add /%postname%/ "
+"in Custom Structure"
+msgstr ""
+"Es muy recomendable que incluyas la variable %postname% en la estructura de "
+"enlaces permanentes. <br />Ve a Ajustes > Enlaces permanentes y añade /"
+"%postname%/ en la estructura personalizada"
+
+#: controllers/SQ_Menu.php:34
+msgid " getting started"
+msgstr "primeros pasos"
+
+#: controllers/SQ_Menu.php:43
+msgid " dashboard"
+msgstr "panel de control"
+
+#: controllers/SQ_Menu.php:44
+msgid "Dashboard"
+msgstr "Panel de control"
+
+#: controllers/SQ_Menu.php:51
+msgid " settings"
+msgstr "ajustes"
+
+#: controllers/SQ_Menu.php:52
+msgid "Settings"
+msgstr "Ajustes"
+
+#: controllers/SQ_Menu.php:59
+msgid "Make money with "
+msgstr "Gana dinero con"
+
+#: controllers/SQ_Menu.php:60
+msgid "Make money"
+msgstr "Gana dinero"
+
+#: controllers/SQ_Menu.php:79
+msgid "Squirrly Article Rank"
+msgstr "Ranking de artículos Squirrly"
+
+#: controllers/SQ_PostsList.php:97
+msgid "Squirrly"
+msgstr "Squirrly"
+
+#: controllers/SQ_PostsList.php:134
+msgid "Custom description: "
+msgstr "Descripción personalizada:"
+
+#: controllers/SQ_PostsList.php:134
+msgid "Custom title: "
+msgstr "Título personalizado:"
+
+#: controllers/SQ_PostsList.php:157
+msgid "Squirrly article rank"
+msgstr "Ranking de artículos Squirrly"
+
+#: controllers/SQ_PostsList.php:158 core/SQ_Blockseo/SQ_Blockseo.php:21
+msgid "Update"
+msgstr "Actualizar"
+
+#: controllers/SQ_PostsList.php:159
+msgid "More details"
+msgstr "Más detalles"
+
+#: controllers/SQ_PostsList.php:160
+msgid "Less details"
+msgstr "Menos detalles"
+
+#: controllers/SQ_PostsList.php:161
+msgid "Interval: "
+msgstr "Intervalo:"
+
+#: controllers/SQ_PostsList.php:162 models/SQ_PostsList.php:30
+msgid "Latest"
+msgstr "Últimos"
+
+#: controllers/SQ_PostsList.php:163 models/SQ_PostsList.php:31
+msgid "Last 7 days"
+msgstr "Últimos 7 días"
+
+#: controllers/SQ_PostsList.php:164 models/SQ_PostsList.php:32
+msgid "Last 30 days"
+msgstr "Últimos 30 días"
+
+#: controllers/SQ_PostsList.php:166
+msgid "See it in 'All Posts'"
+msgstr "Verlo en 'Todos los mensajes'"
+
+#: controllers/SQ_PostsList.php:167
+msgid "progress"
+msgstr "progreso"
+
+#: controllers/SQ_PostsList.php:168
+msgid "optimized"
+msgstr "optimizado"
+
+#: controllers/SQ_PostsList.php:169
+msgid "See rank"
+msgstr "Ver ranking"
+
+#: controllers/SQ_PostsList.php:170
+msgid "Hide rank"
+msgstr "Ocultar ranking"
+
+#: controllers/SQ_PostsList.php:171
+msgid "Optimize"
+msgstr "Optimizar"
+
+#: controllers/SQ_PostsList.php:173
+msgid "Not Public"
+msgstr "No es público"
+
+#: controllers/SQ_PostsList.php:277 core/SQ_Blockrank/SQ_Blockrank.php:32
+msgid "Publish the article to start Squirrly Article Rank"
+msgstr "Publica el artículo para iniciar el Ranking de artículos Squirrly"
+
+#: core/SQ_BlockAffiliate/SQ_BlockAffiliate.php:33
+#, php-format
+msgid "Error: %s"
+msgstr "Error: %s"
+
+#: core/SQ_BlockAffiliate/SQ_BlockAffiliate.php:36
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:85
+msgid "An error occured. Mabe a network error :("
+msgstr "Ha ocurrido un error. Quizás un error de red :("
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:80
+#, php-format
+msgid ""
+"We found your email, so it means you already have a Squirrly.co account. "
+"Please login with your Squirrly Email. If you forgot your password click "
+"%shere%s"
+msgstr ""
+"Hemos encontrado tu email, lo cual significa que ya tienes cuenta en "
+"Squirrly.co. Por favor, inicia sesión con tu email de Squirrly. Si olvidaste "
+"tu contraseña haz click %saquí%s"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:88
+#, php-format
+msgid ""
+"Could not send your informations to squirrly. Please register %smanually%s."
+msgstr ""
+"No se pudo enviar tu información a Squirrly. Por favor, regístrate "
+"%smanualmente%s."
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:129
+msgid "Wrong email or password!"
+msgstr "Contraseña o email incorrecto!"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:132
+msgid "You can use this account only for the URL you registered first!"
+msgstr "Sólo puedes utilizar esta cuenta para la URL que registraste primero!"
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:137
+msgid "An error occured."
+msgstr "Ha ocurrido un error."
+
+#: core/SQ_Blocklogin/SQ_Blocklogin.php:139
+msgid "Both fields are required."
+msgstr "Ambos campos son obligatorios."
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Recent discussions:"
+msgstr "Discusiones recientes:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Exact search:"
+msgstr "Búsqueda exacta:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Competition:"
+msgstr "Competencia:"
+
+#: core/SQ_Blockresearch/SQ_Blockresearch.php:12
+msgid "Trend:"
+msgstr "Tendencia:"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "date"
+msgstr "fecha"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Read it!"
+msgstr "Léelo!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Insert it!"
+msgstr "Insértalo!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Reference"
+msgstr "Referencia"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Insert as box"
+msgstr "Insertar como cuadro"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Not relevant?"
+msgstr "No es relevante?"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Insert in your article"
+msgstr "Insertar en tu artículo"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "For Squirrly to work, you have to have tinymce editor installed!"
+msgstr ""
+"Para que funcione Squirrly tienes que tener instalado el editor tinymce!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid ":( I lost my squirrel. Please reload the page."
+msgstr ":( Perdí mi ardilla. Recarga por favor la página."
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "No results found!"
+msgstr "No se encontraron resultados!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Switch to Visual editor!"
+msgstr "Cambia al editor visual!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Use more words in one keyword"
+msgstr "Usa más palabras en una palabra clave"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Takes too long to check this keyword ..."
+msgstr "Se tarda demasiado en comprobar esta palabra clave ..."
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Do a research!"
+msgstr "Investiga!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Do more research!"
+msgstr "Investiga más!"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+#, php-format
+msgid "[ ATTRIBUTE: Please check: %s to find out how to attribute this image ]"
+msgstr ""
+"[ ATRIBUIR: Por favor comprueba: %s para averiguar cómo atribuir esta "
+"imagen ]"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "Has creative commons attributes"
+msgstr "Tiene atributos Creative Commons"
+
+#: core/SQ_Blocksearch/SQ_Blocksearch.php:51
+msgid "No known copyright restrictions"
+msgstr "No tiene restricciones de copyright conocidas"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:11
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:12
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:13
+msgid "Reset"
+msgstr "Restaurar"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:15
+msgid "Customize Title"
+msgstr "Personalizar título"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:16
+msgid "manage keywords"
+msgstr "Administrar palabras clave"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:17 themes/default/SQ_Menu.php:338
+msgid "Too short"
+msgstr "Demasiado corto"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:18 themes/default/SQ_Menu.php:339
+msgid "Too long"
+msgstr "Demasiado largo"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:20 themes/default/SQ_Menu.php:214
+msgid "Squirrly Snippet"
+msgstr "Fragmento Squirrly (snippet)"
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:22
+msgid ""
+"Click the Update button (to the right) to see the snippet from your website."
+msgstr ""
+"Haz click en el botón actualizar (a la derecha) para ver el fragmento desde "
+"tu sitio web."
+
+#: core/SQ_Blockseo/SQ_Blockseo.php:23
+msgid "Enter a title above for the snippet to get data."
+msgstr "Introduce un título arriba para que el fragmento reciba datos."
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:21
+msgid "Plugin Feedback"
+msgstr "Comentarios sobre el plugin"
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:57
+msgid "Thank you for your feedback"
+msgstr "Gracias por tus comentarios"
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:59
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:94
+msgid "Could not send the email..."
+msgstr "No se pudo enviar el email..."
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:62
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:97
+msgid "No message."
+msgstr "Ningún mensaje."
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:81
+msgid "Plugin Support"
+msgstr "Soporte del plugin"
+
+#: core/SQ_BlockSupport/SQ_BlockSupport.php:92
+msgid "Message sent..."
+msgstr "Mensaje enviado..."
+
+#: core/SQ_Loading/SQ_Loading.php:23
+msgid ""
+"For Squirrly to work properly you have to use a higher version of Internet "
+"Explorer. <br /> We recommend you to use Chrome or Mozilla."
+msgstr ""
+"Para que Squirrly funcione correctamente tienes que usar una versión "
+"superior de Internet Explorer. <br /> Recomendamos que utilices Chrome o "
+"Mozilla."
+
+#: core/SQ_Loading/SQ_Loading.php:30
+msgid ""
+"You haven`t used Squirrly SEO to optimize your article. Do you want to "
+"optimize for a keyword before publishing?"
+msgstr ""
+"No has usado Squirrly SEO para optimizar tu artículo. Quieres optimizar para "
+"una palabra clave antes de publicar?"
+
+#: models/SQ_BlockStatus.php:122
+#, php-format
+msgid "%s More Traffic for you!"
+msgstr ""
+
+#: models/SQ_BlockStatus.php:122
+msgid "[close this box]"
+msgstr ""
+
+#: models/SQ_BlockStatus.php:127
+msgid "CONGRATULATIONS!!"
+msgstr ""
+
+#: models/SQ_BlockStatus.php:130
+msgid "Your Traffic Increased by:"
+msgstr ""
+
+#: models/SQ_BlockStatus.php:135
+#, php-format
+msgid ""
+"the articles you’ve optimized with Squirrly SEO bring you %s more traffic "
+"than the other ones."
+msgstr ""
+
+#: models/SQ_Menu.php:139
+msgid "The code for Google Webmaster Tool is incorrect."
+msgstr ""
+"El código para las Herramientas para webmasters de Google es incorrecto."
+
+#: models/SQ_Menu.php:166
+msgid "The code for Google Analytics is incorrect."
+msgstr "El código para Google Analytics es incorrecto."
+
+#: models/SQ_Menu.php:194
+msgid "The code for Facebook is incorrect."
+msgstr "El código para Facebook es incorrecto."
+
+#: models/SQ_Menu.php:219
+msgid "The code for Bing is incorrect."
+msgstr "El código para Bing es incorrecto."
+
+#: models/SQ_Menu.php:252
+msgid "File type error: Only JPEG, JPG, GIF or PNG files are allowed."
+msgstr ""
+"Error de tipo de archivo: Sólo los archivos JPEG, JPG, GIF o PNG están "
+"permitidos."
+
+#: models/SQ_Menu.php:265
+msgid "GD error: The GD library must be installed on your server."
+msgstr "Error de GD: La librería GD debe ser instalada en tu servidor."
+
+#: models/SQ_Menu.php:272
+msgid "Delete error: Could not delete the old favicon."
+msgstr "Error de eliminación: No se pudo eliminar el antiguo favicon."
+
+#: models/SQ_Menu.php:279
+msgid "Upload error: Could not upload the favicon."
+msgstr "Error de subida: No se pudo subir el favicon."
+
+#: models/SQ_Menu.php:285
+msgid "Permission error: Could not change the favicon permissions."
+msgstr "Error de permisos: No se pudieron cambiar los permisos del favicon."
+
+#: models/SQ_Menu.php:311
+msgid ""
+"ICO Error: Could not create the ICO from file. Try with another file type."
+msgstr ""
+"Error ICO: No se puedo crear el ICO a partir del archivo. Inténtalo con otro "
+"tipo de archivo."
+
+#: models/SQ_Menu.php:314
+msgid "The favicon has been updated."
+msgstr "El favicon ha sido actualizado."
+
+#: models/SQ_Post.php:71
+msgid "Squirrly could not find any results for: "
+msgstr "Squirrly no pudo encontrar ningún resultado para:"
+
+#: models/SQ_PostsList.php:29
+msgid "This article"
+msgstr "Este artículo"
+
+#: models/SQ_PostsList.php:29
+msgid "All your articles"
+msgstr "Todos tus artículos"
+
+#: models/SQ_PostsList.php:69
+msgid "Optimize this article to start Squirrly Article Rank"
+msgstr "Optimiza este artículo para iniciar el ranking de artículos Squirrly"
+
+#: models/SQ_PostsList.php:111
+msgid "There are no information for this post yet."
+msgstr "No hay información aún para este mensaje."
+
+#: models/SQ_PostsList.php:129 models/SQ_PostsList.php:247
+msgid "Traffic to article"
+msgstr "Tráfico al artículo"
+
+#: models/SQ_PostsList.php:130
+msgid "Social impact"
+msgstr "Impacto social"
+
+#: models/SQ_PostsList.php:131
+msgid "Links to article"
+msgstr "Enlaces al artículo"
+
+#: models/SQ_PostsList.php:193
+msgid "Google Indexed"
+msgstr "Indexado por Google"
+
+#: models/SQ_PostsList.php:198
+msgid "pos"
+msgstr "pos"
+
+#: models/SQ_PostsList.php:198 themes/default/SQ_Menu.php:21
+#: themes/default/SQ_Menu.php:40 themes/default/SQ_Menu.php:57
+#: themes/default/SQ_Menu.php:74 themes/default/SQ_Menu.php:91
+#: themes/default/SQ_Menu.php:108 themes/default/SQ_Menu.php:125
+#: themes/default/SQ_Menu.php:152 themes/default/SQ_Menu.php:169
+#: themes/default/SQ_Menu.php:237 themes/default/SQ_Menu.php:248
+#: themes/default/SQ_Menu.php:259 themes/default/SQ_Menu.php:270
+msgid "Yes"
+msgstr "Sí"
+
+#: models/SQ_PostsList.php:198 themes/default/SQ_Menu.php:23
+#: themes/default/SQ_Menu.php:42 themes/default/SQ_Menu.php:59
+#: themes/default/SQ_Menu.php:76 themes/default/SQ_Menu.php:93
+#: themes/default/SQ_Menu.php:110 themes/default/SQ_Menu.php:127
+#: themes/default/SQ_Menu.php:154 themes/default/SQ_Menu.php:171
+#: themes/default/SQ_Menu.php:239 themes/default/SQ_Menu.php:250
+#: themes/default/SQ_Menu.php:261 themes/default/SQ_Menu.php:272
+msgid "No"
+msgstr "No"
+
+#: models/SQ_PostsList.php:198
+msgid "for:"
+msgstr "para:"
+
+#: models/SQ_PostsList.php:198
+msgid "(searched with the url)"
+msgstr "(buscado con la url)"
+
+#: models/SQ_PostsList.php:218
+msgid "This article|Average"
+msgstr "Este artículo|Promedio"
+
+#: models/SQ_PostsList.php:254
+msgid "Visits"
+msgstr "Visitas"
+
+#: models/SQ_PostsList.php:257
+msgid "Unique"
+msgstr "Único"
+
+#: models/SQ_PostsList.php:369
+msgid "Google result for: "
+msgstr "Resultado de Google para:"
+
+#: models/SQ_PostsList.php:402
+msgid "Change"
+msgstr "Cambiar"
+
+#: models/SQ_PostsList.php:402
+msgid "since"
+msgstr "desde"
+
+#: models/SQ_PostsList.php:403 models/SQ_PostsList.php:478
+msgid "Current position"
+msgstr "Posición actual"
+
+#: models/SQ_PostsList.php:437
+msgid "Recommended by Squirrly"
+msgstr "Recomendado por Squirrly"
+
+#: models/SQ_PostsList.php:477
+msgid "Keyword"
+msgstr "Palabra clave"
+
+#: themes/default/SQ_BlockAffiliate.php:4
+#: themes/default/SQ_BlockAffiliate.php:14
+msgid "Join Squirrly today!"
+msgstr "Únete a Squirrly hoy mismo!"
+
+#: themes/default/SQ_BlockAffiliate.php:21
+msgid ""
+"To redirect users to your site, just change \"squirrly.co\" with your domain."
+msgstr ""
+"Para redireccionar a los usuarios a tu sitio web, cambia simplemente "
+"\"squirrly.co\" por tu dominio."
+
+#: themes/default/SQ_BlockAffiliate.php:23
+msgid "Generate affiliate link"
+msgstr "Generar enlace afiliado"
+
+#: themes/default/SQ_BlockAffiliate.php:28
+msgid "Affiliate Benefits"
+msgstr "Beneficios de afiliado"
+
+#: themes/default/SQ_BlockAffiliate.php:33
+#, php-format
+msgid "- Recurring 45%s commission"
+msgstr "- Comisión recurrente del 45%s"
+
+#: themes/default/SQ_BlockAffiliate.php:38
+msgid "- No cost"
+msgstr "- Sin coste"
+
+#: themes/default/SQ_BlockAffiliate.php:43
+msgid "- Monthly payments in your Paypal account"
+msgstr "- Pagos mensuales en tu cuenta de Paypal"
+
+#: themes/default/SQ_BlockAffiliate.php:50
+msgid ""
+"Your affiliate account is set and ready to go. Above you have the affiliate "
+"link. "
+msgstr ""
+"Tu cuenta de afiliado está configurada y lista para funcionar. Arriba tienes "
+"el enlace de afiliado."
+
+#: themes/default/SQ_BlockAffiliate.php:52
+#, php-format
+msgid "Check your affiliate page: %sAffiliate page%s"
+msgstr "Comprueba tu página de afiliado: %sPágina de afiliado%s"
+
+#: themes/default/SQ_BlockAffiliate.php:54
+#, php-format
+msgid "%sTerms of Use for our Affiliate Program%s"
+msgstr "%sTérminos de uso para nuestro Programa de Afiliados %s"
+
+#: themes/default/SQ_BlockAffiliate.php:58
+msgid ""
+"After you connect to Squirrly you can begin to use your free Squirrly "
+"affiliate link immediately!"
+msgstr ""
+"Después de conectarte a Squirrly puedes empezar a usar tu enlace gratuito de "
+"afiliado Squirrly inmediatamente!"
+
+#: themes/default/SQ_BlockAffiliate.php:66
+msgid "Squirrly banners you can use"
+msgstr "Banners de Squirrly que puedes usar"
+
+#: themes/default/SQ_BlockAffiliate.php:87
+#: themes/default/SQ_BlockDashboard.php:54 themes/default/SQ_Menu.php:4
+#, fuzzy
+msgid "Optimize with Squirrly"
+msgstr "Escribe un nuevo artículo con Squirrly"
+
+#: themes/default/SQ_BlockAffiliate.php:88
+msgid "See dashboard"
+msgstr "Ver panel de control"
+
+#: themes/default/SQ_BlockAffiliate.php:89
+#: themes/default/SQ_BlockDashboard.php:55
+msgid "Go to settings"
+msgstr "Ir a los ajustes"
+
+#: themes/default/SQ_BlockDashboard.php:5
+msgid "Squirrly dashboard"
+msgstr "Panel de control Squirrly"
+
+#: themes/default/SQ_BlockDashboard.php:8
+msgid "User level"
+msgstr "Nivel de usuario"
+
+#: themes/default/SQ_BlockDashboard.php:12
+msgid "Beginner"
+msgstr "Principiante"
+
+#: themes/default/SQ_BlockDashboard.php:14
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: themes/default/SQ_BlockDashboard.php:18
+msgid "Select Advanced only if you have SEO knowledge."
+msgstr "Selecciona avanzado sólo si tienes conocimientos sobre SEO."
+
+#: themes/default/SQ_BlockDashboard.php:21
+msgid "What does the Beginner option bring you:"
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:23
+msgid ""
+"Squirrly <strong>finds the optimum Title and Description</strong> for each "
+"page of your blog but you can still customize the home page Title and "
+"Description if you want."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:24
+msgid ""
+"Squirrly <strong>manages the sitemap</strong> for your blog and pings it to "
+"Google and Bing every time you add a new article. This ensures that your "
+"articles get indexed much faster."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:25
+msgid ""
+"Squirrly <strong>adds the Facebook required meta</strong>, so that when your "
+"readers share your page or article, it looks really good."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:26
+msgid ""
+"You can connect your site with your <strong>Google Plus</strong> and "
+"<strong>Google Analytics</strong> accounts."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:27
+msgid ""
+"You can add the site icon (also known as favicon) and Squirrly will set it "
+"up to look good for <strong>Apple devices</strong>."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:32
+msgid "What does the Advanced option bring you:"
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:34
+msgid "More <strong>SEO options</strong> are available on the Settings page."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:35
+msgid ""
+"You can connect your site with <strong>Google Webmaster Tools</strong>, "
+"<strong>Bing Webmaster Tools</strong> and <strong>Facebook Insights</strong>."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:36
+msgid ""
+"You can see the <strong>Snippet</strong> when you edit your Post or Page."
+msgstr ""
+
+#: themes/default/SQ_BlockDashboard.php:37
+msgid ""
+"You can <strong>customize the Title and Description</strong> of each Post/"
+"Page from within the snippet."
+msgstr ""
+
+#: themes/default/SQ_BlockHelp.php:10
+msgid ""
+"With Squirrly SEO, your Wordpress will get Excellent SEO on each article you "
+"write."
+msgstr ""
+"Con Squirrly SEO, tu Wordpress obtendrá un excelente SEO en cada artículo "
+"que escribas."
+
+#: themes/default/SQ_BlockHelp.php:12
+msgid "SEO Software"
+msgstr "Software SEO"
+
+#: themes/default/SQ_BlockHelp.php:12
+msgid ""
+"delivered as a plugin for Wordpress. <br /><br />We connect your wordpress "
+"with Squirrly, so that we can find the best SEO opportunities, give you "
+"reports and analyse your competitors."
+msgstr ""
+"entregado como plugin para Wordpress. <br /><br />Conectamos tu wordpress "
+"con Squirrly, para que podamos encontrar las mejores oportunidades SEO, "
+"ofrecerte informes y analizar tu competencia."
+
+#: themes/default/SQ_BlockHelp.php:20
+msgid "Don't show this page"
+msgstr "No mostrar esta página"
+
+#: themes/default/SQ_BlockHelp.php:21
+msgid "<< START HERE >>"
+msgstr ""
+
+#: themes/default/SQ_Blocklogin.php:2
+msgid "Squirrly.co Login"
+msgstr "Inicio de sesión en Squirrly.co"
+
+#: themes/default/SQ_Blocklogin.php:9
+msgid "Email:"
+msgstr "Email:"
+
+#: themes/default/SQ_Blocklogin.php:10
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: themes/default/SQ_Blocklogin.php:11
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: themes/default/SQ_Blocklogin.php:12
+msgid "Register"
+msgstr "Registrarse"
+
+#: themes/default/SQ_Blocklogin.php:12
+msgid "Register to Squirrly.co"
+msgstr "Registrarse en Squirrly.co"
+
+#: themes/default/SQ_Blocklogin.php:13
+msgid "Lost password?"
+msgstr "Perdiste la contraseña?"
+
+#: themes/default/SQ_Blocklogin.php:13
+msgid "Lost password"
+msgstr "Contraseña perdida"
+
+#: themes/default/SQ_Blocklogin.php:17
+msgid "Enter your email"
+msgstr "Introduce tu email"
+
+#: themes/default/SQ_Blocklogin.php:18
+msgid "Your E-mail:"
+msgstr "Tu Email:"
+
+#: themes/default/SQ_Blocklogin.php:19
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: themes/default/SQ_Blocklogin.php:20
+msgid "I already have an account"
+msgstr "Ya tengo una cuenta"
+
+#: themes/default/SQ_Blocklogin.php:21
+msgid "This email connects you to Squirrly.co"
+msgstr "Este email te conecta a Squirrly.co"
+
+#: themes/default/SQ_Blocklogin.php:30
+msgid "The email address is invalid!"
+msgstr "La dirección de email no es válida!"
+
+#: themes/default/SQ_Blocklogin.php:31
+msgid "Click on Sign Up button and try again ..."
+msgstr "Haz click en el botón Registrarse e inténtalo de nuevo ..."
+
+#: themes/default/SQ_Blocklogin.php:32
+msgid "An error occured while logging in!"
+msgstr "Ha ocurrido un error al iniciar sesión!"
+
+#: themes/default/SQ_Blocklogin.php:33
+msgid "Connecting ..."
+msgstr "Conectando ..."
+
+#: themes/default/SQ_Blocklogin.php:40
+msgid "Congratulations! Now write a new article with:"
+msgstr ""
+
+#: themes/default/SQ_Blocklogin.php:43
+msgid ""
+"<strong>Keyword Research and Analysis</strong>: find the keywords that are "
+"easier to rank for."
+msgstr ""
+
+#: themes/default/SQ_Blocklogin.php:44
+msgid ""
+"<strong>SEO Live Assistant</strong>: Your Wordpress gives you SEO adivce as "
+"you type your article."
+msgstr ""
+
+#: themes/default/SQ_Blocklogin.php:45
+msgid ""
+"<strong>Inspiration box</strong>: get images you can use for free, tweets "
+"you can quote and get up to date with latest news about your subject."
+msgstr ""
+
+#: themes/default/SQ_Blocklogin.php:46
+msgid ""
+"<strong>Article Rank</strong>: Measure and Monitor the impact of SEO and "
+"Social Signals for each of your articles."
+msgstr ""
+
+#: themes/default/SQ_Blockresearch.php:2
+msgid "Squirrly Keyword Research"
+msgstr "Estudio sobre palabras clave de Squirrly"
+
+#: themes/default/SQ_Blockresearch.php:3
+msgid "Clear"
+msgstr "Limpiar"
+
+#: themes/default/SQ_Blockresearch.php:9
+msgid "Keyword:"
+msgstr "Palabra clave:"
+
+#: themes/default/SQ_Blockresearch.php:11 themes/default/SQ_Blocksearch.php:23
+msgid "Use this keyword"
+msgstr "Usar esta palabra clave"
+
+#: themes/default/SQ_Blockresearch.php:20
+msgid "+ Add keyword"
+msgstr "+ Añadir palabra clave"
+
+#: themes/default/SQ_Blockresearch.php:21
+msgid "Do the research"
+msgstr "Realizar el estudio"
+
+#: themes/default/SQ_Blockresearch.php:24
+msgid "Enter even more keywords."
+msgstr "Introduce más palabras clave."
+
+#: themes/default/SQ_Blockresearch.php:25
+msgid "Let some keywords for the next time as well!"
+msgstr "Deja algunas palabras clave para la próxima vez!"
+
+#: themes/default/SQ_Blocksearch.php:3
+msgid "Optimize for Keyword"
+msgstr "Optimizar por palabra clave"
+
+#: themes/default/SQ_Blocksearch.php:10
+msgid "Enter a keyword"
+msgstr "Introduce una palabra clave"
+
+#: themes/default/SQ_Blocksearch.php:10
+msgid "for Squirrly Live SEO optimization"
+msgstr "para la optimización Squirrly Live SEO"
+
+#: themes/default/SQ_Blocksearch.php:22
+msgid "Do a research"
+msgstr "Realizar un estudio"
+
+#: themes/default/SQ_Blocksearch.php:27
+msgid "Enter a keyword above!"
+msgstr "Introduce una palabra clave arriba!"
+
+#: themes/default/SQ_Blocksearch.php:28
+msgid "I have more then one keyword!"
+msgstr "Tengo más de una palabra clave!"
+
+#: themes/default/SQ_Blocksearch.php:34
+msgid "Images"
+msgstr "Imágenes"
+
+#: themes/default/SQ_Blocksearch.php:35
+msgid "Twitter"
+msgstr "Twitter"
+
+#: themes/default/SQ_Blocksearch.php:36
+msgid "Wiki"
+msgstr "Wiki"
+
+#: themes/default/SQ_Blocksearch.php:37
+msgid "News"
+msgstr "Noticias"
+
+#: themes/default/SQ_Blocksearch.php:38
+msgid "Blogs"
+msgstr "Blogs"
+
+#: themes/default/SQ_Blocksearch.php:39
+msgid "My articles"
+msgstr "Mis artículos"
+
+#: themes/default/SQ_Blocksearch.php:44
+msgid "Show only Copyright Free images"
+msgstr "Mostrar sólo imágenes libres de copyright"
+
+#: themes/default/SQ_Blockseo.php:3
+msgid "Squirrly LIVE SEO assistant"
+msgstr "Asistente de Squirrly LIVE SEO"
+
+#: themes/default/SQ_BlockSupport.php:6
+msgid "Go to Profile"
+msgstr "Ir al perfil"
+
+#: themes/default/SQ_BlockSupport.php:6
+msgid "Profile"
+msgstr "Perfil"
+
+#: themes/default/SQ_BlockSupport.php:10
+msgid "Support"
+msgstr "Soporte"
+
+#: themes/default/SQ_BlockSupport.php:13
+msgid "Need Help with Squirrly SEO?"
+msgstr "Necesitas ayuda con Squirrly SEO?"
+
+#: themes/default/SQ_BlockSupport.php:17
+msgid "Send Question"
+msgstr "Enviar pregunta"
+
+#: themes/default/SQ_BlockSupport.php:20 themes/default/SQ_BlockSupport.php:52
+msgid "Go to:"
+msgstr "Ir a:"
+
+#: themes/default/SQ_BlockSupport.php:20 themes/default/SQ_BlockSupport.php:52
+msgid "support page"
+msgstr "página de soporte"
+
+#: themes/default/SQ_BlockSupport.php:25
+msgid "How was your Squirrly experience today?"
+msgstr "Cómo fue tu experiencia con Squirrly hoy?"
+
+#: themes/default/SQ_BlockSupport.php:32
+msgid "How was Squirrly today?"
+msgstr "Cómo fue Squirrly hoy?"
+
+#: themes/default/SQ_BlockSupport.php:45
+msgid "Please tell us why?"
+msgstr "Por favor dinos por qué"
+
+#: themes/default/SQ_BlockSupport.php:48
+msgid "Send feedback"
+msgstr "Enviar comentarios"
+
+#: themes/default/SQ_BlockSupport.php:57
+msgid "Thank you! You can send us a happy face tomorow too."
+msgstr "Gracias! Puedes enviarnos una cara feliz mañana también."
+
+#: themes/default/SQ_Menu.php:4
+msgid "Squirrly settings"
+msgstr "Ajustes de Squirrly"
+
+#: themes/default/SQ_Menu.php:4 themes/default/SQ_Menu.php:332
+msgid "Save settings"
+msgstr "Guardar ajustes"
+
+#: themes/default/SQ_Menu.php:15
+msgid "Let Squirrly automatically optimize my blog"
+msgstr "Dejar que Squirrly optimice automáticamente mi blog"
+
+#: themes/default/SQ_Menu.php:29
+msgid "What does Squirrly automatically do for SEO?"
+msgstr "Qué hace Squirrly automáticamente por el SEO?"
+
+#: themes/default/SQ_Menu.php:45
+msgid "Add <strong>canonical</strong> link in home page"
+msgstr "Añade enlace <strong>canónico</strong> en la página de inicio"
+
+#: themes/default/SQ_Menu.php:62
+msgid "Add the <strong>XML Sitemap</strong> for search engines"
+msgstr ""
+"Añade el <strong>mapa de sitio XML</strong> para los motores de búsqueda"
+
+#: themes/default/SQ_Menu.php:79
+msgid ""
+"Add the required METAs for home page (<strong>icon, author, language, dc "
+"publisher</strong>, etc.)"
+msgstr ""
+"Añade los METAs necesarios para la página de inicio (<strong>icono, autor, "
+"idioma, editor</strong>, etc.)"
+
+#: themes/default/SQ_Menu.php:96
+msgid ""
+"Add the <strong>favicon</strong> and the <strong>icon for Apple devices</"
+"strong>."
+msgstr ""
+"Añade el <strong>favicon</strong> y el <strong>icono para dispositivos "
+"Apple</strong>."
+
+#: themes/default/SQ_Menu.php:113
+msgid ""
+"Add the <strong>Facebook meta objects</strong> for a good looking share. "
+msgstr ""
+"Añade <strong>metaobjetos de Facebook</strong> para compartir las vistas."
+
+#: themes/default/SQ_Menu.php:130
+msgid "Add the <strong>Twitter card</strong> in your tweets. "
+msgstr "Añade <strong>la tarjeta de Twitter</strong> a tus tweets."
+
+#: themes/default/SQ_Menu.php:131
+msgid "Your twitter account: "
+msgstr "Tu cuenta de Twitter:"
+
+#: themes/default/SQ_Menu.php:141
+msgid "First page optimization (Title, Description, Keywords)"
+msgstr ""
+"Optimización de la primera página (Título, Descripción, Palabras clave)"
+
+#: themes/default/SQ_Menu.php:157
+msgid "Add the correct <strong>title</strong> in the home page"
+msgstr "Añade el <strong>título</strong> correcto en la página de inicio"
+
+#: themes/default/SQ_Menu.php:174
+#, fuzzy
+msgid ""
+"Add the correct <strong>description</strong> and <strong>keywords</strong> "
+"in home page"
+msgstr ""
+"Añade <strong>descripción</strong> y <strong>palabras clave</strong> en "
+"todas las páginas"
+
+#: themes/default/SQ_Menu.php:190
+msgid "Auto"
+msgstr "Auto"
+
+#: themes/default/SQ_Menu.php:192
+msgid "Custom"
+msgstr "Personalizado"
+
+#: themes/default/SQ_Menu.php:195
+#, fuzzy
+msgid "Home page SEO optimization"
+msgstr "para la optimización Squirrly Live SEO"
+
+#: themes/default/SQ_Menu.php:200
+msgid "Title:"
+msgstr "Título:"
+
+#: themes/default/SQ_Menu.php:201
+msgid "Tips: Length 10-75 chars"
+msgstr "Consejo: Longitud 10-75 caracteres"
+
+#: themes/default/SQ_Menu.php:204
+msgid "Description:"
+msgstr "Descripción:"
+
+#: themes/default/SQ_Menu.php:205
+msgid "Tips: Length 70-165 chars"
+msgstr "Consejo: Longitud 70-165 caracteres"
+
+#: themes/default/SQ_Menu.php:208
+msgid "Keywords:"
+msgstr "Palabras clave:"
+
+#: themes/default/SQ_Menu.php:209
+msgid "Tips: 2-4 keywords"
+msgstr "Consejo: 2-4 palabras clave"
+
+#: themes/default/SQ_Menu.php:220
+msgid "Check with google ..."
+msgstr "Comprueba con Google ..."
+
+#: themes/default/SQ_Menu.php:223
+msgid ""
+"If you don't see any changes in custom optimization, check if another SEO "
+"plugin affects Squirrly SEO"
+msgstr ""
+"Si no ves ningún cambio en la optimización personalizada, comprueba si otro "
+"plugin SEO afecta a Squirrly SEO"
+
+#: themes/default/SQ_Menu.php:233
+msgid "Squirrly Options"
+msgstr "Opciones de Squirrly"
+
+#: themes/default/SQ_Menu.php:242
+msgid "Let Squirrly warn me if there are errors related to SEO settings"
+msgstr ""
+"Dejar que Squirrly me alerte si hay errores relacionados con los ajustes SEO"
+
+#: themes/default/SQ_Menu.php:253
+msgid ""
+"Show <strong>\"Enter a keyword\"</strong> bubble when posting a new article."
+msgstr ""
+"Mostrar el mensaje <strong>\"Introduce una palabra clave\"</strong> al "
+"publicar un nuevo artículo."
+
+#: themes/default/SQ_Menu.php:264
+msgid ""
+"Always show <strong>Keyword Informations</strong> about the selected keyword."
+msgstr ""
+"Mostrar siempre <strong>Información de palabras clave</strong> en relación a "
+"la palabra clave seleccionada."
+
+#: themes/default/SQ_Menu.php:275
+msgid ""
+"Let Squirrly inform me about the progress of my <strong>Wordpress site</"
+"strong>."
+msgstr ""
+
+#: themes/default/SQ_Menu.php:283
+msgid "Change the Website Icon"
+msgstr "Cambiar el icono del sitio web"
+
+#: themes/default/SQ_Menu.php:286
+msgid "File types: JPG, JPEG, GIF and PNG."
+msgstr "Tipos de archivo: JPG, JPEG, GIF y PNG."
+
+#: themes/default/SQ_Menu.php:289
+msgid "Upload file:"
+msgstr "Subir archivo:"
+
+#: themes/default/SQ_Menu.php:294
+msgid "Upload"
+msgstr "Subir"
+
+#: themes/default/SQ_Menu.php:298
+#, php-format
+msgid ""
+"You can use %shttp://convertico.com/%s to convert your photo to icon and "
+"upload it here after that."
+msgstr ""
+"Puedes usar %shttp://convertico.com/%s para convertir tu foto en icono y "
+"subirla aquí después de ello."
+
+#: themes/default/SQ_Menu.php:299
+msgid ""
+"If you don't see the new icon in your browser, empty the browser cache and "
+"refresh the page."
+msgstr ""
+"Si no ves el nuevo icono en tu navegador, vacía la caché del navegador y "
+"vuelve a cargar la página."
+
+#: themes/default/SQ_Menu.php:303
+msgid "Tool for Search Engines"
+msgstr "Herramienta para motores de búsqueda"
+
+#: themes/default/SQ_Menu.php:307
+msgid "Google Plus URL:"
+msgstr "URL de Google Plus:"
+
+#: themes/default/SQ_Menu.php:311
+#, php-format
+msgid "Google META verification code for %sWebmaster Tool%s`:"
+msgstr ""
+"Código de verificación Google META para %sHerramientas para webmasters%s`:"
+
+#: themes/default/SQ_Menu.php:315
+#, php-format
+msgid "Google  %sAnalytics ID%s`:"
+msgstr "%sID de Google Analytics%s`:"
+
+#: themes/default/SQ_Menu.php:319
+#, php-format
+msgid "Facebook META code (for %sInsights%s )`:"
+msgstr "Código META de Facebook (para las %sestadísticas%s )`:"
+
+#: themes/default/SQ_Menu.php:323
+#, php-format
+msgid "Bing META code (for %sWebmaster Tool%s )`:"
+msgstr "Código META de Bing (para las %sHerramientas para webmasters%s )`:"
+
+#~ msgid "Can not connect to Squirrly. Error: "
+#~ msgstr "No se puede conectar con Squirrly. Error:"
