@@ -6,15 +6,14 @@
  * @author Squirrly
  */
 class SQ_Tools extends SQ_FrontController {
-    /** @var options Array of options from database */
+    /** @var array Saved options in database */
     public static $options = array();
-    public $flash_data = null;
-    public $showNote = array();
 
-
+    /** @var integer Count the errors in site */
     static $errors_count = 0;
-    private static $debug;
 
+    /** @var array */
+    private static $debug;
 
     function __construct() {
         parent::__construct();
@@ -29,29 +28,6 @@ class SQ_Tools extends SQ_FrontController {
         global $current_user;
         return $current_user->ID;
     }
-
-    /**
-     * Check if debug is called
-     */
-    private function checkDebug(){
-        //if debug is called
-        if (self::getIsset('sq_debug')){
-
-
-            if(self::getValue('sq_debug') == self::$options['sq_api'])
-                $_GET['sq_debug'] = 'on';
-            elseif(is_admin())
-                $_GET['sq_debug'] = 'on';
-            else
-                $_GET['sq_debug'] = 'off';
-
-            if(self::getValue('sq_debug') === 'on'){
-                if (function_exists('register_shutdown_function'))
-                    register_shutdown_function(array($this, 'showDebug'));
-            }
-        }
-    }
-
 
     /**
      * Check if ws is called
@@ -73,22 +49,17 @@ class SQ_Tools extends SQ_FrontController {
             }
     }
 
-
     /**
     * This hook will save the current version in database and load the messages from usermeta
     *
     * @return void
     */
     function hookInit(){
-        global $sq_showNote;
 
         //TinyMCE editor required
         set_user_setting('editor', 'tinymce');
 
-        $this->showNote = $sq_showNote;
         $this->loadMultilanguage();
-        $this->checkPluginUpdated();
-        $this->load_flashdata();
 
         //add setting link in plugin
         add_filter('plugin_action_links', array($this, 'hookActionlink'), 5, 2 );
@@ -110,48 +81,6 @@ class SQ_Tools extends SQ_FrontController {
           }
 
           return $links;
-    }
-
-    /**
-    * This hook will output the message to WP header
-    *
-    * @return void
-    */
-    function hookNotices(){
-        global $pagenow;
-
-        $message = $this->flashdata('plugin_update_notice');
-
-        if($message)
-        {
-            // keep update message on update and plugins page because they do many redirects,
-            // so we never know whether user seen the message or not
-            if($pagenow == 'update.php' || ($pagenow == 'plugins.php' && isset($_GET['action'])))
-                    $this->keep_flashdata('plugin_update_notice');
-
-            echo $this->showNotices($message);
-        }
-    }
-
-    /**
-    * This hook will save the new# sign notices in the usermeta table in database
-    *
-    * @return void
-    */
-    function hookShutdown(){
-         global $user_ID;
-        $new_data = array();
-
-        if(is_array($this->flash_data)) {
-            foreach($this->flash_data as $k => $v) {
-                    if(substr($k, 0, 4) == 'new#')
-                           $new_data['old#' . substr($k, 4)] = $v;
-            }
-
-            update_user_option($user_ID, SQ_META, $new_data, false);
-        }
-
-        return;
     }
 
     /**
@@ -203,7 +132,6 @@ class SQ_Tools extends SQ_FrontController {
         return $default;
     }
 
-
     /**
     * Save the Options in user option table in DB
     *
@@ -226,6 +154,7 @@ class SQ_Tools extends SQ_FrontController {
                 header('Content-Type: application/json');
         }
     }
+
     /**
     * Get a value from $_POST / $_GET
     * if unavailable, take a default value
@@ -244,6 +173,12 @@ class SQ_Tools extends SQ_FrontController {
         return !is_string($ret)? $ret : stripslashes($ret);
     }
 
+    /**
+     * Check if the parameter is set
+     *
+     * @param string $key
+     * @return boolean
+     */
     public static function getIsset($key){
         if (!isset($key) OR empty($key) OR !is_string($key))
                 return false;
@@ -407,35 +342,6 @@ class SQ_Tools extends SQ_FrontController {
    }
 
     /**
-    * checkPluginUpdated
-    *
-    * Checks whether plugin update happened and triggers update notice
-    *
-    */
-    private function checkPluginUpdated(){
-        if (isset(self::$options['version']))
-            $saved_version = self::$options['version'];
-
-        // setup current version for new plugin installations
-        if(!isset($saved_version) && !isset(self::$options['apiID'])) {
-            $this->saveOptions('version', SQ_VERSION);
-        }
-
-        // it'll trigger only if different version of plugin was installed before
-        if(!isset($saved_version) || version_compare($saved_version, SQ_VERSION, '!='))
-        {
-            // save new version string to database to avoid event doubling
-            $this->saveOptions('version', SQ_VERSION);
-
-            // setup flashdata so admin_notices hook could pick it up next time it will be displayed
-            if(isset($this->showNote[SQ_VERSION])){
-                $this->set_flashdata('plugin_update_notice', $this->showNote[SQ_VERSION]);
-
-            }
-        }
-    }
-
-    /**
     * Check for SEO blog bad settings
     */
     public static function checkErrorSettings($count_only = false) {
@@ -512,75 +418,6 @@ class SQ_Tools extends SQ_FrontController {
                     return true;
         }
     }
-
-    /**
-    * Get flashdata by key and wipes it immidiately
-    *
-    * @return void
-    */
-    protected function flashdata($key) {
-        if(isset($this->flash_data['new#' . $key]))
-            return $this->flash_data['new#' . $key];
-        else if(isset($this->flash_data['old#' . $key]))
-            return $this->flash_data['old#' . $key];
-
-        return null;
-    }
-
-    /**
-    * Load flashdata that used to be available once and then wiped
-    *
-    * @return void
-     */
-    private function load_flashdata() {
-        global $user_ID;
-
-        if (is_array($this->flash_data))
-            $this->flash_data = array_merge ($this->flash_data,get_user_option('sq_plugin_flash', $user_ID));
-        else
-            $this->flash_data = get_user_option(SQ_META, $user_ID);
-
-        if(!is_array($this->flash_data))
-                $this->flash_data = array();
-
-        return;
-    }
-
-
-    /**
-    * Keep flashdata key till next time
-    *
-    * @return void
-     */
-    private function keep_flashdata($key) {
-        $val = $this->flashdata($key);
-
-        if(!is_null($val))
-                $this->flash_data['new#' . $key] = $val;
-
-        return;
-    }
-
-    /**
-    * Set flashdata value by key, pass null value to unset flashdata
-    *
-    * @return void
-     */
-    private function set_flashdata($key, $value) {
-        if(is_null($value)) {
-            if(isset($this->flash_data['new#' . $key]))
-                    unset($this->flash_data['new#' . $key]);
-            if(isset($this->flash_data['old#' . $key]))
-                    unset($this->flash_data['old#' . $key]);
-
-            return;
-        }
-
-        $this->flash_data['new#' . $key] = $value;
-
-        return;
-    }
-
 
     /**
     * Support for i18n with wpml, polyglot or qtrans
@@ -687,6 +524,7 @@ class SQ_Tools extends SQ_FrontController {
             'pattern'    => $pattern
         );
     }
+
     /**
      *
      * @param string $url
@@ -724,6 +562,28 @@ class SQ_Tools extends SQ_FrontController {
 
         return $snippet;
 
+    }
+
+    /**
+     * Check if debug is called
+     */
+    private function checkDebug(){
+        //if debug is called
+        if (self::getIsset('sq_debug')){
+
+
+            if(self::getValue('sq_debug') == self::$options['sq_api'])
+                $_GET['sq_debug'] = 'on';
+            elseif(is_admin())
+                $_GET['sq_debug'] = 'on';
+            else
+                $_GET['sq_debug'] = 'off';
+
+            if(self::getValue('sq_debug') === 'on'){
+                if (function_exists('register_shutdown_function'))
+                    register_shutdown_function(array($this, 'showDebug'));
+            }
+        }
     }
 
     /**

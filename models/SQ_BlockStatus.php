@@ -110,6 +110,7 @@ class Model_SQ_BlockStatus{
      * @return string
      */
     public function packStatus($progress){
+        $str = '';
         //Check show conditions
         if(!$this->showPopup($progress)) return;
         if (isset(SQ_Tools::$options['sq_posts_status_close']) && (time() - SQ_Tools::$options['sq_posts_status_close'] < 3600*24*$this->prev_check)) return;//min 7 days before show it again

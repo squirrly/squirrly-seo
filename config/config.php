@@ -1,20 +1,8 @@
 <?php
 /**
  * The configuration file
- *
- * Constants and ini_sets
  */
-/* debug section */
-
-
-define('_SQ_DEBUG_LOG_', false);
-define('_SQ_DEBUG_SQL_', false);
-/** current plugin version */
-
 define('_SQ_SUPPORT_EMAIL_', 'support@squirrly.co');
-
-$sq_showNote = array();
-
 define('_SQ_NONCE_ID_', 'sq_none');
 
 if (!defined('PHP_VERSION_ID'))

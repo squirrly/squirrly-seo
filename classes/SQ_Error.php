@@ -8,11 +8,6 @@ class SQ_Error extends SQ_FrontController{
      * The error controller for Squirrly
      */
     function __construct() {
-        if (_SQ_DEBUG_LOG_){
-            ini_set("log_errors", 1);
-            ini_set("error_log", _SQ_ROOT_DIR_ . "php-error.log");
-        }
-
         parent::__construct();
 
         /* Verify dependences */

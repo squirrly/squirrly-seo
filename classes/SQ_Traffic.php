@@ -208,7 +208,7 @@ class SQ_Traffic extends SQ_FrontController {
      * Save the cookie for the unique visitor
      */
     public function saveCookie(){
-        setcookie ('sq_visited', 1, time () + 60 * 60 * 24, '/', COOKIE_DOMAIN);
+        @setcookie ('sq_visited', 1, time () + 60 * 60 * 24, '/', COOKIE_DOMAIN);
     }
 
     /**

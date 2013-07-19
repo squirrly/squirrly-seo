@@ -100,12 +100,16 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
+= 2.0.8 =
+* Added the Spanish (es_ES) translation in Squirly SEO
+* Added the French (fr_FR) translation in Squirly SEO
+* Fixed the custom SEO Title and Description notification in posts list
+* Fixed minor bugs in frontend
+
 = 2.0.7 =
 * Added the Squirrly SEO Traffic Progress report
 * Fixed minor frontend bugs
 * Fixed the date in sitemap for tags
-* Added the Spanish (es_ES) translation in Squirly SEO
-* Added the French (fr_FR) translation in Squirly SEO
 
 
 = 2.0.6 =
