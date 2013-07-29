@@ -7,11 +7,19 @@ jQuery(document).ready(function() {
     jQuery('#sq_beginner_on').bind('click',function(){
         jQuery('#sq_beginner_option_details').show();
         jQuery('#sq_advanced_option_details').hide();
+
+        jQuery('.sq_beginner_condition').hide();
+        jQuery('.sq_beginner_switch_condition').hide();
+
     });
 
     jQuery('#sq_beginner_off').bind('click',function(){
         jQuery('#sq_beginner_option_details').hide();
         jQuery('#sq_advanced_option_details').show();
+
+        jQuery('.sq_beginner_condition').show();
+        if (jQuery('#sq_settings').find('input[name=sq_use]:checked').val() == 1)
+            jQuery('.sq_beginner_switch_condition').show();
     });
 
     jQuery("#sq_goto_settings").bind('click',function() {

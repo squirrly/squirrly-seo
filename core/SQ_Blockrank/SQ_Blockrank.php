@@ -17,7 +17,9 @@ class SQ_Blockrank extends SQ_BlockController {
         //Set some variables
         echo '<script type="text/javascript">
               if(jQuery("#new-post-slug").length == 0){
-                jQuery("#sq_rank_default_text").show();
+                setTimeout(function() {
+                      jQuery("#sq_rank_default_text").show();
+                }, 2000);
               };
             </script>';
 

@@ -320,7 +320,7 @@ class Model_SQ_Frontend {
      */
     public function getImageFromContent() {
         global $wp_query;
-
+        $match = array();
         $post = $this->post;
 
         if (!$post)
@@ -333,7 +333,7 @@ class Model_SQ_Frontend {
         if ($post)
              @preg_match('/<img[^>]+src="([^"]+)"[^>]+>/i', $post->post_content, $match);
 
-        if (!is_array($match) || count($match) == 0)
+        if (empty($match))
              return;
 
         return $match[1];

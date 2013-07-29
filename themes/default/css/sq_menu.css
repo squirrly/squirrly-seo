@@ -512,7 +512,7 @@
 }
 
 
-@media only screen and (max-width: 1220px){
+@media only screen and (max-width: 1800px){
     #sq_settings_body fieldset{
         max-width: 550px;
         min-width: 510px;
@@ -726,4 +726,14 @@
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+}
+
+#sq_settings .sq_option_disclamer{
+    display: block;
+    color: darkgreen;
+    line-height: 19px;
+    font-size: 14px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px #FFF;
 }

@@ -92,7 +92,7 @@ class SQ_Tools extends SQ_FrontController {
         $default = array(
             'sq_beginner_user' => 1,
             'sq_api' => '',
-            'sq_use' => 1,
+            'sq_use' => 0,
             'sq_howto' => 1,
             'sq_auto_canonical' => 1,
             'sq_auto_sitemap' => 1,
@@ -356,11 +356,11 @@ class SQ_Tools extends SQ_FrontController {
         $fixit = "<a href=\"javascript:void(0);\"  onclick=\"%s jQuery(this).closest('div').fadeOut('slow'); if(parseInt(jQuery('.sq_count').html())>0) { var notif = (parseInt(jQuery('.sq_count').html()) - 1); if (notif > 0) {jQuery('.sq_count').html(notif); }else{ jQuery('.sq_count').html(notif); jQuery('.sq_count').hide(); } } jQuery.post(ajaxurl, { action: '%s', nonce: '".wp_create_nonce( 'sq_none' )."'});\" >" . __( "Fix it for me!", _PLUGIN_NAME_ ) . "</a>";
 
         /* IF SEO INDEX IS OFF*/
-        if ( self::getAutoSeoSquirrly() ){
-            if ($count_only)
-                self::$errors_count ++;
-            else SQ_Error::setError(__('Let Squirrly optimize your SEO automatically (recommended)', _PLUGIN_NAME_) . " <br />" . sprintf( $fixit, "jQuery('#sq_use_on').attr('checked', true); jQuery('#sq_use_on').attr('checked',true);", "sq_fixautoseo") . " | ", 'settings', 'sq_fix_auto');
-        }
+//        if ( self::getAutoSeoSquirrly() ){
+//            if ($count_only)
+//                self::$errors_count ++;
+//            else SQ_Error::setError(__('Let Squirrly optimize your SEO automatically (recommended)', _PLUGIN_NAME_) . " <br />" . sprintf( $fixit, "jQuery('#sq_use_on').attr('checked', true); jQuery('#sq_use_on').attr('checked',true);", "sq_fixautoseo") . " | ", 'settings', 'sq_fix_auto');
+//        }
 
         /* IF SEO INDEX IS OFF*/
         if ( self::getPrivateBlog() ){

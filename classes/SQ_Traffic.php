@@ -225,7 +225,7 @@ class SQ_Traffic extends SQ_FrontController {
         //Be sure not to save the bots
         $botlist = array("bot", "crawl", "crawler", "spider", "google", "yahoo", "msn", "ask", "ia_archiver", "@", "ripper", "robot", "radian", "python", "perl", "java");
         foreach($botlist as $bot){
-            if(strpos($_SERVER['HTTP_USER_AGENT'], $bot) !== false)
+            if(isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'], $bot) !== false)
                     return;
         }
 

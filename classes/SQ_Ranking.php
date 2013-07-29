@@ -23,30 +23,31 @@ class SQ_Ranking extends SQ_FrontController {
      * @param type $return
      */
     public function processRanking(&$return, $post_id){
-       $return->global_rank = $this->findTodayRank($post_id, 'global_rank');
-       $saved_keyword = $this->findTodayRank($post_id, 'keyword');
+       if (isset($return->seo) && is_object($return->seo)){
+        $return->global_rank = $this->findTodayRank($post_id, 'global_rank');
+        $saved_keyword = $this->findTodayRank($post_id, 'keyword');
 
-       if ($return->global_rank == -1 || $return->seo->keyword <> $saved_keyword){
-        //   echo "global_rank: " .$return->global_rank;
-        $return->global_rank = $this->getGoogleRank($post_id, $return->seo->keyword);
-        //Save results
-        $this->saveRank($post_id, $return->global_rank, true);
+        if ($return->global_rank == -1 || $return->seo->keyword <> $saved_keyword){
+         //   echo "global_rank: " .$return->global_rank;
+         $return->global_rank = $this->getGoogleRank($post_id, $return->seo->keyword);
+         //Save results
+         $this->saveRank($post_id, $return->global_rank, true);
+        }
+
+        //Local search
+        $country = $this->getLocalGoogleExtension();
+        if ($country <> ''){
+
+          $return->local_rank = $this->findTodayRank($post_id, 'local_rank');
+          if ($return->local_rank == -1  || $return->seo->keyword <> $saved_keyword){
+             // echo 'local_rank: '.$return->local_rank;
+             sleep(1);
+             $return->local_rank = $this->getGoogleRank($post_id, $return->seo->keyword, $country);
+             //Save results
+             $this->saveRank($post_id, $return->local_rank, false);
+          }
+        }
        }
-
-       //Local search
-       $country = $this->getLocalGoogleExtension();
-       if ($country <> ''){
-
-         $return->local_rank = $this->findTodayRank($post_id, 'local_rank');
-         if ($return->local_rank == -1  || $return->seo->keyword <> $saved_keyword){
-            // echo 'local_rank: '.$return->local_rank;
-            sleep(1);
-            $return->local_rank = $this->getGoogleRank($post_id, $return->seo->keyword, $country);
-            //Save results
-            $this->saveRank($post_id, $return->local_rank, false);
-         }
-       }
-
 
     }
 
