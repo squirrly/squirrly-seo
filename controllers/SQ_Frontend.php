@@ -39,9 +39,11 @@ class SQ_Frontend extends SQ_FrontController {
          * Hook the Header load
          */
         public function hookFronthead(){
+            echo $this->model->setStart();
             parent::hookHead();
 
             SQ_Tools::dump(self::$options,  $GLOBALS['wp_query']); //output debug
+
 
             if ( isset(self::$options['sq_use']) && (int)self::$options['sq_use'] == 1 ){
                 echo $this->model->setHeader();

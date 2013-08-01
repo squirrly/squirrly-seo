@@ -135,7 +135,7 @@ class Model_SQ_Frontend {
 
         if (is_home() || is_single() ||  is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search() || is_404()){
 
-            $ret .= $this->setStart();
+            
             /* Meta setting*/
             $this->title = $this->clearTitle($this->getCustomTitle());
 
