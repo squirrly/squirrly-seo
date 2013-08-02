@@ -1,37 +1,41 @@
 <?php
+
 /**
  * The model class for SQ_Blockseo
  *
  */
-class Model_SQ_Blockseo{
-        /**
-         * Get the advanced SEO from database
-         * @global integer $sq_postID
-         * @global type $wpdb
-         * @return string
-         */
-        public function getAdvSeo(){
-            global $sq_postID, $wpdb;
-            $meta = array();
-            $str = '';
+class Model_SQ_Blockseo {
 
-            if ((int)$sq_postID == 0) return;
+    /**
+     * Get the advanced SEO from database
+     * @global integer $sq_postID
+     * @global type $wpdb
+     * @return string
+     */
+    public function getAdvSeo() {
+        global $sq_postID, $wpdb;
+        $meta = array();
+        $str = '';
 
-            $meta = array('sq_fp_title' => '',
-                          'sq_fp_description' => '');
+        if ((int) $sq_postID == 0)
+            return;
 
-            $sql = "SELECT `meta_id`, `meta_value`, `meta_key`
-                    FROM `".$wpdb->postmeta."`
-                    WHERE  `post_id`=".(int)$sq_postID  ;
+        $meta = array('sq_fp_title' => '',
+            'sq_fp_description' => '');
 
-            $rows = $wpdb->get_results($sql);
+        $sql = "SELECT `meta_id`, `meta_value`, `meta_key`
+                    FROM `" . $wpdb->postmeta . "`
+                    WHERE  `post_id`=" . (int) $sq_postID;
 
-            foreach($rows as $row){
-                if (array_key_exists($row->meta_key, $meta))
-                    $meta[$row->meta_key] = $row->meta_value;
-            }
+        $rows = $wpdb->get_results($sql);
 
-            return $meta;
+        foreach ($rows as $row) {
+            if (array_key_exists($row->meta_key, $meta))
+                $meta[$row->meta_key] = $row->meta_value;
         }
+
+        return $meta;
+    }
+
 }
-?>
+

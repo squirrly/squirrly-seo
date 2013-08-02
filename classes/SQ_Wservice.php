@@ -1,29 +1,29 @@
 <?php
+
 /**
  * Class for Traffic Record
  */
-class SQ_Wservice{
+class SQ_Wservice {
 
     private $analytics_table;
     private $status = array();
-
 
     public function __construct() {
         $this->setInfo();
     }
 
-    private function getPublicPosts(){
+    private function getPublicPosts() {
         global $wpdb;
 
-        $sql = "SELECT `ID` as post_id  FROM ".$wpdb->posts."   WHERE post_status = 'publish' ";
+        $sql = "SELECT `ID` as post_id  FROM " . $wpdb->posts . "   WHERE post_status = 'publish' ";
         return $wpdb->get_results($sql);
     }
 
-    public function getInfo(){
+    public function getInfo() {
         return $this->status;
     }
 
-    private function setInfo(){
+    private function setInfo() {
         $info = '';
 
         if (SQ_Tools::getIsset('sq_info'))
@@ -33,13 +33,13 @@ class SQ_Wservice{
         $rank = SQ_ObjController::getController('SQ_Ranking', false);
         $this->analytics_table = $traffic->getAnalyticsTable();
 
-        if (strpos($info, 'progress') !== false){
+        if (strpos($info, 'progress') !== false) {
             $status = SQ_ObjController::getModel('SQ_BlockStatus');
             $this->status['progress'] = $status->getGlobalProgress();
         }
 
         $posts = $this->getPublicPosts();
-        if (strpos($info, 'posts') !== false){
+        if (strpos($info, 'posts') !== false) {
             $this->status['posts'] = $posts;
         }
 
@@ -53,5 +53,6 @@ class SQ_Wservice{
 
         SQ_Tools::dump($this->status);
     }
+
 }
-?>
+

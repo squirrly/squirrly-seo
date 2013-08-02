@@ -105,6 +105,7 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 * Added the French (fr_FR) translation in Squirly SEO
 * Fixed the custom SEO Title and Description notification in posts list
 * Changed the default SEO Settings
+* Fixed image insert in editor
 
 = 2.0.7 =
 * Added the Squirrly SEO Traffic Progress report

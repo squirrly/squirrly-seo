@@ -1,18 +1,20 @@
 <?php
+
 class SQ_Blockrank extends SQ_BlockController {
 
     /** @var integer */
     var $post_id;
+
     /**
      * Load the Rank block header
      *
      * @global type $sq_postID
      */
     function hookHead() {
-       global $sq_postID;
-       parent::hookHead();
-       //Get the current post id from Wordpress
-       $this->post_id = $sq_postID;
+        global $sq_postID;
+        parent::hookHead();
+        //Get the current post id from Wordpress
+        $this->post_id = $sq_postID;
 
         //Set some variables
         echo '<script type="text/javascript">
@@ -24,15 +26,15 @@ class SQ_Blockrank extends SQ_BlockController {
             </script>';
 
         //Load the css and javascript for the rank box
-       SQ_ObjController::getController('SQ_DisplayController', false)
-                       ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/css/sq_postslist.css?ver='.SQ_VERSION_ID);
         SQ_ObjController::getController('SQ_DisplayController', false)
-                   ->loadMedia(_SQ_STATIC_API_URL_.SQ_URI.'/js/sq_rank.js?ver='.SQ_VERSION_ID);
+                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/css/sq_postslist.css?ver=' . SQ_VERSION_ID);
+        SQ_ObjController::getController('SQ_DisplayController', false)
+                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/js/sq_rank.js?ver=' . SQ_VERSION_ID);
     }
 
-    function hookGetContent(){
-        echo '<div id="sq_rank_default_text" style="display:none">'.__('Publish the article to start Squirrly Article Rank', _PLUGIN_NAME_).'</div>';
+    function hookGetContent() {
+        echo '<div id="sq_rank_default_text" style="display:none">' . __('Publish the article to start Squirrly Article Rank', _PLUGIN_NAME_) . '</div>';
     }
 
 }
-?>
+

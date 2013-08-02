@@ -1,149 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-        <block>
-		<name>SQ_Post</name>
-		<description>Post Page</description>
-		<actions>
-                  <action>sq_save_meta</action>
-              </actions>
-		<active>1</active>
-		<path>controllers</path>
-	</block>
-        <block>
-		<name>SQ_PostsList</name>
-		<description>Posts List Page</description>
-		<actions>
-                    <action>sq_post_rank_brief</action>
-                    <action>sq_posts_rank</action>
-                    <action>sq_post_rank</action>
-                    <action>sq_posts_status_close</action>
-                </actions>
-		<active>1</active>
-		<path>controllers</path>
-	</block>
-        <block>
-		<name>SQ_Menu</name>
-		<description>Setting page</description>
-		<actions>
-                    <action>sq_settings_update</action>
-                    <action>sq_get_snippet</action>
+    <block>
+        <name>SQ_Post</name>
+        <description>Post Page</description>
+        <actions>
+            <action>sq_save_meta</action>
+        </actions>
+        <active>1</active>
+        <path>controllers</path>
+    </block>
+    <block>
+        <name>SQ_PostsList</name>
+        <description>Posts List Page</description>
+        <actions>
+            <action>sq_post_rank_brief</action>
+            <action>sq_posts_rank</action>
+            <action>sq_post_rank</action>
+            <action>sq_posts_status_close</action>
+        </actions>
+        <active>1</active> 
+        <path>controllers</path>
+    </block>
+    <block>
+        <name>SQ_Menu</name>
+        <description>Setting page</description>
+        <actions>
+            <action>sq_settings_update</action>
+            <action>sq_get_snippet</action>
 
-                    <action>sq_fixautoseo</action>
-                    <action>sq_fixpermalink</action>
-                    <action>sq_fixprivate</action>
-                    <action>sq_fixcomments</action>
+            <action>sq_fixautoseo</action>
+            <action>sq_fixpermalink</action>
+            <action>sq_fixprivate</action>
+            <action>sq_fixcomments</action>
 
-                    <action>sq_warnings_off</action>
-                </actions>
-		<active>1</active>
-		<path>controllers</path>
-	</block>
-       <block>
-		<name>SQ_BlockDashboard</name>
-		<description></description>
-                <actions>
-                    <action>sq_beginner_set</action>
-                </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
-       <block>
-		<name>SQ_BlockHelp</name>
-		<description>Get started with Squirrly settings</description>
-                <actions>
-                    <action>sq_howto</action>
-                </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
-       <block>
-		<name>SQ_BlockSupport</name>
-		<description>The support icons</description>
-              <controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-              <actions>
-                    <action>sq_feedback</action>
-                    <action>sq_support</action>
-              </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
-        <block>
-		<name>SQ_Blocklogin</name>
-		<description>Login to Squirrly</description>
-		<controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-                <actions>
-                    <action>sq_login</action>
-                    <action>sq_register</action>
-                    <action>sq_reset</action>
+            <action>sq_warnings_off</action>
+        </actions>
+        <active>1</active>
+        <path>controllers</path>
+    </block>
+    <block>
+        <name>SQ_BlockDashboard</name>
+        <description></description>
+        <actions>
+            <action>sq_beginner_set</action>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_BlockHelp</name>
+        <description>Get started with Squirrly settings</description>
+        <actions>
+            <action>sq_howto</action>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_BlockSupport</name>
+        <description>The support icons</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <actions>
+            <action>sq_feedback</action>
+            <action>sq_support</action>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_Blocklogin</name>
+        <description>Login to Squirrly</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <actions>
+            <action>sq_login</action>
+            <action>sq_register</action>
+            <action>sq_reset</action>
 
-                </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
-	<block>
-		<name>SQ_Blocksearch</name>
-		<description>Inspiration box</description>
-		<controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-                <actions>
-                    <action>sq_search_img</action>
-                    <action>sq_search_blog</action>
-                    <action>sq_type_click</action>
-                </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_Blocksearch</name>
+        <description>Inspiration box</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <actions>
+            <action>sq_search_img</action>
+            <action>sq_search_blog</action>
+            <action>sq_type_click</action>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
 
-	<block>
-		<name>SQ_Blockseo</name>
-		<description>SEO Live assistant</description>
-		<controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-		<active>1</active>
-		<path>core</path>
-	</block>
+    <block>
+        <name>SQ_Blockseo</name>
+        <description>SEO Live assistant</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <active>1</active>
+        <path>core</path>
+    </block>
 
-        <block>
-		<name>SQ_Blockresearch</name>
-		<description>Research block</description>
-		<controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-		<active>1</active>
-		<path>core</path>
-	</block>
+    <block>
+        <name>SQ_Blockresearch</name>
+        <description>Research block</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <active>1</active>
+        <path>core</path>
+    </block>
 
-        <block>
-		<name>SQ_Blockrank</name>
-		<description>Article Rank</description>
-		<controllers>
-			<controller>SQ_PostMiddle</controller>
-		</controllers>
-		<active>1</active>
-		<path>core</path>
-	</block>
-       <block>
-		<name>SQ_BlockAffiliate</name>
-		<description>Affiliate Page</description>
-		<actions>
-                    <action>sq_settings_affiliate</action>
-                </actions>
-		<active>1</active>
-		<path>core</path>
-	</block>
-        <block>
-		<name>SQ_Loading</name>
-		<description>Loading JS</description>
-		<controllers>
-			<controller>SQ_Post</controller>
-		</controllers>
-		<active>1</active>
-		<path>core</path>
-	</block>
+    <block>
+        <name>SQ_Blockrank</name>
+        <description>Article Rank</description>
+        <controllers>
+            <controller>SQ_PostMiddle</controller>
+        </controllers>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_BlockAffiliate</name>
+        <description>Affiliate Page</description>
+        <actions>
+            <action>sq_settings_affiliate</action>
+        </actions>
+        <active>1</active>
+        <path>core</path>
+    </block>
+    <block>
+        <name>SQ_Loading</name>
+        <description>Loading JS</description>
+        <controllers>
+            <controller>SQ_Post</controller>
+        </controllers>
+        <active>1</active>
+        <path>core</path>
+    </block>
 </blocks>
