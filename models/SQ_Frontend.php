@@ -100,23 +100,23 @@ class Model_SQ_Frontend {
         $title = $this->getCustomTitle();
         if (isset($title) && !empty($title) && $title <> '') {
             $buffer = @preg_replace('/<title[^<>]*>([^<>]*)<\/title>/si', sprintf("<title>%s</title>", $title), $buffer, 1, $count);
-            if ($count == 0)
-                $buffer .= sprintf("<title>%s</title>", $title) . "\n";
+            if ($count == 0) //if no title found
+                $buffer .= sprintf("<title>%s</title>", $title) . "\n"; //add the title
         }
 
 
         $description = $this->setCustomDescription();
         if (isset($description) && !empty($description) && $description <> '') {
             $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $description, $buffer, 1, $count);
-            if ($count == 0)
-                $buffer .= $description . "\n";
+            if ($count == 0) //if no description found
+                $buffer .= $description . "\n"; //add the description
         }
 
         $keyword = $this->setCustomKeyword();
         if (isset($keyword) && !empty($keyword) && $keyword <> '') {
             $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $keyword, $buffer, 1, $count);
-            if ($count == 0)
-                $buffer .= $keyword . "\n";
+            if ($count == 0) //if no keywords found
+                $buffer .= $keyword . "\n"; //add the keywords
         }
 
         return $buffer;
