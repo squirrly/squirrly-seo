@@ -59,7 +59,7 @@ class SQ_Tools extends SQ_FrontController {
     function hookInit() {
 
         //TinyMCE editor required
-        set_user_setting('editor', 'tinymce');
+        //set_user_setting('editor', 'tinymce');
 
         $this->loadMultilanguage();
 

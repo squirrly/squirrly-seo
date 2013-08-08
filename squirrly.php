@@ -8,11 +8,11 @@
   Plugin URI: https://my.squirrly.co
   Description: Squirrly SEO Plugin helps you find the right keywords to rank by, in less then 2 minutes, and checks your on-page SEO in real time. <BR> <a href="http://my.squirrly.co/user" target="_blank"><strong>Check your profile</strong></a>
   Author: cifi, calinvingan, florinmuresan, lucianpacurar
-  Version: 2.0.9
+  Version: 2.1.0
   Author URI: http://www.squirrly.co
  */
 /* SET THE CURRENT VERSION ABOVE AND BELOW */
-define('SQ_VERSION', '2.0.9');
+define('SQ_VERSION', '2.1.0');
 
 /* Call config files */
 require(dirname(__FILE__) . '/config/config.php');
@@ -48,10 +48,10 @@ function showError() {
     echo '<div class="update-nag"><span style="color:red; font-weight:bold;">' . __('For Squirrly to work, the PHP version has to be equal or greater then 5.1', _PLUGIN_NAME_) . '</span></div>';
 }
 
+// --
 // Upgrade Squirrly call.
 register_activation_hook(__FILE__, 'sq_upgrade');
 
-// --
 function sq_upgrade() {
     set_transient('sq_upgrade', true, 30);
 }
