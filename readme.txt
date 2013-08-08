@@ -100,7 +100,8 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
-= 2.0.9 =
+= 2.1.0 =
+* Added Squirrly for HTML editor
 * Added Squirrly SEO for custom post types
 
 = 2.0.8 =
