@@ -53,3 +53,4 @@ class SQ_Blocksearch extends SQ_BlockController {
 
 }
 
+?>

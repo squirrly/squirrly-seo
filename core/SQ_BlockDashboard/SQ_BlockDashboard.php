@@ -26,3 +26,4 @@ class SQ_BlockDashboard extends SQ_BlockController {
 
 }
 
+?>

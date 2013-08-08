@@ -74,3 +74,4 @@ class SQ_Frontend extends SQ_FrontController {
 
 }
 
+?>

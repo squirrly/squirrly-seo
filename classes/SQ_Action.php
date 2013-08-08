@@ -166,3 +166,5 @@ class SQ_Action extends SQ_FrontController {
     }
 
 }
+
+?>

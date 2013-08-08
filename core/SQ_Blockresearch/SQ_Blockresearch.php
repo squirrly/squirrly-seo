@@ -16,3 +16,4 @@ class SQ_Blockresearch extends SQ_BlockController {
 
 }
 
+?>

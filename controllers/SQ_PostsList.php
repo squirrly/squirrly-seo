@@ -382,3 +382,4 @@ class SQ_PostsList extends SQ_FrontController {
 
 }
 
+?>

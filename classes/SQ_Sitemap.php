@@ -398,3 +398,4 @@ class SQ_Sitemap extends SQ_FrontController {
 
 }
 
+?>

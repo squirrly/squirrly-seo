@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Core class for SQ_Blocksearch
- */
 class SQ_Loading extends SQ_BlockController {
 
     function hookHead() {
@@ -38,3 +35,4 @@ class SQ_Loading extends SQ_BlockController {
 
 }
 
+?>

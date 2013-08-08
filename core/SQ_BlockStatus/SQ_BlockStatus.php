@@ -11,3 +11,4 @@ class SQ_BlockStatus extends SQ_BlockController {
 
 }
 
+?>

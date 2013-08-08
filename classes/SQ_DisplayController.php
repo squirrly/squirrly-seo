@@ -90,3 +90,4 @@ class SQ_DisplayController {
 
 }
 
+?>

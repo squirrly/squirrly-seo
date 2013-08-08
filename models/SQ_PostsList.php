@@ -508,3 +508,4 @@ class Model_SQ_PostsList {
 
 }
 
+?>

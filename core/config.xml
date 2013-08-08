@@ -18,7 +18,7 @@
             <action>sq_post_rank</action>
             <action>sq_posts_status_close</action>
         </actions>
-        <active>1</active> 
+        <active>1</active>
         <path>controllers</path>
     </block>
     <block>
@@ -33,6 +33,8 @@
             <action>sq_fixprivate</action>
             <action>sq_fixcomments</action>
 
+
+            <action>sq_upgrade</action>
             <action>sq_warnings_off</action>
         </actions>
         <active>1</active>

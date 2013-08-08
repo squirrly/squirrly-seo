@@ -46,3 +46,4 @@ class SQ_BlockAffiliate extends SQ_BlockController {
 
 }
 
+?>

@@ -107,3 +107,4 @@ class SQ_BlockSupport extends SQ_BlockController {
 
 }
 
+?>

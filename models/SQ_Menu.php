@@ -116,6 +116,7 @@ class Model_SQ_Menu {
                 if (!isset($this->meta[6]))
                     $this->meta[6] = null; //no arg
 
+
 //print_r($this->meta);
                 /* add the box content with WP */
                 add_meta_box($this->meta[0], $this->meta[1], $this->meta[2], $this->meta[3], $this->meta[4], $this->meta[5]);
@@ -759,3 +760,4 @@ class Model_SQ_Icon {
 
 }
 
+?>

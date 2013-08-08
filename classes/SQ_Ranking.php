@@ -420,3 +420,4 @@ class SQ_Ranking extends SQ_FrontController {
 
 }
 
+?>

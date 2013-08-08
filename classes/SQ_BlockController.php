@@ -80,3 +80,4 @@ class SQ_BlockController {
     /** @todo _ GASESTE O CALE SA INCARC CSS PENTRU BLOCURI */
 }
 
+?>

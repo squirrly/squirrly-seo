@@ -148,3 +148,4 @@ class Model_SQ_Post {
 
 }
 
+?>

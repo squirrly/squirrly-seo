@@ -87,3 +87,4 @@ class SQ_Error extends SQ_FrontController {
 
 }
 
+?>

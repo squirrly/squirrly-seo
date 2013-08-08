@@ -150,3 +150,4 @@ class SQ_Blocklogin extends SQ_BlockController {
 
 }
 
+?>

@@ -38,3 +38,4 @@ class SQ_Blockrank extends SQ_BlockController {
 
 }
 
+?>

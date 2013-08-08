@@ -13,15 +13,34 @@ class SQ_Menu extends SQ_FrontController {
 
     }
 
+    function upgradeRedirect() {
+        // Bail if no activation redirect
+        if (!get_transient('sq_upgrade'))
+            return;
+
+        // Delete the redirect transient
+        delete_transient('sq_upgrade');
+
+        wp_safe_redirect(admin_url('admin.php?page=sq_howto'));
+        exit;
+    }
+
     /*
      * Creates the Setting menu in Wordpress
      */
 
     public function hookMenu() {
+        $this->upgradeRedirect();
+
         $first_page = preg_replace('/\s/', '_', _SQ_NAME_);
 
         SQ_Tools::checkErrorSettings(true);
-        $this->post_type = array('post', 'page', 'product', 'shopp_page_shopp-products');
+        $this->post_type = array('post', 'page', 'movie', 'product', 'shopp_page_shopp-products');
+
+        //add custom post types
+        if (SQ_Tools::getIsset('post_type'))
+            @array_push($this->post_type, SQ_Tools::getValue('post_type'));
+
         if (SQ_Tools::$options['sq_howto'] == 1)
             $first_page = 'sq_howto';
         else
@@ -89,6 +108,7 @@ class SQ_Menu extends SQ_FrontController {
                     'normal',
                     'high'
                 ));
+
 
         //Add the Rank in the Posts list
         $postlist = SQ_ObjController::getController('SQ_PostsList');
@@ -222,3 +242,4 @@ class SQ_Menu extends SQ_FrontController {
 
 }
 
+?>

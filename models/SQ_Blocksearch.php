@@ -71,3 +71,4 @@ class Model_SQ_Blocksearch {
 
 }
 
+?>

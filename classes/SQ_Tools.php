@@ -52,7 +52,7 @@ class SQ_Tools extends SQ_FrontController {
     }
 
     /**
-     * This hook will save the current version in database and load the messages from usermeta
+     * This hook will save the current version in database
      *
      * @return void
      */
@@ -624,3 +624,4 @@ class SQ_Tools extends SQ_FrontController {
 
 }
 
+?>

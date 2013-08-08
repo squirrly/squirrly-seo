@@ -2,6 +2,11 @@
 
 class SQ_Post extends SQ_FrontController {
 
+    /**
+     * Initialize the TinyMCE editor for the current use
+     *
+     * @return void
+     */
     function hookInit() {
         add_filter('tiny_mce_before_init', array(&$this->model, 'setCallback'));
         add_filter('mce_external_plugins', array(&$this->model, 'addHeadingButton'));
@@ -58,21 +63,26 @@ class SQ_Post extends SQ_FrontController {
         // unhook this function so it doesn't loop infinitely
         remove_action('save_post', array($this, 'hookSavePost'), 10);
 
+        //If the post is a new or edited post
         if ((SQ_Tools::getValue('action')) == 'editpost' &&
                 wp_is_post_revision($post_id) == '' &&
                 wp_is_post_autosave($post_id) == '' &&
                 get_post_status($post_id) != 'auto-draft' &&
                 SQ_Tools::getValue('autosave') == '') {
 
+            //check for custom SEO
             $this->checkAdvMeta($post_id);
+            //check the SEO from Squirrly Live Assistant
             $this->checkSeo($post_id, get_post_status($post_id));
         }
 
+        //If the post is not auto-save post
         if ((SQ_Tools::getValue('action')) == 'editpost' &&
                 wp_is_post_autosave($post_id) == '' &&
                 get_post_status($post_id) != 'auto-draft' &&
                 SQ_Tools::getValue('autosave') == '') {
 
+            //check the remote images
             $this->checkImage($post_id);
         }
 
@@ -80,8 +90,15 @@ class SQ_Post extends SQ_FrontController {
         add_action('save_post', array($this, 'hookSavePost'), 10);
     }
 
+    /**
+     * Check if the image is a remote image and save it locally
+     *
+     * @param integer $post_id
+     * @return false|void
+     */
     function checkImage($post_id) {
         @set_time_limit(90);
+        $local_file = false;
 
         $content = stripslashes(SQ_Tools::getValue('post_content'));
         $tmpcontent = trim($content, "\n");
@@ -114,16 +131,16 @@ class SQ_Post extends SQ_FrontController {
                     continue;
 
                 //encode special characters
-                $file['url'] = str_replace($file['filename'], urlencode($file['filename']), $file['url']);
+                $local_file = str_replace($file['filename'], urlencode($file['filename']), $file['url']);
 
-                $content = str_replace($url, $file['url'], $content);
+                $content = str_replace($url, $local_file, $content);
 
                 $attach_id = wp_insert_attachment(array(
                     'post_mime_type' => $file['type'],
                     'post_title' => preg_replace('/\.[^.]+$/', '', $file['filename']),
                     'post_content' => '',
                     'post_status' => 'inherit',
-                    'guid' => $file['url']
+                    'guid' => $local_file
                         ), $file['file'], $post_id);
 
                 $attach_data = wp_generate_attachment_metadata($attach_id, $file['file']);
@@ -132,7 +149,7 @@ class SQ_Post extends SQ_FrontController {
         }
 
 
-        if ($file_name !== false) {
+        if ($local_file !== false) {
             wp_update_post(array(
                 'ID' => $post_id,
                 'post_content' => $content)
@@ -140,6 +157,12 @@ class SQ_Post extends SQ_FrontController {
         }
     }
 
+    /**
+     * Check the SEO from Squirrly Live Assistant
+     *
+     * @param integer $post_id
+     * @param void
+     */
     function checkSeo($post_id, $status = '') {
         $args = array();
 
@@ -219,3 +242,4 @@ class SQ_Post extends SQ_FrontController {
 
 }
 
+?>

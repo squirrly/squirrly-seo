@@ -35,3 +35,4 @@ define('_SQ_URL_', WP_PLUGIN_URL . '/' . _PLUGIN_NAME_);
 define('_SQ_CACHE_URL_', _SQ_URL_ . '/cache/');
 define('_SQ_ALL_THEMES_URL_', _SQ_URL_ . '/themes/');
 define('_SQ_THEME_URL_', _SQ_URL_ . '/themes/' . _THEME_NAME_ . '/');
+?>
