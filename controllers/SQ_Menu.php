@@ -31,15 +31,21 @@ class SQ_Menu extends SQ_FrontController {
 
     public function hookMenu() {
         $this->upgradeRedirect();
-
         $first_page = preg_replace('/\s/', '_', _SQ_NAME_);
 
         SQ_Tools::checkErrorSettings(true);
-        $this->post_type = array('post', 'page', 'movie', 'product', 'shopp_page_shopp-products');
+        $this->post_type = array('post', 'page', 'movie', 'product', 'download', 'shopp_page_shopp-products');
 
         //add custom post types
         if (SQ_Tools::getIsset('post_type'))
             @array_push($this->post_type, SQ_Tools::getValue('post_type'));
+        elseif (SQ_Tools::getIsset('post')) {
+            $post = get_post(SQ_Tools::getValue('post'));
+            @array_push($this->post_type, $post->post_type);
+        } elseif (SQ_Tools::getIsset('id')) {
+            $post = get_post(SQ_Tools::getValue('post'));
+            @array_push($this->post_type, $post->post_type);
+        }
 
         if (SQ_Tools::$options['sq_howto'] == 1)
             $first_page = 'sq_howto';
