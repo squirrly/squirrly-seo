@@ -43,7 +43,7 @@ class SQ_Menu extends SQ_FrontController {
             $post = get_post(SQ_Tools::getValue('post'));
             @array_push($this->post_type, $post->post_type);
         } elseif (SQ_Tools::getIsset('id')) {
-            $post = get_post(SQ_Tools::getValue('post'));
+            $post = get_post(SQ_Tools::getValue('id'));
             @array_push($this->post_type, $post->post_type);
         }
 
