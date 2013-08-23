@@ -62,8 +62,7 @@ class SQ_Post extends SQ_FrontController {
      */
     function hookSavePost($post_id) {
         $file_name = false;
-        if ($this->saved)
-            return;
+
 
         // unhook this function so it doesn't loop infinitely
         remove_action('save_post', array($this, 'hookSavePost'), 10);
@@ -73,8 +72,9 @@ class SQ_Post extends SQ_FrontController {
                 wp_is_post_revision($post_id) == '' &&
                 wp_is_post_autosave($post_id) == '' &&
                 get_post_status($post_id) != 'auto-draft' &&
+                get_post_status($post_id) != 'inherit' &&
                 SQ_Tools::getValue('autosave') == '') {
-
+            //echo 'saving';
             //check for custom SEO
             $this->checkAdvMeta($post_id);
             //check the SEO from Squirrly Live Assistant
@@ -85,13 +85,16 @@ class SQ_Post extends SQ_FrontController {
         if ((SQ_Tools::getValue('action')) == 'editpost' &&
                 wp_is_post_autosave($post_id) == '' &&
                 get_post_status($post_id) != 'auto-draft' &&
+                get_post_status($post_id) != 'inherit' &&
                 SQ_Tools::getValue('autosave') == '') {
 
+            if (!$this->saved)
             //check the remote images
-            $this->checkImage($post_id);
+                $this->checkImage($post_id);
+            $this->saved = true;
         }
 
-        $this->saved = true;
+
         add_action('save_post', array($this, 'hookSavePost'), 10);
     }
 
@@ -137,19 +140,20 @@ class SQ_Post extends SQ_FrontController {
 
                 //encode special characters
                 $local_file = str_replace($file['filename'], urlencode($file['filename']), $file['url']);
+                if ($local_file !== false) {
+                    $content = str_replace($url, $local_file, $content);
 
-                $content = str_replace($url, $local_file, $content);
+                    $attach_id = wp_insert_attachment(array(
+                        'post_mime_type' => $file['type'],
+                        'post_title' => preg_replace('/\.[^.]+$/', '', $file['filename']),
+                        'post_content' => '',
+                        'post_status' => 'inherit',
+                        'guid' => $local_file
+                            ), $file['file'], $post_id);
 
-                $attach_id = wp_insert_attachment(array(
-                    'post_mime_type' => $file['type'],
-                    'post_title' => preg_replace('/\.[^.]+$/', '', $file['filename']),
-                    'post_content' => '',
-                    'post_status' => 'inherit',
-                    'guid' => $local_file
-                        ), $file['file'], $post_id);
-
-                $attach_data = wp_generate_attachment_metadata($attach_id, $file['file']);
-                wp_update_attachment_metadata($attach_id, $attach_data);
+                    $attach_data = wp_generate_attachment_metadata($attach_id, $file['file']);
+                    wp_update_attachment_metadata($attach_id, $attach_data);
+                }
             }
         }
 

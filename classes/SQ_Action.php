@@ -151,8 +151,8 @@ class SQ_Action extends SQ_FrontController {
             if (function_exists('base64_encode'))
                 $parameters = 'q=' . base64_encode($parameters);
 
-        $url = self::cleanUrl(_SQ_API_URL_ . $module . "?" . $parameters);
 
+        $url = self::cleanUrl(_SQ_API_URL_ . $module . "?" . $parameters);
         return SQ_Tools::sq_remote_get($url, array('timeout' => $timeout));
     }
 
