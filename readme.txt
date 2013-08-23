@@ -2,7 +2,7 @@
 Contributors: cifi, calinvingan, florinmuresan, lucianpacurar
 Tags: seo,seo optimization,seo content,seo plugin,squirly,squirrley,squirrely,wordpress seo,plugin,dutch,german,russian,romanian,brazilian,spanish,french,search engine optimization,xml,sitemap,keyword,keyword research,post,posts,page,squirrly,tag,image,images,photos,flickr,statistics,google,content,title,description,favicon,apple,ios,andriod,mobile,canonical,author,googleplus,analytics,automation,admin,automatic seo,seo correction,seo title,seo meta
 Requires at least: 3.1
-Tested up to: 3.5.2
+Tested up to: 3.6
 Stable tag: trunk
 
 Squirrly SEO Plugin helps you write excellent SEO articles for your WordPress and do keyword researches in less then 2 minutes.
@@ -101,8 +101,10 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 == Changelog ==
 = 2.1.0 =
-* Added Squirrly for HTML editor
+* Added Squirrly Live Assistant for both Visual and HTML editors
 * Added Squirrly SEO for custom post types
+* Compatible with the Wordpress version 3.6
+* Fixed the type delay for Seo Live Assistant
 
 = 2.0.8 =
 * Added the Spanish (es_ES) translation in Squirly SEO
@@ -117,7 +119,6 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 * Added the Squirrly SEO Traffic Progress report
 * Fixed minor frontend bugs
 * Fixed the date in sitemap for tags
-
 
 = 2.0.6 =
 (stable)

@@ -86,7 +86,6 @@
     margin: 0 7px;
 }
 
-
 /**************************** LOGIN **********************************/
 #sq_settings_login #sq_blocklogin label{
     width: 80px;
@@ -107,12 +106,9 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-
 #sq_settings_login .sq_login_done{
     background: #f0f0f0 url('../img/settings_login_done.jpg') 0px 0px  no-repeat;
 }
-
-
 #sq_settings_login .sq_box .sq_header{
     color: #11a5c1;
     font-size: 28px;
@@ -122,7 +118,6 @@
     line-height: 29px;
     text-shadow: 1px 2px white;
 }
-
 #sq_settings_login .sq_login_done .sq_header{
     font-size: 24px;
 }
@@ -168,7 +163,6 @@
 #sq_settings .sq_settings_affiliate_info{
     margin-bottom: 35px;
 }
-
 #sq_settings .sq_settings_affiliate_info li{
     margin-left: 16px;
     font-weight: bold;
@@ -176,7 +170,6 @@
     color: #222;
     line-height: 20px;
 }
-
 #sq_settings .sq_affiliate_banner{
     display:block;
     margin-bottom:20px;
@@ -203,7 +196,6 @@
     height: 450px;
     width: 740px;
 }
-
 #sq_settings #sq_settings_howto #sq_settings_howto_title{
     display: block;
     width: 100%;
@@ -217,7 +209,6 @@
     text-shadow: 1px 1px white;
     height: auto;
 }
-
 #sq_settings #sq_settings_howto #sq_settings_howto_body{
     display: table;
     font-size: 20px;
@@ -226,14 +217,12 @@
     padding: 25px 0;
     text-shadow: 1px 1px white;
 }
-
 #sq_settings #sq_settings_howto #sq_settings_howto_body p{
     float: left;
     width: 243px;
     margin: 0 18px;
     text-align: left;
 }
-
 #sq_settings #sq_settings_howto #sq_settings_howto_body p span{
     display: block;
     font-size: 30px;
@@ -255,7 +244,6 @@
     text-shadow: 1px 1px #BF4509;
     border-radius: 6px;
 }
-
 #sq_settings #sq_settings_title #sq_settings_howto_close{
     display: inline-block;
     font-size: 12px;
@@ -273,19 +261,16 @@
     padding: 5px 0 !important;
     text-align: left;
 }
-
 #sq_settings #sq_user_stats_list li{
     margin: 0;
     padding: 3px 0 3px 24px;
     line-height: 25px;
     font-size: 14px;
 }
-
 #sq_settings #sq_user_stats_list li strong{
     color: green;
     font-size: 16px;
 }
-
 #sq_settings #sq_user_info .sq_settings_info{
     color: #333;
     padding-top: 15px;
@@ -322,7 +307,6 @@
     padding: 0px;
     text-shadow: 1px 1px white;
 }
-
 #sq_settings #sq_userinfo li{
     padding: 10px;
 }
@@ -337,7 +321,6 @@
     text-align: left;
     margin-top: 20px;
 }
-
 #sq_settings_body #sq_settings_left,
 #sq_settings_body #sq_settings_right{
     float: left;
@@ -367,17 +350,12 @@
 
     box-shadow: 0 5px 9px -6px #222;
 }
-
-
-
 #sq_settings_body #sq_settings_left fieldset{
     margin: 10px 10px 22px 10px;
 }
-
 #sq_settings_body #sq_settings_right fieldset{
     margin: 10px 0px 22px 0px;
 }
-
 #sq_settings_body fieldset legend{
     background: #f3f3f3 repeat-x top left;
     border: 1px solid #364A14;
@@ -394,7 +372,6 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-
 #sq_settings_body span.sq_settings_info {
     clear: both;
     display: block;
@@ -403,7 +380,6 @@
     width: 100%;
     text-align: right;
 }
-
 #sq_settings_body ul.sq_settings_info > span{
     display: block;
     color: #777;
@@ -412,7 +388,6 @@
     margin-bottom: 10px;
     list-style: none;
 }
-
 #sq_settings_body ul.sq_settings_info li {
     margin-left: 5px;
     font-size: 11px;
@@ -427,7 +402,6 @@
     font-weight: normal;
     font-size: 12px;
 }
-
 #sq_settings_body fieldset p.withborder{
     clear: both;
     vertical-align: top;
@@ -447,7 +421,6 @@
     margin-left: 15px;
     margin-top: 10px;
 }
-
 #sq_settings_body fieldset p.withcode input[type=text]{
     width: 170px;
     font-size: 10px;
@@ -506,11 +479,9 @@
     color: blue;
     cursor: pointer;
 }
-
 #sq_settings_body ._customize{
     margin-top: 10px;
 }
-
 
 @media only screen and (max-width: 1800px){
     #sq_settings_body fieldset{
@@ -534,7 +505,6 @@
     padding: 6px 0;
     height: 30px;
 }
-
 .sq_option_content > span{
     position: relative;
     padding-top: 3px;
@@ -546,86 +516,77 @@
 }
 
 .sq_switch {
-  float: left;
-  position: relative;
-  margin: 0px 9px 0 0;
+    float: left;
+    position: relative;
+    margin: 0px 9px 0 0;
 
-  height: 26px;
-  width: 120px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    height: 26px;
+    width: 120px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 }
-
-
-
 .sq_switch-label {
-  position: relative;
-  z-index: 2;
-  float: left;
-  width: 58px;
-  line-height: 26px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
-  cursor: pointer;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 58px;
+    line-height: 26px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
 }
-
 .sq_switch-label:active {
-  font-weight: bold;
+    font-weight: bold;
 
 }
-
 .sq_switch-label-off {
-  padding-left: 2px;
+    padding-left: 2px;
 }
-
 .sq_switch-label-on {
-  padding-right: 2px;
+    padding-right: 2px;
 }
 
 .sq_switch-input {
-  display: none;
+    display: none;
 }
-
 .sq_switch-input:checked + .sq_switch-label {
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.65);
-  text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
-  -webkit-transition: 0.15s ease-out;
-  -moz-transition: 0.15s ease-out;
-  -o-transition: 0.15s ease-out;
-  transition: 0.15s ease-out;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.65);
+    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
 }
-
 .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
-  /* Note: left: 50% doesn't transition in WebKit */
-  left: 60px;
-  background: lightcoral;
+    /* Note: left: 50% doesn't transition in WebKit */
+    left: 60px;
+    background: lightcoral;
 }
-
 .sq_switch-selection {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 2px;
-  left: 2px;
-  width: 58px;
-  height: 22px;
-  background: #65bd63;
-  border-radius: 3px;
-  background-image: -webkit-linear-gradient(top, #9dd993, #65bd63);
-  background-image: -moz-linear-gradient(top, #9dd993, #65bd63);
-  background-image: -o-linear-gradient(top, #9dd993, #65bd63);
-  background-image: linear-gradient(to bottom, #9dd993, #65bd63);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
-  -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
-  -o-transition: left 0.15s ease-out;
-  transition: left 0.15s ease-out;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    width: 58px;
+    height: 22px;
+    background: #65bd63;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, #9dd993, #65bd63);
+    background-image: -moz-linear-gradient(top, #9dd993, #65bd63);
+    background-image: -o-linear-gradient(top, #9dd993, #65bd63);
+    background-image: linear-gradient(to bottom, #9dd993, #65bd63);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
 
 }
 
@@ -639,31 +600,26 @@
     font-size: 11px;
     color: #777;
 }
-
 .sq_option_content_small .sq_switch {
-  margin: 0px 9px 0 0;
+    margin: 0px 9px 0 0;
     height: 18px;
     width: 60px;
 }
-
 .sq_option_content_small .sq_switch-label {
-  width: 28px;
-  line-height: 17px;
-  font-size: 9px;
+    width: 28px;
+    line-height: 17px;
+    font-size: 9px;
 }
-
- .sq_option_content_small .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
-  /* Note: left: 50% doesn't transition in WebKit */
-  left: 31px;
+.sq_option_content_small .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
+    /* Note: left: 50% doesn't transition in WebKit */
+    left: 31px;
 }
-
 .sq_option_content_small .sq_switch-selection {
     top: 1px;
     left: 1px;
     width: 28px;
     height: 16px;
 }
-
 .sq_option_content_small > span{
     font-size: 11px !important;
 }
@@ -675,29 +631,25 @@
     margin: 0 auto;
     width: 200px;
 }
-
 .sq_option_content .sq_beginner_user {
     float: none !important;
     margin: 0 auto;
     height: 32px;
     width: 200px;
 }
-
 .sq_option_content .sq_beginner_user .sq_switch-label{
     width: 97px !important;
     font-size: 14px!important;
     line-height: 30px!important;
     color: lightgoldenrodyellow;
 }
-
 .sq_option_content .sq_beginner_user .sq_switch-selection {
-  width: 95px;
-  height: 28px;
+    width: 95px;
+    height: 28px;
 }
-
 .sq_option_content .sq_beginner_user  .sq_switch-input:checked + .sq_switch-label-on ~ .sq_switch-selection {
-  /* Note: left: 50% doesn't transition in WebKit */
-  left: 103px;
+    /* Note: left: 50% doesn't transition in WebKit */
+    left: 103px;
 }
 
 #sq_settings .sq_option_details .sq_header{
@@ -727,7 +679,6 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-
 #sq_settings .sq_option_disclamer{
     display: block;
     color: darkgreen;

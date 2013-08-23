@@ -2,6 +2,8 @@
 
 class SQ_Post extends SQ_FrontController {
 
+    var $saved;
+
     /**
      * Initialize the TinyMCE editor for the current use
      *
@@ -60,6 +62,9 @@ class SQ_Post extends SQ_FrontController {
      */
     function hookSavePost($post_id) {
         $file_name = false;
+        if ($this->saved)
+            return;
+
         // unhook this function so it doesn't loop infinitely
         remove_action('save_post', array($this, 'hookSavePost'), 10);
 
@@ -86,7 +91,7 @@ class SQ_Post extends SQ_FrontController {
             $this->checkImage($post_id);
         }
 
-
+        $this->saved = true;
         add_action('save_post', array($this, 'hookSavePost'), 10);
     }
 
@@ -124,7 +129,7 @@ class SQ_Post extends SQ_FrontController {
 
         if (!is_array($urls) || (is_array($urls) && count($urls) == 0))
             return;
-
+        $urls = @array_unique($urls);
         foreach ($urls as $url) {
             if ($file = $this->model->upload_image($url)) {
                 if (!file_is_valid_image($file['file']))
@@ -180,7 +185,7 @@ class SQ_Post extends SQ_FrontController {
         $args['author'] = (int) SQ_Tools::getUserID();
         $args['post_id'] = $post_id;
 
-        SQ_Action::apiCall('sq/seo/post', $args);
+        SQ_Action::apiCall('sq/seo/post', $args, 5);
     }
 
     function getPaged($link) {

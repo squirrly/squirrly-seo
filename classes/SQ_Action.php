@@ -119,7 +119,7 @@ class SQ_Action extends SQ_FrontController {
      * @param array $args
      * @return json | string
      */
-    public static function apiCall($module, $args = array()) {
+    public static function apiCall($module, $args = array(), $timeout = 60) {
         $parameters = "";
 
         if (SQ_Tools::$options['sq_api'] == '' && $module <> 'sq/login' && $module <> 'sq/register')
@@ -153,7 +153,7 @@ class SQ_Action extends SQ_FrontController {
 
         $url = self::cleanUrl(_SQ_API_URL_ . $module . "?" . $parameters);
 
-        return SQ_Tools::sq_remote_get($url, array('timeout' => 60));
+        return SQ_Tools::sq_remote_get($url, array('timeout' => $timeout));
     }
 
     /**

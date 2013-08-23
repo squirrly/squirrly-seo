@@ -36,7 +36,6 @@
     padding: 0;
 }
 
-
 #postsquirrly .hndle,#postsquirrly  .handlediv{
     display: none;
 }
@@ -73,7 +72,6 @@
     margin-bottom: 15px;
 
 }
-
 
 /* FOR LOADING*/
 #sq_blocklogin{
@@ -189,7 +187,6 @@
 #sq_options > ul{
     margin: 10px 0;
 }
-
 #sq_options > ul > li{
     position: relative;
     width: 115px;
@@ -203,7 +200,6 @@
     padding: 0px 0 0 0px;
     cursor: pointer;
 }
-
 #sq_options li#sq_options_support{
     margin-left: 27px;
     width: 100px;
@@ -359,7 +355,6 @@
     padding: 6px 0;
     clear: both;
 }
-
 #sq_facebook_b > span{
     display: block;
     float: left;
@@ -383,14 +378,12 @@
 #sq_facebook_b .sq_facebook_frame{
     margin-top: 35px;
 }
-/*********************************************************************/
+
 
 /**************** POPUP ************************/
-
 #sq_status{
     margin: 40px 0;
 }
-
 #sq_status .sq_box{
     position: relative;
     width: 750px;
@@ -408,7 +401,6 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-
 #sq_status .sq_box .sq_header{
     clear: both;
     color: #1ca12f;
@@ -428,23 +420,19 @@
     background-image: linear-gradient(to top,#ECECEC,#F9F9F9);
 
 }
-
 #sq_status .sq_box .sq_header span{
     color: #444;
     margin-right: 10px;
 }
-
 #sq_status .sq_box .sq_header .sq_status_close{
     float: right;
     color: #999;
     font-size: 10px;
     cursor: pointer;
 }
-
 #sq_status .sq_box table{
     margin: 35px 25px 0 25px;;
 }
-
 #sq_status .sq_box td{
     text-align: left;
     font-size: 13px;
@@ -472,7 +460,6 @@
     font-weight: bold;
     width: 270px;
 }
-
 #sq_status .sq_box .sq_status_text3{
     color: #A8A8A8;
     font-size: 16px;
@@ -482,7 +469,6 @@
     width: 355px;
     text-align: left;
 }
-
 #sq_status .sq_box .sq_status_bigtext{
     color: #1ca12f;
     padding-top: 12px;
