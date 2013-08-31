@@ -105,14 +105,14 @@ class Model_SQ_Frontend {
         }
 
 
-        $description = $this->setCustomDescription();
+        $description = $this->getCustomDescription();
         if (isset($description) && !empty($description) && $description <> '') {
             $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $description, $buffer, 1, $count);
             if ($count == 0) //if no description found
                 $buffer .= $description . "\n"; //add the description
         }
 
-        $keyword = $this->setCustomKeyword();
+        $keyword = $this->getCustomKeyword();
         if (isset($keyword) && !empty($keyword) && $keyword <> '') {
             $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $keyword, $buffer, 1, $count);
             if ($count == 0) //if no keywords found
@@ -144,6 +144,8 @@ class Model_SQ_Frontend {
             /* Meta setting */
             $this->title = $this->clearTitle($this->getCustomTitle());
 
+
+
             if (SQ_Tools::$options['sq_auto_canonical'] == 1)
                 $ret .= $this->setCanonical();
 
@@ -161,6 +163,8 @@ class Model_SQ_Frontend {
                 $ret .= $this->getDCPublisher();
                 $ret .= $this->getTheDate();
             }
+
+            $this->getCustomDescription(); //set the $this->description for open graph an twitter
 
             if (SQ_Tools::$options['sq_auto_facebook'] == 1)
                 $ret .= $this->getFacebookObject(SQ_Tools::$options) . "\n";
@@ -334,7 +338,7 @@ class Model_SQ_Frontend {
             }
 
         if ($post)
-            @preg_match('/<img[^>]+src="([^"]+)"[^>]+>/i', $post->post_content, $match);
+            @preg_match('/<img[^>]*src="([^"]*)"[^>]*>/i', $post->post_content, $match);
 
         if (empty($match))
             return;
@@ -352,7 +356,7 @@ class Model_SQ_Frontend {
      *
      * @return string
      */
-    private function setCustomDescription() {
+    private function getCustomDescription() {
         global $wp_query;
         $sep = '|';
         $description = '';
@@ -422,7 +426,7 @@ class Model_SQ_Frontend {
      *
      * @return string
      */
-    private function setCustomKeyword() {
+    private function getCustomKeyword() {
         global $wp_query;
         $keywords = '';
 

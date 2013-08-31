@@ -117,6 +117,14 @@ class Model_SQ_Menu {
                     $this->meta[6] = null; //no arg
 
 
+
+
+
+
+
+
+
+
 //print_r($this->meta);
                 /* add the box content with WP */
                 add_meta_box($this->meta[0], $this->meta[1], $this->meta[2], $this->meta[3], $this->meta[4], $this->meta[5]);
@@ -252,11 +260,11 @@ class Model_SQ_Menu {
         if (!empty($file['name'])) {
             /* Check the extension */
             $file_type = strtolower($file_type);
-            $files = array('jpeg', 'jpg', 'gif', 'png');
-            $key = array_search($file_type, $files);
+            $files = array('ico', 'jpeg', 'jpg', 'gif', 'png');
+            $key = in_array($file_type, $files);
 
             if (!$key) {
-                SQ_Error::setError(__("File type error: Only JPEG, JPG, GIF or PNG files are allowed.", _PLUGIN_NAME_));
+                SQ_Error::setError(__("File type error: Only ICO, JPEG, JPG, GIF or PNG files are allowed.", _PLUGIN_NAME_));
                 return;
             }
 
@@ -291,30 +299,33 @@ class Model_SQ_Menu {
                     return;
                 }
 
-                /* Transform the image into icon */
-                $img->openImage($out['tmp']);
-                $img->resizeImage(32, 32);
-                $img->saveImage($out['tmp']);
+                if ($file_type <> 'ico') {
+                    /* Transform the image into icon */
+                    $img->openImage($out['tmp']);
+                    $img->resizeImage(32, 32);
+                    $img->saveImage($out['tmp']);
 
-                switch ($file_type) {
-                    case "jpeg":
-                    case "jpg":
-                        $im = @imagecreatefromjpeg($out['tmp']);
-                        break;
-                    case "gif":
-                        $im = @imagecreatefromgif($out['tmp']);
-                        break;
-                    case "png":
-                        $im = imagecreatefrompng($out['tmp']);
-                        break;
+                    switch ($file_type) {
+                        case "jpeg":
+                        case "jpg":
+                            $im = @imagecreatefromjpeg($out['tmp']);
+                            break;
+                        case "gif":
+                            $im = @imagecreatefromgif($out['tmp']);
+                            break;
+                        case "png":
+                            $im = @imagecreatefrompng($out['tmp']);
+                            break;
+                    }
+
+                    /* Save the file */
+                    if ($im)
+                        new Model_SQ_Icon($im, $out['favicon']);
+                    else
+                        SQ_Error::setError(__("ICO Error: Could not create the ICO from file. Try with another file type.", _PLUGIN_NAME_));
+                }else {
+                    copy($out['tmp'], $out['favicon']);
                 }
-
-                /* Save the file */
-                if ($im)
-                    new Model_SQ_Icon($im, $out['favicon']);
-                else
-                    SQ_Error::setError(__("ICO Error: Could not create the ICO from file. Try with another file type.", _PLUGIN_NAME_));
-
 
                 $out['message'] .= __("The favicon has been updated.", _PLUGIN_NAME_);
 

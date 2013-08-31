@@ -132,6 +132,7 @@
 #sq_snippet #sq_snippet_ul #sq_snippet_url a{
     color: #093;
     height: 16px;
+    line-height: 14px;
     overflow: visible;
     text-decoration: none;
 }
@@ -141,7 +142,7 @@
     color: #222;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 2px;
+    margin-top: 4px;
     max-width: 480px;
     overflow: hidden;
 }
