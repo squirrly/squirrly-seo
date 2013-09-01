@@ -60,6 +60,43 @@ class SQ_Frontend extends SQ_FrontController {
     }
 
     /**
+     * Change the image path to absolute when in feed
+     */
+    function hookFrontcontent($content) {
+        if (!is_feed())
+            return $content;
+
+
+        $find = $replace = $urls = array();
+
+        @preg_match_all('/<img[^>]*src="([^"]+)"[^>]*>/i', $content, $out);
+        if (is_array($out)) {
+            if (!is_array($out[1]) || empty($out[1]))
+                return $content;
+
+            foreach ($out[1] as $row) {
+                if (strpos($row, '//') === false) {
+                    if (!in_array($row, $urls)) {
+                        $urls[] = $row;
+                    }
+                }
+            }
+        }
+        if (!is_array($urls) || (is_array($urls) && empty($urls)))
+            return $content;
+
+        foreach ($urls as $url) {
+            $find[] = $url;
+            $replace[] = get_bloginfo('url') . $url;
+        }
+        if (!empty($find) && !empty($replace)) {
+            $content = str_replace($find, $replace, $content);
+        }
+
+        return $content;
+    }
+
+    /**
      * Hook Footer load to save the visit and to close the buffer
      */
     function hookFrontfooter() {

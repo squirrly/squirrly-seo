@@ -97,28 +97,26 @@ class Model_SQ_Frontend {
         global $wp_query;
         $this->post = $wp_query->get_queried_object();
 
-        $title = $this->getCustomTitle();
-        if (isset($title) && !empty($title) && $title <> '') {
-            $buffer = @preg_replace('/<title[^<>]*>([^<>]*)<\/title>/si', sprintf("<title>%s</title>", $title), $buffer, 1, $count);
-            if ($count == 0) //if no title found
-                $buffer .= sprintf("<title>%s</title>", $title) . "\n"; //add the title
+        if (is_home() || (isset($wp_query->query) && empty($wp_query->query)) || is_single() || is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search()) {
+
+            $title = $this->getCustomTitle();
+            if (isset($title) && !empty($title) && $title <> '') {
+                $buffer = @preg_replace('/<title[^<>]*>([^<>]*)<\/title>/si', sprintf("<title>%s</title>", $title), $buffer, 1, $count);
+                if ($count == 0) //if no title found
+                    $buffer .= sprintf("<title>%s</title>", $title) . "\n"; //add the title
+            }
+
+
+            $description = $this->getCustomDescription();
+            if (isset($description) && !empty($description) && $description <> '') {
+                $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $description, $buffer, 1, $count);
+            }
+
+            $keyword = $this->getCustomKeyword();
+            if (isset($keyword) && !empty($keyword) && $keyword <> '') {
+                $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $keyword, $buffer, 1, $count);
+            }
         }
-
-
-        $description = $this->getCustomDescription();
-        if (isset($description) && !empty($description) && $description <> '') {
-            $buffer = @preg_replace('/<meta[^>]*name=\"description\"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $description, $buffer, 1, $count);
-            if ($count == 0) //if no description found
-                $buffer .= $description . "\n"; //add the description
-        }
-
-        $keyword = $this->getCustomKeyword();
-        if (isset($keyword) && !empty($keyword) && $keyword <> '') {
-            $buffer = @preg_replace('/<meta[^>]*name=\"keywords"[^>]*content=[\"|\'][^>]*[\"|\'][^>]*>/si', $keyword, $buffer, 1, $count);
-            if ($count == 0) //if no keywords found
-                $buffer .= $keyword . "\n"; //add the keywords
-        }
-
         return $buffer;
     }
 
@@ -138,13 +136,16 @@ class Model_SQ_Frontend {
         if (!function_exists('preg_replace'))
             return $ret;
 
-        if (is_home() || is_single() || is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search() || is_404()) {
+        if (is_home() || (isset($wp_query->query) && empty($wp_query->query)) || is_single() || is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search()) {
 
 
             /* Meta setting */
             $this->title = $this->clearTitle($this->getCustomTitle());
 
-
+            if (SQ_Tools::$options['sq_auto_description'] == 1) {
+                $ret .= $this->getCustomDescription() . "\n";
+                $ret .= $this->getCustomKeyword() . "\n";
+            }
 
             if (SQ_Tools::$options['sq_auto_canonical'] == 1)
                 $ret .= $this->setCanonical();
@@ -164,7 +165,7 @@ class Model_SQ_Frontend {
                 $ret .= $this->getTheDate();
             }
 
-            $this->getCustomDescription(); //set the $this->description for open graph an twitter
+
 
             if (SQ_Tools::$options['sq_auto_facebook'] == 1)
                 $ret .= $this->getFacebookObject(SQ_Tools::$options) . "\n";
@@ -302,6 +303,17 @@ class Model_SQ_Frontend {
             $title = $this->clearTitle($this->grabTitleFromPost($post->ID));
         }
 
+        //If is category
+        if (is_category()) { //for homepage
+            $category = get_category(get_query_var('cat'), false);
+            $title = SQ_Tools::i18n($category->cat_name);
+            if ($title == '')
+                $title = $this->clearTitle($this->grabTitleFromPost());
+            if (is_paged()) {
+                $title .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
+        }
+
         //If title then clear it
         if ($title <> '') {
             $title = $this->clearTitle($title);
@@ -343,6 +355,9 @@ class Model_SQ_Frontend {
         if (empty($match))
             return;
 
+        if (strpos($match[1], '//') === false)
+            $match[1] = get_bloginfo('url') . $match[1];
+
         return $match[1];
     }
 
@@ -376,6 +391,10 @@ class Model_SQ_Frontend {
                 $description = SQ_Tools::i18n($category->cat_name);
             if ($description == '')
                 $description = $this->grabDescriptionFromPost();
+
+            if (is_paged()) {
+                $description .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
 
             if ($this->isHomePage() && $description <> '')
                 if ($this->meta['blogname'] <> '')
@@ -1045,7 +1064,7 @@ class Model_SQ_Frontend {
      */
     private function isHomePage() {
         global $wp_query;
-        return (is_home() || (isset($wp_query->query) && count($wp_query->query) == 0 && !is_preview()));
+        return (is_home() || (isset($wp_query->query) && empty($wp_query->query) && !is_preview()));
     }
 
     /**

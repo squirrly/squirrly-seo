@@ -26,6 +26,7 @@ class SQ_HookController {
             'frontinit' => 'init',
             'fronthead' => 'wp_head',
             'frontfooter' => 'wp_footer',
+            'frontcontent' => 'the_content',
         );
         $this->custom_hooks = array();
         $this->block_hooks = array('getContent' => 'getContent');
