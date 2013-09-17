@@ -21,7 +21,10 @@ class SQ_Menu extends SQ_FrontController {
         // Delete the redirect transient
         delete_transient('sq_upgrade');
 
-        wp_safe_redirect(admin_url('admin.php?page=sq_howto'));
+        if (SQ_Tools::$options['sq_howto'] == 1)
+            wp_safe_redirect(admin_url('admin.php?page=sq_howto'));
+        else
+            wp_safe_redirect(admin_url('admin.php?page=sq_dashboard'));
         exit;
     }
 

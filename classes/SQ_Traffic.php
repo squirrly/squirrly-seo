@@ -64,6 +64,7 @@ class SQ_Traffic extends SQ_FrontController {
                     `id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
                     `post_id` bigint( 20 ) NOT NULL DEFAULT 0,
                     `home` tinyint( 1 ) NOT NULL DEFAULT 0,
+                    `domain` varchar(255) collate utf8_unicode_ci NOT NULL default '',
                     `referral` varchar(96) collate utf8_unicode_ci NOT NULL default '',
                     `keyword` varchar(255) collate utf8_unicode_ci NOT NULL default '',
                     `date` DATE default NULL,

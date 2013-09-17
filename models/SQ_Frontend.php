@@ -136,7 +136,7 @@ class Model_SQ_Frontend {
         if (!function_exists('preg_replace'))
             return $ret;
 
-        if (is_home() || (isset($wp_query->query) && empty($wp_query->query)) || is_single() || is_preview() || is_page() || is_archive() || is_author() || is_category() || is_tag() || is_search()) {
+        if (is_home() || (isset($wp_query->query) && empty($wp_query->query)) || is_single() || is_preview() || is_page() || is_archive() || is_category() || is_author() || is_tag() || is_search()) {
 
 
             /* Meta setting */
@@ -314,6 +314,14 @@ class Model_SQ_Frontend {
             }
         }
 
+        if (is_author()) { //for homepage
+            $author = get_author_name();
+            $title = $this->clearTitle($this->grabTitleFromPost()) . " " . $sep . " " . $author;
+            if (is_paged()) {
+                $title .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
+        }
+
         //If title then clear it
         if ($title <> '') {
             $title = $this->clearTitle($title);
@@ -400,6 +408,16 @@ class Model_SQ_Frontend {
                 if ($this->meta['blogname'] <> '')
                     $description .= " " . $sep . " " . $this->meta['blogname'];
         }
+
+        if (is_author()) { //for homepage
+            $author = get_author_name();
+            $description = $this->grabDescriptionFromPost() . " " . $sep . " " . $author;
+            if (is_paged()) {
+                $description .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
+        }
+
+
 
         /* Check if is a predefined Title */
         if ($this->isHomePage() &&

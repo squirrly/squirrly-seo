@@ -100,13 +100,20 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
+= 2.1.1 =
+* Fixed absolute path for images in feed
+* Fixed unique title and description for categories and pages
+* Fixed local save images minor bug
+* Fixed keyword saving for main domain optimization
+* Changed the blog limit and optimization limit for the free account
+* Added the weekly SEO audit for all accounts
+* Added unique SEO (title and description) for the author and category pages
+
 = 2.1.0 =
 * Added Squirrly Live Assistant for both Visual and HTML editors
 * Added Squirrly SEO for custom post types
 * Compatible with the Wordpress version 3.6
 * Fixed the type delay for Seo Live Assistant
-* Fixed local save images minor bug
-* Fixed keyword saving for main domain optimization
 
 = 2.0.8 =
 * Added the Spanish (es_ES) translation in Squirly SEO

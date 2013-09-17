@@ -70,7 +70,7 @@
                             $sq_affiliate_images[] = _SQ_STATIC_API_URL_ . 'default/img/banners/banner2.jpg';
 
                             foreach ($sq_affiliate_images as $sq_affiliate_image) {
-                                echo '<li><a href="' . SQ_Tools::$options['sq_affiliate_link'] . '" target="_blank"><img src="' . $sq_affiliate_image . '" /></a>';
+                                echo '<li><a href="' . SQ_Tools::$options['sq_affiliate_link'] . '" target="_blank"><img src="' . $sq_affiliate_image . '" alt="Seo Plugin by Squirrly" /></a>';
                                 echo '<span class="sq_affiliate_banner" >';
                                 echo '<textarea style="width: 500px; height: 45px;" onclick="this.focus(); this.select();"><a href="' . SQ_Tools::$options['sq_affiliate_link'] . '" target="_blank"><img src="' . $sq_affiliate_image . '" /></a></textarea>';
                                 echo '</span></li>';
