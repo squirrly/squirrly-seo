@@ -111,7 +111,7 @@
     padding: 4px 0px 4px 15px;
     margin: 5px 0px;
     line-height: 16px;
-    text-shadow: 1px 1px #white;
+    text-shadow: 1px 1px white;
     text-align: center;
 }
 
@@ -281,7 +281,7 @@
     border: 1px solid #CCC;
     border-radius: 0 7px 7px 7px;
     -moz-border-radius: 0 7px 7px 7px;
-    -webkit-border-radius: 0 7p 7px 7px;
+    -webkit-border-radius: 0 7px 7px 7px;
     box-shadow: 1px 4px 6px -1px #888;
     -moz-box-shadow:1px 4px 6px -1px #888;
     -webkit-box-shadow:1px 4px 6px -1px #888;
@@ -431,7 +431,7 @@
     cursor: pointer;
 }
 #sq_status .sq_box table{
-    margin: 35px 25px 0 25px;;
+    margin: 35px 25px 0 25px;
 }
 #sq_status .sq_box td{
     text-align: left;

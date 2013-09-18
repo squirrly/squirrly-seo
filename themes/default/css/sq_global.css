@@ -32,6 +32,11 @@
     width: 20px;
     background: transparent url('../img/minloading.gif') no-repeat center;
 }
+#sq_preloading {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+}
 .sq_error{
     text-align: center;
     font-size: 14px;

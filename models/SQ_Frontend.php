@@ -232,7 +232,7 @@ class Model_SQ_Frontend {
         $meta .= sprintf('<meta property="og:title" content="%s" />', $this->title) . "\n";
         $meta .= sprintf('<meta property="og:description" content="%s" />', $this->description) . "\n";
         $meta .= (($this->meta['blogname'] <> '') ? sprintf('<meta property="og:site_name" content="%s" />', $this->meta['blogname']) . "\n" : '');
-        $meta .= sprintf('<meta property="og:type" content="%s" />', 'blog') . "\n";
+        $meta .= sprintf('<meta property="og:type" content="%s" />', 'article') . "\n";
 
         return $meta;
     }
@@ -304,7 +304,7 @@ class Model_SQ_Frontend {
         }
 
         //If is category
-        if (is_category()) { //for homepage
+        if (is_category()) { //for category
             $category = get_category(get_query_var('cat'), false);
             $title = SQ_Tools::i18n($category->cat_name);
             if ($title == '')
@@ -314,11 +314,22 @@ class Model_SQ_Frontend {
             }
         }
 
-        if (is_author()) { //for homepage
-            $author = get_author_name();
-            $title = $this->clearTitle($this->grabTitleFromPost()) . " " . $sep . " " . $author;
+        if (is_author()) { //for author
+            $author = SQ_Tools::i18n(get_the_author_meta('nicename', get_query_var('author')));
+
+            if ($title == '')
+                $title = $this->clearTitle($this->grabTitleFromPost()) . " " . $sep . " " . ucfirst($author);
+            if ($title == '')
+                $title = __('About') . " " . ucfirst($author);
             if (is_paged()) {
                 $title .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
+        }
+
+        if (is_tag()) { //for tags
+            if (is_paged()) {
+                $tag = get_query_var('tag');
+                $title = ucfirst(str_replace('-', ' ', SQ_Tools::i18n($tag))) . " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
             }
         }
 
@@ -352,9 +363,10 @@ class Model_SQ_Frontend {
 
         if (!$post)
             foreach ($wp_query->posts as $post) {
-                $id = (is_attachment()) ? ($post->post_parent) : ($post->ID);
-                $post = get_post($id);
-                break;
+                if ($post->ID && get_post_status($post->ID) == 'publish') {
+                    $post = get_post($post->ID);
+                    break;
+                }
             }
 
         if ($post)
@@ -392,7 +404,7 @@ class Model_SQ_Frontend {
             $description = $this->grabDescriptionFromPost();
         }
 
-        if (is_category()) {
+        if (is_category()) { //for categories
             $category = get_category(get_query_var('cat'), false);
             $description = SQ_Tools::i18n($category->category_description);
             if ($description == '')
@@ -409,15 +421,27 @@ class Model_SQ_Frontend {
                     $description .= " " . $sep . " " . $this->meta['blogname'];
         }
 
-        if (is_author()) { //for homepage
-            $author = get_author_name();
-            $description = $this->grabDescriptionFromPost() . " " . $sep . " " . $author;
+        if (is_author()) { //for author
+            $description = SQ_Tools::i18n(get_the_author_meta('description', get_query_var('author')));
+            if ($description == '') {
+                $author = SQ_Tools::i18n(get_the_author_meta('nicename', get_query_var('author')));
+                $description = $this->grabDescriptionFromPost() . " " . $sep . " " . $author;
+            }
             if (is_paged()) {
                 $description .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
             }
         }
 
-
+        if (is_tag()) { //for tags
+            $description = SQ_Tools::i18n(tag_description());
+            if ($description == '') {
+                $tag = SQ_Tools::i18n(single_tag_title('', false));
+                $description = ucfirst($tag) . " " . $sep . " " . $this->grabDescriptionFromPost();
+            }
+            if (is_paged()) {
+                $description .= " " . $sep . " " . __('Page', _PLUGIN_NAME_) . " " . get_query_var('paged');
+            }
+        }
 
         /* Check if is a predefined Title */
         if ($this->isHomePage() &&
@@ -997,11 +1021,11 @@ class Model_SQ_Frontend {
                 $author = get_userdata(get_query_var('author'));
                 if ($author === false)
                     return false;
-                $link = get_author_link(false, $author->ID, $author->user_nicename);
+                $link = get_author_posts_url($author->ID, $author->user_nicename);
             } else {
                 global $cache_userdata;
                 $userid = get_query_var('author');
-                $link = get_author_link(false, $userid, $cache_userdata[$userid]->user_nicename);
+                $link = get_author_posts_url($userid, $cache_userdata[$userid]->user_nicename);
             }
         } elseif ($wp_query->is_category && $haspost) {
             $link = get_category_link(get_query_var('cat'));
@@ -1052,11 +1076,11 @@ class Model_SQ_Frontend {
                 $author = get_userdata(get_query_var('author'));
                 if ($author === false)
                     return false;
-                return get_author_link(false, $author->ID, $author->user_nicename);
+                return get_author_posts_url($author->ID, $author->user_nicename);
             } else {
                 global $cache_userdata;
                 $userid = get_query_var('author');
-                return get_author_link(false, $userid, $cache_userdata[$userid]->user_nicename);
+                return get_author_posts_url($userid, $cache_userdata[$userid]->user_nicename);
             }
         }
         return false;

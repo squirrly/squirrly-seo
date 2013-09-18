@@ -27,9 +27,9 @@ class SQ_Blockrank extends SQ_BlockController {
 
         //Load the css and javascript for the rank box
         SQ_ObjController::getController('SQ_DisplayController', false)
-                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/css/sq_postslist.css?ver=' . SQ_VERSION_ID);
+                ->loadMedia(_SQ_THEME_URL_ . '/css/sq_postslist.css?ver=' . SQ_VERSION_ID);
         SQ_ObjController::getController('SQ_DisplayController', false)
-                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/js/sq_rank.js?ver=' . SQ_VERSION_ID);
+                ->loadMedia(_SQ_THEME_URL_ . '/js/sq_rank.js?ver=' . SQ_VERSION_ID);
     }
 
     function hookGetContent() {
