@@ -100,13 +100,15 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 
 
 == Changelog ==
+= 2.1.3 =
+* Optimized Squirrly SEO for a faster load
+* Fixed minor bugs in the theme's css files
+
 = 2.1.2 =
 * Added unique SEO (title and description) for the author, tag and category pages
 * Fixed Open Graph image size and image url for a better view in facebook and google
 * Fixed some deprecated functions
-* Fixed minor bug on Squirrly SEO load
-*
-* Wordpress 3.6.1 theme compatibility
+* Wordpress 3.6.1 compatibility
 
 = 2.1.1 =
 * Fixed absolute path for images in feed
