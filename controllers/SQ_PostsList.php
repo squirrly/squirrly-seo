@@ -100,9 +100,9 @@ class SQ_PostsList extends SQ_FrontController {
     function add_column($columns) {
         $this->is_list = true;
         SQ_ObjController::getController('SQ_DisplayController', false)
-                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/css/sq_postslist.css?ver=' . SQ_VERSION_ID);
+                ->loadMedia(_SQ_THEME_URL_ . '/css/sq_postslist.css?ver=' . SQ_VERSION_ID);
         SQ_ObjController::getController('SQ_DisplayController', false)
-                ->loadMedia(_SQ_STATIC_API_URL_ . SQ_URI . '/js/sq_rank.js?ver=' . SQ_VERSION_ID);
+                ->loadMedia(_SQ_THEME_URL_ . '/js/sq_rank.js?ver=' . SQ_VERSION_ID);
 
         return $this->insert($columns, array($this->column_id => __('Squirrly')), $this->pos);
     }
@@ -162,6 +162,13 @@ class SQ_PostsList extends SQ_FrontController {
 
         echo '<script type="text/javascript">
                     var sq_posts = new Array(' . $posts . ');
+              </script>';
+
+        $this->setVars();
+    }
+
+    public function setVars() {
+        echo '<script type="text/javascript">
                     var __sq_article_rank = "' . __('Squirrly article rank', _PLUGIN_NAME_) . '";
                     var __sq_refresh = "' . __('Update', _PLUGIN_NAME_) . '"
                     var __sq_more_details = "' . __('More details', _PLUGIN_NAME_) . '";
@@ -177,6 +184,7 @@ class SQ_PostsList extends SQ_FrontController {
                     var __sq_rankseemore_text = "' . __('See rank', _PLUGIN_NAME_) . '";
                     var __sq_rankseeless_text = "' . __('Hide rank', _PLUGIN_NAME_) . '";
                     var __sq_optimize_text = "' . __('Optimize', _PLUGIN_NAME_) . '";
+                    if (typeof sq_dashurl === "undefined") var sq_dashurl = "' . _SQ_STATIC_API_URL_ . '";
                     if (typeof __token === "undefined") var __token = "' . SQ_Tools::$options['sq_api'] . '";
                     var __sq_ranknotpublic_text = "' . __('Not Public', _PLUGIN_NAME_) . '";
 

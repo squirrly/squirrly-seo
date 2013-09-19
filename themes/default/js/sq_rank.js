@@ -1,34 +1,12 @@
 (function() {
     var SQ = this;
-    if (typeof __sq_article_rank === "undefined")
-        var __sq_article_rank = "Squirrly article rank";
-    if (typeof __sq_refresh === "undefined")
-        var __sq_refresh = "Update";
-    if (typeof __sq_more_details === "undefined")
-        var __sq_more_details = "More details";
-    if (typeof __sq_less_details === "undefined")
-        var __sq_less_details = "Less details";
-    if (typeof __sq_interval_text === "undefined")
-        var __sq_interval_text = "Interval:";
-    if (typeof __sq_interval_day === "undefined")
-        var __sq_interval_day = "Latest";
-    if (typeof __sq_interval_week === "undefined")
-        var __sq_interval_week = "Last 7 days";
-    if (typeof __sq_interval_month === "undefined")
-        var __sq_interval_month = "Last 30 days";
-    if (typeof __sq_goto_allposts === "undefined")
-        var __sq_goto_allposts = "See it in \"All Posts\"";
-    if (typeof __sq_rankglobal_text === "undefined")
-        var __sq_rankglobal_text = "progress";
-    if (typeof __sq_ranknotpublic_text === "undefined")
-        var __sq_ranknotpublic_text = "Not public";
-    if (typeof __sq_rankseemore_text === "undefined")
-        var __sq_rankseemore_text = "See rank";
-    if (typeof __sq_optimize_text === "undefined")
-        var __sq_optimize_text = "Optimize";
 
     if (typeof this.sq_dashurl == 'undefined')
-        this.sq_dashurl = 'http://my.squirrly.co/';
+        if (typeof sq_dashurl !== 'undefined')
+            this.sq_dashurl = sq_dashurl;
+        else
+            this.sq_dashurl = 'http://my.squirrly.co/';
+
     if (typeof this.__token == 'undefined' && typeof __token !== 'undefined')
         this.__token = __token;
     if (typeof this.typenow == 'undefined' && typeof typenow !== 'undefined')
