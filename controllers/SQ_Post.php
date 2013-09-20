@@ -113,17 +113,21 @@ class SQ_Post extends SQ_FrontController {
         $urls = array();
 
         if (function_exists('preg_match_all')) {
-            @preg_match_all('/<img[^>]+src="([^"]+)"[^>]+>/i', $tmpcontent, $out);
+            @preg_match_all('/<img[^>]*src="([^"]+)"[^>]*>/i', $tmpcontent, $out);
 
             if (is_array($out)) {
                 if (!is_array($out[1]) || count($out[1]) == 0)
                     return;
 
-                foreach ($out[1] as $row) {
-                    if (strpos($row, 'http') !== false &&
-                            strpos($row, get_bloginfo('url')) === false) {
-                        if (!in_array($row, $urls)) {
-                            $urls[] = $row;
+                if (get_bloginfo('wpurl') <> '') {
+                    $domain = parse_url(get_bloginfo('wpurl'));
+
+                    foreach ($out[1] as $row) {
+                        if (strpos($row, 'http') !== false &&
+                                strpos($row, $domain['host']) === false) {
+                            if (!in_array($row, $urls)) {
+                                $urls[] = $row;
+                            }
                         }
                     }
                 }
@@ -132,6 +136,7 @@ class SQ_Post extends SQ_FrontController {
 
         if (!is_array($urls) || (is_array($urls) && count($urls) == 0))
             return;
+
         $urls = @array_unique($urls);
         foreach ($urls as $url) {
             if ($file = $this->model->upload_image($url)) {

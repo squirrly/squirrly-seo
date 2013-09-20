@@ -412,7 +412,7 @@ class SQ_Tools extends SQ_FrontController {
         $home_path = get_home_path();
         $htaccess_file = $home_path . '.htaccess';
 
-        if ((!file_exists($htaccess_file) && is_writable($home_path) && $wp_rewrite->using_mod_rewrite_permalinks()) || is_writable($htaccess_file)) {
+        if ((!file_exists($htaccess_file) && @is_writable($home_path) && $wp_rewrite->using_mod_rewrite_permalinks()) || @is_writable($htaccess_file)) {
             $link = get_option('permalink_structure');
             if ($link == '')
                 return true;
