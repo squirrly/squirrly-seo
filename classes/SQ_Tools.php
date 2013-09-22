@@ -96,6 +96,7 @@ class SQ_Tools extends SQ_FrontController {
             'sq_api' => '',
             'sq_use' => 0,
             'sq_howto' => 1,
+            // --
             'sq_auto_canonical' => 1,
             'sq_auto_sitemap' => 1,
             'sq_auto_meta' => 1,
@@ -103,20 +104,25 @@ class SQ_Tools extends SQ_FrontController {
             'sq_auto_twitter' => 1,
             'sq_auto_facebook' => 1,
             'sq_twitter_account' => '',
+            // --
             'sq_auto_seo' => 1,
             'sq_auto_title' => 1,
             'sq_auto_description' => 1,
             'sq_fp_title' => '',
             'sq_fp_description' => '',
             'sq_fp_keywords' => '',
+            // --
             'sq_google_plus' => '',
             'sq_google_wt' => '',
             'sq_google_analytics' => '',
             'sq_facebook_insights' => '',
             'sq_bing_wt' => '',
+            // --
             'ignore_warn' => 0,
             'sq_keyword_help' => 1,
             'sq_keyword_information' => 0,
+            'sq_savelocal' => 1,
+            // --
             'sq_advance_user' => 0,
             'sq_affiliate_link' => '',
             'sq_ws' => 1,

@@ -180,6 +180,7 @@ class SQ_Menu extends SQ_FrontController {
                 SQ_Tools::saveOptions('sq_fp_keywords', SQ_Tools::getValue('sq_fp_keywords'));
 
 
+
                 SQ_Tools::saveOptions('sq_google_plus', SQ_Tools::getValue('sq_google_plus'));
                 SQ_Tools::saveOptions('sq_google_wt', $this->model->checkGoogleWTCode(SQ_Tools::getValue('sq_google_wt')));
                 SQ_Tools::saveOptions('sq_google_analytics', $this->model->checkGoogleAnalyticsCode(SQ_Tools::getValue('sq_google_analytics')));
@@ -190,7 +191,7 @@ class SQ_Menu extends SQ_FrontController {
                 SQ_Tools::saveOptions('sq_keyword_help', (int) SQ_Tools::getValue('sq_keyword_help'));
                 SQ_Tools::saveOptions('sq_keyword_information', (int) SQ_Tools::getValue('sq_keyword_information'));
                 SQ_Tools::saveOptions('sq_ws', (int) SQ_Tools::getValue('sq_ws'));
-
+                SQ_Tools::saveOptions('sq_savelocal', (int) SQ_Tools::getValue('sq_savelocal'));
 
                 //update_option('blog_public', (int)SQ_Tools::getValue('sq_google_index'));
 

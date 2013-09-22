@@ -81,19 +81,20 @@ class SQ_Post extends SQ_FrontController {
             $this->checkSeo($post_id, get_post_status($post_id));
         }
 
-        //If the post is not auto-save post
-        if ((SQ_Tools::getValue('action')) == 'editpost' &&
-                wp_is_post_autosave($post_id) == '' &&
-                get_post_status($post_id) != 'auto-draft' &&
-                get_post_status($post_id) != 'inherit' &&
-                SQ_Tools::getValue('autosave') == '') {
+        if (SQ_Tools::$options['sq_savelocal'] == 1) {
+            //If the post is not auto-save post
+            if ((SQ_Tools::getValue('action')) == 'editpost' &&
+                    wp_is_post_autosave($post_id) == '' &&
+                    get_post_status($post_id) != 'auto-draft' &&
+                    get_post_status($post_id) != 'inherit' &&
+                    SQ_Tools::getValue('autosave') == '') {
 
-            if (!$this->saved)
-            //check the remote images
-                $this->checkImage($post_id);
-            $this->saved = true;
+                if (!$this->saved)
+                //check the remote images
+                    $this->checkImage($post_id);
+                $this->saved = true;
+            }
         }
-
 
         add_action('save_post', array($this, 'hookSavePost'), 10);
     }

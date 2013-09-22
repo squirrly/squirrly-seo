@@ -5,39 +5,50 @@ Requires at least: 3.1
 Tested up to: 3.6.1
 Stable tag: trunk
 
-Squirrly SEO Plugin helps you write excellent SEO articles for your WordPress and do keyword researches in less then 2 minutes.
+Squirrly SEO Plugin is the Only SEO Tool that Allows You To Optimize Content And Measure Its Success. For Both Humans and Search Engines.
 
 == Description ==
 [youtube http://www.youtube.com/watch?v=HYTcdLXNhhw]
 
-<strong>The three things you should look for in a seo plugin:</strong>
 
-1) to increase the chances of <strong>being found on search engines</strong>, by writting better optimized content
+<strong>Lets Face It. SEO is tough.</strong> How does Squirrly take the hard work out of SEO?
 
-2) to help you <strong>measure the improvement</strong> of your site, in terms of ranking, traffic, links and Social Signals.
+- <strong>Gives You SEO Advice as you're typing your articles.</strong> Squirrly helps you in real time to optimize your articles to 100%, while you are writing or editing them.
 
-3) to get <strong>great support</strong>
+- <strong>Optimized articles get +285% traffic,</strong> on average (real statistics from over 16,500 people who participated in the survey).
 
-<strong>SEO Plugin by Squirrly helps you write rich content that will be found by potential customers on search engines, research and analyze keywords that will give you a better chance of being found on google, it helps you measure the social signals that come to your site from various social networks and with one click you can check the SEO improvement of each article.</strong>
+- <strong>Finds you Keywords and Topics that your Customers actively search for</strong> and which will help you out-rank your competitors, not just follow them around
+- <strong>The algorithm for Keyword analysis</strong> takes into accounts elements that will help you find suitable keywords for content optimization: for Humans and for Search Engines.
+
+- <strong>Tracks all the aspects of your Content Marketing Strategy:</strong> Blogging, Traffic, SEO, Social Signals, Links, Authority. Every single week you get a report by email.
+
+- <strong>Send the Audit report by email</strong> to your content writer, SEO person, developers, etc.
+
+- <strong>It Gives You Professional Advice on How To Fix</strong> any of those areas that it helps track, so you can easily find out how to improve. Content from SEO Moz (recently just MOZ), Google, Authority Labs, etc.
+
+- <strong>Monitors Your Progress, week by week.</strong> You'll get interesting data about the historical performance of each article you write.
+
+- <strong>Analyze any single article. See how it improves over time.</strong>
+
+- <strong>Optimize Your Content for Humans.</strong> We've recently added tools and lessons (free of charge) that will help you optimize all of your Content for Humans, not just for search engines.
+
+- <strong>Stay up to date with your SEO and Social Signals, with our Email Alerts</strong>. We send out email alerts if something on your wordpress site needs immediate attention, so that you can act upon it and save your business the trouble.
+
+- <strong>Free Images that You Can Use.</strong>
+
+- <strong>Social Intelligence through the Inspiration Box, to help you write better content, by showing you recent tweets about your subject, how other journalists and bloggers have approached your topic. All of this in your "Add New Post" interface.</strong>
 
 
-All of these help you get <strong>Excellent SEO on all your articles and measure the success of your site</strong>.
 
-<em>"Wow ,I've been using your tool for a week now and one of my blog ranked no1 out of a million for its key word... amazing"</em> - <strong>Pierre Perpal</strong>. Pierre worked hard to get that, and even though success stories keep coming in, they don't happen for all of our users. SEO Plugin by Squirrly does not guarantee that you will succeed. It's just a tool that makes it possible to reach such results. It's a door opener.
 
-<strong>How does Squirrly help you boost your ranking in search engines?</strong>
+<strong>You Only Pay Us If You Love Us. Otherwise You Can Use Squirrly for Free.</strong>
 
-First of all, it's the <strong>easiest tool to understand</strong>, make sense of SEO and use. This has been our focus from day 1.
+You’ll start with the full version of Squirrly. If in 14 Days, you decide you love to get all the benefits from Squirrly, you pay for it (Pricing Plans below). If not, then you will continue using the <strong>Free Version</strong> of our Content Marketing tool, no questions asked.
 
-It helps you with <strong>SEO advice</strong>, in real time (as you're typing the article), to have a 100% optimized article.
 
-<strong>Great keywords</strong> help you get ranked much faster. If you want to rank for "auto parts shop",for example, Squirrly will suggest related keywords that give you a better chance of ranking and getting visitors.
 
-To suggest them, it checks how much the keyword is discussed on Twitter (we have an authorized twitter app for this), on forums, how many people search for that keyword, if the search trend is going up (which means your articles with the keyword will become really popular over time) and checks competition for that keyword (also taking into account the chances you have for beating competitors for that keyword).
 
-<strong>Social Signal Metrics</strong> help you plan out the way you'll share your articles on social media networks and groups, since in 2013 this is one of the most important factors for boosting your rank on Google.
-
-<strong>The SEO analytics</strong> (that we call Article Rank), helps you measure the improvement and impact of each article you've written on your blog using Squirrly.
+<em>"Wow ,I've been using your tool for a week now and one of my blog ranked no1 out of a million for its key word... amazing"</em>
 
 <h3>Reviews</h3>
 * <em>"You can be confident that without ever leaving your Add New Blog page you have a strong keyword, good and current content, and your post will be 100% optimized for the search engines."</em> - <strong>Jason Fox Marketing</strong>
@@ -50,7 +61,7 @@ To suggest them, it checks how much the keyword is discussed on Twitter (we have
 
 <strong>You can read reviews from Internet Marketing experts on http://www.squirrly.co/reviews-pag68312.html</strong>
 
-More then helping you with your internet marketing efforts, we strive to offer Excellence in Customer Service.
+More than helping you with your internet marketing efforts, we strive to offer Excellence in Customer Service.
 
 - we have a Free Coaching session with 14 lessons and 10 actionable work files, awaiting you after you install the plugin and connect to squirrly.co
 
@@ -60,20 +71,16 @@ We're passionate about seeing you get a great and happy experience, so we'll do 
 
 The <a title="Squirrly SEO in Delivering Happiness" href="http://www.deliveringhappiness.com/everyday-happiness-florin-squirrly-and-how-theyre-making-happy-work/" target="_blank">Delivering Happiness</a> blog featured us for this.
 
-To ensure that you will get the best experience we can offer, we made a simple monthly subscription plan, which you can cancel anytime you want. This way, you'll be certain that we're always there for you, because you are the one who decides when we're not worth your time anymore.
 
-We've written <a href="http://www.squirrly.co/3_reasons_why_a_subscription_based_payment_makes_sense_for_you-pag38470-article_id62166.html" title="Squirrly SEO" target="_blank">3 reasons for why a monthly subscription makes sense in a product like Squirrly.</a>
-
-Squirrly Seo has a Trial period of 14 Days, after which you may choose to buy a monthly subscription or keep using Squirrly for Free and be able to optimize 2 articles / month.
-
-We're glad to have you
-Florin Muresan, Founder and CEO Squirrly UK
+We're glad to have you,
+Florin Muresan
+Founder and CEO Squirrly UK
 
 
 See all the Features of our product on the <a href="/extend/plugins/squirrly-seo/faq/" title="Squirrly Wordpress SEO"> FAQ Section </a>.
 
 <a href="/extend/plugins/squirrly-seo/screenshots/" title="Squirrly SEO Plugin">Check our screenshots</a>
- | <a href="http://www.squirrly.co" title="Squirrly SEO" target="_blank">Go to our official site</a>
+ | <a href="http://www.squirrly.co" title="Squirrly SEO" target="_blank">Go to our official site</a> | Free Version OR <a href="http://www.squirrly.co/pricing" title="See Pricing" target="_blank">Pricing Plans</a>
 
 == Installation ==
 1. Log In as an Admin on your Wordpress blog.
@@ -103,6 +110,7 @@ See all the Features of our product on the <a href="/extend/plugins/squirrly-seo
 = 2.1.3 =
 * Optimized Squirrly SEO for a faster load
 * Fixed minor bugs in the theme's css files
+* Local save for remote images is now optional in Settings
 
 = 2.1.2 =
 * Added unique SEO (title and description) for the author, tag and category pages
@@ -284,7 +292,7 @@ Cristina  - Squirrly mascot designer
 Many Thanks.
 
 == License ==
-Squirrly Seo has a Trial period of 14 Days, after which you may choose to buy a monthly subscription or keep using Squirrly for Free and be able to optimize 2 articles/month
+Squirrly Seo has a Trial period of 14 Days, after which you may choose to buy a monthly subscription or keep using Squirrly for Free and be able to optimize 5 articles/month
 
 
 == Frequently Asked Questions ==

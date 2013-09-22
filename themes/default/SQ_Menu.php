@@ -300,6 +300,17 @@
 
                     <div class="sq_option_content">
                         <div class="sq_switch">
+                            <input id="sq_savelocal1" type="radio" class="sq_switch-input" name="sq_savelocal" value="1" <?php echo (($view->options['sq_savelocal'] == 1) ? "checked" : '') ?> />
+                            <label for="sq_savelocal1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
+                            <input id="sq_savelocal0" type="radio" class="sq_switch-input" name="sq_savelocal"  value="0" <?php echo (($view->options['sq_savelocal'] == 0) ? "checked" : '') ?> />
+                            <label for="sq_savelocal0" class="sq_switch-label sq_switch-label-on"><?php _e('No', _PLUGIN_NAME_); ?></label>
+                            <span class="sq_switch-selection"></span>
+                        </div>
+                        <span><?php _e('Let Squirrly automatically <strong>save remote images</strong> to upload directory.', _PLUGIN_NAME_); ?></span>
+                    </div>
+
+                    <div class="sq_option_content">
+                        <div class="sq_switch">
                             <input id="sq_audit1" type="radio" class="sq_switch-input" name="sq_ws" value="1" <?php echo (($view->options['sq_ws'] == 1) ? "checked" : '') ?> />
                             <label for="sq_audit1" class="sq_switch-label sq_switch-label-off"><?php _e('Yes', _PLUGIN_NAME_); ?></label>
                             <input id="sq_audit0" type="radio" class="sq_switch-input" name="sq_ws"  value="0" <?php echo (($view->options['sq_ws'] == 0) ? "checked" : '') ?> />
