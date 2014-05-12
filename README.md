@@ -40,4 +40,4 @@ And 4 Great collaborators:
 * Bogdan - stylish designer
 * Cristina  - Squirrly mascot designer
 
-
+http://www.squirrly.co
